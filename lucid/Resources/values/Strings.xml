@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Click Me!</string>
+    <string name="app_name">lucid</string>
+    <string name="login">Login</string>
+    <string name="hint_username">Username...</string>
+    <string name="hint_password">Password...</string>
+    <string name="drawer_open">Open</string>  
+    <string name="drawer_close">Close</string>
+    <string name="portfolio_summary">Portfolio Summary</string>
+    <string name="account_summary">Account Summary</string>
+    <string name="asset_allocation">Asset Allocation</string>
+    <string name="details_of_transaction">Details of Transaction</string>
+    <string name="profit_loss">Profit/Loss</string>
+    <string name="change_password">Change Password</string>
+    <string name="logout">Logout</string>
+    <string name="about_us">About Us</string>
+    <string name="asset_description">Asset Description</string>
+    <string name="pos_bal_sys_tot_usd">Pos Bal Sys Tot (USD)</string>
+    <string name="weight_percentage">Weight %</string>
+    <string name="pos_bal_sys_tot_usd_weight_percentage">Pos Bal Sys Tot (USD) Weight %</string>
+</resources>
