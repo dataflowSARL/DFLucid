@@ -134,23 +134,17 @@
     <AndroidResource Include="Resources\menu\nav_menu.xml" />
     <AndroidResource Include="Resources\layout\layout_header.axml" />
     <AndroidResource Include="Resources\layout\toolbar.axml" />
-    <AndroidResource Include="Resources\layout\portfolio_summary.axml" />
-    <AndroidResource Include="Resources\layout\account_summary.axml" />
-    <AndroidResource Include="Resources\layout\asset_allocation.axml" />
-    <AndroidResource Include="Resources\layout\details_of_transaction.axml" />
-    <AndroidResource Include="Resources\layout\profit_loss.axml" />
-    <AndroidResource Include="Resources\layout\change_password.axml" />
-    <AndroidResource Include="Resources\layout\about_us.axml" />
     <AndroidResource Include="Resources\layout\asset_allocation_listview_even_row.axml" />
     <AndroidResource Include="Resources\drawable\animation.xml" />
     <AndroidResource Include="Resources\drawable\animation2.xml" />
     <AndroidResource Include="Resources\layout\asset_allocation_listview_odd_row.axml" />
+    <AndroidResource Include="Resources\drawable\asset_allocation.axml" />
+    <AndroidResource Include="Resources\layout\asset_allocation_layout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\layout\" />
     <Folder Include="Resources\menu\" />
-    <Folder Include="Resources\anim\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MarketFlowLibrary\MarketFlowLibrary.csproj">

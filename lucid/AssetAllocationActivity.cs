@@ -30,7 +30,7 @@ namespace lucid
         async protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.asset_allocation);
+            SetContentView(Resource.Layout.asset_allocation_layout);
             // Create your application here
             setUpVariables();
             back_btn.Click += Back_Btn_Click;
