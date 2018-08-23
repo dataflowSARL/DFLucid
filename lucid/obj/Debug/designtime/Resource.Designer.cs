@@ -2467,8 +2467,8 @@ namespace lucid
 			// aapt resource value: 0x7F020032
 			public const int details_of_transaction = 2130837554;
 			
-			// aapt resource value: 0x7F020025
-			public const int divider = 2130837541;
+			// aapt resource value: 0x7F020022
+			public const int divider = 2130837538;
 			
 			// aapt resource value: 0x7F020006
 			public const int drawer_layout = 2130837510;
@@ -2506,11 +2506,11 @@ namespace lucid
 			// aapt resource value: 0x7F020021
 			public const int header_left = 2130837537;
 			
-			// aapt resource value: 0x7F020024
-			public const int header_right_bottom = 2130837540;
+			// aapt resource value: 0x7F020025
+			public const int header_right_bottom = 2130837541;
 			
-			// aapt resource value: 0x7F020023
-			public const int header_right_top = 2130837539;
+			// aapt resource value: 0x7F020024
+			public const int header_right_top = 2130837540;
 			
 			// aapt resource value: 0x7F0C0035
 			public const int home = 2131492917;
@@ -2677,8 +2677,8 @@ namespace lucid
 			// aapt resource value: 0x7F0C0054
 			public const int right = 2131492948;
 			
-			// aapt resource value: 0x7F020022
-			public const int right_header_layout = 2130837538;
+			// aapt resource value: 0x7F020023
+			public const int right_header_layout = 2130837539;
 			
 			// aapt resource value: 0x7F0C0014
 			public const int right_icon = 2131492884;

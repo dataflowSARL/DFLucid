@@ -3016,7 +3016,7 @@ containing a value of this type.
         public static final int design_navigation_view=0x7f0800a7;
         public static final int details_of_transaction=0x7f0800ac;
         public static final int disableHome=0x7f080020;
-        public static final int divider=0x7f080097;
+        public static final int divider=0x7f080094;
         public static final int drawer_layout=0x7f0800ad;
         public static final int edit_query=0x7f08007e;
         public static final int end=0x7f080030;
@@ -3034,8 +3034,8 @@ containing a value of this type.
         public static final int ghost_view=0x7f08000a;
         public static final int header_layout=0x7f080092;
         public static final int header_left=0x7f080093;
-        public static final int header_right_bottom=0x7f080096;
-        public static final int header_right_top=0x7f080095;
+        public static final int header_right_bottom=0x7f080097;
+        public static final int header_right_top=0x7f080096;
         public static final int home=0x7f080005;
         public static final int homeAsUp=0x7f080021;
         public static final int icon=0x7f080062;
@@ -3095,7 +3095,7 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f080007;
         public static final int radio=0x7f080075;
         public static final int right=0x7f08004a;
-        public static final int right_header_layout=0x7f080094;
+        public static final int right_header_layout=0x7f080095;
         public static final int right_icon=0x7f0800c3;
         public static final int right_side=0x7f0800bf;
         public static final int save_image_matrix=0x7f08000c;

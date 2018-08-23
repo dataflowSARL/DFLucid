@@ -61,6 +61,12 @@
             android:text="@string/asset_description"
             android:textStyle="bold"
             android:gravity="center" />
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="#dcdcdc" />
         <LinearLayout
             android:id="@+id/right_header_layout"
             android:layout_width="match_parent"

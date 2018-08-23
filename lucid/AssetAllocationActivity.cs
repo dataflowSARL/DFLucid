@@ -61,14 +61,14 @@ namespace lucid
 
         void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            switch(e.Position) {
-                case 1:
+            switch(mItems[e.Position].AssetDescription) {
+                case "Equities":
                     Toast.MakeText(this, "Equities", ToastLength.Short).Show();
                     break;
-                case 2:
+                case "Fixed Income":
                     Toast.MakeText(this, "Fixed Income", ToastLength.Short).Show();
                     break;
-                case 3:
+                case "Funds":
                     Toast.MakeText(this, "Funds", ToastLength.Short).Show();
                     break;
                 default:

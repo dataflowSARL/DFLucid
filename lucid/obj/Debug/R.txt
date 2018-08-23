@@ -802,7 +802,7 @@ int id design_menu_item_text 0x7f0800a8
 int id design_navigation_view 0x7f0800a7
 int id details_of_transaction 0x7f0800ac
 int id disableHome 0x7f080020
-int id divider 0x7f080097
+int id divider 0x7f080094
 int id drawer_layout 0x7f0800ad
 int id edit_query 0x7f08007e
 int id end 0x7f080030
@@ -820,8 +820,8 @@ int id forever 0x7f080058
 int id ghost_view 0x7f08000a
 int id header_layout 0x7f080092
 int id header_left 0x7f080093
-int id header_right_bottom 0x7f080096
-int id header_right_top 0x7f080095
+int id header_right_bottom 0x7f080097
+int id header_right_top 0x7f080096
 int id home 0x7f080005
 int id homeAsUp 0x7f080021
 int id icon 0x7f080062
@@ -881,7 +881,7 @@ int id progress_circular 0x7f080006
 int id progress_horizontal 0x7f080007
 int id radio 0x7f080075
 int id right 0x7f08004a
-int id right_header_layout 0x7f080094
+int id right_header_layout 0x7f080095
 int id right_icon 0x7f0800c3
 int id right_side 0x7f0800bf
 int id save_image_matrix 0x7f08000c

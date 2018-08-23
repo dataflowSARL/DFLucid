@@ -2535,8 +2535,8 @@ namespace lucid
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
-			// aapt resource value: 0x7f080097
-			public const int divider = 2131230871;
+			// aapt resource value: 0x7f080094
+			public const int divider = 2131230868;
 			
 			// aapt resource value: 0x7f0800ad
 			public const int drawer_layout = 2131230893;
@@ -2589,11 +2589,11 @@ namespace lucid
 			// aapt resource value: 0x7f080093
 			public const int header_left = 2131230867;
 			
-			// aapt resource value: 0x7f080096
-			public const int header_right_bottom = 2131230870;
+			// aapt resource value: 0x7f080097
+			public const int header_right_bottom = 2131230871;
 			
-			// aapt resource value: 0x7f080095
-			public const int header_right_top = 2131230869;
+			// aapt resource value: 0x7f080096
+			public const int header_right_top = 2131230870;
 			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
@@ -2772,8 +2772,8 @@ namespace lucid
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
 			
-			// aapt resource value: 0x7f080094
-			public const int right_header_layout = 2131230868;
+			// aapt resource value: 0x7f080095
+			public const int right_header_layout = 2131230869;
 			
 			// aapt resource value: 0x7f0800c3
 			public const int right_icon = 2131230915;
