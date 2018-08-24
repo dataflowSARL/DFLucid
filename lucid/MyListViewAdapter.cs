@@ -55,13 +55,13 @@ namespace lucid
                 asset_description_odd_tv.Text = mItems[position].AssetDescription;
 
                 TextView code_odd_tv = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_odd);
-                code_odd_tv.Text = mItems[position].Code;
+                code_odd_tv.Text = mItems[position].Balance.ToString() + ", " + mItems[position].Weight.ToString() + "%";
             } else {
                 TextView asset_description_even_tv = row.FindViewById<TextView>(Resource.Id.asset_description_even);
                 asset_description_even_tv.Text = mItems[position].AssetDescription;
 
                 TextView code_even_tv = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_even);
-                code_even_tv.Text = mItems[position].Code;
+                code_even_tv.Text = mItems[position].Balance.ToString() + ", " + mItems[position].Weight.ToString() + "%";
             }
 
             return row;

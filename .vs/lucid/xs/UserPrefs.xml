@@ -1,14 +1,22 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/HomeActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/AssetAllocationActivity.cs">
     <Files>
-      <File FileName="lucid/MyListViewAdapter.cs" Line="60" Column="1" />
-      <File FileName="lucid/HomeActivity.cs" Line="83" Column="66" />
+      <File FileName="lucid/MyListViewAdapter.cs" Line="64" Column="77" />
+      <File FileName="lucid/HomeActivity.cs" Line="32" Column="27" />
+      <File FileName="lucid/AssetAllocationActivity.cs" Line="40" Column="18" />
+      <File FileName="MarketFlowLibrary/Classes/AssetAllocation.cs" Line="9" Column="53" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/Position.cs" Line="35" Column="41" />
+      <File FileName="lucid/MainActivity.cs" Line="67" Column="43" />
+      <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="74" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="24" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="49" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="45" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/MarketFlowLibrary/Service/MarketFlowService.cs" relfile="MarketFlowLibrary/Service/MarketFlowService.cs" line="72" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/MarketFlowLibrary/Service/MarketFlowService.cs" relfile="MarketFlowLibrary/Service/MarketFlowService.cs" line="74" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

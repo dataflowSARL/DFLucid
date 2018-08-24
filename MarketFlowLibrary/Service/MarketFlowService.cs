@@ -18,7 +18,7 @@ namespace MarketFlowLibrary
 
 	public class MarketFlowService
 	{
-        private const string serviceBaseURI = "http://10.10.0.155/MKFApi/api/values/"; //"http://staging2.folens.ie/api/";
+        private const string serviceBaseURI = "http://10.10.0.155/MKFAPI/API/Values/"; //"http://staging2.folens.ie/api/";
         private const string loginAction = "login";
 		private const string getPosition = "GetPosition";
 
