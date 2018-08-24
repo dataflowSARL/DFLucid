@@ -52,30 +52,36 @@ namespace lucid
                 switch (e.MenuItem.ToString())
                 {
                     case "Portfolio Summary":
-                        Toast.MakeText(this, e.MenuItem.ToString(), ToastLength.Short).Show();
+                        Intent portfolioSummary = new Intent(this, typeof(PortfolioSummaryActivity));
+                        StartActivity(portfolioSummary);
                         break;
                     case "Account Summary":
-                        Toast.MakeText(this, e.MenuItem.ToString(), ToastLength.Short).Show();
+                        Intent accountSummary = new Intent(this, typeof(AccountSummaryActivity));
+                        StartActivity(accountSummary);
                         break;
                     case "Asset Allocation":
                         Intent assetAllocation = new Intent(this, typeof(AssetAllocationActivity));
                         StartActivity(assetAllocation);
                         break;
                     case "Details of Transaction":
-                        Toast.MakeText(this, e.MenuItem.ToString(), ToastLength.Short).Show();
+                        Intent detailsOfTransaction = new Intent(this, typeof(DetailsOfTransactionActivity));
+                        StartActivity(detailsOfTransaction);
                         break;
                     case "Profit/Loss":
-                        Toast.MakeText(this, e.MenuItem.ToString(), ToastLength.Short).Show();
+                        Intent profitLoss = new Intent(this, typeof(ProfitLossActivity));
+                        StartActivity(profitLoss);
                         break;
                     case "Change Password":
-                        Toast.MakeText(this, e.MenuItem.ToString(), ToastLength.Short).Show();
+                        Intent changePassword = new Intent(this, typeof(ChangePasswordActivity));
+                        StartActivity(changePassword);
                         break;
                     case "Logout":
                         Intent logout = new Intent(this , typeof(MainActivity));
                         StartActivity(logout);
                         break;
                     case "About Us":
-                        Toast.MakeText(this, e.MenuItem.ToString(), ToastLength.Short).Show();
+                        Intent aboutUs = new Intent(this, typeof(AboutUsActivity));
+                        StartActivity(aboutUs);
                         break;
                     default:
                         Toast.MakeText(this, "Error", ToastLength.Short).Show();

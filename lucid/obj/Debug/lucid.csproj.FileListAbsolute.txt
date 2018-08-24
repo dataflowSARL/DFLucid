@@ -1,3 +1,5 @@
+/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csprojResolveAssemblyReference.cache
+/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csproj.CoreCompileInputs.cache
 /Users/lucien/Projects/lucid/lucid/bin/Debug/lucid.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/lucid.pdb
 /Users/lucien/Projects/lucid/lucid/bin/Debug/com.dataflow.lucid.apk
@@ -25,8 +27,6 @@
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Kotlin.StdLib.Jre8.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/MarketFlowLibrary.pdb
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Newtonsoft.Json.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csprojResolveAssemblyReference.cache
-/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csproj.CoreCompileInputs.cache
 /Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.pdb
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/bin/com.dataflow.lucid.apk
@@ -52,6 +52,12 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_listview_odd_row.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/asset_allocation.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/portfolio_summary_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/account_summary_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/details_of_transaction_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/profit_loss_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/change_password_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/about_us_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/lucid/obj/Debug/uploadflags.txt

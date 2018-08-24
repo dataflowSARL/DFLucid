@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Toolbar
+        android:id="@+id/as_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="#3e94a6"
+        android:elevation="4dp">
+        <LinearLayout
+            android:id="@+id/linearLayoutToolbarAccountSummary"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingRight="2dp"
+            android:paddingLeft="2dp">
+            <ImageButton
+                android:id="@+id/as_back_btn"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/abc_ic_ab_back_material"
+                android:background="#3e94a6"
+                android:layout_gravity="center" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/title_account_summary"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/account_summary"
+                android:layout_gravity="center"
+                android:textColor="#565a61"
+                style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <ImageView
+                android:id="@+id/toolbarLogoAccountSummary"
+                android:src="@drawable/logo"
+                android:layout_height="50dp"
+                android:layout_width="50dp"
+                android:padding="1dp" />
+        </LinearLayout>
+    </Toolbar>
+</LinearLayout>

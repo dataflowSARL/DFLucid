@@ -12,3 +12,4 @@
 /Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/uploadflags.txt
+/Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/MarketFlowLibrary.csprojResolveAssemblyReference.cache

@@ -110,6 +110,12 @@
     <Compile Include="HomeActivity.cs" />
     <Compile Include="AssetAllocationActivity.cs" />
     <Compile Include="MyListViewAdapter.cs" />
+    <Compile Include="PortfolioSummaryActivity.cs" />
+    <Compile Include="AccountSummaryActivity.cs" />
+    <Compile Include="DetailsOfTransactionActivity.cs" />
+    <Compile Include="ProfitLossActivity.cs" />
+    <Compile Include="ChangePasswordActivity.cs" />
+    <Compile Include="AboutUsActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -140,6 +146,12 @@
     <AndroidResource Include="Resources\layout\asset_allocation_listview_odd_row.axml" />
     <AndroidResource Include="Resources\drawable\asset_allocation.axml" />
     <AndroidResource Include="Resources\layout\asset_allocation_layout.axml" />
+    <AndroidResource Include="Resources\layout\portfolio_summary_layout.axml" />
+    <AndroidResource Include="Resources\layout\account_summary_layout.axml" />
+    <AndroidResource Include="Resources\layout\details_of_transaction_layout.axml" />
+    <AndroidResource Include="Resources\layout\profit_loss_layout.axml" />
+    <AndroidResource Include="Resources\layout\change_password_layout.axml" />
+    <AndroidResource Include="Resources\layout\about_us_layout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

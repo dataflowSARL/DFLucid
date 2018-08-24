@@ -13,6 +13,12 @@
     </activity>
     <activity android:theme="@style/Theme.DesignDemo" android:name="md57c883242be2a3677065c75adf70e4be4.HomeActivity" />
     <activity android:label="AssetAllocation" android:name="md57c883242be2a3677065c75adf70e4be4.AssetAllocationActivity" />
+    <activity android:label="PortfolioSummaryActivity" android:name="md57c883242be2a3677065c75adf70e4be4.PortfolioSummaryActivity" />
+    <activity android:label="AccountSummaryActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AccountSummaryActivity" />
+    <activity android:label="DetailsOfTransactionActivity" android:name="md57c883242be2a3677065c75adf70e4be4.DetailsOfTransactionActivity" />
+    <activity android:label="ProfitLossActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ProfitLossActivity" />
+    <activity android:label="ChangePasswordActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ChangePasswordActivity" />
+    <activity android:label="AboutUsActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AboutUsActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.dataflow.lucid.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">
