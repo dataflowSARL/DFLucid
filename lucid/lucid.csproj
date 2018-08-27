@@ -116,6 +116,7 @@
     <Compile Include="ProfitLossActivity.cs" />
     <Compile Include="ChangePasswordActivity.cs" />
     <Compile Include="AboutUsActivity.cs" />
+    <Compile Include="AssetAllocationDetailsActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -152,6 +153,7 @@
     <AndroidResource Include="Resources\layout\profit_loss_layout.axml" />
     <AndroidResource Include="Resources\layout\change_password_layout.axml" />
     <AndroidResource Include="Resources\layout\about_us_layout.axml" />
+    <AndroidResource Include="Resources\layout\asset_allocation_details_layout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

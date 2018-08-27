@@ -58,6 +58,7 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/profit_loss_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/change_password_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/about_us_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/lucid/obj/Debug/uploadflags.txt

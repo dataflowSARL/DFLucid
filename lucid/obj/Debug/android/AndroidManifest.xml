@@ -19,6 +19,7 @@
     <activity android:label="ProfitLossActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ProfitLossActivity" />
     <activity android:label="ChangePasswordActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ChangePasswordActivity" />
     <activity android:label="AboutUsActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AboutUsActivity" />
+    <activity android:label="AssetAllocationDetailsActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AssetAllocationDetailsActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.dataflow.lucid.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">

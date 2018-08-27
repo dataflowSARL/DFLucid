@@ -61,10 +61,17 @@ namespace lucid
                 weight_percentage_odd_tv.Text = mItems[position].Weight.ToString("#0.00") + "%";
 
                 ImageButton details_btn_odd = row.FindViewById<ImageButton>(Resource.Id.details_button_odd);
+                if (Convert.ToInt32(mItems[position].Code) <= 0)
+                {
+                    details_btn_odd.Visibility = ViewStates.Invisible;
+                }
                 details_btn_odd.Click += delegate {
                     if (Convert.ToInt32(mItems[position].Code) > 0)
                     {
-                        Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show();
+                        //Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show();
+                        Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
+                        details.PutExtra("assetcode", mItems[position].Code);
+                        mContext.StartActivity(details);
                     }
                 };
             } else {
@@ -78,9 +85,16 @@ namespace lucid
                 weight_percentage_even_tv.Text = mItems[position].Weight.ToString("#0.00") + "%";
 
                 ImageButton details_btn_even = row.FindViewById<ImageButton>(Resource.Id.details_button_even);
+                if (Convert.ToInt32(mItems[position].Code) <= 0)
+                {
+                    details_btn_even.Visibility = ViewStates.Invisible;
+                }
                 details_btn_even.Click += delegate {
                     if(Convert.ToInt32(mItems[position].Code) > 0) {
-                        Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show(); 
+                        //Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show();
+                        Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
+                        details.PutExtra("assetcode", mItems[position].Code);
+                        mContext.StartActivity(details);
                     }
                 };
             }
