@@ -47,7 +47,7 @@
                 android:padding="1dp" />
         </LinearLayout>
     </Toolbar>
-    <LinearLayout
+<!--    <LinearLayout
         android:id="@+id/header_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             android:textStyle="bold"
             android:gravity="center" />
         <View
-            android:id="@+id/divider"
+            android:id="@+id/divider_header"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
@@ -77,7 +77,7 @@
             <TextView
                 android:id="@+id/header_right_top"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:text="@string/pos_bal_sys_tot_usd"
                 android:textStyle="bold"
@@ -85,15 +85,15 @@
             <TextView
                 android:id="@+id/header_right_bottom"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:text="@string/weight_percentage"
                 android:textStyle="bold"
                 android:gravity="center" />
         </LinearLayout>
-    </LinearLayout>
+    </LinearLayout>-->
     <View
-        android:id="@+id/divider"
+        android:id="@+id/divider1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_centerHorizontal="true"
@@ -103,4 +103,10 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="1" />
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true"
+        android:background="#dcdcdc" />
 </LinearLayout>

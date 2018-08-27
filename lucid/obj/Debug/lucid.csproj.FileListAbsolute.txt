@@ -1,5 +1,3 @@
-/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csprojResolveAssemblyReference.cache
-/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csproj.CoreCompileInputs.cache
 /Users/lucien/Projects/lucid/lucid/bin/Debug/lucid.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/lucid.pdb
 /Users/lucien/Projects/lucid/lucid/bin/Debug/com.dataflow.lucid.apk
@@ -27,6 +25,8 @@
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Kotlin.StdLib.Jre8.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/MarketFlowLibrary.pdb
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Newtonsoft.Json.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csprojResolveAssemblyReference.cache
+/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csproj.CoreCompileInputs.cache
 /Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.pdb
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/bin/com.dataflow.lucid.apk

@@ -14,18 +14,33 @@
         android:text="@string/asset_description"
         android:gravity="center" />
     <View
-        android:id="@+id/divider"
+        android:id="@+id/divider_even"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:background="#dcdcdc" />
-    <TextView
-        android:id="@+id/pos_bal_sys_tot_usd_even"
-        android:text="@string/pos_bal_sys_tot_usd"
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/right_column"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
         android:layout_weight="0.5"
-        android:gravity="center" />
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/pos_bal_sys_tot_usd_even"
+            android:text="@string/pos_bal_sys_tot_usd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="8dp"
+            android:layout_weight="0.5"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/weight_percentage_tv_even"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:paddingBottom="8dp"
+            android:gravity="center"
+            android:text="@string/weight_percentage" />
+    </LinearLayout>
 </LinearLayout>

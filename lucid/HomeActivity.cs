@@ -14,6 +14,7 @@ using Android.Support.V4.Widget;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Support.Design.Widget;
 using Android.Support.Compat;
+using MKFLibrary;
 
 namespace lucid
 {
@@ -24,14 +25,18 @@ namespace lucid
         #region variables
         NavigationView navigationView;
         DrawerLayout drawerLayout;
+        private MKFUser user;
         #endregion
 
 
         protected override void OnCreate(Bundle bundle)  
         {  
-            base.OnCreate(bundle);  
+            base.OnCreate(bundle);
             // Set our view from the "home" layout resource  
-            SetContentView(Resource.Layout.Home);  
+            SetContentView(Resource.Layout.Home);
+            user = new MKFUser();
+            user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
+            user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
             drawerLayout = FindViewById < DrawerLayout > (Resource.Id.drawer_layout);  
             // Create ActionBarDrawerToggle button and add it to the toolbar  
             var toolbar = FindViewById < V7Toolbar > (Resource.Id.toolbar);  
@@ -61,6 +66,8 @@ namespace lucid
                         break;
                     case "Asset Allocation":
                         Intent assetAllocation = new Intent(this, typeof(AssetAllocationActivity));
+                        assetAllocation.PutExtra("webclicode", user.WebCliCode);
+                        assetAllocation.PutExtra("clicode", user.CliCode);
                         StartActivity(assetAllocation);
                         break;
                     case "Details of Transaction":

@@ -33,5 +33,6 @@ namespace MKFLibrary
         public double UnrealizedPnlUSD  {get;set;}
         public string ISIN  {get;set;}
         public string MODCOD  {get;set;}
+        public string Tit_Cod {get; set;}
     }
 }
