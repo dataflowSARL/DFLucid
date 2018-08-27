@@ -19,4 +19,5 @@
     <string name="pos_bal_sys_tot_usd">Pos Bal Sys Tot (USD)</string>
     <string name="weight_percentage">Weight %</string>
     <string name="pos_bal_sys_tot_usd_weight_percentage">Pos Bal Sys Tot (USD) Weight %</string>
+    <string name="asset_allocation_details">Asset Allocation Details</string>
 </resources>

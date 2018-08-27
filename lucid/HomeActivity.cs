@@ -27,7 +27,7 @@ namespace lucid
         DrawerLayout drawerLayout;
         private MKFUser user;
         #endregion
-
+        //TODO: Add username to layout header.
 
         protected override void OnCreate(Bundle bundle)  
         {  
