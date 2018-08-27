@@ -59,6 +59,14 @@ namespace lucid
 
                 TextView weight_percentage_odd_tv = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_odd);
                 weight_percentage_odd_tv.Text = mItems[position].Weight.ToString("#0.00") + "%";
+
+                ImageButton details_btn_odd = row.FindViewById<ImageButton>(Resource.Id.details_button_odd);
+                details_btn_odd.Click += delegate {
+                    if (Convert.ToInt32(mItems[position].Code) > 0)
+                    {
+                        Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show();
+                    }
+                };
             } else {
                 TextView asset_description_even_tv = row.FindViewById<TextView>(Resource.Id.asset_description_even);
                 asset_description_even_tv.Text = mItems[position].AssetDescription;
@@ -68,8 +76,14 @@ namespace lucid
 
                 TextView weight_percentage_even_tv = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_even);
                 weight_percentage_even_tv.Text = mItems[position].Weight.ToString("#0.00") + "%";
-            }
 
+                ImageButton details_btn_even = row.FindViewById<ImageButton>(Resource.Id.details_button_even);
+                details_btn_even.Click += delegate {
+                    if(Convert.ToInt32(mItems[position].Code) > 0) {
+                        Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show(); 
+                    }
+                };
+            }
             return row;
         }
     }

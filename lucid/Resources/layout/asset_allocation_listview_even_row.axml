@@ -4,15 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:weightSum="1">
-    <TextView
-        android:id="@+id/asset_description_even"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_weight="0.5"
+        android:weightSum="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:text="@string/asset_description"
-        android:gravity="center" />
+        android:gravity="center">
+        <TextView
+            android:id="@+id/asset_description_even"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center"
+            android:text="@string/asset_description" />
+        <ImageButton
+            android:id="@+id/details_button_even"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="0.9"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white"
+            android:src="@drawable/abc_ic_go_search_api_material" />
+    </LinearLayout>
     <View
         android:id="@+id/divider_even"
         android:layout_width="1dp"

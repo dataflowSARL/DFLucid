@@ -5,16 +5,32 @@
     android:layout_height="wrap_content"
     android:weightSum="1"
     android:background="@color/material_grey_600">
-    <TextView
-        android:id="@+id/asset_description_odd"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_weight="0.5"
+        android:weightSum="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:textColor="@android:color/white"
-        android:text="@string/asset_description"
-        android:gravity="center" />
+        android:gravity="center">
+        <TextView
+            android:id="@+id/asset_description_odd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:text="@string/asset_description" />
+        <ImageButton
+            android:id="@+id/details_button_odd"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="0.9"
+            android:layout_gravity="center_vertical"
+            android:background="@color/material_grey_600"
+            android:src="@drawable/abc_ic_go_search_api_material" />
+    </LinearLayout>
     <View
         android:id="@+id/divider_odd"
         android:layout_width="1dp"
