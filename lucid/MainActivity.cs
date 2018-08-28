@@ -14,10 +14,13 @@ namespace lucid
     {
 
         #region variables
-        EditText username;
-        EditText password;
-        ImageView logo;
-        Button login;
+        private EditText username;
+        private EditText password;
+        private ImageView logo;
+        private Button login;
+
+        private MKFUser user;
+
         int screenWidth;
         #endregion
 
@@ -51,7 +54,7 @@ namespace lucid
 
         void Login_Click(object sender, System.EventArgs e)
         {
-            MKFUser user = new MKFUser();
+            user = new MKFUser();
             user.WebCliCode = "1203255717565F";
             user.CliCode = user.WebCliCode;
 

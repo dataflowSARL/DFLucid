@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>lucid</RootNamespace>
     <AssemblyName>lucid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -117,6 +117,7 @@
     <Compile Include="ChangePasswordActivity.cs" />
     <Compile Include="AboutUsActivity.cs" />
     <Compile Include="AssetAllocationDetailsActivity.cs" />
+    <Compile Include="MyListViewDetailsAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -154,6 +155,8 @@
     <AndroidResource Include="Resources\layout\change_password_layout.axml" />
     <AndroidResource Include="Resources\layout\about_us_layout.axml" />
     <AndroidResource Include="Resources\layout\asset_allocation_details_layout.axml" />
+    <AndroidResource Include="Resources\layout\asset_allocation_details_listview_even_row.axml" />
+    <AndroidResource Include="Resources\layout\asset_allocation_details_listview_odd_row.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -20,4 +20,7 @@
     <string name="weight_percentage">Weight %</string>
     <string name="pos_bal_sys_tot_usd_weight_percentage">Pos Bal Sys Tot (USD) Weight %</string>
     <string name="asset_allocation_details">Asset Allocation Details</string>
+    <string name="tit_nom">Tit Nom</string>
+    <string name="isin">ISIN</string>
+    <string name="sumQty">Sum Qty</string>
 </resources>

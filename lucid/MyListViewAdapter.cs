@@ -4,6 +4,7 @@ using Android.Content;
 using Android.Views;
 using Android.Widget;
 using MarketFlowLibrary;
+using MKFLibrary;
 
 namespace lucid
 {
@@ -12,11 +13,13 @@ namespace lucid
 
         public List<AssetAllocation> mItems;
         private Context mContext;
+        private MKFUser mUser;
 
-        public MyListViewAdapter(Context context , List<AssetAllocation> items)
+        public MyListViewAdapter(Context context , List<AssetAllocation> items , MKFUser user)
         {
             mItems = items;
             mContext = context;
+            mUser = user;
         }
 
         public override AssetAllocation this[int position] => mItems[position];
@@ -71,6 +74,8 @@ namespace lucid
                         //Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show();
                         Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
                         details.PutExtra("assetcode", mItems[position].Code);
+                        details.PutExtra("webclicode", mUser.WebCliCode);
+                        details.PutExtra("clicode", mUser.CliCode);
                         mContext.StartActivity(details);
                     }
                 };
@@ -94,6 +99,8 @@ namespace lucid
                         //Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show();
                         Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
                         details.PutExtra("assetcode", mItems[position].Code);
+                        details.PutExtra("webclicode", mUser.WebCliCode);
+                        details.PutExtra("clicode", mUser.CliCode);
                         mContext.StartActivity(details);
                     }
                 };

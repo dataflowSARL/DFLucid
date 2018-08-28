@@ -25,8 +25,10 @@
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Kotlin.StdLib.Jre8.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/MarketFlowLibrary.pdb
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Newtonsoft.Json.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csprojResolveAssemblyReference.cache
+/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csprojAssemblyReference.cache
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csproj.CoreCompileInputs.cache
+/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csproj.CopyComplete
 /Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.pdb
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/bin/com.dataflow.lucid.apk
@@ -59,6 +61,8 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/change_password_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/about_us_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_listview_even_row.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_listview_odd_row.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/lucid/obj/Debug/uploadflags.txt

@@ -34,11 +34,12 @@ namespace lucid
             SetContentView(Resource.Layout.asset_allocation_layout);
             // Create your application here
             setUpVariables();
-            back_btn.Click += Back_Btn_Click;
            
         }
+
         async private void setUpVariables() {
             back_btn = FindViewById<ImageButton>(Resource.Id.aa_back_btn);
+            back_btn.Click += Back_Btn_Click;
             listView = FindViewById<ListView>(Resource.Id.asset_allocation_list_view);
             user = new MKFUser();
             user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
@@ -47,9 +48,9 @@ namespace lucid
             //List<Position> userAccountPositions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Position>>(dsValue);
             List<Position> userAccountPositions = await MarketFlowService.GetPosition(user);
             mItems = userAccountPositions.Where(u => u.AssetGrp == 1).Union(userAccountPositions.Where(u => u.ord == 2).Where(u => u.AssetGrp == 0)).Select(u => new AssetAllocation() { Code = u.Asset_Cod, AssetDescription = u.Asset_Desc, Balance = u.PosBalSysTot, Weight = u.Weight }).ToList<AssetAllocation>();
-            MyListViewAdapter listViewAdapter = new MyListViewAdapter(this, mItems);
+            MyListViewAdapter listViewAdapter = new MyListViewAdapter(this, mItems, user);
             listView.Adapter = listViewAdapter;
-            listView.ItemClick += ListView_ItemClick;
+            //listView.ItemClick += ListView_ItemClick;
         }
 
         void Back_Btn_Click(object sender, EventArgs e)
@@ -57,27 +58,27 @@ namespace lucid
             Intent home = new Intent(this, typeof(HomeActivity));
             Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Drawable.animation, Resource.Drawable.animation2).ToBundle();
             StartActivity(home , bndlanimation);
+            Finish();
         }
 
-        void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            string assetCode = mItems[e.Position].Code;
+        //void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        //{
+        //    string assetCode = mItems[e.Position].Code;
 
-            //switch(mItems[e.Position].Code) {
-            //    case "Equities":
-            //        Toast.MakeText(this, "Equities", ToastLength.Short).Show();
-            //        break;
-            //    case "Fixed Income ":
-            //        Toast.MakeText(this, "Fixed Income", ToastLength.Short).Show();
-            //        break;
-            //    case "Funds":
-            //        Toast.MakeText(this, "Funds", ToastLength.Short).Show();
-            //        break;
-            //    default:
-            //        Toast.MakeText(this, "Default", ToastLength.Short).Show();
-            //        break;
-            //}
-        }
-
+        //    //switch(mItems[e.Position].Code) {
+        //    //    case "Equities":
+        //    //        Toast.MakeText(this, "Equities", ToastLength.Short).Show();
+        //    //        break;
+        //    //    case "Fixed Income ":
+        //    //        Toast.MakeText(this, "Fixed Income", ToastLength.Short).Show();
+        //    //        break;
+        //    //    case "Funds":
+        //    //        Toast.MakeText(this, "Funds", ToastLength.Short).Show();
+        //    //        break;
+        //    //    default:
+        //    //        Toast.MakeText(this, "Default", ToastLength.Short).Show();
+        //    //        break;
+        //    //}
+        //}
     }
 }
