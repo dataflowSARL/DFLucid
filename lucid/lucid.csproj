@@ -118,6 +118,7 @@
     <Compile Include="AboutUsActivity.cs" />
     <Compile Include="AssetAllocationDetailsActivity.cs" />
     <Compile Include="MyListViewDetailsAdapter.cs" />
+    <Compile Include="ViewHolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

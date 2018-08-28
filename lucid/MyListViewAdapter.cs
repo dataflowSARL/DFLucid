@@ -40,6 +40,7 @@ namespace lucid
         {
             int layoutResource = 0;
             int viewType = GetItemViewType(position);
+            ViewHolder viewHolder;
             switch(viewType) {
                 case 0:
                     layoutResource = Resource.Layout.asset_allocation_listview_even_row;
@@ -51,27 +52,31 @@ namespace lucid
             View row = convertView;
             if (row == null) {
                 row = LayoutInflater.From(mContext).Inflate(layoutResource, null, false);
+                viewHolder = new ViewHolder();
+                viewHolder.asset_description_odd = row.FindViewById<TextView>(Resource.Id.asset_description_odd);
+                viewHolder.asset_description_even = row.FindViewById<TextView>(Resource.Id.asset_description_even);
+                viewHolder.code_odd = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_odd);
+                viewHolder.code_even = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_even);
+                viewHolder.weight_percentage_odd = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_odd);
+                viewHolder.weight_percentage_even = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_even);
+                viewHolder.details_btn_odd = row.FindViewById<ImageButton>(Resource.Id.details_button_odd);
+                viewHolder.details_btn_even = row.FindViewById<ImageButton>(Resource.Id.details_button_even);
+                row.Tag = viewHolder;
+            } else {
+                viewHolder = row.Tag as ViewHolder;
             }
 
             if(position % 2 == 1) {
-                TextView asset_description_odd_tv = row.FindViewById<TextView>(Resource.Id.asset_description_odd);
-                asset_description_odd_tv.Text = mItems[position].AssetDescription;
-
-                TextView code_odd_tv = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_odd);
-                code_odd_tv.Text = mItems[position].Balance.ToString("#,##0.00");
-
-                TextView weight_percentage_odd_tv = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_odd);
-                weight_percentage_odd_tv.Text = mItems[position].Weight.ToString("#0.00") + "%";
-
-                ImageButton details_btn_odd = row.FindViewById<ImageButton>(Resource.Id.details_button_odd);
+                viewHolder.asset_description_odd.Text = mItems[position].AssetDescription;
+                viewHolder.code_odd.Text = mItems[position].Balance.ToString("#,##0.00");
+                viewHolder.weight_percentage_odd.Text = mItems[position].Weight.ToString("#0.00") + "%";
                 if (Convert.ToInt32(mItems[position].Code) <= 0)
                 {
-                    details_btn_odd.Visibility = ViewStates.Invisible;
+                    viewHolder.details_btn_odd.Visibility = ViewStates.Invisible;
                 }
-                details_btn_odd.Click += delegate {
+                viewHolder.details_btn_odd.Click += delegate {
                     if (Convert.ToInt32(mItems[position].Code) > 0)
                     {
-                        //Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show();
                         Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
                         details.PutExtra("assetcode", mItems[position].Code);
                         details.PutExtra("webclicode", mUser.WebCliCode);
@@ -80,23 +85,16 @@ namespace lucid
                     }
                 };
             } else {
-                TextView asset_description_even_tv = row.FindViewById<TextView>(Resource.Id.asset_description_even);
-                asset_description_even_tv.Text = mItems[position].AssetDescription;
-
-                TextView code_even_tv = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_even);
-                code_even_tv.Text = mItems[position].Balance.ToString("#,##0.00");
-
-                TextView weight_percentage_even_tv = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_even);
-                weight_percentage_even_tv.Text = mItems[position].Weight.ToString("#0.00") + "%";
-
-                ImageButton details_btn_even = row.FindViewById<ImageButton>(Resource.Id.details_button_even);
+                viewHolder.asset_description_even.Text = mItems[position].AssetDescription;
+                viewHolder.code_even.Text = mItems[position].Balance.ToString("#,##0.00");
+                viewHolder.weight_percentage_even.Text = mItems[position].Weight.ToString("#0.00") + "%";
+                viewHolder.details_btn_even = row.FindViewById<ImageButton>(Resource.Id.details_button_even);
                 if (Convert.ToInt32(mItems[position].Code) <= 0)
                 {
-                    details_btn_even.Visibility = ViewStates.Invisible;
+                    viewHolder.details_btn_even.Visibility = ViewStates.Invisible;
                 }
-                details_btn_even.Click += delegate {
+                viewHolder.details_btn_even.Click += delegate {
                     if(Convert.ToInt32(mItems[position].Code) > 0) {
-                        //Toast.MakeText(mContext, mItems[position].Code, ToastLength.Short).Show();
                         Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
                         details.PutExtra("assetcode", mItems[position].Code);
                         details.PutExtra("webclicode", mUser.WebCliCode);
