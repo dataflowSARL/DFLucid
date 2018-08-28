@@ -18,6 +18,7 @@ namespace lucid
     [Activity(Label = "AssetAllocationDetailsActivity")]
     public class AssetAllocationDetailsActivity : Activity
     {
+        //TODO: replace listview with recyclerview
         #region vars
         private ImageButton back_btn;
         private ListView listView;
@@ -43,9 +44,6 @@ namespace lucid
             assetCode = Intent.GetStringExtra("assetcode") ?? string.Empty;
             List<Position> userAccountPositions = await MarketFlowService.GetPosition(user);
             mItemsPosition = userAccountPositions.Where(u => u.Asset_Cod == assetCode).Select(u => new Position() { Tit_Cod = u.Tit_Cod, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
-            //foreach(Position p in mItemsPosition) {
-            //    Console.WriteLine("tit_nom: " + p.tit_nom + " isin: " + p.ISIN + " sumqty: " + p.sumQty + " pos_bal: " + p.PosBalSysTot + " weight: " + p.Weight);
-            //}
             MyListViewDetailsAdapter listViewDetailsAdapter = new MyListViewDetailsAdapter(this, mItemsPosition, user);
             listView.Adapter = listViewDetailsAdapter;
         }

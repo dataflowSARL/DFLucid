@@ -47,12 +47,6 @@
                 android:padding="1dp" />
         </LinearLayout>
     </Toolbar>
-    <!--<View
-        android:id="@+id/divider3"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_centerHorizontal="true"
-        android:background="#dcdcdc" />-->
     <ListView
         android:id="@+id/asset_allocation_details_list_view"
         android:layout_height="match_parent"
@@ -60,10 +54,4 @@
         android:divider="#dcdcdc"
         android:dividerHeight="1dp"
         android:layout_weight="1" />
-   <!--<View
-        android:id="@+id/divider4"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_centerHorizontal="true"
-        android:background="#dcdcdc" />-->
 </LinearLayout>

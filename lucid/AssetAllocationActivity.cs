@@ -18,6 +18,7 @@ namespace lucid
     [Activity(Label = "AssetAllocation")]
     public class AssetAllocationActivity : Activity
     {
+        //TODO: replace listview with recyclerview
 
         #region variables
         private ImageButton back_btn;
@@ -50,7 +51,6 @@ namespace lucid
             mItems = userAccountPositions.Where(u => u.AssetGrp == 1).Union(userAccountPositions.Where(u => u.ord == 2).Where(u => u.AssetGrp == 0)).Select(u => new AssetAllocation() { Code = u.Asset_Cod, AssetDescription = u.Asset_Desc, Balance = u.PosBalSysTot, Weight = u.Weight }).ToList<AssetAllocation>();
             MyListViewAdapter listViewAdapter = new MyListViewAdapter(this, mItems, user);
             listView.Adapter = listViewAdapter;
-            //listView.ItemClick += ListView_ItemClick;
         }
 
         void Back_Btn_Click(object sender, EventArgs e)
@@ -60,25 +60,5 @@ namespace lucid
             StartActivity(home , bndlanimation);
             Finish();
         }
-
-        //void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        //{
-        //    string assetCode = mItems[e.Position].Code;
-
-        //    //switch(mItems[e.Position].Code) {
-        //    //    case "Equities":
-        //    //        Toast.MakeText(this, "Equities", ToastLength.Short).Show();
-        //    //        break;
-        //    //    case "Fixed Income ":
-        //    //        Toast.MakeText(this, "Fixed Income", ToastLength.Short).Show();
-        //    //        break;
-        //    //    case "Funds":
-        //    //        Toast.MakeText(this, "Funds", ToastLength.Short).Show();
-        //    //        break;
-        //    //    default:
-        //    //        Toast.MakeText(this, "Default", ToastLength.Short).Show();
-        //    //        break;
-        //    //}
-        //}
     }
 }

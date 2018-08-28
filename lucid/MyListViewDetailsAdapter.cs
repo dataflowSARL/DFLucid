@@ -81,38 +81,6 @@ namespace lucid
                 viewHolder.pos_bal_sys_tot_usd_details_even.Text = mItemsPosition[position].PosBalSysTot.ToString("#,##0.00");
                 viewHolder.weight_even.Text = mItemsPosition[position].Weight.ToString("#0.00") + "%";
             }
-
-            //if(position % 2 == 1) {
-            //    TextView tit_nom_odd = row.FindViewById<TextView>(Resource.Id.tit_nom_odd);
-            //    tit_nom_odd.Text = mItemsPosition[position].tit_nom;
-
-            //    TextView isin_odd = row.FindViewById<TextView>(Resource.Id.isin_odd);
-            //    isin_odd.Text = mItemsPosition[position].ISIN;
-
-            //    TextView sumqty_odd = row.FindViewById<TextView>(Resource.Id.sum_qty_odd);
-            //    sumqty_odd.Text = mItemsPosition[position].sumQty.ToString("#,##0.0000");
-
-            //    TextView pos_bal_sys_tot_usd_details_odd = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_details_odd);
-            //    pos_bal_sys_tot_usd_details_odd.Text = mItemsPosition[position].PosBalSysTot.ToString("#,##0.00");
-
-            //    TextView weight_percentage_details_odd = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_details_odd);
-            //    weight_percentage_details_odd.Text = mItemsPosition[position].Weight.ToString("#0.00") + "%";
-            //} else {
-            //    TextView tit_nom_even = row.FindViewById<TextView>(Resource.Id.tit_nom_even);
-            //    tit_nom_even.Text = mItemsPosition[position].tit_nom;
-
-            //    TextView isin_even = row.FindViewById<TextView>(Resource.Id.isin_even);
-            //    isin_even.Text = mItemsPosition[position].ISIN;
-
-            //    TextView sumqty_even = row.FindViewById<TextView>(Resource.Id.sum_qty_even);
-            //    sumqty_even.Text = mItemsPosition[position].sumQty.ToString("#,##0.0000");
-
-            //    TextView pos_bal_sys_tot_usd_details_even = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_details_even);
-            //    pos_bal_sys_tot_usd_details_even.Text = mItemsPosition[position].PosBalSysTot.ToString("#,##0.00");
-
-            //    TextView weight_percentage_details_even = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_details_even);
-            //    weight_percentage_details_even.Text = mItemsPosition[position].Weight.ToString("#0.00") + "%";
-            //}
             return row;
         }
     }
