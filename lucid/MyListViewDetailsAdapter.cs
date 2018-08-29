@@ -48,7 +48,7 @@ namespace lucid
             }
             View row = convertView;
             if(row == null) {
-                row = LayoutInflater.From(mContext).Inflate(layoutResource, parent, false);
+                row = LayoutInflater.From(mContext).Inflate(layoutResource, null, false);
                 viewHolder = new ViewHolder();
                 viewHolder.tit_nom_odd = row.FindViewById<TextView>(Resource.Id.tit_nom_odd);
                 viewHolder.tit_nom_even = row.FindViewById<TextView>(Resource.Id.tit_nom_even);

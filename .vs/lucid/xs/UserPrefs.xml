@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/AssetAllocationDetailsActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/MainActivity.cs">
     <Files>
       <File FileName="lucid/AssetAllocationDetailsActivity.cs" Line="21" Column="51" />
       <File FileName="lucid/AssetAllocationActivity.cs" Line="21" Column="9" />
+      <File FileName="lucid/MyListViewDetailsAdapter.cs" Line="70" Column="1" />
+      <File FileName="lucid/MainActivity.cs" Line="58" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

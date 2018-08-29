@@ -43,7 +43,7 @@ namespace lucid
             user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
             assetCode = Intent.GetStringExtra("assetcode") ?? string.Empty;
             List<Position> userAccountPositions = await MarketFlowService.GetPosition(user);
-            mItemsPosition = userAccountPositions.Where(u => u.Asset_Cod == assetCode).Select(u => new Position() { Tit_Cod = u.Tit_Cod, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
+            mItemsPosition = userAccountPositions.Where(u => u.Asset_Cod == assetCode).Select(u => new Position() { Tit_Cod = u.Tit_Cod, ISIN = u.ISIN, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
             MyListViewDetailsAdapter listViewDetailsAdapter = new MyListViewDetailsAdapter(this, mItemsPosition, user);
             listView.Adapter = listViewDetailsAdapter;
         }
