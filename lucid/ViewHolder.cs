@@ -18,8 +18,8 @@ namespace lucid
         public TextView weight_odd { get; set; }
         public TextView asset_description_even { get; set; }
         public TextView asset_description_odd { get; set; }
-        public TextView code_even { get; set; }
-        public TextView code_odd { get; set; }
+        public TextView balance_even { get; set; }
+        public TextView balance_odd { get; set; }
         public TextView weight_percentage_even { get; set; }
         public TextView weight_percentage_odd { get; set; }
         public ImageButton details_btn_even { get; set; }

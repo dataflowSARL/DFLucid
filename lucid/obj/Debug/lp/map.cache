@@ -15,9 +15,9 @@ Xamarin.Android.Support.Media.Compat
 Xamarin.Android.Support.Transition
 Xamarin.Android.Support.v4
 Xamarin.Android.Support.v7.AppCompat
+Xamarin.Android.Support.v7.CardView
 Xamarin.Android.Support.v7.RecyclerView
 Xamarin.Android.Support.Vector.Drawable
 Xamarin.Kotlin.StdLib
 Xamarin.Kotlin.StdLib.Jre7
 Xamarin.Kotlin.StdLib.Jre8
-Xamarin.Android.Support.v7.CardView

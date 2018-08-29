@@ -122,6 +122,8 @@
     <Compile Include="AssetAllocationDetailsActivity.cs" />
     <Compile Include="MyListViewDetailsAdapter.cs" />
     <Compile Include="ViewHolder.cs" />
+    <Compile Include="RecyclerViewAdapterDetails.cs" />
+    <Compile Include="RecyclerViewHolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -161,6 +163,8 @@
     <AndroidResource Include="Resources\layout\asset_allocation_details_layout.axml" />
     <AndroidResource Include="Resources\layout\asset_allocation_details_listview_even_row.axml" />
     <AndroidResource Include="Resources\layout\asset_allocation_details_listview_odd_row.axml" />
+    <AndroidResource Include="Resources\layout\recyclerview_card_aad_even_layout.axml" />
+    <AndroidResource Include="Resources\layout\recyclerview_card_aad_odd_layout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

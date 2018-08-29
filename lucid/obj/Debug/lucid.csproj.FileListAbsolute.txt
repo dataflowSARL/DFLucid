@@ -18,6 +18,7 @@
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Android.Support.Transition.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Android.Support.v4.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Android.Support.v7.AppCompat.dll
+/Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Android.Support.v7.CardView.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Android.Support.v7.RecyclerView.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Android.Support.Vector.Drawable.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Kotlin.StdLib.dll
@@ -63,6 +64,8 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_listview_even_row.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_listview_odd_row.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aad_even_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aad_odd_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/lucid/obj/Debug/uploadflags.txt

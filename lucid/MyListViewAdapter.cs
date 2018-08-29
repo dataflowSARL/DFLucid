@@ -55,8 +55,8 @@ namespace lucid
                 viewHolder = new ViewHolder();
                 viewHolder.asset_description_odd = row.FindViewById<TextView>(Resource.Id.asset_description_odd);
                 viewHolder.asset_description_even = row.FindViewById<TextView>(Resource.Id.asset_description_even);
-                viewHolder.code_odd = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_odd);
-                viewHolder.code_even = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_even);
+                viewHolder.balance_odd = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_odd);
+                viewHolder.balance_even = row.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_even);
                 viewHolder.weight_percentage_odd = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_odd);
                 viewHolder.weight_percentage_even = row.FindViewById<TextView>(Resource.Id.weight_percentage_tv_even);
                 viewHolder.details_btn_odd = row.FindViewById<ImageButton>(Resource.Id.details_button_odd);
@@ -68,7 +68,7 @@ namespace lucid
 
             if(position % 2 == 1) {
                 viewHolder.asset_description_odd.Text = mItems[position].AssetDescription;
-                viewHolder.code_odd.Text = mItems[position].Balance.ToString("#,##0.00");
+                viewHolder.balance_odd.Text = mItems[position].Balance.ToString("#,##0.00");
                 viewHolder.weight_percentage_odd.Text = mItems[position].Weight.ToString("#0.00") + "%";
                 if (Convert.ToInt32(mItems[position].Code) <= 0)
                 {
@@ -86,7 +86,7 @@ namespace lucid
                 };
             } else {
                 viewHolder.asset_description_even.Text = mItems[position].AssetDescription;
-                viewHolder.code_even.Text = mItems[position].Balance.ToString("#,##0.00");
+                viewHolder.balance_even.Text = mItems[position].Balance.ToString("#,##0.00");
                 viewHolder.weight_percentage_even.Text = mItems[position].Weight.ToString("#0.00") + "%";
                 viewHolder.details_btn_even = row.FindViewById<ImageButton>(Resource.Id.details_button_even);
                 if (Convert.ToInt32(mItems[position].Code) <= 0)

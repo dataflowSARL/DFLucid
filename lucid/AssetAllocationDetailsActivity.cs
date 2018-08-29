@@ -8,6 +8,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using MarketFlowLibrary;
@@ -24,6 +25,9 @@ namespace lucid
         private ListView listView;
         private List<Position> mItemsPosition = new List<Position>();
         private MKFUser user;
+        private RecyclerView mRecyclerView;
+        private RecyclerView.LayoutManager mLayoutManager;
+        private RecyclerViewAdapterDetails mRecyclerViewAdapter;
         private string assetCode;
         #endregion
         protected override void OnCreate(Bundle savedInstanceState)
@@ -37,16 +41,29 @@ namespace lucid
         async private void setUpVariables() {
             back_btn = FindViewById<ImageButton>(Resource.Id.aad_back_btn);
             back_btn.Click += Back_Btn_Click;
-            listView = FindViewById<ListView>(Resource.Id.asset_allocation_details_list_view);
+            //listView = FindViewById<ListView>(Resource.Id.asset_allocation_details_list_view);
+            mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_aa_details);
             user = new MKFUser();
             user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
             user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
             assetCode = Intent.GetStringExtra("assetcode") ?? string.Empty;
             List<Position> userAccountPositions = await MarketFlowService.GetPosition(user);
             mItemsPosition = userAccountPositions.Where(u => u.Asset_Cod == assetCode).Select(u => new Position() { Tit_Cod = u.Tit_Cod, ISIN = u.ISIN, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
-            MyListViewDetailsAdapter listViewDetailsAdapter = new MyListViewDetailsAdapter(this, mItemsPosition, user);
-            listView.Adapter = listViewDetailsAdapter;
+            mLayoutManager = new LinearLayoutManager(this);
+            mRecyclerView.SetLayoutManager(mLayoutManager);
+            mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, user);
+            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
+            mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+            //MyListViewDetailsAdapter listViewDetailsAdapter = new MyListViewDetailsAdapter(this, mItemsPosition, user);
+            //listView.Adapter = listViewDetailsAdapter;
+
         }
+
+        void MRecyclerViewAdapter_ItemClick(object sender, int e)
+        {
+            Toast.MakeText(this, "Clicked", ToastLength.Short).Show();
+        }
+
 
         void Back_Btn_Click(object sender, EventArgs e)
         {
