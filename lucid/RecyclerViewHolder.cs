@@ -41,10 +41,12 @@ namespace lucid
             asset_description_odd = itemview.FindViewById<TextView>(Resource.Id.asset_description_odd);
             balance_even = itemview.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_even);
             balance_odd = itemview.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_odd);
+            weight_percentage_even = itemview.FindViewById<TextView>(Resource.Id.weight_percentage_tv_even);
+            weight_percentage_odd = itemview.FindViewById<TextView>(Resource.Id.weight_percentage_tv_odd);
             details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.details_button_even);
             details_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.details_button_odd);
 
-            itemview.Click += (sender, e) => listener(base.Position);
+            itemview.Click += (sender, e) => listener(base.AdapterPosition);
         }
     }
 }

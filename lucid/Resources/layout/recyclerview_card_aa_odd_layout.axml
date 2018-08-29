@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+             xmlns:card_view="http://schemas.android.com/apk/res-auto"  
+             android:layout_width="match_parent"  
+             android:layout_height="wrap_content">  
+  <android.support.v7.widget.CardView 
+    android:layout_width="match_parent"  
+    android:layout_height="wrap_content"  
+    card_view:cardElevation="4dp"  
+    card_view:cardCornerRadius="5dp"
+    card_view:cardUseCompatPadding="true">  
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:padding="8dp"
+        android:background="@color/material_grey_600">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="0.5"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/asset_description_odd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:text="@string/asset_description" />
+            <ImageButton
+                android:id="@+id/details_button_odd"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="0.9"
+                android:layout_gravity="center_vertical"
+                android:background="@color/material_grey_600"
+                android:src="@drawable/abc_ic_go_search_api_material" />
+        </LinearLayout>
+        <View
+            android:id="@+id/divider_odd"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="#dcdcdc" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/right_column"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="0.5"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/pos_bal_sys_tot_usd_odd"
+                android:text="@string/pos_bal_sys_tot_usd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/white"
+                android:paddingTop="8dp"
+                android:layout_weight="0.5"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/weight_percentage_tv_odd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingBottom="8dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:text="@string/weight_percentage" />
+        </LinearLayout>
+    </LinearLayout>
+  </android.support.v7.widget.CardView>  
+</FrameLayout>  

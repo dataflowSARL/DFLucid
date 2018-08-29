@@ -8,6 +8,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using MarketFlowLibrary;
@@ -18,11 +19,12 @@ namespace lucid
     [Activity(Label = "AssetAllocation")]
     public class AssetAllocationActivity : Activity
     {
-        //TODO: replace listview with recyclerview
 
         #region variables
         private ImageButton back_btn;
-        private ListView listView;
+        private RecyclerView mRecyclerView;
+        private RecyclerView.LayoutManager mLayoutManager;
+        private RecyclerViewAdapterAssetAllocation mRecyclerViewAdapter;
         private List<AssetAllocation> mItems = new List<AssetAllocation>();
         private MKFUser user;
 
@@ -41,7 +43,7 @@ namespace lucid
         async private void setUpVariables() {
             back_btn = FindViewById<ImageButton>(Resource.Id.aa_back_btn);
             back_btn.Click += Back_Btn_Click;
-            listView = FindViewById<ListView>(Resource.Id.asset_allocation_list_view);
+            mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_aa);
             user = new MKFUser();
             user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
             user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
@@ -49,9 +51,12 @@ namespace lucid
             //List<Position> userAccountPositions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Position>>(dsValue);
             List<Position> userAccountPositions = await MarketFlowService.GetPosition(user);
             mItems = userAccountPositions.Where(u => u.AssetGrp == 1).Union(userAccountPositions.Where(u => u.ord == 2).Where(u => u.AssetGrp == 0)).Select(u => new AssetAllocation() { Code = u.Asset_Cod, AssetDescription = u.Asset_Desc, Balance = u.PosBalSysTot, Weight = u.Weight }).ToList<AssetAllocation>();
-            MyListViewAdapter listViewAdapter = new MyListViewAdapter(this, mItems, user);
-            listView.Adapter = listViewAdapter;
+            mLayoutManager = new LinearLayoutManager(this);
+            mRecyclerView.SetLayoutManager(mLayoutManager);
+            mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, user);
+            mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
+
 
         void Back_Btn_Click(object sender, EventArgs e)
         {

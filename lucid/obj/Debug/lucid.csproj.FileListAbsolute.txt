@@ -49,10 +49,8 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/menu/nav_menu.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/layout_header.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/toolbar.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_listview_even_row.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/animation.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/animation2.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_listview_odd_row.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/asset_allocation.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/portfolio_summary_layout.xml
@@ -62,10 +60,10 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/change_password_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/about_us_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_layout.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_listview_even_row.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_details_listview_odd_row.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aad_even_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aad_odd_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aa_even_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aa_odd_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/lucid/obj/Debug/uploadflags.txt

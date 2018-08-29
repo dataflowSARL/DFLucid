@@ -10,6 +10,7 @@
     <ManifestDocument>obj/Debug/lp/16/jl/AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj/Debug/lp/17/jl/AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj/Debug/lp/18/jl/AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj/Debug/lp/19/jl/AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj/Debug/lp/5/jl/AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj/Debug/lp/6/jl/AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj/Debug/lp/8/jl/AndroidManifest.xml</ManifestDocument>
@@ -26,9 +27,10 @@
     <Jar>obj/Debug/lp/16/jl/bin/classes.jar</Jar>
     <Jar>obj/Debug/lp/17/jl/bin/classes.jar</Jar>
     <Jar>obj/Debug/lp/18/jl/bin/classes.jar</Jar>
-    <Jar>obj/Debug/lp/19/jl/__reference__kotlin-stdlib.jar</Jar>
-    <Jar>obj/Debug/lp/20/jl/__reference__kotlin-stdlib-jre7.jar</Jar>
-    <Jar>obj/Debug/lp/21/jl/__reference__kotlin-stdlib-jre8.jar</Jar>
+    <Jar>obj/Debug/lp/19/jl/bin/classes.jar</Jar>
+    <Jar>obj/Debug/lp/20/jl/__reference__kotlin-stdlib.jar</Jar>
+    <Jar>obj/Debug/lp/21/jl/__reference__kotlin-stdlib-jre7.jar</Jar>
+    <Jar>obj/Debug/lp/22/jl/__reference__kotlin-stdlib-jre8.jar</Jar>
     <Jar>obj/Debug/lp/3/jl/arch-core-common.jar</Jar>
     <Jar>obj/Debug/lp/4/jl/arch-lifecycle-common.jar</Jar>
     <Jar>obj/Debug/lp/5/jl/bin/classes.jar</Jar>

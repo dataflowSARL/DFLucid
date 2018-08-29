@@ -12,7 +12,6 @@ namespace lucid
 
         public event EventHandler<int> ItemClick;
         public List<Position> mItemsPosition;
-        public Context mContext;
         public MKFUser mUser;
         public RecyclerViewAdapterDetails(List<Position> items, MKFUser user)
         {

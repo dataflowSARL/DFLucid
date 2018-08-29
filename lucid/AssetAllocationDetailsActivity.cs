@@ -19,10 +19,8 @@ namespace lucid
     [Activity(Label = "AssetAllocationDetailsActivity")]
     public class AssetAllocationDetailsActivity : Activity
     {
-        //TODO: replace listview with recyclerview
         #region vars
         private ImageButton back_btn;
-        private ListView listView;
         private List<Position> mItemsPosition = new List<Position>();
         private MKFUser user;
         private RecyclerView mRecyclerView;
@@ -41,7 +39,6 @@ namespace lucid
         async private void setUpVariables() {
             back_btn = FindViewById<ImageButton>(Resource.Id.aad_back_btn);
             back_btn.Click += Back_Btn_Click;
-            //listView = FindViewById<ListView>(Resource.Id.asset_allocation_details_list_view);
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_aa_details);
             user = new MKFUser();
             user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
@@ -54,8 +51,6 @@ namespace lucid
             mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, user);
             mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
-            //MyListViewDetailsAdapter listViewDetailsAdapter = new MyListViewDetailsAdapter(this, mItemsPosition, user);
-            //listView.Adapter = listViewDetailsAdapter;
 
         }
 
@@ -70,6 +65,7 @@ namespace lucid
             Intent assetAllocation = new Intent(this, typeof(AssetAllocationActivity));
             Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Drawable.animation, Resource.Drawable.animation2).ToBundle();
             StartActivity(assetAllocation, bndlanimation);
+            Finish();
         }
 
     }
