@@ -16,9 +16,12 @@ using MKFLibrary;
 
 namespace lucid
 {
-    [Activity(Label = "AssetAllocationDetailsActivity")]
+    [Activity(Label = "AssetAllocationDetailsActivity", ParentActivity = typeof(AssetAllocationActivity))]
+    [MetaData("android.support.PARENT_ACTIVITY", Value = ".AssetAllocationActivity")]
     public class AssetAllocationDetailsActivity : Activity
     {
+
+        //TODO: implement onclick event for recyclerview (Step 3)
         #region vars
         private ImageButton back_btn;
         private List<Position> mItemsPosition = new List<Position>();
@@ -62,10 +65,12 @@ namespace lucid
 
         void Back_Btn_Click(object sender, EventArgs e)
         {
-            Intent assetAllocation = new Intent(this, typeof(AssetAllocationActivity));
-            Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Drawable.animation, Resource.Drawable.animation2).ToBundle();
-            StartActivity(assetAllocation, bndlanimation);
-            Finish();
+            //Intent assetAllocation = new Intent(this, typeof(AssetAllocationActivity));
+            ////Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Drawable.animation, Resource.Drawable.animation2).ToBundle();
+            ////StartActivity(assetAllocation, bndlanimation);
+            //StartActivity(assetAllocation);
+            //Finish();
+            base.OnBackPressed();
         }
 
     }

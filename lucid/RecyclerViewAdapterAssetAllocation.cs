@@ -35,7 +35,7 @@ namespace lucid
                     recyclerViewHolder.details_btn_odd.Visibility = ViewStates.Invisible;
                 }
                 recyclerViewHolder.details_btn_odd.Click += delegate {
-                    if (Convert.ToInt32(mItems[position].Code) > 0)
+                    if (Convert.ToInt16(mItems[position].Code) > 0)
                     {
                         Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
                         details.PutExtra("assetcode", mItems[position].Code);
@@ -48,12 +48,12 @@ namespace lucid
                 recyclerViewHolder.asset_description_even.Text = mItems[position].AssetDescription;
                 recyclerViewHolder.balance_even.Text = mItems[position].Balance.ToString("#,##0.00"); ;
                 recyclerViewHolder.weight_percentage_even.Text = mItems[position].Weight.ToString("#0.00") + "%";
-                if (Convert.ToInt32(mItems[position].Code) <= 0)
+                if (Convert.ToInt16(mItems[position].Code) <= 0)
                 {
                     recyclerViewHolder.details_btn_even.Visibility = ViewStates.Invisible;
                 }
                 recyclerViewHolder.details_btn_even.Click += delegate {
-                    if (Convert.ToInt32(mItems[position].Code) > 0)
+                    if (Convert.ToInt16(mItems[position].Code) > 0)
                     {
                         Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
                         details.PutExtra("assetcode", mItems[position].Code);

@@ -23,8 +23,8 @@ namespace lucid
     {
 
         #region variables
-        NavigationView navigationView;
-        DrawerLayout drawerLayout;
+        private NavigationView navigationView;
+        private DrawerLayout drawerLayout;
         private MKFUser user;
         #endregion
         //TODO: Add username to layout header.

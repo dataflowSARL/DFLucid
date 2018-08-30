@@ -12,14 +12,30 @@
       </intent-filter>
     </activity>
     <activity android:theme="@style/Theme.DesignDemo" android:name="md57c883242be2a3677065c75adf70e4be4.HomeActivity" />
-    <activity android:label="AssetAllocation" android:name="md57c883242be2a3677065c75adf70e4be4.AssetAllocationActivity" />
-    <activity android:label="PortfolioSummaryActivity" android:name="md57c883242be2a3677065c75adf70e4be4.PortfolioSummaryActivity" />
-    <activity android:label="AccountSummaryActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AccountSummaryActivity" />
-    <activity android:label="DetailsOfTransactionActivity" android:name="md57c883242be2a3677065c75adf70e4be4.DetailsOfTransactionActivity" />
-    <activity android:label="ProfitLossActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ProfitLossActivity" />
-    <activity android:label="ChangePasswordActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ChangePasswordActivity" />
-    <activity android:label="AboutUsActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AboutUsActivity" />
-    <activity android:label="AssetAllocationDetailsActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AssetAllocationDetailsActivity" />
+    <activity android:label="AssetAllocation" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AssetAllocationActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="PortfolioSummaryActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.PortfolioSummaryActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="AccountSummaryActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AccountSummaryActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="DetailsOfTransactionActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.DetailsOfTransactionActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="ProfitLossActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ProfitLossActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="ChangePasswordActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ChangePasswordActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="AboutUsActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AboutUsActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="AssetAllocationDetailsActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.AssetAllocationActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AssetAllocationDetailsActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".AssetAllocationActivity" />
+    </activity>
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.dataflow.lucid.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">

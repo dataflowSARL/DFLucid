@@ -23,4 +23,5 @@
     <string name="tit_nom">Tit Nom</string>
     <string name="isin">ISIN</string>
     <string name="sumQty">Sum Qty</string>
+    <string name="username">Username</string>
 </resources>

@@ -16,10 +16,10 @@ using MKFLibrary;
 
 namespace lucid
 {
-    [Activity(Label = "AssetAllocation")]
+    [Activity(Label = "AssetAllocation", ParentActivity = typeof(HomeActivity))]
+    [MetaData("android.support.PARENT_ACTIVITY", Value = "HomeActivity")]
     public class AssetAllocationActivity : Activity
     {
-
         #region variables
         private ImageButton back_btn;
         private RecyclerView mRecyclerView;
@@ -39,6 +39,32 @@ namespace lucid
             setUpVariables();
            
         }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            SetContentView(Resource.Layout.asset_allocation_layout);
+            setUpVariables();
+        }
+
+        //protected override void OnStart()
+        //{
+        //    base.OnStart();
+        //    SetContentView(Resource.Layout.asset_allocation_layout);
+        //    setUpVariables();
+        //}
+
+        //protected override void OnRestart()
+        //{
+        //    base.OnRestart();
+        //    SetContentView(Resource.Layout.asset_allocation_layout);
+        //    setUpVariables();
+        //}
+
+        //protected override void OnDestroy()
+        //{
+        //    base.OnDestroy();
+        //}
 
         async private void setUpVariables() {
             back_btn = FindViewById<ImageButton>(Resource.Id.aa_back_btn);
@@ -61,9 +87,11 @@ namespace lucid
         void Back_Btn_Click(object sender, EventArgs e)
         {
             Intent home = new Intent(this, typeof(HomeActivity));
-            Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Drawable.animation, Resource.Drawable.animation2).ToBundle();
-            StartActivity(home , bndlanimation);
-            Finish();
+            ////Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Drawable.animation, Resource.Drawable.animation2).ToBundle();
+            ////StartActivity(home , bndlanimation);
+            //StartActivity(home);
+            //Finish();
+            base.OnBackPressed();
         }
     }
 }

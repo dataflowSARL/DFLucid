@@ -1,60 +1,16 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/HomeActivity.cs">
     <Files>
-      <File FileName="lucid/RecyclerViewAdapterAssetAllocation.cs" Line="50" Column="114" />
-      <File FileName="lucid/AssetAllocationActivity.cs" Line="57" Column="74" />
-      <File FileName="lucid/RecyclerViewHolder.cs" Line="49" Column="77" />
+      <File FileName="lucid/RecyclerViewAdapterAssetAllocation.cs" Line="43" Column="68" />
+      <File FileName="lucid/AssetAllocationActivity.cs" Line="22" Column="6" />
+      <File FileName="lucid/RecyclerViewHolder.cs" Line="1" Column="1" />
+      <File FileName="lucid/AssetAllocationDetailsActivity.cs" Line="56" Column="60" />
+      <File FileName="lucid/HomeActivity.cs" Line="28" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="31" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="32" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="33" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="35" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="40" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="41" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="42" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="44" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="43" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="48" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="49" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="50" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="53" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="58" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="59" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="60" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="61" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="62" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="29" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="70" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="71" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="75" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="74" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="77" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="78" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="80" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="82" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="81" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="55" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="56" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="57" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="58" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="45" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="46" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="47" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="48" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="49" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="50" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="40" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="38" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="22" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="21" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAssetAllocation.cs" relfile="lucid/RecyclerViewAdapterAssetAllocation.cs" line="20" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="37" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="35" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.lucid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.my_device" AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" />

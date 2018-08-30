@@ -3497,6 +3497,7 @@ containing a value of this type.
         public static final int status_bar_notification_info_overflow=0x7f0b0026;
         public static final int sumQty=0x7f0b003e;
         public static final int tit_nom=0x7f0b003c;
+        public static final int username=0x7f0b003f;
         public static final int weight_percentage=0x7f0b0039;
     }
     public static final class style {

@@ -13,7 +13,8 @@ using Android.Widget;
 
 namespace lucid
 {
-    [Activity(Label = "PortfolioSummaryActivity")]
+    [Activity(Label = "PortfolioSummaryActivity",ParentActivity = typeof(HomeActivity))]
+    [MetaData("android.support.PARENT_ACTIVITY", Value = "HomeActivity")]
     public class PortfolioSummaryActivity : Activity
     {
         #region vars
@@ -34,9 +35,7 @@ namespace lucid
 
         void BackButton_Click(object sender, EventArgs e)
         {
-            Intent home = new Intent(this, typeof(HomeActivity));
-            Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Drawable.animation, Resource.Drawable.animation2).ToBundle();
-            StartActivity(home, bndlanimation);
+            base.OnBackPressed();
         }
 
     }

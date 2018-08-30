@@ -119,7 +119,6 @@
     <Compile Include="ChangePasswordActivity.cs" />
     <Compile Include="AboutUsActivity.cs" />
     <Compile Include="AssetAllocationDetailsActivity.cs" />
-    <Compile Include="ViewHolder.cs" />
     <Compile Include="RecyclerViewAdapterDetails.cs" />
     <Compile Include="RecyclerViewHolder.cs" />
     <Compile Include="RecyclerViewAdapterAssetAllocation.cs" />

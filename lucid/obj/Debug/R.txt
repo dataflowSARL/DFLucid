@@ -1179,6 +1179,7 @@ int string search_menu_title 0x7f0b0011
 int string status_bar_notification_info_overflow 0x7f0b0026
 int string sumQty 0x7f0b003e
 int string tit_nom 0x7f0b003c
+int string username 0x7f0b003f
 int string weight_percentage 0x7f0b0039
 int style AlertDialog_AppCompat 0x7f090099
 int style AlertDialog_AppCompat_Light 0x7f09009a

@@ -3731,6 +3731,9 @@ namespace lucid
 			// aapt resource value: 0x7f0b003c
 			public const int tit_nom = 2131427388;
 			
+			// aapt resource value: 0x7f0b003f
+			public const int username = 2131427391;
+			
 			// aapt resource value: 0x7f0b0039
 			public const int weight_percentage = 2131427385;
 			
