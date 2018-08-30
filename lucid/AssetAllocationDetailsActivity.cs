@@ -57,14 +57,8 @@ namespace lucid
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this , user, assetCode);
-            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
 
-        }
-
-        void MRecyclerViewAdapter_ItemClick(object sender, int e)
-        {
-            Toast.MakeText(this, "Clicked", ToastLength.Short).Show();
         }
 
 
