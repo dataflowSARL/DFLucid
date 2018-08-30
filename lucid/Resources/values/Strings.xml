@@ -24,4 +24,19 @@
     <string name="isin">ISIN</string>
     <string name="sumQty">Sum Qty</string>
     <string name="username">Username</string>
+    <string name="all_details">All Details</string>
+    <string name="security">Security:</string>
+    <string name="isin2">ISIN:</string>
+    <string name="qty">Qty:</string>
+    <string name="maturity_date">Maturity Date:</string>
+    <string name="currency">Currency:</string>
+    <string name="market_price">Market Price:</string>
+    <string name="average_price">Average Price</string>
+    <string name="unrealised_pl">Unrealised P/L in Curr:</string>
+    <string name="unrealised_pl_usd">Unrealised P/L in USD:</string>
+    <string name="gain_loss">Gain Loss %:</string>
+    <string name="total_value">Total Value in Curr:</string>
+    <string name="total_value_usd">Total Value in USD:</string>
+    <string name="weight">Weight %:</string>
+    <string name="accued_interest">Accued Interest:</string>
 </resources>

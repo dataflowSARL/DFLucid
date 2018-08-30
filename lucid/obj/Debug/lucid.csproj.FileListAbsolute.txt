@@ -26,7 +26,6 @@
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Xamarin.Kotlin.StdLib.Jre8.dll
 /Users/lucien/Projects/lucid/lucid/bin/Debug/MarketFlowLibrary.pdb
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Newtonsoft.Json.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csprojAssemblyReference.cache
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csproj.CoreCompileInputs.cache
 /Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csproj.CopyComplete
@@ -64,9 +63,12 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aad_odd_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aa_even_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aa_odd_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/all_details_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/custom_all_details_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/lucid/obj/Debug/uploadflags.txt
+/Users/lucien/Projects/lucid/lucid/obj/Debug/lucid.csprojAssemblyReference.cache
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Mono.Android.pdb
 /Users/lucien/Projects/lucid/lucid/obj/Debug/linksrc/lucid.pdb
 /Users/lucien/Projects/lucid/lucid/obj/Debug/linksrc/MarketFlowLibrary.pdb

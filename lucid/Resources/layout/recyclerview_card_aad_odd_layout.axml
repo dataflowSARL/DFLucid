@@ -14,34 +14,52 @@
               android:layout_width="match_parent" 
               android:layout_height="wrap_content"
               android:weightSum="1"
+              android:gravity="center"
               android:padding="8dp"
               android:background="@color/material_grey_600">
-    
-        <LinearLayout 
-              android:orientation="vertical"
-              android:weightSum="1"
-              android:layout_weight="0.33"
-              android:layout_height="wrap_content"
-              android:layout_width="match_parent"
-              android:gravity="center"
-              android:layout_gravity="center">
+            
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_weight="0.33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                
+            <LinearLayout 
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:layout_weight="0.1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center">
         
-            <TextView android:id="@+id/tit_nom_odd"
-              android:layout_weight="0.5"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:textColor="@android:color/white"
-              android:text="@string/tit_nom"
-              android:gravity="center"/>
+                <TextView android:id="@+id/tit_nom_odd"
+                    android:layout_weight="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/white"
+                    android:text="@string/tit_nom"
+                    android:gravity="center"/>
         
-            <TextView android:id="@+id/isin_odd"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:layout_weight="0.5"
-              android:textColor="@android:color/white"
-              android:text="@string/isin"
-              android:gravity="center"/>
+                <TextView android:id="@+id/isin_odd"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:textColor="@android:color/white"
+                    android:text="@string/isin"
+                    android:gravity="center"/>
         
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/all_details_button_odd"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="0.9"
+                android:padding="2dp"
+                android:background="@color/material_grey_600"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/abc_ic_go_search_api_material" />
         </LinearLayout>
     
         <View

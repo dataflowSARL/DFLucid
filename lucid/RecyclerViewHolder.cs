@@ -25,6 +25,8 @@ namespace lucid
         public TextView weight_percentage_odd { get; set; }
         public ImageButton details_btn_even { get; set; }
         public ImageButton details_btn_odd { get; set; }
+        public ImageButton all_details_btn_even { get; set; }
+        public ImageButton all_details_btn_odd { get; set; }
 
         public RecyclerViewHolder(View itemview, Action<int> listener) : base(itemview) {
             tit_nom_even = itemview.FindViewById<TextView>(Resource.Id.tit_nom_even);
@@ -45,6 +47,8 @@ namespace lucid
             weight_percentage_odd = itemview.FindViewById<TextView>(Resource.Id.weight_percentage_tv_odd);
             details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.details_button_even);
             details_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.details_button_odd);
+            all_details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.all_details_button_even);
+            all_details_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.all_details_button_odd);
 
             itemview.Click += (sender, e) => listener(base.AdapterPosition);
         }

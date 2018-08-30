@@ -30,6 +30,7 @@ namespace lucid
         private RecyclerView.LayoutManager mLayoutManager;
         private RecyclerViewAdapterDetails mRecyclerViewAdapter;
         private string assetCode;
+        private ProgressDialog progressDialog;
         #endregion
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,6 +41,7 @@ namespace lucid
         }
 
         async private void setUpVariables() {
+            progressDialog = new ProgressDialog(this);
             back_btn = FindViewById<ImageButton>(Resource.Id.aad_back_btn);
             back_btn.Click += Back_Btn_Click;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_aa_details);
@@ -47,11 +49,14 @@ namespace lucid
             user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
             user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
             assetCode = Intent.GetStringExtra("assetcode") ?? string.Empty;
+            progressDialog.SetMessage("Please wait...");
+            progressDialog.Show();
             List<Position> userAccountPositions = await MarketFlowService.GetPosition(user);
+            progressDialog.Dismiss();
             mItemsPosition = userAccountPositions.Where(u => u.Asset_Cod == assetCode).Select(u => new Position() { Tit_Cod = u.Tit_Cod, ISIN = u.ISIN, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, user);
+            mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this , user, assetCode);
             mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
 

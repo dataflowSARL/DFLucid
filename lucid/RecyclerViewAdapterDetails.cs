@@ -13,10 +13,14 @@ namespace lucid
         public event EventHandler<int> ItemClick;
         public List<Position> mItemsPosition;
         public MKFUser mUser;
-        public RecyclerViewAdapterDetails(List<Position> items, MKFUser user)
+        public Context mContext;
+        public string mAsset_code;
+        public RecyclerViewAdapterDetails(List<Position> items, Context context, MKFUser user, String asset_code)
         {
             mUser = user;
             mItemsPosition = items;
+            mContext = context;
+            mAsset_code = asset_code;
         }
 
         public override int ItemCount => mItemsPosition.Count;
@@ -30,12 +34,28 @@ namespace lucid
                 recyclerViewHolder.sumqty_odd.Text = mItemsPosition[position].sumQty.ToString("#,##0.0000");
                 recyclerViewHolder.pos_bal_sys_tot_usd_details_odd.Text = mItemsPosition[position].PosBalSysTot.ToString("#,##0.00");
                 recyclerViewHolder.weight_odd.Text = mItemsPosition[position].Weight.ToString("#0.00") + "%";
+                recyclerViewHolder.all_details_btn_odd.Click += delegate {
+                    Intent all_details = new Intent(mContext, typeof(AllDetailsActivity));
+                    all_details.PutExtra("tit_cod", mItemsPosition[position].Tit_Cod);
+                    all_details.PutExtra("webclicode", mUser.WebCliCode);
+                    all_details.PutExtra("clicode", mUser.CliCode);
+                    all_details.PutExtra("assetcode", mAsset_code);
+                    mContext.StartActivity(all_details);
+                };
             } else {
                 recyclerViewHolder.tit_nom_even.Text = mItemsPosition[position].tit_nom;
                 recyclerViewHolder.isin_even.Text = mItemsPosition[position].ISIN;
                 recyclerViewHolder.sumqty_even.Text = mItemsPosition[position].sumQty.ToString("#,##0.0000");
                 recyclerViewHolder.pos_bal_sys_tot_usd_details_even.Text = mItemsPosition[position].PosBalSysTot.ToString("#,##0.00");
                 recyclerViewHolder.weight_even.Text = mItemsPosition[position].Weight.ToString("#0.00") + "%";
+                recyclerViewHolder.all_details_btn_even.Click += delegate {
+                    Intent all_details = new Intent(mContext, typeof(AllDetailsActivity));
+                    all_details.PutExtra("tit_cod", mItemsPosition[position].Tit_Cod);
+                    all_details.PutExtra("webclicode", mUser.WebCliCode);
+                    all_details.PutExtra("clicode", mUser.CliCode);
+                    all_details.PutExtra("assetcode", mAsset_code);
+                    mContext.StartActivity(all_details);
+                };
             }
         }
 
