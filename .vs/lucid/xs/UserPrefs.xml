@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="lucid/AllDetailsActivity.cs" Line="67" Column="59" />
-      <File FileName="lucid/AssetAllocationActivity.cs" Line="62" Column="122" />
-      <File FileName="lucid/AllDetailsRecyclerViewAdapter.cs" Line="18" Column="10" />
+      <File FileName="lucid/AllDetailsActivity.cs" Line="1" Column="1" />
+      <File FileName="lucid/AssetAllocationActivity.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -17,6 +16,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.lucid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.my_device" AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" />
+  <MonoDevelop.Ide.ItemProperties.lucid PreferredExecutionTarget="Android.my_device" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -72,11 +72,6 @@ namespace lucid
 
         void Back_Btn_Click(object sender, EventArgs e)
         {
-            Intent home = new Intent(this, typeof(HomeActivity));
-            ////Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Drawable.animation, Resource.Drawable.animation2).ToBundle();
-            ////StartActivity(home , bndlanimation);
-            //StartActivity(home);
-            //Finish();
             base.OnBackPressed();
         }
     }
