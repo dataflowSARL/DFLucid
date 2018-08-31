@@ -70,13 +70,5 @@ namespace lucid
             home.PutExtra("clicode", user.CliCode);
             StartActivity(home);
         }
-
-        private void login_user() {
-            
-        }
-
-        private void logout_user() {
-            
-        }
     }
 }
