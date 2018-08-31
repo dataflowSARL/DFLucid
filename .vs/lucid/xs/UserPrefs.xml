@@ -1,20 +1,15 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/AllDetailsActivity.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="lucid/AllDetailsActivity.cs" Line="61" Column="57" />
+      <File FileName="lucid/AllDetailsActivity.cs" Line="67" Column="59" />
       <File FileName="lucid/AssetAllocationActivity.cs" Line="62" Column="122" />
       <File FileName="lucid/AllDetailsRecyclerViewAdapter.cs" Line="18" Column="10" />
-      <File FileName="lucid/RecyclerViewAdapterDetails.cs" Line="34" Column="107" NotebookId="1" />
-      <File FileName="lucid/RecyclerViewHolder.cs" Line="75" Column="33" NotebookId="1" />
-      <File FileName="lucid/RecyclerViewAdapterAssetAllocation.cs" Line="51" Column="113" NotebookId="1" />
-      <File FileName="lucid/AssetAllocationDetailsActivity.cs" Line="23" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AllDetailsActivity.cs" relfile="lucid/AllDetailsActivity.cs" line="63" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AllDetailsActivity.cs" relfile="lucid/AllDetailsActivity.cs" line="64" column="81" />
       <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AllDetailsActivity.cs" relfile="lucid/AllDetailsActivity.cs" line="40" column="1" />
       <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AllDetailsActivity.cs" relfile="lucid/AllDetailsActivity.cs" line="43" column="1" />
       <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AllDetailsActivity.cs" relfile="lucid/AllDetailsActivity.cs" line="44" column="1" />
