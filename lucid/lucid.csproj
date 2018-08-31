@@ -123,6 +123,7 @@
     <Compile Include="RecyclerViewHolder.cs" />
     <Compile Include="RecyclerViewAdapterAssetAllocation.cs" />
     <Compile Include="AllDetailsActivity.cs" />
+    <Compile Include="AllDetailsRecyclerViewAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -164,6 +165,7 @@
     <AndroidResource Include="Resources\layout\recyclerview_card_aa_odd_layout.axml" />
     <AndroidResource Include="Resources\layout\all_details_layout.axml" />
     <AndroidResource Include="Resources\drawable\custom_all_details_layout.xml" />
+    <AndroidResource Include="Resources\layout\recyclerview_card_all_details_layout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
