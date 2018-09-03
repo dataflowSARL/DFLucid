@@ -64,7 +64,6 @@ namespace lucid
                     }
                     catch (Exception e)
                     {
-                        Console.Write(e.ToString());
                         this.RunOnUiThread(() => DismissRefresher());
                     }
                 });
