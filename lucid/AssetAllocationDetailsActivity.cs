@@ -9,6 +9,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
@@ -31,6 +32,7 @@ namespace lucid
         private RecyclerViewAdapterDetails mRecyclerViewAdapter;
         private string assetCode;
         private ProgressDialog progressDialog;
+        private SwipeRefreshLayout swipeRefreshLayout;
         #endregion
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,6 +44,25 @@ namespace lucid
 
         private void setUpVariables() {
             List<Position> userAccountPositions = new List<Position>();
+            swipeRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.refresher_details);
+            swipeRefreshLayout.SetColorSchemeResources(Resource.Color.blue,
+                                              Resource.Color.purple,
+                                              Resource.Color.red,
+                                              Resource.Color.green);
+            swipeRefreshLayout.Refresh += delegate {
+                Task.Run(async () =>
+                {
+                    try
+                    {
+                        userAccountPositions = await MarketFlowService.GetPosition(user);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Write(e.ToString());
+                        this.RunOnUiThread(() => DismissRefresher());
+                    }
+                });
+            };
             progressDialog = new ProgressDialog(this);
             progressDialog.SetMessage("Fetching Data...");
             progressDialog.Show();
@@ -78,6 +99,12 @@ namespace lucid
         private void Dismiss()
         {
             progressDialog.Dismiss();
+            Toast.MakeText(this, "You are not connected", ToastLength.Short).Show();
+        }
+
+        private void DismissRefresher()
+        {
+            swipeRefreshLayout.Refreshing = false;
             Toast.MakeText(this, "You are not connected", ToastLength.Short).Show();
         }
 
