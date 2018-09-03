@@ -65,11 +65,6 @@ namespace lucid
 
         void Back_Btn_Click(object sender, EventArgs e)
         {
-            //Intent assetAllocation = new Intent(this, typeof(AssetAllocationActivity));
-            ////Bundle bndlanimation = ActivityOptions.MakeCustomAnimation(this, Resource.Drawable.animation, Resource.Drawable.animation2).ToBundle();
-            ////StartActivity(assetAllocation, bndlanimation);
-            //StartActivity(assetAllocation);
-            //Finish();
             base.OnBackPressed();
         }
 

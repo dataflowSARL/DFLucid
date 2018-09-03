@@ -26,8 +26,8 @@ namespace lucid
         private NavigationView navigationView;
         private DrawerLayout drawerLayout;
         private MKFUser user;
+        private TextView username;
         #endregion
-        //TODO: Add username to layout header.
 
         protected override void OnCreate(Bundle bundle)  
         {  
@@ -45,6 +45,9 @@ namespace lucid
             drawerLayout.AddDrawerListener(drawerToggle);
             drawerToggle.SyncState();
             navigationView = FindViewById < NavigationView > (Resource.Id.nav_view);
+            View headerView = navigationView.GetHeaderView(0);
+            username = headerView.FindViewById<TextView>(Resource.Id.header_username);
+            username.Text = user.Username ?? "Username No Found";
             setupDrawerContent(navigationView); //Calling Function
         }
 

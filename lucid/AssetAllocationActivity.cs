@@ -41,13 +41,6 @@ namespace lucid
            
         }
 
-        //protected override void OnResume()
-        //{
-        //    base.OnResume();
-        //    SetContentView(Resource.Layout.asset_allocation_layout);
-        //    setUpVariables();
-        //}
-
         /*async*/ private void setUpVariables() {
             progressDialog = new ProgressDialog(this);
             back_btn = FindViewById<ImageButton>(Resource.Id.aa_back_btn);

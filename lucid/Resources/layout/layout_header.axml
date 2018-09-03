@@ -4,14 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:background="#3e94a6"
-    android:padding="16dp"
+    android:paddingTop="32dp"
     android:orientation="vertical"
     android:gravity="center">
     <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:padding="2dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
         android:id="@+id/navheader_logo"
         android:src="@drawable/logo" />
+    
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_margin="4dp"
+              android:id="@+id/header_username"
+              android:text="@string/username"
+              android:textColor="#565a61"/>
 </LinearLayout>
