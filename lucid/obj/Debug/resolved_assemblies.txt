@@ -6,6 +6,7 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/Newtonsoft.Json.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.Core.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.dll
+/Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.Net.Http.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.Xml.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/Xamarin.Android.Arch.Core.Common.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/Xamarin.Android.Arch.Lifecycle.Common.dll
@@ -42,7 +43,6 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.Runtime.InteropServices.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.Runtime.Extensions.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.Reflection.Extensions.dll
-/Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.Net.Http.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.Runtime.Serialization.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.ServiceModel.Internals.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/System.IO.dll

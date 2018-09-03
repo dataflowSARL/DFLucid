@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/HomeActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/AssetAllocationActivity.cs">
     <Files>
-      <File FileName="lucid/HomeActivity.cs" Line="43" Column="85" />
+      <File FileName="lucid/HomeActivity.cs" Line="83" Column="31" />
       <File FileName="lucid/Resources/values/Strings.xml" Line="3" Column="33" />
       <File FileName="lucid/RecyclerViewAdapterDetails.cs" Line="74" Column="58" />
       <File FileName="lucid/AssetAllocationDetailsActivity.cs" Line="55" Column="47" />
+      <File FileName="lucid/AssetAllocationActivity.cs" Line="44" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
