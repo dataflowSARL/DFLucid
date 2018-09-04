@@ -38,4 +38,5 @@
     <string name="total_value_usd">Total Value in USD:</string>
     <string name="weight">Weight %:</string>
     <string name="accued_interest">Accued Interest:</string>
+    <string name="error">Error</string>
 </resources>

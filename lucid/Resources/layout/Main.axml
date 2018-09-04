@@ -25,6 +25,11 @@
                 android:padding="1dp" />
         </LinearLayout>
     </Toolbar>
+    <ProgressBar android:id="@+id/progressBarLogin"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                 android:indeterminate="true"/>
     <LinearLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -109,6 +114,12 @@
                 android:layout_width="wrap_content"
                 android:layout_weight="1" />
         </LinearLayout>
+        <TextView android:id="@+id/error_message"
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:textColor="@color/red"
+                  android:layout_gravity="center"
+                  android:text="@string/error"/>
         <Space
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"

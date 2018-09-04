@@ -66,6 +66,7 @@
     <Compile Include="Common\BusinessEntityBase.cs" />
     <Compile Include="Common\IBusinessEntity.cs" />
     <Compile Include="Classes\AssetAllocation.cs" />
+    <Compile Include="ServiceEntities\MKFApp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
