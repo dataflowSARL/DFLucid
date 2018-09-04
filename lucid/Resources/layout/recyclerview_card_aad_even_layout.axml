@@ -15,7 +15,7 @@
           android:layout_height="wrap_content"
           android:gravity="center"
           android:weightSum="1"
-          android:padding="8dp">
+          android:padding="4dp">
             
         <LinearLayout 
             android:orientation="horizontal"
