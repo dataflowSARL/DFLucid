@@ -42,6 +42,7 @@ namespace lucid
                         details.PutExtra("assetcode", mItems[position].Code);
                         details.PutExtra("webclicode", mUser.WebCliCode);
                         details.PutExtra("clicode", mUser.CliCode);
+                        details.PutExtra("description", mItems[position].AssetDescription);
                         mContext.StartActivity(details);
                     }
                 };
@@ -60,6 +61,7 @@ namespace lucid
                         details.PutExtra("assetcode", mItems[position].Code);
                         details.PutExtra("webclicode", mUser.WebCliCode);
                         details.PutExtra("clicode", mUser.CliCode);
+                        details.PutExtra("description", mItems[position].AssetDescription);
                         mContext.StartActivity(details);
                     }
                 };

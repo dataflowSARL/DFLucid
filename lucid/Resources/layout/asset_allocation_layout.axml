@@ -47,6 +47,12 @@
                 android:padding="1dp" />
         </LinearLayout>
     </Toolbar>
+    <ProgressBar android:id="@+id/progress_bar_asset_allocation"
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_gravity="center"
+                 android:indeterminate="true"/>
+    
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_to_refresh"
         android:layout_height="match_parent"

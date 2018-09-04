@@ -15,12 +15,14 @@ namespace lucid
         public MKFUser mUser;
         public Context mContext;
         public string mAsset_code;
-        public RecyclerViewAdapterDetails(List<Position> items, Context context, MKFUser user, String asset_code)
+        public string mTitle;
+        public RecyclerViewAdapterDetails(List<Position> items, Context context, MKFUser user, String asset_code, String title)
         {
             mUser = user;
             mItemsPosition = items;
             mContext = context;
             mAsset_code = asset_code;
+            mTitle = title;
         }
 
         public override int ItemCount => mItemsPosition.Count;
@@ -40,6 +42,7 @@ namespace lucid
                     all_details.PutExtra("webclicode", mUser.WebCliCode);
                     all_details.PutExtra("clicode", mUser.CliCode);
                     all_details.PutExtra("assetcode", mAsset_code);
+                    all_details.PutExtra("description", mTitle);
                     mContext.StartActivity(all_details);
                 };
             } else {
@@ -54,6 +57,7 @@ namespace lucid
                     all_details.PutExtra("webclicode", mUser.WebCliCode);
                     all_details.PutExtra("clicode", mUser.CliCode);
                     all_details.PutExtra("assetcode", mAsset_code);
+                    all_details.PutExtra("description", mTitle);
                     mContext.StartActivity(all_details);
                 };
             }

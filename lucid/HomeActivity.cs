@@ -47,7 +47,7 @@ namespace lucid
             navigationView = FindViewById < NavigationView > (Resource.Id.nav_view);
             View headerView = navigationView.GetHeaderView(0);
             username = headerView.FindViewById<TextView>(Resource.Id.header_username);
-            username.Text = user.Username ?? "Username No Found";
+            username.Text = user.Username ?? "Username Not Found";
             setupDrawerContent(navigationView); //Calling Function
         }
 
