@@ -1,10 +1,7 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="MarketFlowLibrary/ServiceEntities/MKFApp.cs" Line="151" Column="19" />
-      <File FileName="lucid/MainActivity.cs" Line="80" Column="20" />
-      <File FileName="MarketFlowLibrary/ServiceEntities/LoginResult.cs" Line="8" Column="18" />
-      <File FileName="lucid/AssetAllocationActivity.cs" Line="27" Column="6" NotebookId="1" />
+      <File FileName="lucid/ChangePasswordActivity.cs" Line="47" Column="95" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

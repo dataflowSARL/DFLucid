@@ -105,8 +105,10 @@ namespace lucid
                 Intent home = new Intent(this, typeof(HomeActivity));
                 user.WebCliCode = loginResult.WebCliCode;
                 user.CliCode = loginResult.CliCode;
+                user.Username = loginResult.CliID;
                 home.PutExtra("webclicode", user.WebCliCode);
                 home.PutExtra("clicode", user.CliCode);
+                home.PutExtra("username", user.Username);
                 StartActivity(home);
             }
             else

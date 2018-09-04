@@ -15,6 +15,7 @@ using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Support.Design.Widget;
 using Android.Support.Compat;
 using MKFLibrary;
+using MarketFlow;
 
 namespace lucid
 {
@@ -37,6 +38,7 @@ namespace lucid
             user = new MKFUser();
             user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
             user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
+            user.Username = Intent.GetStringExtra("username") ?? string.Empty;
             drawerLayout = FindViewById < DrawerLayout > (Resource.Id.drawer_layout);  
             // Create ActionBarDrawerToggle button and add it to the toolbar  
             var toolbar = FindViewById < V7Toolbar > (Resource.Id.toolbar);  
@@ -86,6 +88,8 @@ namespace lucid
                         StartActivity(changePassword);
                         break;
                     case "Logout":
+                        user = null;
+
                         Intent logout = new Intent(this , typeof(MainActivity));
                         StartActivity(logout);
                         break;

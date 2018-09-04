@@ -30,7 +30,7 @@ namespace lucid
         private RecyclerView mRecyclerView;
         private RecyclerView.LayoutManager mLayoutManager;
         private RecyclerViewAdapterAssetAllocation mRecyclerViewAdapter;
-        private List<AssetAllocation> mItems = new List<AssetAllocation>();
+        public static List<AssetAllocation> mItems = new List<AssetAllocation>();
         private MKFUser user;
         private ProgressBar progressBar;
         private SwipeRefreshLayout swipeRefreshLayout;
