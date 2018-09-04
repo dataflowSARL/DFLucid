@@ -115,8 +115,21 @@ namespace lucid
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this, user, assetCode, title.Text);
+            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
+
+        void MRecyclerViewAdapter_ItemClick1(object sender, int e)
+        {
+            Intent all_details = new Intent(this, typeof(AllDetailsActivity));
+            all_details.PutExtra("tit_cod", mItemsPosition[e].Tit_Cod);
+            all_details.PutExtra("webclicode", user.WebCliCode);
+            all_details.PutExtra("clicode", user.CliCode);
+            all_details.PutExtra("assetcode", assetCode);
+            all_details.PutExtra("description", title.Text);
+            StartActivity(all_details);
+        }
+
 
         private void DisplayRefresher(List<Position> userAccountPositions)
         {
@@ -125,8 +138,21 @@ namespace lucid
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this, user, assetCode, title.Text);
+            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
+
+        void MRecyclerViewAdapter_ItemClick(object sender, int e)
+        {
+            Intent all_details = new Intent(this, typeof(AllDetailsActivity));
+            all_details.PutExtra("tit_cod", mItemsPosition[e].Tit_Cod);
+            all_details.PutExtra("webclicode", user.WebCliCode);
+            all_details.PutExtra("clicode", user.CliCode);
+            all_details.PutExtra("assetcode", assetCode);
+            all_details.PutExtra("description", title.Text);
+            StartActivity(all_details);
+        }
+
 
         void Back_Btn_Click(object sender, EventArgs e)
         {

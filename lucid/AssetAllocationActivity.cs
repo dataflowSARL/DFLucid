@@ -110,8 +110,20 @@ namespace lucid
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, user);
+            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
+
+        void MRecyclerViewAdapter_ItemClick(object sender, int e)
+        {
+            Intent details = new Intent(this, typeof(AssetAllocationDetailsActivity));
+            details.PutExtra("assetcode", mItems[e].Code);
+            details.PutExtra("webclicode", user.WebCliCode);
+            details.PutExtra("clicode", user.CliCode);
+            details.PutExtra("description", mItems[e].AssetDescription);
+            StartActivity(details);
+        }
+
 
         private void DisplayRefresher(List<Position> userAccountPositions) {
             swipeRefreshLayout.Refreshing = false;
@@ -119,8 +131,20 @@ namespace lucid
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, user);
+            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
+
+        void MRecyclerViewAdapter_ItemClick1(object sender, int e)
+        {
+            Intent details = new Intent(this, typeof(AssetAllocationDetailsActivity));
+            details.PutExtra("assetcode", mItems[e].Code);
+            details.PutExtra("webclicode", user.WebCliCode);
+            details.PutExtra("clicode", user.CliCode);
+            details.PutExtra("description", mItems[e].AssetDescription);
+            StartActivity(details);
+        }
+
 
         void Back_Btn_Click(object sender, EventArgs e)
         {

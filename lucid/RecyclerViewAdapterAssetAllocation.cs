@@ -34,6 +34,9 @@ namespace lucid
                 recyclerViewHolder.weight_percentage_odd.Text = mItems[position].Weight.ToString("#0.00") + "%";
                 if (Convert.ToInt16(mItems[position].Code) <= 0) {
                     recyclerViewHolder.details_btn_odd.Visibility = ViewStates.Invisible;
+                    recyclerViewHolder.asset_description_odd.SetTextColor(Android.Graphics.Color.Blue);
+                    recyclerViewHolder.balance_odd.SetTextColor(Android.Graphics.Color.Blue);
+                    recyclerViewHolder.weight_percentage_odd.SetTextColor(Android.Graphics.Color.Blue);
                 }
                 recyclerViewHolder.details_btn_odd.Click += delegate {
                     if (Convert.ToInt16(mItems[position].Code) > 0)
@@ -53,6 +56,9 @@ namespace lucid
                 if (Convert.ToInt16(mItems[position].Code) <= 0)
                 {
                     recyclerViewHolder.details_btn_even.Visibility = ViewStates.Invisible;
+                    recyclerViewHolder.asset_description_even.SetTextColor(Android.Graphics.Color.Blue);
+                    recyclerViewHolder.balance_even.SetTextColor(Android.Graphics.Color.Blue);
+                    recyclerViewHolder.weight_percentage_even.SetTextColor(Android.Graphics.Color.Blue);
                 }
                 recyclerViewHolder.details_btn_even.Click += delegate {
                     if (Convert.ToInt16(mItems[position].Code) > 0)

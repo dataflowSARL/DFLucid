@@ -15,7 +15,7 @@
           android:layout_height="match_parent"
           android:orientation="vertical"
           android:padding="8dp"
-          android:background="@color/material_grey_600"
+          android:background="@color/material_grey_300"
           android:gravity="center_horizontal">
     
     <LinearLayout android:orientation="horizontal"
@@ -36,8 +36,7 @@
         
         <TextView android:id="@+id/security_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
 
@@ -59,8 +58,7 @@
         
         <TextView android:id="@+id/isin_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     
@@ -82,8 +80,7 @@
         
         <TextView android:id="@+id/qty_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     
@@ -105,8 +102,7 @@
         
         <TextView android:id="@+id/maturity_date_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -127,8 +123,7 @@
         
         <TextView android:id="@+id/currency_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -149,8 +144,7 @@
         
         <TextView android:id="@+id/market_price_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -171,8 +165,7 @@
         
         <TextView android:id="@+id/average_price_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -193,8 +186,7 @@
         
         <TextView android:id="@+id/unrealised_pl_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -215,8 +207,7 @@
         
         <TextView android:id="@+id/unrealised_pl_usd_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -237,8 +228,7 @@
         
         <TextView android:id="@+id/gain_loss_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -259,8 +249,7 @@
         
         <TextView android:id="@+id/total_value_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -281,8 +270,7 @@
         
         <TextView android:id="@+id/total_value_usd_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -303,8 +291,7 @@
         
         <TextView android:id="@+id/weight_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
     <LinearLayout android:orientation="horizontal"
@@ -325,8 +312,7 @@
         
         <TextView android:id="@+id/accued_interest_tv"
                   android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@android:color/white"/>
+                  android:layout_width="wrap_content"/>
         
     </LinearLayout>
 </LinearLayout>
