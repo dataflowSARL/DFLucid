@@ -77,7 +77,6 @@
                 android:padding="10dp"
                 android:textStyle="normal"
                 android:textColorHint="#565a61"
-                android:textColor="#3e94a6"
                 android:background="@drawable/edittextlayout"
                 android:textSize="15dp" />
             <Space
@@ -107,7 +106,6 @@
                 android:padding="10dp"
                 android:textStyle="normal"
                 android:textColorHint="#565a61"
-                android:textColor="#3e94a6"
                 android:inputType="textPassword"
                 android:background="@drawable/edittextlayout"
                 android:textSize="15dp" />

@@ -5,6 +5,7 @@
     android:layout_height="150dp"
     android:background="#3e94a6"
     android:paddingTop="32dp"
+    android:id="@+id/header_linear_layout"
     android:orientation="vertical"
     android:gravity="center">
     <ImageView
@@ -19,5 +20,5 @@
               android:layout_margin="4dp"
               android:id="@+id/header_username"
               android:text="@string/username"
-              android:textColor="#565a61"/>
+              android:textColor="@color/material_grey_300"/>
 </LinearLayout>

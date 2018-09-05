@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Toolbar = Android.Widget.Toolbar;
 
 namespace lucid
 {
@@ -26,11 +27,14 @@ namespace lucid
             SetContentView(Resource.Layout.about_us_layout);
             // Create your application here
             setUpVariables();
-            back_button.Click += Back_Button_Click;
         }
 
         private void setUpVariables(){
+            var toolbar = FindViewById<Toolbar>(Resource.Id.au_toolbar);
+            toolbar.SetBackgroundColor(MainActivity.toolbarColor);
             back_button = FindViewById<ImageButton>(Resource.Id.au_back_btn);
+            back_button.SetBackgroundColor(MainActivity.toolbarColor);
+            back_button.Click += Back_Button_Click;
         }
 
         void Back_Button_Click(object sender, EventArgs e)

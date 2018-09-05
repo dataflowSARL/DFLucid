@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Toolbar = Android.Widget.Toolbar;
 
 namespace lucid
 {
@@ -26,11 +27,14 @@ namespace lucid
             SetContentView(Resource.Layout.portfolio_summary_layout);
             // Create your application here
             setUpVariables();
-            backButton.Click += BackButton_Click;
         }
 
         private void setUpVariables() {
+            var toolbar = FindViewById<Toolbar>(Resource.Id.ps_toolbar);
+            toolbar.SetBackgroundColor(MainActivity.toolbarColor);
             backButton = FindViewById<ImageButton>(Resource.Id.ps_back_btn);
+            backButton.SetBackgroundColor(MainActivity.toolbarColor);
+            backButton.Click += BackButton_Click;
         }
 
         void BackButton_Click(object sender, EventArgs e)

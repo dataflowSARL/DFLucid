@@ -1,4 +1,4 @@
-﻿    using Android.App;
+﻿using Android.App;
 using Android.Widget;
 using Android.OS;
 using Android.Content;
@@ -7,9 +7,13 @@ using System.Collections.Generic;
 using MarketFlowLibrary;
 using System.Linq;
 using Android.Views;
+using Toolbar = Android.Widget.Toolbar;
 using MarketFlow;
 using System.Threading.Tasks;
 using System;
+using Android.Graphics;
+using Android.Support.V7.Widget;
+using Android.Graphics.Drawables;
 
 namespace lucid
 {
@@ -17,7 +21,7 @@ namespace lucid
     public class MainActivity : Activity
     {
         //TODO: implement timer for logout
-        //TODO: implement logout
+        //TODO: tell to gloria to make password and username comparison case sensitive
         #region variables
         private EditText username;
         private EditText password;
@@ -25,6 +29,8 @@ namespace lucid
         private Button login;
         private TextView error;
         private ProgressBar progressBar;
+
+        public static Color toolbarColor = Color.ParseColor("#3e94a6");
 
         public static MKFUser user;
 
@@ -47,11 +53,23 @@ namespace lucid
 
         private void setUpVariables()
         {
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbarMain);
+            toolbar.SetBackgroundColor(MainActivity.toolbarColor);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
+            GradientDrawable gd = new GradientDrawable();
+            gd.SetCornerRadius(10);
+            gd.SetStroke(3, MainActivity.toolbarColor);
             username = FindViewById<EditText>(Resource.Id.username);
+            username.Background = gd;
+            username.SetTextColor(toolbarColor);
+            username.SetHighlightColor(Color.LightGray);
             password = FindViewById<EditText>(Resource.Id.password);
+            password.Background = gd;
+            password.SetTextColor(toolbarColor);
+            password.SetHighlightColor(Color.LightGray);
             logo = FindViewById<ImageView>(Resource.Id.logo);
             login = FindViewById<Button>(Resource.Id.login);
+            login.SetTextColor(toolbarColor);
             error = FindViewById<TextView>(Resource.Id.error_message);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progressBarLogin);
             progressBar.Visibility = ViewStates.Invisible;
@@ -110,10 +128,6 @@ namespace lucid
                 user.WebCliCode = loginResult.WebCliCode;
                 user.CliCode = loginResult.CliCode;
                 user.Username = loginResult.CliID;
-                //home.PutExtra("webclicode", user.WebCliCode);
-                //home.PutExtra("clicode", user.CliCode);
-                //home.PutExtra("username", user.Username);
-                //home.PutExtra("password", user.Password);
                 StartActivity(home);
             }
             else

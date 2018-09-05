@@ -26,7 +26,7 @@
        <TextView android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="@string/security"
-                 android:textColor="#3e94a6"
+                 android:textColor="@color/blue"
                  android:textStyle="bold"
                  android:textSize="15dp"/>
         
@@ -48,7 +48,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/isin2"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -70,7 +70,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/qty"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -92,7 +92,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/maturity_date"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -113,7 +113,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/currency"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -134,7 +134,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/market_price"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -155,7 +155,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/average_price"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -176,7 +176,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/unrealised_pl"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -197,7 +197,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/unrealised_pl_usd"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -218,7 +218,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/gain_loss"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -239,7 +239,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/total_value"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -260,7 +260,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/total_value_usd"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -281,7 +281,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/weight"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         
@@ -302,7 +302,7 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="@string/accued_interest"
-                  android:textColor="#3e94a6"
+                  android:textColor="@color/blue"
                   android:textStyle="bold"
                   android:textSize="15dp"/>
         

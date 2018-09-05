@@ -1,11 +1,13 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using Android.Graphics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -13,6 +15,7 @@ using Android.Views;
 using Android.Widget;
 using MarketFlow;
 using MKFLibrary;
+using Toolbar = Android.Widget.Toolbar;
 
 namespace lucid
 {
@@ -44,18 +47,34 @@ namespace lucid
         }
 
         private void setUpVariables() {
+            var toolbar = FindViewById<Toolbar>(Resource.Id.cp_toolbar);
+            toolbar.SetBackgroundColor(MainActivity.toolbarColor);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
+            GradientDrawable gd = new GradientDrawable();
+            gd.SetCornerRadius(10);
+            gd.SetStroke(3, MainActivity.toolbarColor);
             linearLayout = FindViewById<LinearLayout>(Resource.Id.change_password_layout);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_password);
             progressBar.Visibility = ViewStates.Invisible;
             back_button = FindViewById<ImageButton>(Resource.Id.cp_back_btn);
+            back_button.SetBackgroundColor(MainActivity.toolbarColor);
             back_button.Click += Back_Button_Click;
             old_password = FindViewById<EditText>(Resource.Id.old_password);
+            old_password.SetTextColor(MainActivity.toolbarColor);
+            old_password.SetHighlightColor(Color.LightGray);
+            old_password.Background = gd;
             new_password = FindViewById<EditText>(Resource.Id.new_password);
+            new_password.SetTextColor(MainActivity.toolbarColor);
+            new_password.SetHighlightColor(Color.LightGray);
+            new_password.Background = gd;
             error_message = FindViewById<TextView>(Resource.Id.update_error);
             error_message.Visibility = ViewStates.Invisible;
             confirm_password = FindViewById<EditText>(Resource.Id.confirm_password);
+            confirm_password.SetTextColor(MainActivity.toolbarColor);
+            confirm_password.SetHighlightColor(Color.LightGray);
+            confirm_password.Background = gd;
             confirm_button = FindViewById<Button>(Resource.Id.confirm_button);
+            confirm_button.SetTextColor(MainActivity.toolbarColor);
             old_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
             new_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
             confirm_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);

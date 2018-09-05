@@ -19,6 +19,7 @@ using Android.Views;
 using Android.Widget;
 using MarketFlowLibrary;
 using MKFLibrary;
+using Toolbar = Android.Widget.Toolbar;
 
 namespace lucid
 {
@@ -50,10 +51,13 @@ namespace lucid
         }
 
         private void setUpVariables() {
+            var toolbar = FindViewById<Toolbar>(Resource.Id.aa_toolbar);
+            toolbar.SetBackgroundColor(MainActivity.toolbarColor);
             linearLayout = FindViewById<LinearLayout>(Resource.Id.asset_allocation_linear_layout);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_asset_allocation);
             progressBar.Visibility = ViewStates.Visible;
             back_btn = FindViewById<ImageButton>(Resource.Id.aa_back_btn);
+            back_btn.SetBackgroundColor(MainActivity.toolbarColor);
             back_btn.Click += Back_Btn_Click;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_aa);
             swipeRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_to_refresh);

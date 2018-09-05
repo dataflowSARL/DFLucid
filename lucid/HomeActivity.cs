@@ -17,6 +17,7 @@ using Android.Support.Compat;
 using MKFLibrary;
 using MarketFlow;
 using System.Threading.Tasks;
+using Android.Graphics.Drawables;
 
 namespace lucid
 {
@@ -37,16 +38,22 @@ namespace lucid
             base.OnCreate(bundle);
             // Set our view from the "home" layout resource  
             SetContentView(Resource.Layout.Home);
+            setUpVariables();
+        }
+
+        public void setUpVariables() {
             linearLayout = FindViewById<LinearLayout>(Resource.Id.home_linear_layout);
-            drawerLayout = FindViewById < DrawerLayout > (Resource.Id.drawer_layout);  
+            drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             // Create ActionBarDrawerToggle button and add it to the toolbar  
-            var toolbar = FindViewById < V7Toolbar > (Resource.Id.toolbar);  
+            var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
+            toolbar.SetBackgroundColor(MainActivity.toolbarColor);
             SetSupportActionBar(toolbar);
             var drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, Resource.String.drawer_open, Resource.String.drawer_close);
             drawerLayout.AddDrawerListener(drawerToggle);
             drawerToggle.SyncState();
-            navigationView = FindViewById < NavigationView > (Resource.Id.nav_view);
+            navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             View headerView = navigationView.GetHeaderView(0);
+            headerView.SetBackgroundColor(MainActivity.toolbarColor);
             username = headerView.FindViewById<TextView>(Resource.Id.header_username);
             username.Text = MainActivity.user.Username ?? "Username Not Found";
             setupDrawerContent(navigationView); //Calling Function
