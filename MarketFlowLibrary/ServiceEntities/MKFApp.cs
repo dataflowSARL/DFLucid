@@ -189,18 +189,18 @@ namespace MarketFlow
             return loginResult;
         }
 
-        public async Task<LoginResult> UpdatePassword(string newPassword, string oldPassword){
+        public async Task<LoginResult> UpdatePassword(string newPassword, string oldPassword, string webclicode, string clicode, string username){
             MKFUser input = new MKFUser();
-            input.NewPassword = newPassword;
-            input.Password = oldPassword;
-            LoginResult loginResult = await MarketFlowLibrary.MarketFlowService.UpdatePassword(input);
-            if(loginResult.Success == true) {
-                MKFUser newUser = new MKFUser();
-                newUser.WebCliCode = loginResult.WebCliCode;
-                newUser.Username = loginResult.CliID;
-                newUser.CliCode = loginResult.CliCode;
-                this.User = newUser;
-            }
+            this.User.NewPassword = newPassword;
+            this.User.Password = oldPassword;
+            LoginResult loginResult = await MarketFlowLibrary.MarketFlowService.UpdatePassword(this.User);
+            //if(loginResult.Success == true) {
+            //    MKFUser newUser = new MKFUser();
+            //    newUser.WebCliCode = loginResult.WebCliCode;
+            //    newUser.Username = loginResult.CliID;
+            //    newUser.CliCode = loginResult.CliCode;
+            //    this.User = newUser;
+            //}
             return loginResult;
         }
 

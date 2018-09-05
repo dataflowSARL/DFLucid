@@ -94,13 +94,13 @@ namespace lucid
 
         private void Dismiss(){
             progressBar.Visibility = ViewStates.Gone;
-            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthShort).Show();
+            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }
 
         private void DismissRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
-            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthShort).Show();
+            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }
 
         private void Display() {

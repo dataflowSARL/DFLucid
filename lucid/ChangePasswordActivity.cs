@@ -30,7 +30,7 @@ namespace lucid
         private TextView error_message;
         private LinearLayout linearLayout;
         int screenWidth;
-        private MKFUser user;
+        //private MKFUser user;
         private string webclicode;
         private string clicode;
         private string password;
@@ -68,28 +68,24 @@ namespace lucid
         void Confirm_Button_Click(object sender, EventArgs e)
         {
             LoginResult loginResult = new LoginResult();
-            user = new MKFUser();
-            user.WebCliCode = webclicode;
-            user.CliCode = clicode;
-            user.Password = password;
             if(new_password.Text == string.Empty || old_password.Text == string.Empty || confirm_password.Text == string.Empty) {
                 error_message.Text = "Fields cannot be empty";
                 error_message.Visibility = ViewStates.Visible;
-            } else if (!old_password.Text.Equals(user.Password)) {
+            } else if (!old_password.Text.Equals(MainActivity.user.Password)) {
                 error_message.Text = "Wrong old password";
                 error_message.Visibility = ViewStates.Visible;
             } else if (!new_password.Text.Equals(confirm_password.Text)) {
                 error_message.Text = "Passwords don't match";
                 error_message.Visibility = ViewStates.Visible;
             }
-            else if (new_password.Text.Equals(confirm_password.Text) && old_password.Text.Equals(user.Password))
+            else if (new_password.Text.Equals(confirm_password.Text) && old_password.Text.Equals(MainActivity.user.Password))
             {
                 progressBar.Visibility = ViewStates.Visible;
                 Task.Run(async () =>
                 {
                     try
                     {
-                        loginResult = await MKFApp.Current.UpdatePassword(new_password.Text, old_password.Text);
+                        loginResult = await MKFApp.Current.UpdatePassword(new_password.Text, old_password.Text, MainActivity.user.WebCliCode, MainActivity.user.CliCode, MainActivity.user.Username);
                         this.RunOnUiThread(() => updatePasswordSuccess(loginResult));
                     }
                     catch (Exception exception)
@@ -105,16 +101,21 @@ namespace lucid
             error_message.Visibility = ViewStates.Invisible;
 
             if(loginResult.Success == true) {
-                Snackbar.Make(linearLayout, "Password Updated", Snackbar.LengthShort).Show();
+                old_password.Text = string.Empty;
+                new_password.Text = string.Empty;
+                confirm_password.Text = string.Empty;
+                Snackbar.Make(linearLayout, "Password Updated", Snackbar.LengthLong).Show();
+                Intent home = new Intent(this, typeof(HomeActivity));
+                StartActivity(home);
             } else {
-                Snackbar.Make(linearLayout,loginResult.WebMessage, Snackbar.LengthShort).Show();
+                Snackbar.Make(linearLayout,loginResult.WebMessage, Snackbar.LengthLong).Show();
             }
         }
 
         private void updatePasswordFail() {
             progressBar.Visibility = ViewStates.Invisible;
             error_message.Visibility = ViewStates.Invisible;
-            Snackbar.Make(linearLayout , "You are not connected", Snackbar.LengthShort).Show();
+            Snackbar.Make(linearLayout , "You are not connected", Snackbar.LengthLong).Show();
         }
 
 

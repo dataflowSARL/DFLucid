@@ -16,6 +16,7 @@ using Android.Support.Design.Widget;
 using Android.Support.Compat;
 using MKFLibrary;
 using MarketFlow;
+using System.Threading.Tasks;
 
 namespace lucid
 {
@@ -84,15 +85,26 @@ namespace lucid
                         StartActivity(changePassword);
                         break;
                     case "Logout":
-                        Intent logout = new Intent(this , typeof(MainActivity));
-                        StartActivity(logout);
+                        Task.Run(async () =>
+                        {
+                            try
+                            {
+                                LoginResult loginResult = await MKFApp.Current.Logout();
+                                this.RunOnUiThread(() => logoutSuccessful());
+                            }
+                            catch (Exception exception)
+                            {
+                                this.RunOnUiThread(() => logoutFailed());
+                            }
+                        });
+
                         break;
                     case "About Us":
                         Intent aboutUs = new Intent(this, typeof(AboutUsActivity));
                         StartActivity(aboutUs);
                         break;
                     default:
-                        Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthShort).Show();
+                        Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
                         break;
                 }
             };  
@@ -102,6 +114,15 @@ namespace lucid
         {  
             navigationView.InflateMenu(Resource.Menu.nav_menu); //Navigation Drawer Layout Menu Creation
             return true;
+        }
+
+        public void logoutSuccessful() {
+            Intent logout = new Intent(this, typeof(MainActivity));
+            StartActivity(logout);
+        }
+
+        public void logoutFailed() {
+            Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
     }
 }

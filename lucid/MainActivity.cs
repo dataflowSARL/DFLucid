@@ -16,7 +16,8 @@ namespace lucid
     [Activity(Label = "lucid", Theme = "@style/Theme.AppCompat.Light.NoActionBar", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
-
+        //TODO: implement timer for logout
+        //TODO: implement logout
         #region variables
         private EditText username;
         private EditText password;
@@ -118,6 +119,7 @@ namespace lucid
             else
             {
                 error.Text = loginResult.WebMessage;
+                error.Visibility = ViewStates.Visible;
             }
         }
 
