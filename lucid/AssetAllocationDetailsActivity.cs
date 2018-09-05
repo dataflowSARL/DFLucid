@@ -9,6 +9,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -25,9 +26,10 @@ namespace lucid
 
         #region vars
         private ImageButton back_btn;
-        public static List<Position> mItemsPosition = new List<Position>();
-        private MKFUser user;
+        private List<Position> mItemsPosition = new List<Position>();
+        //private MKFUser user;
         private RecyclerView mRecyclerView;
+        private LinearLayout linearLayout;
         private RecyclerView.LayoutManager mLayoutManager;
         private RecyclerViewAdapterDetails mRecyclerViewAdapter;
         private string assetCode;
@@ -45,7 +47,7 @@ namespace lucid
 
         private void setUpVariables()
         {
-            List<Position> userAccountPositions = new List<Position>();
+            linearLayout = FindViewById<LinearLayout>(Resource.Id.aa_details_linear_layout);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_asset_allocation_details);
             progressBar.Visibility = ViewStates.Visible;
             back_btn = FindViewById<ImageButton>(Resource.Id.aad_back_btn);
@@ -53,9 +55,9 @@ namespace lucid
             title = FindViewById<TextView>(Resource.Id.title_asset_allocation_details);
             title.Text = Intent.GetStringExtra("description") ?? string.Empty;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_aa_details);
-            user = new MKFUser();
-            user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
-            user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
+            //user = new MKFUser();
+            //user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
+            //user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
             assetCode = Intent.GetStringExtra("assetcode") ?? string.Empty;
             swipeRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.refresher_details);
             swipeRefreshLayout.SetColorSchemeResources(Resource.Color.blue,
@@ -68,12 +70,10 @@ namespace lucid
                 {
                     try
                     {
-                        userAccountPositions = await MarketFlowService.GetPosition(user);
-                        this.RunOnUiThread(() => DisplayRefresher(userAccountPositions));
+                        this.RunOnUiThread(() => DisplayRefresher());
                     }
                     catch (Exception e)
                     {
-                        Console.Write(e.ToString());
                         this.RunOnUiThread(() => DismissRefresher());
                     }
                 });
@@ -82,8 +82,7 @@ namespace lucid
             {
                 try
                 {
-                    userAccountPositions = await MarketFlowService.GetPosition(user);
-                    this.RunOnUiThread(() => Display(userAccountPositions));
+                    this.RunOnUiThread(() => Display());
                 }
                 catch (Exception e)
                 {
@@ -99,22 +98,22 @@ namespace lucid
         private void Dismiss()
         {
             progressBar.Visibility = ViewStates.Gone;
-            Toast.MakeText(this, "You are not connected", ToastLength.Short).Show();
+            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthShort).Show();
         }
 
         private void DismissRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
-            Toast.MakeText(this, "You are not connected", ToastLength.Short).Show();
+            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthShort).Show();
         }
 
-        private void Display(List<Position> userAccountPositions)
+        private void Display()
         {
             progressBar.Visibility = ViewStates.Gone;
-            mItemsPosition = userAccountPositions.Where(u => u.Asset_Cod == assetCode).Where(u => u.Tit_Cod != "").Select(u => new Position() { Tit_Cod = u.Tit_Cod, ISIN = u.ISIN, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
+            mItemsPosition = AssetAllocationActivity.userAccountPositions.Where(u => u.Asset_Cod == assetCode).Where(u => u.Tit_Cod != "").Select(u => new Position() { Tit_Cod = u.Tit_Cod, ISIN = u.ISIN, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this, user, assetCode, title.Text);
+            mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this, MainActivity.user, assetCode, title.Text);
             mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
@@ -123,21 +122,21 @@ namespace lucid
         {
             Intent all_details = new Intent(this, typeof(AllDetailsActivity));
             all_details.PutExtra("tit_cod", mItemsPosition[e].Tit_Cod);
-            all_details.PutExtra("webclicode", user.WebCliCode);
-            all_details.PutExtra("clicode", user.CliCode);
+            all_details.PutExtra("webclicode", MainActivity.user.WebCliCode);
+            all_details.PutExtra("clicode", MainActivity.user.CliCode);
             all_details.PutExtra("assetcode", assetCode);
             all_details.PutExtra("description", title.Text);
             StartActivity(all_details);
         }
 
 
-        private void DisplayRefresher(List<Position> userAccountPositions)
+        private void DisplayRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
-            mItemsPosition = userAccountPositions.Where(u => u.Asset_Cod == assetCode).Where(u => u.Tit_Cod != "").Select(u => new Position() { Tit_Cod = u.Tit_Cod, ISIN = u.ISIN, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
+            mItemsPosition = AssetAllocationActivity.userAccountPositions.Where(u => u.Asset_Cod == assetCode).Where(u => u.Tit_Cod != "").Select(u => new Position() { Tit_Cod = u.Tit_Cod, ISIN = u.ISIN, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this, user, assetCode, title.Text);
+            mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this, MainActivity.user, assetCode, title.Text);
             mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
@@ -146,8 +145,8 @@ namespace lucid
         {
             Intent all_details = new Intent(this, typeof(AllDetailsActivity));
             all_details.PutExtra("tit_cod", mItemsPosition[e].Tit_Cod);
-            all_details.PutExtra("webclicode", user.WebCliCode);
-            all_details.PutExtra("clicode", user.CliCode);
+            all_details.PutExtra("webclicode", MainActivity.user.WebCliCode);
+            all_details.PutExtra("clicode", MainActivity.user.CliCode);
             all_details.PutExtra("assetcode", assetCode);
             all_details.PutExtra("description", title.Text);
             StartActivity(all_details);

@@ -179,12 +179,29 @@ namespace MarketFlow
             return result;
         }
 
-        public void Logout()
+        public async Task<LoginResult> Logout()
         {
-            //call service
+            LoginResult loginResult = await MarketFlowLibrary.MarketFlowService.LogOut(this.User);
+            if(loginResult.Success == true) {
+                this.User = null;
+                this.UserPositions = null;
+            }
+            return loginResult;
+        }
 
-            this.User = null;
-            this.UserPositions = null;
+        public async Task<LoginResult> UpdatePassword(string newPassword, string oldPassword){
+            MKFUser input = new MKFUser();
+            input.NewPassword = newPassword;
+            input.Password = oldPassword;
+            LoginResult loginResult = await MarketFlowLibrary.MarketFlowService.UpdatePassword(input);
+            if(loginResult.Success == true) {
+                MKFUser newUser = new MKFUser();
+                newUser.WebCliCode = loginResult.WebCliCode;
+                newUser.Username = loginResult.CliID;
+                newUser.CliCode = loginResult.CliCode;
+                this.User = newUser;
+            }
+            return loginResult;
         }
 
 

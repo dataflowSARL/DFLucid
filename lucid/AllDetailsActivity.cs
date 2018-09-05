@@ -8,6 +8,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -25,10 +26,11 @@ namespace lucid
         #region variables
         private ImageButton back_btn;
 
-        private MKFUser user;
+        //private MKFUser user;
         private List<Position> mItemsAllDetails;
         private String tit_cod;
         private String asset_cod;
+        private LinearLayout linearLayout;
 
         private RecyclerView mRecyclerView;
         private RecyclerView.LayoutManager mLayoutManager;
@@ -51,15 +53,12 @@ namespace lucid
 
         private void setUpVariables()
         {
-            List<Position> userAccountPositions = new List<Position>();
+            linearLayout = FindViewById<LinearLayout>(Resource.Id.all_details_layout);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_all_details);
             progressBar.Visibility = ViewStates.Visible;
             title = FindViewById<TextView>(Resource.Id.title_all_details);
             title.Text = Intent.GetStringExtra("description") ?? string.Empty;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_all_details);
-            user = new MKFUser();
-            user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
-            user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
             tit_cod = Intent.GetStringExtra("tit_cod") ?? string.Empty;
             asset_cod = Intent.GetStringExtra("assetcode") ?? string.Empty;
             back_btn = FindViewById<ImageButton>(Resource.Id.ad_back_btn);
@@ -74,9 +73,8 @@ namespace lucid
                 {
                     try
                     {
-                        userAccountPositions = await MarketFlowService.GetPosition(user);
                         //userAccountPositions = AssetAllocationDetailsActivity.mItemsPosition;
-                        this.RunOnUiThread(() => Display(userAccountPositions));
+                        this.RunOnUiThread(() => Display());
                     }
                     catch (Exception e)
                     {
@@ -91,8 +89,7 @@ namespace lucid
             {
                 try
                 {
-                    userAccountPositions = await MarketFlowService.GetPosition(user);
-                    this.RunOnUiThread(() => Display(userAccountPositions));
+                    this.RunOnUiThread(() => Display());
                 }
                 catch (Exception e)
                 {
@@ -106,35 +103,35 @@ namespace lucid
             base.OnBackPressed();
         }
 
-        private void Display(List<Position> userAccountPositions)
+        private void Display()
         {
             progressBar.Visibility = ViewStates.Gone;
-            mItemsAllDetails = userAccountPositions.Where(u => u.Tit_Cod == tit_cod).Select(u => new Position() { tit_nom = u.tit_nom, ISIN = u.ISIN, sumQty = u.sumQty, tit_dat_mat = u.tit_dat_mat, devSymb = u.devSymb, TitCrs = u.TitCrs, CrsMoyen = u.CrsMoyen, UnrealizedPnl = u.UnrealizedPnl, UnrealizedPnlUSD = u.UnrealizedPnlUSD, GainLoss = u.GainLoss, PosBalDevTitTot = u.PosBalDevTitTot, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight, IntVal = u.IntVal }).ToList<Position>();
+            mItemsAllDetails = AssetAllocationActivity.userAccountPositions.Where(u => u.Tit_Cod == tit_cod).Select(u => new Position() { tit_nom = u.tit_nom, ISIN = u.ISIN, sumQty = u.sumQty, tit_dat_mat = u.tit_dat_mat, devSymb = u.devSymb, TitCrs = u.TitCrs, CrsMoyen = u.CrsMoyen, UnrealizedPnl = u.UnrealizedPnl, UnrealizedPnlUSD = u.UnrealizedPnlUSD, GainLoss = u.GainLoss, PosBalDevTitTot = u.PosBalDevTitTot, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight, IntVal = u.IntVal }).ToList<Position>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerViewAdapter = new AllDetailsRecyclerViewAdapter(mItemsAllDetails, this, user);
+            mRecyclerViewAdapter = new AllDetailsRecyclerViewAdapter(mItemsAllDetails, this, MainActivity.user);
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
 
         private void Dismiss()
         {
             progressBar.Visibility = ViewStates.Gone;
-            Toast.MakeText(this, "You are not connected", ToastLength.Short).Show();
+            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthShort).Show();
         }
 
         private void DismissRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
-            Toast.MakeText(this, "You are not connected", ToastLength.Short).Show();
+            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthShort).Show();
         }
 
-        private void DisplayRefresher(List<Position> userAccountPositions)
+        private void DisplayRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
-            mItemsAllDetails = userAccountPositions.Where(u => u.Tit_Cod == tit_cod).Select(u => new Position() { tit_nom = u.tit_nom, ISIN = u.ISIN, sumQty = u.sumQty, tit_dat_mat = u.tit_dat_mat, devSymb = u.devSymb, TitCrs = u.TitCrs, CrsMoyen = u.CrsMoyen, UnrealizedPnl = u.UnrealizedPnl, UnrealizedPnlUSD = u.UnrealizedPnlUSD, GainLoss = u.GainLoss, PosBalDevTitTot = u.PosBalDevTitTot, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight, IntVal = u.IntVal }).ToList<Position>();
+            mItemsAllDetails = AssetAllocationActivity.userAccountPositions.Where(u => u.Tit_Cod == tit_cod).Select(u => new Position() { tit_nom = u.tit_nom, ISIN = u.ISIN, sumQty = u.sumQty, tit_dat_mat = u.tit_dat_mat, devSymb = u.devSymb, TitCrs = u.TitCrs, CrsMoyen = u.CrsMoyen, UnrealizedPnl = u.UnrealizedPnl, UnrealizedPnlUSD = u.UnrealizedPnlUSD, GainLoss = u.GainLoss, PosBalDevTitTot = u.PosBalDevTitTot, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight, IntVal = u.IntVal }).ToList<Position>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerViewAdapter = new AllDetailsRecyclerViewAdapter(mItemsAllDetails, this, user);
+            mRecyclerViewAdapter = new AllDetailsRecyclerViewAdapter(mItemsAllDetails, this, MainActivity.user);
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
     }

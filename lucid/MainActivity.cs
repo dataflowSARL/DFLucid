@@ -1,4 +1,4 @@
-﻿using Android.App;
+﻿    using Android.App;
 using Android.Widget;
 using Android.OS;
 using Android.Content;
@@ -25,7 +25,7 @@ namespace lucid
         private TextView error;
         private ProgressBar progressBar;
 
-        private MKFUser user;
+        public static MKFUser user;
 
         int screenWidth;
         #endregion
@@ -65,9 +65,11 @@ namespace lucid
         void Login_Click(object sender, System.EventArgs e)
         {
             progressBar.Visibility = ViewStates.Visible;
+            Window.SetFlags(WindowManagerFlags.NotTouchable, WindowManagerFlags.NotTouchable);
             LoginResult loginResult = new LoginResult();
             if (username.Text == string.Empty || password.Text == string.Empty) {
                 progressBar.Visibility = ViewStates.Invisible;
+                Window.ClearFlags(WindowManagerFlags.NotTouchable);
                 error.Text = "Both fields cannot be empty";
                 error.Visibility = ViewStates.Visible;
             } else {
@@ -99,6 +101,7 @@ namespace lucid
 
         private void SuccessLoginResultMethod(LoginResult loginResult) {
             progressBar.Visibility = ViewStates.Invisible;
+            Window.ClearFlags(WindowManagerFlags.NotTouchable);
             if (loginResult.Success == true)
             {
                 error.Visibility = ViewStates.Invisible;
@@ -106,9 +109,10 @@ namespace lucid
                 user.WebCliCode = loginResult.WebCliCode;
                 user.CliCode = loginResult.CliCode;
                 user.Username = loginResult.CliID;
-                home.PutExtra("webclicode", user.WebCliCode);
-                home.PutExtra("clicode", user.CliCode);
-                home.PutExtra("username", user.Username);
+                //home.PutExtra("webclicode", user.WebCliCode);
+                //home.PutExtra("clicode", user.CliCode);
+                //home.PutExtra("username", user.Username);
+                //home.PutExtra("password", user.Password);
                 StartActivity(home);
             }
             else
@@ -119,6 +123,7 @@ namespace lucid
 
         private void FailLoginResultMethod() {
             progressBar.Visibility = ViewStates.Invisible;
+            Window.ClearFlags(WindowManagerFlags.NotTouchable);
             error.Text = "You are not connected";
         }
     }

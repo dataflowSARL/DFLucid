@@ -3,13 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
+using MarketFlow;
+using MKFLibrary;
 
 namespace lucid
 {
@@ -19,12 +22,18 @@ namespace lucid
     {
         #region vars
         private ImageButton back_button;
-        private TextView old_password;
-        private TextView new_password;
-        private TextView confirm_password;
+        private EditText old_password;
+        private EditText new_password;
+        private EditText confirm_password;
         private Button confirm_button;
         private ProgressBar progressBar;
+        private TextView error_message;
+        private LinearLayout linearLayout;
         int screenWidth;
+        private MKFUser user;
+        private string webclicode;
+        private string clicode;
+        private string password;
         #endregion
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,27 +41,80 @@ namespace lucid
             SetContentView(Resource.Layout.change_password_layout);
             // Create your application here
             setUpVariables();
-            back_button.Click += Back_Button_Click;
         }
 
         private void setUpVariables() {
             screenWidth = Resources.DisplayMetrics.WidthPixels;
+            linearLayout = FindViewById<LinearLayout>(Resource.Id.change_password_layout);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_password);
             progressBar.Visibility = ViewStates.Invisible;
             back_button = FindViewById<ImageButton>(Resource.Id.cp_back_btn);
-            old_password = FindViewById<TextView>(Resource.Id.old_password);
-            new_password = FindViewById<TextView>(Resource.Id.new_password);
-            confirm_password = FindViewById<TextView>(Resource.Id.confirm_password);
+            back_button.Click += Back_Button_Click;
+            old_password = FindViewById<EditText>(Resource.Id.old_password);
+            new_password = FindViewById<EditText>(Resource.Id.new_password);
+            error_message = FindViewById<TextView>(Resource.Id.update_error);
+            error_message.Visibility = ViewStates.Invisible;
+            confirm_password = FindViewById<EditText>(Resource.Id.confirm_password);
             confirm_button = FindViewById<Button>(Resource.Id.confirm_button);
             old_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
             new_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
             confirm_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
             confirm_button.Click += Confirm_Button_Click;
+            webclicode = MainActivity.user.WebCliCode;
+            clicode = MainActivity.user.CliCode;
+            password = MainActivity.user.Password;
         }
 
         void Confirm_Button_Click(object sender, EventArgs e)
         {
-            progressBar.Visibility = ViewStates.Visible;
+            LoginResult loginResult = new LoginResult();
+            user = new MKFUser();
+            user.WebCliCode = webclicode;
+            user.CliCode = clicode;
+            user.Password = password;
+            if(new_password.Text == string.Empty || old_password.Text == string.Empty || confirm_password.Text == string.Empty) {
+                error_message.Text = "Fields cannot be empty";
+                error_message.Visibility = ViewStates.Visible;
+            } else if (!old_password.Text.Equals(user.Password)) {
+                error_message.Text = "Wrong old password";
+                error_message.Visibility = ViewStates.Visible;
+            } else if (!new_password.Text.Equals(confirm_password.Text)) {
+                error_message.Text = "Passwords don't match";
+                error_message.Visibility = ViewStates.Visible;
+            }
+            else if (new_password.Text.Equals(confirm_password.Text) && old_password.Text.Equals(user.Password))
+            {
+                progressBar.Visibility = ViewStates.Visible;
+                Task.Run(async () =>
+                {
+                    try
+                    {
+                        loginResult = await MKFApp.Current.UpdatePassword(new_password.Text, old_password.Text);
+                        this.RunOnUiThread(() => updatePasswordSuccess(loginResult));
+                    }
+                    catch (Exception exception)
+                    {
+                        this.RunOnUiThread(() => updatePasswordFail());
+                    }
+                });
+            }
+        }
+
+        private void updatePasswordSuccess(LoginResult loginResult) {
+            progressBar.Visibility = ViewStates.Invisible;
+            error_message.Visibility = ViewStates.Invisible;
+
+            if(loginResult.Success == true) {
+                Snackbar.Make(linearLayout, "Password Updated", Snackbar.LengthShort).Show();
+            } else {
+                Snackbar.Make(linearLayout,loginResult.WebMessage, Snackbar.LengthShort).Show();
+            }
+        }
+
+        private void updatePasswordFail() {
+            progressBar.Visibility = ViewStates.Invisible;
+            error_message.Visibility = ViewStates.Invisible;
+            Snackbar.Make(linearLayout , "You are not connected", Snackbar.LengthShort).Show();
         }
 
 

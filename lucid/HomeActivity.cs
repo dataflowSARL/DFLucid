@@ -26,7 +26,8 @@ namespace lucid
         #region variables
         private NavigationView navigationView;
         private DrawerLayout drawerLayout;
-        private MKFUser user;
+        private LinearLayout linearLayout;
+        //private MKFUser user;
         private TextView username;
         #endregion
 
@@ -35,10 +36,7 @@ namespace lucid
             base.OnCreate(bundle);
             // Set our view from the "home" layout resource  
             SetContentView(Resource.Layout.Home);
-            user = new MKFUser();
-            user.WebCliCode = Intent.GetStringExtra("webclicode") ?? string.Empty;
-            user.CliCode = Intent.GetStringExtra("clicode") ?? string.Empty;
-            user.Username = Intent.GetStringExtra("username") ?? string.Empty;
+            linearLayout = FindViewById<LinearLayout>(Resource.Id.home_linear_layout);
             drawerLayout = FindViewById < DrawerLayout > (Resource.Id.drawer_layout);  
             // Create ActionBarDrawerToggle button and add it to the toolbar  
             var toolbar = FindViewById < V7Toolbar > (Resource.Id.toolbar);  
@@ -49,7 +47,7 @@ namespace lucid
             navigationView = FindViewById < NavigationView > (Resource.Id.nav_view);
             View headerView = navigationView.GetHeaderView(0);
             username = headerView.FindViewById<TextView>(Resource.Id.header_username);
-            username.Text = user.Username ?? "Username Not Found";
+            username.Text = MainActivity.user.Username ?? "Username Not Found";
             setupDrawerContent(navigationView); //Calling Function
         }
 
@@ -71,8 +69,6 @@ namespace lucid
                         break;
                     case "Asset Allocation":
                         Intent assetAllocation = new Intent(this, typeof(AssetAllocationActivity));
-                        assetAllocation.PutExtra("webclicode", user.WebCliCode);
-                        assetAllocation.PutExtra("clicode", user.CliCode);
                         StartActivity(assetAllocation);
                         break;
                     case "Details of Transaction":
@@ -88,8 +84,6 @@ namespace lucid
                         StartActivity(changePassword);
                         break;
                     case "Logout":
-                        user = null;
-
                         Intent logout = new Intent(this , typeof(MainActivity));
                         StartActivity(logout);
                         break;
@@ -98,7 +92,7 @@ namespace lucid
                         StartActivity(aboutUs);
                         break;
                     default:
-                        Toast.MakeText(this, "Error", ToastLength.Short).Show();
+                        Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthShort).Show();
                         break;
                 }
             };  
