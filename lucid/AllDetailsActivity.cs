@@ -73,7 +73,6 @@ namespace lucid
                 {
                     try
                     {
-                        //userAccountPositions = AssetAllocationDetailsActivity.mItemsPosition;
                         this.RunOnUiThread(() => Display());
                     }
                     catch (Exception e)
