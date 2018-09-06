@@ -37,6 +37,16 @@ namespace lucid
         public TextView total_value_usd { get; set; }
         public TextView weight_all_details { get; set; }
         public TextView accued_interest { get; set; }
+        public TextView account_to_display_even { get; set; }
+        public TextView account_to_display_odd { get; set; }
+        public TextView account_type_even { get; set; }
+        public TextView account_type_odd { get; set; }
+        public TextView currency_account_summary_even { get; set; }
+        public TextView currency_account_summary_odd { get; set; }
+        public TextView amount_system_even { get; set; }
+        public TextView amount_system_odd { get; set; }
+        public ImageButton as_btn_even { get; set; }
+        public ImageButton as_btn_odd { get; set; }
         public ImageButton details_btn_even { get; set; }
         public ImageButton details_btn_odd { get; set; }
         public ImageButton all_details_btn_even { get; set; }
@@ -73,6 +83,16 @@ namespace lucid
             total_value_usd = itemview.FindViewById<TextView>(Resource.Id.total_value_usd_tv);
             weight_all_details = itemview.FindViewById<TextView>(Resource.Id.weight_tv);
             accued_interest = itemview.FindViewById<TextView>(Resource.Id.accued_interest_tv);
+            account_to_display_even = itemview.FindViewById<TextView>(Resource.Id.account_to_display_even);
+            account_to_display_odd = itemview.FindViewById<TextView>(Resource.Id.account_to_display_odd);
+            account_type_even = itemview.FindViewById<TextView>(Resource.Id.account_type_even);
+            account_type_odd = itemview.FindViewById<TextView>(Resource.Id.account_type_odd);
+            currency_account_summary_even = itemview.FindViewById<TextView>(Resource.Id.currency_symbol_even);
+            currency_account_summary_odd = itemview.FindViewById<TextView>(Resource.Id.currency_symbol_odd);
+            amount_system_even = itemview.FindViewById<TextView>(Resource.Id.amount_system_even);
+            amount_system_odd = itemview.FindViewById<TextView>(Resource.Id.amount_system_odd);
+            as_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.as_button_even);
+            as_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.as_button_odd);
             details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.details_button_even);
             details_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.details_button_odd);
             all_details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.all_details_button_even);

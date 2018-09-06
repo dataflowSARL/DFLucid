@@ -129,17 +129,6 @@ namespace lucid
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
 
-        void MRecyclerViewAdapter_ItemClick1(object sender, int e)
-        {
-            Intent all_details = new Intent(this, typeof(AllDetailsActivity));
-            all_details.PutExtra("tit_cod", mItemsPosition[e].Tit_Cod);
-            all_details.PutExtra("webclicode", MainActivity.user.WebCliCode);
-            all_details.PutExtra("clicode", MainActivity.user.CliCode);
-            all_details.PutExtra("assetcode", assetCode);
-            all_details.PutExtra("description", title.Text);
-            StartActivity(all_details);
-        }
-
 
         private void DisplayRefresher()
         {

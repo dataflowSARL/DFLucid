@@ -126,12 +126,15 @@ namespace lucid
 
         void MRecyclerViewAdapter_ItemClick(object sender, int e)
         {
-            Intent details = new Intent(this, typeof(AssetAllocationDetailsActivity));
-            details.PutExtra("assetcode", mItems[e].Code);
-            details.PutExtra("webclicode", MainActivity.user.WebCliCode);
-            details.PutExtra("clicode", MainActivity.user.CliCode);
-            details.PutExtra("description", mItems[e].AssetDescription);
-            StartActivity(details);
+            if (Convert.ToInt16(mItems[e].Code) >= 0)
+            {
+                Intent details = new Intent(this, typeof(AssetAllocationDetailsActivity));
+                details.PutExtra("assetcode", mItems[e].Code);
+                details.PutExtra("webclicode", MainActivity.user.WebCliCode);
+                details.PutExtra("clicode", MainActivity.user.CliCode);
+                details.PutExtra("description", mItems[e].AssetDescription);
+                StartActivity(details);
+            }
         }
 
 
@@ -143,16 +146,6 @@ namespace lucid
             mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
             mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
-        }
-
-        void MRecyclerViewAdapter_ItemClick1(object sender, int e)
-        {
-            Intent details = new Intent(this, typeof(AssetAllocationDetailsActivity));
-            details.PutExtra("assetcode", mItems[e].Code);
-            details.PutExtra("webclicode", MainActivity.user.WebCliCode);
-            details.PutExtra("clicode", MainActivity.user.CliCode);
-            details.PutExtra("description", mItems[e].AssetDescription);
-            StartActivity(details);
         }
 
 
