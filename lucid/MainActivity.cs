@@ -1,19 +1,21 @@
-﻿using Android.App;
-using Android.Widget;
-using Android.OS;
-using Android.Content;
-using MKFLibrary;
+﻿using System;
 using System.Collections.Generic;
-using MarketFlowLibrary;
 using System.Linq;
-using Android.Views;
-using Toolbar = Android.Widget.Toolbar;
-using MarketFlow;
 using System.Threading.Tasks;
-using System;
+using System.Timers;
+using Android.App;
+using Android.Content;
 using Android.Graphics;
-using Android.Support.V7.Widget;
 using Android.Graphics.Drawables;
+using Android.OS;
+using Android.Support.Design.Widget;
+using Android.Support.V7.Widget;
+using Android.Views;
+using Android.Widget;
+using MarketFlow;
+using MarketFlowLibrary;
+using MKFLibrary;
+using Toolbar = Android.Widget.Toolbar;
 
 namespace lucid
 {
@@ -29,8 +31,9 @@ namespace lucid
         private Button login;
         private TextView error;
         private ProgressBar progressBar;
+        private LinearLayout linearLayout;
 
-        public static Color toolbarColor = Color.ParseColor("#3e94a6");
+        public static Color TOOLBAR_COLOR = Color.ParseColor("#3e94a6");
 
         public static MKFUser user;
 
@@ -53,23 +56,24 @@ namespace lucid
 
         private void setUpVariables()
         {
+            linearLayout = FindViewById<LinearLayout>(Resource.Id.main_activity_linear_layout);
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbarMain);
-            toolbar.SetBackgroundColor(MainActivity.toolbarColor);
+            toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
             GradientDrawable gd = new GradientDrawable();
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, MainActivity.toolbarColor);
+            gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
             username = FindViewById<EditText>(Resource.Id.username);
             username.Background = gd;
-            username.SetTextColor(toolbarColor);
+            username.SetTextColor(TOOLBAR_COLOR);
             username.SetHighlightColor(Color.LightGray);
             password = FindViewById<EditText>(Resource.Id.password);
             password.Background = gd;
-            password.SetTextColor(toolbarColor);
+            password.SetTextColor(TOOLBAR_COLOR);
             password.SetHighlightColor(Color.LightGray);
             logo = FindViewById<ImageView>(Resource.Id.logo);
             login = FindViewById<Button>(Resource.Id.login);
-            login.SetTextColor(toolbarColor);
+            login.SetTextColor(TOOLBAR_COLOR);
             error = FindViewById<TextView>(Resource.Id.error_message);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progressBarLogin);
             progressBar.Visibility = ViewStates.Invisible;
@@ -140,7 +144,7 @@ namespace lucid
         private void FailLoginResultMethod() {
             progressBar.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
-            error.Text = "You are not connected";
+            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }
     }
 }

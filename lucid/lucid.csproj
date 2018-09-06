@@ -168,6 +168,7 @@
     <AndroidResource Include="Resources\layout\all_details_layout.axml" />
     <AndroidResource Include="Resources\drawable\custom_all_details_layout.xml" />
     <AndroidResource Include="Resources\layout\recyclerview_card_all_details_layout.axml" />
+    <AndroidResource Include="Resources\layout\home_layout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

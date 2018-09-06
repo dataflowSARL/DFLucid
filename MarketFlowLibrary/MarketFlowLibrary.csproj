@@ -67,6 +67,8 @@
     <Compile Include="Common\IBusinessEntity.cs" />
     <Compile Include="Classes\AssetAllocation.cs" />
     <Compile Include="ServiceEntities\MKFApp.cs" />
+    <Compile Include="ServiceEntities\API_Response.cs" />
+    <Compile Include="ServiceEntities\ParamDate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

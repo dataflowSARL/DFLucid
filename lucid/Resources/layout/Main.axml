@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    android:id="@+id/main_activity_linear_layout">
     <Toolbar
         android:id="@+id/toolbarMain"
         android:layout_height="wrap_content"

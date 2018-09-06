@@ -8,14 +8,15 @@ namespace MKFLibrary
 {
     public class AccountSummary
     {
-        public string account { get; set; }
-        public string accType { get; set; }
-        public int accSeq { get; set; }
-        public string accTypeDesc { get; set; }
-        public string devSymb { get; set; }
-        public decimal amount { get; set; }
-        public double amountSys { get; set; }
-        public string accDesc { get; set; }
-        public int onHold { get; set; }
+        public string Account { get; set; }
+        public string AccountType { get; set; }
+        public int AccountSeq { get; set; }
+        public string AccountTypeDesc { get; set; }
+        public string CurrencySymbol { get; set; }
+        public decimal Amount { get; set; }
+        public double AmountSystem { get; set; }
+        public string AccountDesc { get; set; }
+        public string AccountToDisplay { get; set; }
+        public int OnHold { get; set; }
     }
 }

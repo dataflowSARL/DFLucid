@@ -1,11 +1,8 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/HomeActivity.cs">
     <Files>
-      <File FileName="lucid/MainActivity.cs" Line="33" Column="69" />
-      <File FileName="lucid/ChangePasswordActivity.cs" Line="74" Column="63" />
-      <File FileName="lucid/AllDetailsActivity.cs" Line="68" Column="21" />
-      <File FileName="lucid/HomeActivity.cs" Line="55" Column="1" />
-      <File FileName="lucid/AllDetailsRecyclerViewAdapter.cs" Line="48" Column="87" />
+      <File FileName="lucid/HomeActivity.cs" Line="210" Column="6" />
+      <File FileName="lucid/MainActivity.cs" Line="115" Column="2782" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

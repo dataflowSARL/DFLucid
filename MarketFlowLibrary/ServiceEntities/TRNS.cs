@@ -8,18 +8,17 @@ namespace MKFLibrary
 {
     public class TRNS
     {
-        public Int64 TID {get;set;}
-        public string account {get;set;}
-        public DateTime? transDate {get;set;}
-        public int fiche {get;set;}
-	    public string trnsDesc {get;set;}
-	    public string dbCr {get;set;}
-    	public double dbAmount {get;set;}
-	    public double crAmount {get;set;}
-        public DateTime? dueDate {get;set;}
-	    public string client_code {get;set;}
-        public string client_name {get;set;}
-        public string currSymb {get;set;}
-        public string accTypeDesc { get; set; }
+        public string Account {get;set;}
+        public DateTime? TransactionDate {get;set;}
+        public string Fiche {get;set;}
+	    public string TrnsDesc {get;set;}
+	    public string DBCR {get;set;}
+    	public decimal DbAmount {get;set;}
+	    public decimal CrAmount {get;set;}
+        public DateTime? DueDate {get;set;}
+	    public string ClientCode {get;set;}
+        public string ClientName {get;set;}
+        public string CurrencySymbol {get;set;}
+        public string AccountTypeDesc { get; set; }
     }
 }
