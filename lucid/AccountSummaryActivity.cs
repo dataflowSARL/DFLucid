@@ -32,6 +32,7 @@ namespace lucid
         private RecyclerView mRecyclerView;
         private RecyclerView.LayoutManager mLayoutManager;
         private RecyclerViewAdapterAccountSummary mRecyclerViewAdapter;
+        private List<AccountSummary> accountSummaries = new List<AccountSummary>();
         private API_Response<AccountSummary> mResponse = new API_Response<AccountSummary>();
         private ProgressBar progressBar;
         private SwipeRefreshLayout swipeRefreshLayout;
@@ -103,7 +104,8 @@ namespace lucid
             progressBar.Visibility = ViewStates.Gone;
             if (mResponse.Success == true) {
                 mRecyclerView.SetLayoutManager(mLayoutManager);
-                mRecyclerViewAdapter = new RecyclerViewAdapterAccountSummary(mResponse, this, MainActivity.user);
+                accountSummaries = mResponse.Content.Where(u => u.AmountSystem != 0).ToList<AccountSummary>(); 
+                mRecyclerViewAdapter = new RecyclerViewAdapterAccountSummary(accountSummaries, this, MainActivity.user);
                 mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
                 mRecyclerView.SetAdapter(mRecyclerViewAdapter);
             } else {
@@ -117,7 +119,8 @@ namespace lucid
             if (mResponse.Success == true)
             {
                 mRecyclerView.SetLayoutManager(mLayoutManager);
-                mRecyclerViewAdapter = new RecyclerViewAdapterAccountSummary(mResponse, this, MainActivity.user);
+                accountSummaries = mResponse.Content.Where(u => u.AmountSystem != 0).ToList<AccountSummary>();
+                mRecyclerViewAdapter = new RecyclerViewAdapterAccountSummary(accountSummaries, this, MainActivity.user);
                 mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
                 mRecyclerView.SetAdapter(mRecyclerViewAdapter);
             }
