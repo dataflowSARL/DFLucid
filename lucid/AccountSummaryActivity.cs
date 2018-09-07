@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +25,6 @@ namespace lucid
     [MetaData("android.support.PARENT_ACTIVITY", Value = "HomeActivity")]
     public class AccountSummaryActivity : Activity
     {
-        //TODO: positive (green) negative (red) , zero (blue) amountsystem.
         #region vars
         private ImageButton back_button;
         private LinearLayout linearLayout;
@@ -128,7 +126,9 @@ namespace lucid
 
         void MRecyclerViewAdapter_ItemClick(object sender, int e)
         {
-            Toast.MakeText(this, "Row clicked", ToastLength.Short).Show();
+            Intent details = new Intent(this, typeof(AccountSummaryDetailsActivity));
+            details.PutExtra("account", accountSummaries[e].Account);
+            StartActivity(details);
         }
 
         private void Display() {

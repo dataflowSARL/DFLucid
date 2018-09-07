@@ -39,6 +39,9 @@
     <activity android:label="AllDetailsActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.AssetAllocationDetailsActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AllDetailsActivity">
       <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".AssetAllocationDetailsActivity" />
     </activity>
+    <activity android:label="AccountSummaryDetailsActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.AccountSummaryActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AccountSummaryDetailsActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="AccountSummaryActivity" />
+    </activity>
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.dataflow.lucid.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">

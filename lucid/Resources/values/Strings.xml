@@ -47,4 +47,5 @@
     <string name="account_type">Account Type</string>
     <string name="currency_as">Currency</string>
     <string name="amount_system">Amount System</string>
+    <string name="account_summary_details">Account Summary Details</string>
 </resources>

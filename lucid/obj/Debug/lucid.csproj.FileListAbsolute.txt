@@ -69,6 +69,7 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_all_details_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/home_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_account_summary_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/account_summary_details_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/lucid/obj/Debug/uploadflags.txt
