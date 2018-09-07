@@ -13,6 +13,7 @@ using System.Diagnostics;
 using MKFLibrary;
 using System.Security.Policy;
 using Android.App.Usage;
+using MKFLibrary.API;
 
 namespace MarketFlow
 {
@@ -23,6 +24,7 @@ namespace MarketFlow
         const string InsightsLoggedInUser = "loggedInUser";
         const string InsightsBookInfo = "book";
         public static Url OpenedFile = null;
+        public static string DATE_FORMAT = "MM/dd/yyyy";
 
         //public const float APPVERSION = 0.02f;
         private static readonly MKFApp instance = new MKFApp();
@@ -194,14 +196,18 @@ namespace MarketFlow
             this.User.NewPassword = newPassword;
             this.User.Password = oldPassword;
             LoginResult loginResult = await MarketFlowLibrary.MarketFlowService.UpdatePassword(this.User);
-            //if(loginResult.Success == true) {
-            //    MKFUser newUser = new MKFUser();
-            //    newUser.WebCliCode = loginResult.WebCliCode;
-            //    newUser.Username = loginResult.CliID;
-            //    newUser.CliCode = loginResult.CliCode;
-            //    this.User = newUser;
-            //}
             return loginResult;
+        }
+
+        public async Task<API_Response<AccountSummary>> GetAccountSummary(){
+            ParamDate paramDate = new ParamDate();
+            paramDate.userMKF = this.User;
+            paramDate.DateTo = DateTime.Now;
+            API_Response<AccountSummary> response = await MarketFlowLibrary.MarketFlowService.GetAccountSummary(paramDate);
+            if(response.Success == true) {
+
+            }
+            return response;
         }
 
 

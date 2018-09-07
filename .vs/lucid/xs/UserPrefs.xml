@@ -1,17 +1,18 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/HomeActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/AccountSummaryActivity.cs">
     <Files>
-      <File FileName="lucid/HomeActivity.cs" Line="210" Column="6" />
-      <File FileName="lucid/MainActivity.cs" Line="115" Column="2782" />
+      <File FileName="lucid/RecyclerViewAdapterAccountSummary.cs" Line="52" Column="85" />
+      <File FileName="lucid/AccountSummaryActivity.cs" Line="154" Column="42" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/MKFApp.cs" Line="206" Column="122" />
+      <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="130" Column="80" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/ParamDate.cs" Line="1" Column="1" />
+      <File FileName="lucid/MainActivity.cs" Line="34" Column="73" />
+      <File FileName="lucid/RecyclerViewHolder.cs" Line="81" Column="98" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/lucien/Projects/lucid/MarketFlowLibrary/ServiceEntities/MKFApp.cs" relfile="MarketFlowLibrary/ServiceEntities/MKFApp.cs" line="194" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/MarketFlowLibrary/ServiceEntities/MKFApp.cs" relfile="MarketFlowLibrary/ServiceEntities/MKFApp.cs" line="196" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/MarketFlowLibrary/ServiceEntities/MKFApp.cs" relfile="MarketFlowLibrary/ServiceEntities/MKFApp.cs" line="195" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.lucid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.my_device" AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" />

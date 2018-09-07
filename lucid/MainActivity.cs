@@ -22,8 +22,6 @@ namespace lucid
     [Activity(Label = "lucid", Theme = "@style/Theme.AppCompat.Light.NoActionBar", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
-        //TODO: implement timer for logout
-        //TODO: tell to gloria to make password and username comparison case sensitive
         #region variables
         private EditText username;
         private EditText password;
@@ -136,8 +134,7 @@ namespace lucid
             }
             else
             {
-                error.Text = loginResult.WebMessage;
-                error.Visibility = ViewStates.Visible;
+                Snackbar.Make(linearLayout, loginResult.WebMessage ?? "An Error Occured", Snackbar.LengthLong).Show();
             }
         }
 
