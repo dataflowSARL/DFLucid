@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.Support.V7.Widget;
 using Android.Views;
+using Android.Widget;
 using MKFLibrary;
 using MKFLibrary.API;
 
@@ -31,7 +32,7 @@ namespace lucid
                 recyclerViewHolder.currency_account_summary_odd.Text = mResponse.Content[position].CurrencySymbol;
                 recyclerViewHolder.amount_system_odd.Text = mResponse.Content[position].AmountSystem.ToString("#,##0.00");
                 recyclerViewHolder.as_btn_odd.Click += delegate {
-                
+                    Toast.MakeText(mContext, "button clicked", ToastLength.Short).Show();
 
                 };
             } else {
@@ -40,7 +41,7 @@ namespace lucid
                 recyclerViewHolder.currency_account_summary_even.Text = mResponse.Content[position].CurrencySymbol;
                 recyclerViewHolder.amount_system_even.Text = mResponse.Content[position].AmountSystem.ToString("#,##0.00");
                 recyclerViewHolder.as_btn_even.Click += delegate {
-                
+                    Toast.MakeText(mContext, "button clicked", ToastLength.Short).Show();
 
                 };
             }

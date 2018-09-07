@@ -73,7 +73,7 @@ namespace lucid
                 {
                     try
                     {
-                        userAccountPositions = await MarketFlowService.GetPosition(MainActivity.user);
+                        userAccountPositions = await MKFApp.Current.GetPositions();
                         this.RunOnUiThread(() => DisplayRefresher());
                     }
                     catch (Exception e)
@@ -89,7 +89,7 @@ namespace lucid
             {
                 try
                 {
-                    userAccountPositions = await MarketFlowService.GetPosition(MainActivity.user);
+                    userAccountPositions = await MKFApp.Current.GetPositions();
                     this.RunOnUiThread(() => Display());
                 }
                 catch (Exception e)

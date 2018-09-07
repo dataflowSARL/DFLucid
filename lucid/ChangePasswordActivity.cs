@@ -106,6 +106,7 @@ namespace lucid
             else if (new_password.Text.Equals(confirm_password.Text) && old_password.Text.Equals(MainActivity.user.Password))
             {
                 progressBar.Visibility = ViewStates.Visible;
+                Window.SetFlags(WindowManagerFlags.NotTouchable, WindowManagerFlags.NotTouchable);
                 Task.Run(async () =>
                 {
                     try
@@ -124,8 +125,8 @@ namespace lucid
         private void updatePasswordSuccess(LoginResult loginResult) {
             progressBar.Visibility = ViewStates.Invisible;
             error_message.Visibility = ViewStates.Invisible;
-
-            if(loginResult.Success == true) {
+            Window.ClearFlags(WindowManagerFlags.NotTouchable);
+            if (loginResult.Success == true) {
                 old_password.Text = string.Empty;
                 new_password.Text = string.Empty;
                 confirm_password.Text = string.Empty;
@@ -140,6 +141,7 @@ namespace lucid
         private void updatePasswordFail() {
             progressBar.Visibility = ViewStates.Invisible;
             error_message.Visibility = ViewStates.Invisible;
+            Window.ClearFlags(WindowManagerFlags.NotTouchable);
             Snackbar.Make(linearLayout , "You are not connected", Snackbar.LengthLong).Show();
         }
 

@@ -1,16 +1,18 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="lucid/MainActivity.cs">
     <Files>
-      <File FileName="lucid/RecyclerViewAdapterAccountSummary.cs" Line="63" Column="39" NotebookId="1" />
-      <File FileName="MarketFlowLibrary/ServiceEntities/API_Response.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="MarketFlowLibrary/ServiceEntities/AccountSummary.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="lucid/AccountSummaryActivity.cs" Line="79" Column="78" NotebookId="1" />
-      <File FileName="lucid/MainActivity.cs" Line="124" Column="54" NotebookId="1" />
+      <File FileName="lucid/RecyclerViewAdapterAccountSummary.cs" Line="14" Column="55" NotebookId="1" />
+      <File FileName="lucid/AccountSummaryActivity.cs" Line="116" Column="44" NotebookId="1" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/MKFApp.cs" Line="204" Column="55" NotebookId="1" />
+      <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="130" Column="80" NotebookId="1" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/ParamDate.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="lucid/MainActivity.cs" Line="35" Column="34" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1681" Y="23" Width="1919" Height="1035">
+      <FloatingWindow WindowId="1" X="0" Y="23" Width="1680" Height="963">
         <Files>
-          <File FileName="lucid/AssetAllocationActivity.cs" Line="119" Column="43" />
+          <File FileName="lucid/AssetAllocationActivity.cs" Line="76" Column="83" />
+          <File FileName="lucid/RecyclerViewAdapterAssetAllocation.cs" Line="1" Column="1" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -18,33 +20,22 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/lucien/Projects/lucid/MarketFlowLibrary/ServiceEntities/MKFApp.cs" relfile="MarketFlowLibrary/ServiceEntities/MKFApp.cs" line="194" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/MarketFlowLibrary/ServiceEntities/MKFApp.cs" relfile="MarketFlowLibrary/ServiceEntities/MKFApp.cs" line="196" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/MarketFlowLibrary/ServiceEntities/MKFApp.cs" relfile="MarketFlowLibrary/ServiceEntities/MKFApp.cs" line="195" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="142" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="143" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="144" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="137" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="128" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="129" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="130" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="131" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="132" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="133" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="125" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="124" column="54" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="98" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="99" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="103" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="104" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="106" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="91" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="92" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="93" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="94" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="95" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="89" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="88" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="30" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="31" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="32" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="33" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="34" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="39" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="40" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="41" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="43" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="42" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="44" column="90" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="35" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/RecyclerViewAdapterAccountSummary.cs" relfile="lucid/RecyclerViewAdapterAccountSummary.cs" line="24" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AccountSummaryActivity.cs" relfile="lucid/AccountSummaryActivity.cs" line="67" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AccountSummaryActivity.cs" relfile="lucid/AccountSummaryActivity.cs" line="89" column="53" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AccountSummaryActivity.cs" relfile="lucid/AccountSummaryActivity.cs" line="90" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -64,7 +64,7 @@ namespace lucid
                 {
                     try
                     {
-                        mResponse = await MarketFlowService.GetAccountSummary(MainActivity.user);
+                        mResponse = await MKFApp.Current.GetAccountSummary();
                         this.RunOnUiThread(() => DisplayRefresher());
                     }
                     catch (Exception e)
@@ -86,7 +86,7 @@ namespace lucid
             Task.Run(async () =>
             {
                 try {
-                    mResponse = await MarketFlowService.GetAccountSummary(MainActivity.user);
+                    mResponse = await MKFApp.Current.GetAccountSummary();
                     this.RunOnUiThread(() => Display());
                 } catch(Exception e) {
                     this.RunOnUiThread(() => Dismiss());
@@ -101,19 +101,30 @@ namespace lucid
 
         private void Display() {
             progressBar.Visibility = ViewStates.Gone;
-            mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerViewAdapter = new RecyclerViewAdapterAccountSummary(mResponse, this, MainActivity.user);
-            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
-            mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+            if (mResponse.Success == true) {
+                mRecyclerView.SetLayoutManager(mLayoutManager);
+                mRecyclerViewAdapter = new RecyclerViewAdapterAccountSummary(mResponse, this, MainActivity.user);
+                mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
+                mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+            } else {
+                Snackbar.Make(linearLayout, mResponse.Message ?? "An Error Occured", Snackbar.LengthLong).Show();
+            }
         }
 
         private void DisplayRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
-            mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerViewAdapter = new RecyclerViewAdapterAccountSummary(mResponse, this, MainActivity.user);
-            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
-            mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+            if (mResponse.Success == true)
+            {
+                mRecyclerView.SetLayoutManager(mLayoutManager);
+                mRecyclerViewAdapter = new RecyclerViewAdapterAccountSummary(mResponse, this, MainActivity.user);
+                mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
+                mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+            }
+            else
+            {
+                Snackbar.Make(linearLayout, mResponse.Message ?? "An Error Occured", Snackbar.LengthLong).Show();
+            }
         }
 
         private void Dismiss() {

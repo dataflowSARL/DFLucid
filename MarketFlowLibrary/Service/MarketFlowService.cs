@@ -122,12 +122,12 @@ namespace MarketFlowLibrary
 
         }
 
-        public async static Task<API_Response<AccountSummary>> GetAccountSummary(MKFUser user)
+        public async static Task<API_Response<AccountSummary>> GetAccountSummary(ParamDate paramDate)
         {
             API_Response<AccountSummary> result = new API_Response<AccountSummary>();
             HttpClient client = new HttpClient();
             string serviceURL = string.Format("{0}{1}", serviceBaseURI, getAccountSummaryAction);
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(user);
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(paramDate);
 
             var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync(serviceURL, stringContent);
