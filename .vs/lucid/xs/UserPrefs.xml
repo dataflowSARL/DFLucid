@@ -1,23 +1,14 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/AccountSummaryActivity.cs">
     <Files>
-      <File FileName="lucid/RecyclerViewAdapterAccountSummary.cs" Line="33" Column="92" NotebookId="1" />
-      <File FileName="lucid/AccountSummaryActivity.cs" Line="35" Column="84" NotebookId="1" />
-      <File FileName="MarketFlowLibrary/ServiceEntities/MKFApp.cs" Line="206" Column="122" NotebookId="1" />
-      <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="130" Column="80" NotebookId="1" />
-      <File FileName="MarketFlowLibrary/ServiceEntities/ParamDate.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="lucid/MainActivity.cs" Line="34" Column="73" NotebookId="1" />
-      <File FileName="MarketFlowLibrary/ServiceEntities/AccountSummary.cs" Line="17" Column="35" NotebookId="1" />
-      <File FileName="lucid/RecyclerViewHolder.cs" Line="87" Column="104" NotebookId="1" />
+      <File FileName="lucid/RecyclerViewAdapterAccountSummary.cs" Line="52" Column="85" />
+      <File FileName="lucid/AccountSummaryActivity.cs" Line="154" Column="42" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/MKFApp.cs" Line="206" Column="122" />
+      <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="130" Column="80" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/ParamDate.cs" Line="1" Column="1" />
+      <File FileName="lucid/MainActivity.cs" Line="34" Column="73" />
+      <File FileName="lucid/RecyclerViewHolder.cs" Line="81" Column="98" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="0" Y="23" Width="1680" Height="963">
-        <Files>
-          <File FileName="lucid/AssetAllocationActivity.cs" Line="32" Column="38" />
-          <File FileName="lucid/RecyclerViewAdapterAssetAllocation.cs" Line="1" Column="1" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
