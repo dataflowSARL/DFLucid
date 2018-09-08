@@ -128,6 +128,7 @@
     <Compile Include="AllDetailsRecyclerViewAdapter.cs" />
     <Compile Include="RecyclerViewAdapterAccountSummary.cs" />
     <Compile Include="AccountSummaryDetailsActivity.cs" />
+    <Compile Include="RecyclerViewASDAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

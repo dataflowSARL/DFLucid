@@ -210,6 +210,11 @@ namespace MarketFlow
             return response;
         }
 
+        public async Task<TRNS> GetStatement(ParamDate paramDate) {
+            TRNS response = await MarketFlowLibrary.MarketFlowService.GetStatement(paramDate);
+            return response;
+        }
+
 
         //private Device device;
 

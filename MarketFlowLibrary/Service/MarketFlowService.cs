@@ -24,6 +24,7 @@ namespace MarketFlowLibrary
         private const string logoutAction = "LogOut";
         private const string updatePasswordAction = "UpdatePassword";
         private const string getAccountSummaryAction = "GetAccountSummary";
+        private const string getStatementAction = "GetStatement";
 
 		private static bool TestMode { get; set; }
 
@@ -135,6 +136,26 @@ namespace MarketFlowLibrary
             if (response.IsSuccessStatusCode)
             {
                 result = Newtonsoft.Json.JsonConvert.DeserializeObject<API_Response<AccountSummary>>(response.Content.ReadAsStringAsync().Result);
+            }
+
+            return result;
+
+
+        }
+
+        public async static Task<TRNS> GetStatement(ParamDate paramDate)
+        {
+            TRNS result = new TRNS();
+            HttpClient client = new HttpClient();
+            string serviceURL = string.Format("{0}{1}", serviceBaseURI, getStatementAction);
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(paramDate);
+
+            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(serviceURL, stringContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<TRNS>(response.Content.ReadAsStringAsync().Result);
             }
 
             return result;
