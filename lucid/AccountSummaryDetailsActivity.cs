@@ -10,10 +10,13 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
+using Android.Support.V4.Widget;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using MarketFlow;
 using MKFLibrary;
+using Toolbar = Android.Widget.Toolbar;
 
 namespace lucid
 {
@@ -25,6 +28,12 @@ namespace lucid
         private Timer timer;
         private LinearLayout linearLayout;
         private ImageButton back_btn;
+        private RecyclerView recyclerView;
+        private RecyclerView.LayoutManager mLayoutManager;
+        private RecyclerViewASDAdapter recyclerViewASDAdapter;
+        private List<TRNS> items = new List<TRNS>();
+        private ProgressBar progressBar;
+        private SwipeRefreshLayout swipeRefreshLayout;
         #endregion
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -54,9 +63,6 @@ namespace lucid
             base.OnBackPressed();
             timer.Stop();
         }
-
-
-
 
         protected override void OnStart()
         {

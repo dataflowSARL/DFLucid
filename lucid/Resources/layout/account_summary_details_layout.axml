@@ -48,4 +48,42 @@
                 android:padding="1dp" />
         </LinearLayout>
     </Toolbar>
+    <ProgressBar android:id="@+id/progress_bar_account_summary_details"
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_gravity="center"
+                 android:indeterminate="true"/>
+    
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:weightSum="1"
+                  android:gravity="center"
+                  android:layout_gravity="center">
+        
+        <CalendarView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:id="@+id/from_date"/>
+        
+        <CalendarView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:id="@+id/to_date"/>
+        
+    </LinearLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_to_refresh_account_summary_details"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+        
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview_asd"
+                    android:scrollbars="vertical"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        
+        
+            </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

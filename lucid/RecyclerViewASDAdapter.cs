@@ -38,7 +38,7 @@ namespace lucid
                 recyclerViewHolder.dbcr_amount.Text = mItems[position].CrAmount.ToString("#,##0.00");
                 recyclerViewHolder.dbcr_amount.SetTextColor(Android.Graphics.Color.ParseColor("#7bb89c"));
             }
-            //recyclerViewHolder.balance.Text = mItems[position].;
+            //recyclerViewHolder.balance.Text = mItems[position;
         }
 
         public override ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
