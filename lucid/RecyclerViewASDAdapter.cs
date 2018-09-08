@@ -27,6 +27,18 @@ namespace lucid
         public override void OnBindViewHolder(ViewHolder holder, int position)
         {
             RecyclerViewHolder recyclerViewHolder = holder as RecyclerViewHolder;
+            recyclerViewHolder.transaction_date.Text = mItems[position].TransactionDate.ToString();
+            recyclerViewHolder.due_date.Text = mItems[position].DueDate.ToString();
+            recyclerViewHolder.transaction_description.Text = mItems[position].TrnsDesc;
+            recyclerViewHolder.dbcr.Text = mItems[position].DBCR;
+            if(recyclerViewHolder.dbcr.Equals("D")) {
+                recyclerViewHolder.dbcr_amount.Text = mItems[position].DbAmount.ToString("#,##0.00");
+                recyclerViewHolder.dbcr_amount.SetTextColor(Android.Graphics.Color.Red);
+            } else {
+                recyclerViewHolder.dbcr_amount.Text = mItems[position].CrAmount.ToString("#,##0.00");
+                recyclerViewHolder.dbcr_amount.SetTextColor(Android.Graphics.Color.ParseColor("#7bb89c"));
+            }
+            //recyclerViewHolder.balance.Text = mItems[position].;
         }
 
         public override ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
