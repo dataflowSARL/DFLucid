@@ -41,6 +41,12 @@ namespace lucid
         public TextView account_type { get; set; }
         public TextView currency_account_summary { get; set; }
         public TextView amount_system { get; set; }
+        public TextView transaction_date { get; set; }
+        public TextView due_date { get; set; }
+        public TextView transaction_description { get; set; }
+        public TextView dbcr { get; set; }
+        public TextView dbcr_amount { get; set; }
+        public TextView balance { get; set; }
         public ImageButton as_btn { get; set; }
         public ImageButton details_btn_even { get; set; }
         public ImageButton details_btn_odd { get; set; }
@@ -82,6 +88,12 @@ namespace lucid
             account_type = itemview.FindViewById<TextView>(Resource.Id.account_type);
             currency_account_summary = itemview.FindViewById<TextView>(Resource.Id.currency_symbol);
             amount_system = itemview.FindViewById<TextView>(Resource.Id.amount_system);
+            transaction_date = itemview.FindViewById<TextView>(Resource.Id.transaction_date);
+            due_date = itemview.FindViewById<TextView>(Resource.Id.due_date);
+            transaction_description = itemview.FindViewById<TextView>(Resource.Id.transaction_description);
+            dbcr = itemview.FindViewById<TextView>(Resource.Id.dbcr);
+            dbcr_amount = itemview.FindViewById<TextView>(Resource.Id.dbcr_amount);
+            balance = itemview.FindViewById<TextView>(Resource.Id.balance);
             as_btn = itemview.FindViewById<ImageButton>(Resource.Id.as_button);
             details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.details_button_even);
             details_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.details_button_odd);
