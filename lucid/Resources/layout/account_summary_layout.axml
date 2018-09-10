@@ -62,7 +62,7 @@
         <LinearLayout android:orientation="vertical"
                   android:layout_height="wrap_content"
                   android:layout_width="match_parent"
-                      android:layout_weight="0.9">
+                      android:layout_weight="0.99">
         
             <android.support.v4.widget.SwipeRefreshLayout
                 android:id="@+id/swipe_to_refresh_account_summary"
@@ -84,16 +84,18 @@
                   android:layout_height="wrap_content"
                   android:layout_width="match_parent"
                   android:gravity="center"
+                  android:layout_margin="4dp"
                   android:layout_gravity="center"
-                  android:layout_weight="0.1">
+                  android:layout_weight="0.01">
         
             <Button android:id="@+id/filter_button"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:text="Show All Balance"
                 android:gravity="center"
-                android:textColor="#3e94a6"
+                android:background="#47555e"
+                android:textColor="@android:color/white"
                 android:layout_gravity="center"/>
         
         </LinearLayout>

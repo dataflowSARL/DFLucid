@@ -143,9 +143,9 @@ namespace MarketFlowLibrary
 
         }
 
-        public async static Task<TRNS> GetStatement(ParamDate paramDate)
+        public async static Task<API_Response<TRNS>> GetStatement(ParamDate paramDate)
         {
-            TRNS result = new TRNS();
+            API_Response<TRNS> result = new API_Response<TRNS>();
             HttpClient client = new HttpClient();
             string serviceURL = string.Format("{0}{1}", serviceBaseURI, getStatementAction);
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(paramDate);
@@ -155,7 +155,7 @@ namespace MarketFlowLibrary
 
             if (response.IsSuccessStatusCode)
             {
-                result = Newtonsoft.Json.JsonConvert.DeserializeObject<TRNS>(response.Content.ReadAsStringAsync().Result);
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<API_Response<TRNS>>(response.Content.ReadAsStringAsync().Result);
             }
 
             return result;

@@ -54,4 +54,6 @@
     <string name="dbcr">DBCR</string>
     <string name="dbcr_amount">Amount</string>
     <string name="balance">Balance</string>
+    <string name="from">From --/--/--</string>
+    <string name="to">To --/--/--</string>
 </resources>

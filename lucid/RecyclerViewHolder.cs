@@ -44,7 +44,6 @@ namespace lucid
         public TextView transaction_date { get; set; }
         public TextView due_date { get; set; }
         public TextView transaction_description { get; set; }
-        public TextView dbcr { get; set; }
         public TextView dbcr_amount { get; set; }
         public TextView balance { get; set; }
         public ImageButton as_btn { get; set; }
@@ -91,7 +90,6 @@ namespace lucid
             transaction_date = itemview.FindViewById<TextView>(Resource.Id.transaction_date);
             due_date = itemview.FindViewById<TextView>(Resource.Id.due_date);
             transaction_description = itemview.FindViewById<TextView>(Resource.Id.transaction_description);
-            dbcr = itemview.FindViewById<TextView>(Resource.Id.dbcr);
             dbcr_amount = itemview.FindViewById<TextView>(Resource.Id.dbcr_amount);
             balance = itemview.FindViewById<TextView>(Resource.Id.balance);
             as_btn = itemview.FindViewById<ImageButton>(Resource.Id.as_button);

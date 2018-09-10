@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:weightSum="1"
-                android:layout_weight="0.25"
+                android:layout_weight="0.33"
                 android:gravity="center"
                 android:layout_gravity="center">
                 <TextView
@@ -45,20 +45,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/transaction_description"
                 android:gravity="center"
-                android:layout_weight="0.25"/>
-            <TextView
-                android:id="@+id/dbcr"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dbcr"
-                android:gravity="center"
-                android:layout_weight="0.25"/>
+                android:layout_weight="0.34"/>
+            
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:weightSum="1"
-                android:layout_weight="0.25"
+                android:layout_weight="0.33"
                 android:gravity="center"
                 android:layout_gravity="center">
                 <TextView
@@ -66,6 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/dbcr_amount"
+                    android:textStyle="bold"
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"/>

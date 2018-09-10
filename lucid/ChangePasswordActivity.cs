@@ -38,6 +38,8 @@ namespace lucid
         private string clicode;
         private string password;
 
+        private GradientDrawable gd = new GradientDrawable();
+
         private Timer timer;
         #endregion
         protected override void OnCreate(Bundle savedInstanceState)
@@ -52,7 +54,6 @@ namespace lucid
             var toolbar = FindViewById<Toolbar>(Resource.Id.cp_toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
-            GradientDrawable gd = new GradientDrawable();
             gd.SetCornerRadius(10);
             gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
             linearLayout = FindViewById<LinearLayout>(Resource.Id.change_password_layout);
@@ -94,12 +95,27 @@ namespace lucid
         {
             LoginResult loginResult = new LoginResult();
             if(new_password.Text == string.Empty || old_password.Text == string.Empty || confirm_password.Text == string.Empty) {
+                gd.SetCornerRadius(10);
+                gd.SetStroke(3, Android.Graphics.Color.Red);
+                new_password.Background = gd;
+                old_password.Background = gd;
+                confirm_password.Background = gd;
                 error_message.Text = "Fields cannot be empty";
                 error_message.Visibility = ViewStates.Visible;
             } else if (!old_password.Text.Equals(MainActivity.user.Password)) {
+                gd.SetCornerRadius(10);
+                gd.SetStroke(3, Android.Graphics.Color.Red);
+                new_password.Background = gd;
+                old_password.Background = gd;
+                confirm_password.Background = gd;
                 error_message.Text = "Wrong old password";
                 error_message.Visibility = ViewStates.Visible;
             } else if (!new_password.Text.Equals(confirm_password.Text)) {
+                gd.SetCornerRadius(10);
+                gd.SetStroke(3, Android.Graphics.Color.Red);
+                new_password.Background = gd;
+                old_password.Background = gd;
+                confirm_password.Background = gd;
                 error_message.Text = "Passwords don't match";
                 error_message.Visibility = ViewStates.Visible;
             }
@@ -127,6 +143,11 @@ namespace lucid
             error_message.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
             if (loginResult.Success == true) {
+                gd.SetCornerRadius(10);
+                gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
+                new_password.Background = gd;
+                old_password.Background = gd;
+                confirm_password.Background = gd;
                 old_password.Text = string.Empty;
                 new_password.Text = string.Empty;
                 confirm_password.Text = string.Empty;
@@ -134,6 +155,11 @@ namespace lucid
                 Intent home = new Intent(this, typeof(HomeActivity));
                 StartActivity(home);
             } else {
+                gd.SetCornerRadius(10);
+                gd.SetStroke(3, Android.Graphics.Color.Red);
+                new_password.Background = gd;
+                old_password.Background = gd;
+                confirm_password.Background = gd;
                 Snackbar.Make(linearLayout,loginResult.WebMessage, Snackbar.LengthLong).Show();
             }
         }

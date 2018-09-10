@@ -31,6 +31,8 @@ namespace lucid
         private ProgressBar progressBar;
         private LinearLayout linearLayout;
 
+        private GradientDrawable gd = new GradientDrawable();
+
         public static Color TOOLBAR_COLOR = Color.ParseColor("#3e94a6");
 
         public static MKFUser user;
@@ -58,9 +60,8 @@ namespace lucid
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbarMain);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
-            GradientDrawable gd = new GradientDrawable();
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
+            gd.SetStroke(3, TOOLBAR_COLOR);
             username = FindViewById<EditText>(Resource.Id.username);
             username.Background = gd;
             username.SetTextColor(TOOLBAR_COLOR);
@@ -89,6 +90,10 @@ namespace lucid
             Window.SetFlags(WindowManagerFlags.NotTouchable, WindowManagerFlags.NotTouchable);
             LoginResult loginResult = new LoginResult();
             if (username.Text == string.Empty || password.Text == string.Empty) {
+                gd.SetCornerRadius(10);
+                gd.SetStroke(3, Android.Graphics.Color.Red);
+                username.Background = gd;
+                password.Background = gd;
                 progressBar.Visibility = ViewStates.Invisible;
                 Window.ClearFlags(WindowManagerFlags.NotTouchable);
                 error.Text = "Both fields cannot be empty";
@@ -125,6 +130,10 @@ namespace lucid
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
             if (loginResult.Success == true)
             {
+                gd.SetCornerRadius(10);
+                gd.SetStroke(3, TOOLBAR_COLOR);
+                username.Background = gd;
+                password.Background = gd;
                 error.Visibility = ViewStates.Invisible;
                 Intent home = new Intent(this, typeof(HomeActivity));
                 user.WebCliCode = loginResult.WebCliCode;

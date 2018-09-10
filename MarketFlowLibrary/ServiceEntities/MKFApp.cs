@@ -210,8 +210,13 @@ namespace MarketFlow
             return response;
         }
 
-        public async Task<TRNS> GetStatement(ParamDate paramDate) {
-            TRNS response = await MarketFlowLibrary.MarketFlowService.GetStatement(paramDate);
+        public async Task<List<TRNS>> GetStatement(ParamDate paramDate) {
+            List<TRNS> response = new List<TRNS>();
+            API_Response<TRNS> api_response = new API_Response<TRNS>();
+            api_response = await MarketFlowLibrary.MarketFlowService.GetStatement(paramDate);
+            if(api_response.Success == true) {
+                response = api_response.Content;
+            }
             return response;
         }
 

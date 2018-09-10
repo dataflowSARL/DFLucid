@@ -42,8 +42,9 @@ namespace lucid
             }
             recyclerViewHolder.amount_system.Text = mList[position].AmountSystem.ToString("#,##0.00");
             recyclerViewHolder.as_btn.Click += delegate {
-                Toast.MakeText(mContext, "button clicked", ToastLength.Short).Show();
-
+                Intent asd = new Intent(mContext, typeof(AccountSummaryDetailsActivity));
+                asd.PutExtra("account", mList[position].Account);
+                mContext.StartActivity(asd);
             };
         }
 

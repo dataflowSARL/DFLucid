@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using Android.App;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -39,6 +40,7 @@ namespace lucid
         private int state = 0;
         private string show_all = "Show All Balance";
         private string show_non_zero = "Show Non-Zero";
+        private GradientDrawable gd = new GradientDrawable();
 
         private Timer timer;
         #endregion
@@ -57,7 +59,21 @@ namespace lucid
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_account_summary);
             progressBar.Visibility = ViewStates.Visible;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_as);
+            filter_button = FindViewById<Button>(Resource.Id.filter_button);
+            gd.SetCornerRadius(10);
+            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetColor(Android.Graphics.Color.ParseColor("#47555e"));
+            filter_button.Background = gd;
+            filter_button.SetTextColor(Android.Graphics.Color.White);
             mLayoutManager = new LinearLayoutManager(this);
+            linearLayout = FindViewById<LinearLayout>(Resource.Id.as_linear_layout);
+            var toolbar = FindViewById<Toolbar>(Resource.Id.as_toolbar);
+            toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
+            filter_button.Visibility = ViewStates.Invisible;
+            filter_button.Click += Filter_Button_Click;
+            back_button = FindViewById<ImageButton>(Resource.Id.as_back_btn);
+            back_button.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
+            back_button.Click += Back_Button_Click;
             swipeRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_to_refresh_account_summary);
             swipeRefreshLayout.SetColorSchemeResources(Resource.Color.blue,
                                               Resource.Color.purple,
@@ -77,16 +93,6 @@ namespace lucid
                     }
                 });
             };
-            linearLayout = FindViewById<LinearLayout>(Resource.Id.as_linear_layout);
-            var toolbar = FindViewById<Toolbar>(Resource.Id.as_toolbar);
-            toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
-            filter_button = FindViewById<Button>(Resource.Id.filter_button);
-            filter_button.Visibility = ViewStates.Invisible;
-            filter_button.Click += Filter_Button_Click;
-            filter_button.SetTextColor(MainActivity.TOOLBAR_COLOR);
-            back_button = FindViewById<ImageButton>(Resource.Id.as_back_btn);
-            back_button.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
-            back_button.Click += Back_Button_Click;
             timer = new Timer(HomeActivity.INTERVAL);
             HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
             timer.Elapsed += Timer_Elapsed;

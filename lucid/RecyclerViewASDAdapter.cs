@@ -14,6 +14,7 @@ namespace lucid
         public Context mContext;
         public MKFUser mUser;
         public List<TRNS> mItems;
+        private decimal balance;
 
         public RecyclerViewASDAdapter(List<TRNS> items,MKFUser user , Context context)
         {
@@ -27,18 +28,35 @@ namespace lucid
         public override void OnBindViewHolder(ViewHolder holder, int position)
         {
             RecyclerViewHolder recyclerViewHolder = holder as RecyclerViewHolder;
-            recyclerViewHolder.transaction_date.Text = mItems[position].TransactionDate.ToString();
-            recyclerViewHolder.due_date.Text = mItems[position].DueDate.ToString();
+            recyclerViewHolder.transaction_date.Text = mItems[position].TransactionDate.HasValue ? mItems[position].TransactionDate.Value.ToString("dd/MM/yyyy") : "";
+            recyclerViewHolder.due_date.Text = mItems[position].DueDate.HasValue ? mItems[position].DueDate.Value.ToString("dd/MM/yyyy") : "";
             recyclerViewHolder.transaction_description.Text = mItems[position].TrnsDesc;
-            recyclerViewHolder.dbcr.Text = mItems[position].DBCR;
-            if(recyclerViewHolder.dbcr.Equals("D")) {
-                recyclerViewHolder.dbcr_amount.Text = mItems[position].DbAmount.ToString("#,##0.00");
+            recyclerViewHolder.balance.SetTextColor(Android.Graphics.Color.Blue);
+            if(mItems[position].DBCR.Equals("D")) {
+                recyclerViewHolder.dbcr_amount.Text = "-" + mItems[position].DbAmount.ToString("#,##0.00");
                 recyclerViewHolder.dbcr_amount.SetTextColor(Android.Graphics.Color.Red);
-            } else {
+                balance = balance - mItems[position].DbAmount;
+                recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+            } else if(mItems[position].DBCR.Equals("C")) {
                 recyclerViewHolder.dbcr_amount.Text = mItems[position].CrAmount.ToString("#,##0.00");
                 recyclerViewHolder.dbcr_amount.SetTextColor(Android.Graphics.Color.ParseColor("#7bb89c"));
+                balance = balance + mItems[position].CrAmount;
+                recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+            } else if(mItems[position].DBCR.Equals("P"))
+            {
+                recyclerViewHolder.dbcr_amount.Text = string.Empty;
+                if(mItems[position].CrAmount == 0 && mItems[position].DbAmount == 0) {
+                    balance = mItems[position].DbAmount;
+                    recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+                } else if (mItems[position].CrAmount == 0)
+                {
+                    balance = mItems[position].DbAmount;
+                    recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+                } else if(mItems[position].DbAmount == 0) {
+                    balance = mItems[position].CrAmount;
+                    recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+                }
             }
-            //recyclerViewHolder.balance.Text = mItems[position;
         }
 
         public override ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

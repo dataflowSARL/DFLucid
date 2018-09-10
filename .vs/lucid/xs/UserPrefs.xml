@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/AccountSummaryActivity.cs">
     <Files>
-      <File FileName="lucid/RecyclerViewASDAdapter.cs" Line="41" Column="65" />
       <File FileName="MarketFlowLibrary/ServiceEntities/TRNS.cs" Line="1" Column="1" />
-      <File FileName="MarketFlowLibrary/ServiceEntities/MKFApp.cs" Line="215" Column="29" />
-      <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="126" Column="101" />
-      <File FileName="lucid/AccountSummaryDetailsActivity.cs" Line="19" Column="40" />
+      <File FileName="lucid/AccountSummaryDetailsActivity.cs" Line="91" Column="13" />
+      <File FileName="lucid/AccountSummaryActivity.cs" Line="74" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
