@@ -26,17 +26,18 @@ namespace lucid
         private ImageButton backButton;
         private LinearLayout linearLayout;
 
-        private Timer timer;
+        private Timer ps_timer;
+        private int COUNTDOWN = 5 * 60, INTERVAL = 1000, INITIAL = 5 * 60;
         #endregion
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.portfolio_summary_layout);
             // Create your application here
-            setUpVariables();
+            SetUpVariables();
         }
 
-        private void setUpVariables() {
+        private void SetUpVariables() {
             linearLayout = FindViewById<LinearLayout>(Resource.Id.ps_linear_layout);
             var toolbar = FindViewById<Toolbar>(Resource.Id.ps_toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
@@ -45,17 +46,29 @@ namespace lucid
             backButton.Click += BackButton_Click;
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                ps_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                ps_timer.Elapsed += Timer_Elapsed;
+                ps_timer.Start();
             });
         }
 
         void BackButton_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
-            Task.Run(() => timer.Stop());
+            Task.Run(() => ps_timer.Stop());
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+            Task.Run(() => ps_timer.Stop());
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Task.Run(() => ps_timer.Stop());
         }
 
         protected override void OnStart()
@@ -63,10 +76,11 @@ namespace lucid
             base.OnStart();
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                ps_timer.Stop();
+                ps_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                ps_timer.Elapsed += Timer_Elapsed;
+                ps_timer.Start();
             });
         }
 
@@ -75,10 +89,11 @@ namespace lucid
             base.OnResume();
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                ps_timer.Stop();
+                ps_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                ps_timer.Elapsed += Timer_Elapsed;
+                ps_timer.Start();
             });
         }
 
@@ -87,45 +102,49 @@ namespace lucid
             base.OnUserInteraction();
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                ps_timer.Stop();
+                ps_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                ps_timer.Elapsed += Timer_Elapsed;
+                ps_timer.Start();
             });
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            HomeActivity.COUNTDOWN--;
-            if (HomeActivity.COUNTDOWN == 0)
+            COUNTDOWN--;
+            if (COUNTDOWN == 0)
             {
                 Task.Run(async () =>
                 {
                     try
                     {
-                        timer.Stop();
+                        ps_timer.Stop();
                         LoginResult loginResult = await MKFApp.Current.Logout();
-                        this.RunOnUiThread(() => logoutSuccessful());
+                        this.RunOnUiThread(() => LogoutSuccessful());
                     }
                     catch (Exception exception)
                     {
-                        this.RunOnUiThread(() => logoutFailed());
+                        this.RunOnUiThread(() => LogoutFailed());
                     }
                 });
             }
         }
 
-        public void logoutSuccessful()
+        public void LogoutSuccessful()
         {
-            showAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            if (!IsFinishing)
+            {
+                ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            }
         }
 
-        public void logoutFailed()
+        public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
-        private void showAlertDialog(String title, String message)
+        private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.SetTitle(title);

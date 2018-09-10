@@ -3572,6 +3572,7 @@ containing a value of this type.
         public static int confirm_password=0x7f0b0050;
         public static int currency=0x7f0b0043;
         public static int currency_as=0x7f0b0054;
+        public static int date=0x7f0b005f;
         public static int dbcr=0x7f0b005a;
         public static int dbcr_amount=0x7f0b005b;
         public static int details_of_transaction=0x7f0b0030;

@@ -1,19 +1,12 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/ProfitLossActivity.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="lucid/AccountSummaryDetailsActivity.cs" Line="186" Column="42" />
-      <File FileName="lucid/HomeActivity.cs" Line="153" Column="16" />
-      <File FileName="lucid/ProfitLossActivity.cs" Line="144" Column="1" />
+      <File FileName="lucid/HomeActivity.cs" Line="205" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/HomeActivity.cs" relfile="lucid/HomeActivity.cs" line="199" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/HomeActivity.cs" relfile="lucid/HomeActivity.cs" line="205" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/HomeActivity.cs" relfile="lucid/HomeActivity.cs" line="206" column="1" />
-      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/HomeActivity.cs" relfile="lucid/HomeActivity.cs" line="210" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.lucid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.pixel_xl" AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" />

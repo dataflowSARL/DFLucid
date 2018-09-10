@@ -27,6 +27,9 @@ namespace lucid
     public class AccountSummaryActivity : Activity
     {
         #region vars
+        private Timer as_timer;
+        private int COUNTDOWN = 5 * 60, INTERVAL = 1000, INITIAL = 5 * 60;
+
         private ImageButton back_button;
         private LinearLayout linearLayout;
         private Button filter_button;
@@ -42,7 +45,6 @@ namespace lucid
         private string show_non_zero = "Show Non-Zero";
         private GradientDrawable gd = new GradientDrawable();
 
-        private Timer timer;
         #endregion
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -95,10 +97,10 @@ namespace lucid
             };
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                as_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                as_timer.Elapsed += Timer_Elapsed;
+                as_timer.Start();
             });
             Task.Run(async () =>
             {
@@ -135,6 +137,7 @@ namespace lucid
 
         void MRecyclerViewAdapter_ItemClick(object sender, int e)
         {
+            as_timer.Stop();
             Intent details = new Intent(this, typeof(AccountSummaryDetailsActivity));
             details.PutExtra("account", accountSummaries[e].Account);
             StartActivity(details);
@@ -191,7 +194,19 @@ namespace lucid
         void Back_Button_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
-            Task.Run(() => timer.Stop());
+            Task.Run(() => as_timer.Stop());
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+            Task.Run(() => as_timer.Stop());
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Task.Run(() => as_timer.Stop());
         }
 
         protected override void OnStart()
@@ -199,10 +214,11 @@ namespace lucid
             base.OnStart();
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                as_timer.Stop();
+                as_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                as_timer.Elapsed += Timer_Elapsed;
+                as_timer.Start();
             });
         }
 
@@ -211,10 +227,11 @@ namespace lucid
             base.OnResume();
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                as_timer.Stop();
+                as_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                as_timer.Elapsed += Timer_Elapsed;
+                as_timer.Start();
             });
         }
 
@@ -223,23 +240,24 @@ namespace lucid
             base.OnUserInteraction();
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                as_timer.Stop();
+                as_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                as_timer.Elapsed += Timer_Elapsed;
+                as_timer.Start();
             });
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            HomeActivity.COUNTDOWN--;
-            if (HomeActivity.COUNTDOWN == 0)
+            COUNTDOWN--;
+            if (COUNTDOWN == 0)
             {
                 Task.Run(async () =>
                 {
                     try
                     {
-                        timer.Stop();
+                        as_timer.Stop();
                         LoginResult loginResult = await MKFApp.Current.Logout();
                         this.RunOnUiThread(() => LogoutSuccessful());
                     }
@@ -253,7 +271,10 @@ namespace lucid
 
         public void LogoutSuccessful()
         {
-            ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            if (!IsFinishing)
+            {
+                ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            }
         }
 
         public void LogoutFailed()

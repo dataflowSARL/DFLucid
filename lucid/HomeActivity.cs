@@ -33,11 +33,11 @@ namespace lucid
         private NavigationView navigationView;
         private DrawerLayout drawerLayout;
         private LinearLayout linearLayout;
-        private TextView username , timer_tv;
+        private TextView username;
 
-        public static int COUNTDOWN;
-        public static int INITIAL_VALUE = 5 * 60;
-        public static int INTERVAL = 1000;
+        private int COUNTDOWN = 5 * 60;
+        private int INITIAL = 5 * 60;
+        private int INTERVAL = 1000;
         public static string DIALOG_TITLE = "TIME OUT";
         public static string DIALOG_MESSAGE = "You've been logged out due to inactivity";
         private Timer timer;
@@ -53,7 +53,6 @@ namespace lucid
         }
 
         public void SetUpVariables() {
-            timer_tv = FindViewById<TextView>(Resource.Id.timer_tv);
             linearLayout = FindViewById<LinearLayout>(Resource.Id.home_linear_layout);
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             // Create ActionBarDrawerToggle button and add it to the toolbar  
@@ -72,7 +71,7 @@ namespace lucid
             Task.Run(() =>
             {
                 timer = new Timer(INTERVAL);
-                COUNTDOWN = INITIAL_VALUE;
+                COUNTDOWN = INITIAL;
                 timer.Elapsed += Timer_Elapsed;
                 timer.Start();
             });
@@ -87,26 +86,32 @@ namespace lucid
                 switch (e.MenuItem.ToString())
                 {
                     case "Portfolio Summary":
+                        timer.Stop();
                         Intent portfolioSummary = new Intent(this, typeof(PortfolioSummaryActivity));
                         StartActivity(portfolioSummary);
                         break;
                     case "Account Summary":
+                        timer.Stop();
                         Intent accountSummary = new Intent(this, typeof(AccountSummaryActivity));
                         StartActivity(accountSummary);
                         break;
                     case "Asset Allocation":
+                        timer.Stop();
                         Intent assetAllocation = new Intent(this, typeof(AssetAllocationActivity));
                         StartActivity(assetAllocation);
                         break;
                     case "Details of Transaction":
+                        timer.Stop();
                         Intent detailsOfTransaction = new Intent(this, typeof(DetailsOfTransactionActivity));
                         StartActivity(detailsOfTransaction);
                         break;
                     case "Profit/Loss":
+                        timer.Stop();
                         Intent profitLoss = new Intent(this, typeof(ProfitLossActivity));
                         StartActivity(profitLoss);
                         break;
                     case "Change Password":
+                        timer.Stop();
                         Intent changePassword = new Intent(this, typeof(ChangePasswordActivity));
                         StartActivity(changePassword);
                         break;
@@ -126,6 +131,7 @@ namespace lucid
 
                         break;
                     case "About Us":
+                        timer.Stop();
                         Intent aboutUs = new Intent(this, typeof(AboutUsActivity));
                         StartActivity(aboutUs);
                         break;
@@ -142,16 +148,16 @@ namespace lucid
             return true;
         }
 
-        protected override void OnRestart()
+        protected override void OnStop()
         {
-            base.OnRestart();
-            Task.Run(() =>
-            {
-                timer = new Timer(INTERVAL);
-                COUNTDOWN = INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
-            });
+            base.OnStop();
+            Task.Run(() => timer.Stop());
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Task.Run(() => timer.Stop());
         }
 
         protected override void OnStart()
@@ -159,8 +165,9 @@ namespace lucid
             base.OnStart();
             Task.Run(() =>
             {
+                timer.Stop();
                 timer = new Timer(INTERVAL);
-                COUNTDOWN = INITIAL_VALUE;
+                COUNTDOWN = INITIAL;
                 timer.Elapsed += Timer_Elapsed;
                 timer.Start();
             });
@@ -171,8 +178,9 @@ namespace lucid
             base.OnResume();
             Task.Run(() =>
             {
+                timer.Stop();
                 timer = new Timer(INTERVAL);
-                COUNTDOWN = INITIAL_VALUE;
+                COUNTDOWN = INITIAL;
                 timer.Elapsed += Timer_Elapsed;
                 timer.Start();
             });
@@ -183,8 +191,9 @@ namespace lucid
             base.OnUserInteraction();
             Task.Run(() =>
             {
+                timer.Stop();
                 timer = new Timer(INTERVAL);
-                COUNTDOWN = INITIAL_VALUE;
+                COUNTDOWN = INITIAL;
                 timer.Elapsed += Timer_Elapsed;
                 timer.Start();
             });
@@ -194,8 +203,6 @@ namespace lucid
         {
             Console.Write(COUNTDOWN.ToString());
             COUNTDOWN--;
-            this.RunOnUiThread(() => timer_tv.Text = (COUNTDOWN / 60).ToString() + ":" + (COUNTDOWN % 60).ToString());
-			
             if (COUNTDOWN == 0)
             {
                 Task.Run(async () =>
@@ -215,7 +222,10 @@ namespace lucid
         }
 
         public void LogoutSuccessfulDialog() {
-            ShowAlertDialog(DIALOG_TITLE, DIALOG_MESSAGE);
+            if (!IsFinishing)
+            {
+                ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            }
         }
 
         public void LogoutSuccessful() {
@@ -230,7 +240,7 @@ namespace lucid
 
         private void ShowAlertDialog(String title, String message)
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(ApplicationContext);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.SetTitle(title);
             builder.SetMessage(message);
             builder.SetPositiveButton("OK", (sender, e) =>

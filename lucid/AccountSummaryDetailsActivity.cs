@@ -29,7 +29,6 @@ namespace lucid
     public class AccountSummaryDetailsActivity : Activity,IOnDateSetListener
     {
         #region variables
-        private Timer timer;
         private LinearLayout linearLayout;
         private ImageButton back_btn;
         private RecyclerView mRecyclerView;
@@ -46,6 +45,9 @@ namespace lucid
         private int to_year = DateTime.Now.Year, to_month = DateTime.Now.Month - 1, to_day = DateTime.Now.Day;
         private int from_to = 0;
         private const int FROM_DIALOG = 1 , TO_DIALOG = 0;
+
+        private Timer asd_timer;
+        private int COUNTDOWN = 5 * 60, INITIAL = 5 * 60, INTERVAL = 1000;
 
         #endregion
 
@@ -110,10 +112,10 @@ namespace lucid
             back_btn.Click += Back_Btn_Click;
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                asd_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                asd_timer.Elapsed += Timer_Elapsed;
+                asd_timer.Start();
             });
         }
 
@@ -183,7 +185,19 @@ namespace lucid
         void Back_Btn_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
-            Task.Run(() => timer.Stop());
+            Task.Run(() => asd_timer.Stop());
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+            Task.Run(() => asd_timer.Stop());
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Task.Run(() => asd_timer.Stop());
         }
 
         protected override void OnStart()
@@ -191,10 +205,11 @@ namespace lucid
             base.OnStart();
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                asd_timer.Stop();
+                asd_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                asd_timer.Elapsed += Timer_Elapsed;
+                asd_timer.Start();
             });
         }
 
@@ -203,10 +218,11 @@ namespace lucid
             base.OnResume();
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                asd_timer.Stop();
+                asd_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                asd_timer.Elapsed += Timer_Elapsed;
+                asd_timer.Start();
             });
         }
 
@@ -215,23 +231,24 @@ namespace lucid
             base.OnUserInteraction();
             Task.Run(() =>
             {
-                timer = new Timer(HomeActivity.INTERVAL);
-                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
+                asd_timer.Stop();
+                asd_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                asd_timer.Elapsed += Timer_Elapsed;
+                asd_timer.Start();
             });
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            HomeActivity.COUNTDOWN--;
-            if (HomeActivity.COUNTDOWN == 0)
+            COUNTDOWN--;
+            if (COUNTDOWN == 0)
             {
                 Task.Run(async () =>
                 {
                     try
                     {
-                        timer.Stop();
+                        asd_timer.Stop();
                         LoginResult loginResult = await MKFApp.Current.Logout();
                         this.RunOnUiThread(() => LogoutSuccessful());
                     }
@@ -243,9 +260,11 @@ namespace lucid
             }
         }
 
-        public void LogoutSuccessful()
+        public async void LogoutSuccessful()
         {
-            ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            if(!IsFinishing){
+                ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            }
         }
 
         public void LogoutFailed()
