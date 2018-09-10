@@ -40,17 +40,19 @@ namespace lucid
 
         private GradientDrawable gd = new GradientDrawable();
 
-        private Timer timer;
+        private Timer cp_timer;
+        private int COUNTDOWN = 5 * 60, INTERVAL = 1000, INITIAL = 5 * 60;
+
         #endregion
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.change_password_layout);
             // Create your application here
-            setUpVariables();
+            SetUpVariables();
         }
 
-        private void setUpVariables() {
+        private void SetUpVariables() {
             var toolbar = FindViewById<Toolbar>(Resource.Id.cp_toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
@@ -85,10 +87,13 @@ namespace lucid
             webclicode = MainActivity.user.WebCliCode;
             clicode = MainActivity.user.CliCode;
             password = MainActivity.user.Password;
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                cp_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                cp_timer.Elapsed += Timer_Elapsed;
+                cp_timer.Start();
+            });
         }
 
         void Confirm_Button_Click(object sender, EventArgs e)
@@ -128,17 +133,17 @@ namespace lucid
                     try
                     {
                         loginResult = await MKFApp.Current.UpdatePassword(new_password.Text, old_password.Text, MainActivity.user.WebCliCode, MainActivity.user.CliCode, MainActivity.user.Username);
-                        this.RunOnUiThread(() => updatePasswordSuccess(loginResult));
+                        this.RunOnUiThread(() => UpdatePasswordSuccess(loginResult));
                     }
                     catch (Exception exception)
                     {
-                        this.RunOnUiThread(() => updatePasswordFail());
+                        this.RunOnUiThread(() => UpdatePasswordFail());
                     }
                 });
             }
         }
 
-        private void updatePasswordSuccess(LoginResult loginResult) {
+        private void UpdatePasswordSuccess(LoginResult loginResult) {
             progressBar.Visibility = ViewStates.Invisible;
             error_message.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
@@ -164,7 +169,7 @@ namespace lucid
             }
         }
 
-        private void updatePasswordFail() {
+        private void UpdatePasswordFail() {
             progressBar.Visibility = ViewStates.Invisible;
             error_message.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
@@ -175,69 +180,95 @@ namespace lucid
         void Back_Button_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
-            timer.Stop();
+            Task.Run(() => cp_timer.Stop());
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+            Task.Run(() => cp_timer.Stop());
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Task.Run(() => cp_timer.Stop());
         }
 
         protected override void OnStart()
         {
             base.OnStart();
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                cp_timer.Stop();
+                cp_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                cp_timer.Elapsed += Timer_Elapsed;
+                cp_timer.Start();
+            });
         }
 
         protected override void OnResume()
         {
             base.OnResume();
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                cp_timer.Stop();
+                cp_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                cp_timer.Elapsed += Timer_Elapsed;
+                cp_timer.Start();
+            });
         }
 
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                cp_timer.Stop();
+                cp_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                cp_timer.Elapsed += Timer_Elapsed;
+                cp_timer.Start();
+            });
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            HomeActivity.COUNTDOWN--;
-            if (HomeActivity.COUNTDOWN == 0)
+            COUNTDOWN--;
+            if (COUNTDOWN == 0)
             {
-                timer.Stop();
                 Task.Run(async () =>
                 {
                     try
                     {
+                        cp_timer.Stop();
                         LoginResult loginResult = await MKFApp.Current.Logout();
-                        this.RunOnUiThread(() => logoutSuccessful());
+                        this.RunOnUiThread(() => LogoutSuccessful());
                     }
                     catch (Exception exception)
                     {
-                        this.RunOnUiThread(() => logoutFailed());
+                        this.RunOnUiThread(() => LogoutFailed());
                     }
                 });
             }
         }
 
-        public void logoutSuccessful()
+        public void LogoutSuccessful()
         {
-            timer.Stop();
-            showAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            if (!IsFinishing)
+            {
+                ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            }
         }
 
-        public void logoutFailed()
+        public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
-        private void showAlertDialog(String title, String message)
+        private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.SetTitle(title);
@@ -245,6 +276,7 @@ namespace lucid
             builder.SetPositiveButton("OK", (sender, e) =>
             {
                 Intent logout = new Intent(this, typeof(MainActivity));
+                logout.SetFlags(ActivityFlags.ClearTask | ActivityFlags.NewTask);
                 StartActivity(logout);
             });
             builder.Create().Show();

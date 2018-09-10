@@ -1,9 +1,7 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="MarketFlowLibrary/ServiceEntities/TRNS.cs" Line="1" Column="1" />
-      <File FileName="lucid/AccountSummaryDetailsActivity.cs" Line="81" Column="35" />
-      <File FileName="lucid/AccountSummaryActivity.cs" Line="263" Column="1" />
+      <File FileName="lucid/HomeActivity.cs" Line="205" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -11,6 +9,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.lucid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.my_device" AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" />
+  <MonoDevelop.Ide.ItemProperties.lucid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.pixel_xl" AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" />
   <MultiItemStartupConfigurations />
 </Properties>

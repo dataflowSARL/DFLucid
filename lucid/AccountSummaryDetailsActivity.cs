@@ -29,7 +29,6 @@ namespace lucid
     public class AccountSummaryDetailsActivity : Activity,IOnDateSetListener
     {
         #region variables
-        private Timer timer;
         private LinearLayout linearLayout;
         private ImageButton back_btn;
         private RecyclerView mRecyclerView;
@@ -46,6 +45,9 @@ namespace lucid
         private int to_year = DateTime.Now.Year, to_month = DateTime.Now.Month - 1, to_day = DateTime.Now.Day;
         private int from_to = 0;
         private const int FROM_DIALOG = 1 , TO_DIALOG = 0;
+
+        private Timer asd_timer;
+        private int COUNTDOWN = 5 * 60, INITIAL = 5 * 60, INTERVAL = 1000;
 
         #endregion
 
@@ -108,10 +110,13 @@ namespace lucid
             submit.SetTextColor(MainActivity.TOOLBAR_COLOR);
             submit.Click += Submit_Click;
             back_btn.Click += Back_Btn_Click;
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                asd_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                asd_timer.Elapsed += Timer_Elapsed;
+                asd_timer.Start();
+            });
         }
 
         void Submit_Click(object sender, EventArgs e)
@@ -180,46 +185,70 @@ namespace lucid
         void Back_Btn_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
-            timer.Stop();
+            Task.Run(() => asd_timer.Stop());
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+            Task.Run(() => asd_timer.Stop());
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Task.Run(() => asd_timer.Stop());
         }
 
         protected override void OnStart()
         {
             base.OnStart();
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                asd_timer.Stop();
+                asd_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                asd_timer.Elapsed += Timer_Elapsed;
+                asd_timer.Start();
+            });
         }
 
         protected override void OnResume()
         {
             base.OnResume();
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                asd_timer.Stop();
+                asd_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                asd_timer.Elapsed += Timer_Elapsed;
+                asd_timer.Start();
+            });
         }
 
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                asd_timer.Stop();
+                asd_timer = new Timer(INTERVAL);
+                COUNTDOWN = INITIAL;
+                asd_timer.Elapsed += Timer_Elapsed;
+                asd_timer.Start();
+            });
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            HomeActivity.COUNTDOWN--;
-            if (HomeActivity.COUNTDOWN == 0)
+            COUNTDOWN--;
+            if (COUNTDOWN == 0)
             {
-                timer.Stop();
                 Task.Run(async () =>
                 {
                     try
                     {
+                        asd_timer.Stop();
                         LoginResult loginResult = await MKFApp.Current.Logout();
                         this.RunOnUiThread(() => LogoutSuccessful());
                     }
@@ -231,10 +260,11 @@ namespace lucid
             }
         }
 
-        public void LogoutSuccessful()
+        public async void LogoutSuccessful()
         {
-            timer.Stop();
-            ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            if(!IsFinishing){
+                ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            }
         }
 
         public void LogoutFailed()
@@ -250,6 +280,7 @@ namespace lucid
             builder.SetPositiveButton("OK", (sender, e) =>
             {
                 Intent logout = new Intent(this, typeof(MainActivity));
+                logout.SetFlags(ActivityFlags.ClearTask | ActivityFlags.NewTask);
                 StartActivity(logout);
             });
             builder.Create().Show();
