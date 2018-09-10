@@ -3956,6 +3956,9 @@ namespace lucid
 			// aapt resource value: 0x7f0b0055
 			public const int currency_as = 2131427413;
 			
+			// aapt resource value: 0x7f0b0060
+			public const int date = 2131427424;
+			
 			// aapt resource value: 0x7f0b005b
 			public const int dbcr = 2131427419;
 			

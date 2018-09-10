@@ -67,10 +67,18 @@ namespace lucid
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             back_btn = FindViewById<ImageButton>(Resource.Id.asd_back_btn);
             back_btn.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
+            mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_asd);
+            mLayoutManager = new LinearLayoutManager(this);
+            from_btn = FindViewById<Button>(Resource.Id.from_btn);
+            to_btn = FindViewById<Button>(Resource.Id.to_btn);
             paramDate.FromAcc = Intent.GetStringExtra("account") ?? string.Empty;
             paramDate.ToAcc = Intent.GetStringExtra("account") ?? string.Empty;
-            paramDate.DateTo = DateTime.Now.Date;
-            paramDate.DateFrom = DateTime.Now.Date;
+            to = DateTime.Now.Date;
+            from = DateTime.Now.Date;
+            paramDate.DateFrom = from;
+            paramDate.DateTo = to;
+            from_btn.Text = "From " + paramDate.DateFrom.ToString("dd/MM/yyyy");
+            to_btn.Text = "To " + paramDate.DateTo.ToString("dd/MM/yyyy");
             Task.Run(async () =>
             {
                 try
@@ -84,10 +92,6 @@ namespace lucid
                     this.RunOnUiThread(() => Failed());
                 }
             });
-            mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_asd);
-            mLayoutManager = new LinearLayoutManager(this);
-            from_btn = FindViewById<Button>(Resource.Id.from_btn);
-            to_btn = FindViewById<Button>(Resource.Id.to_btn);
             gd.SetCornerRadius(10);
             gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
             from_btn.Background = gd;
@@ -263,7 +267,7 @@ namespace lucid
                 this.to_year = year;
                 this.to_month = month + 1;
                 this.to_day = dayOfMonth;
-                to_btn.Text = "From " + this.to_day + "/" + this.to_month + "/" + this.to_year;
+                to_btn.Text = "To " + this.to_day + "/" + this.to_month + "/" + this.to_year;
                 to = new DateTime(this.to_year, this.to_month, this.to_day);
             }
             paramDate.DateFrom = from;

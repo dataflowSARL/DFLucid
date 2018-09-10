@@ -33,28 +33,28 @@ namespace lucid
             recyclerViewHolder.transaction_description.Text = mItems[position].TrnsDesc;
             recyclerViewHolder.balance.SetTextColor(Android.Graphics.Color.Blue);
             if(mItems[position].DBCR.Equals("D")) {
-                recyclerViewHolder.dbcr_amount.Text = "-" + mItems[position].DbAmount.ToString("#,##0.00");
+                recyclerViewHolder.dbcr_amount.Text = "-" + mItems[position].DbAmount.ToString("#,##0.00") + " " + mItems[position].CurrencySymbol;
                 recyclerViewHolder.dbcr_amount.SetTextColor(Android.Graphics.Color.Red);
                 balance = balance - mItems[position].DbAmount;
-                recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+                recyclerViewHolder.balance.Text = balance.ToString("#,##0.00") + " " + mItems[position].CurrencySymbol;
             } else if(mItems[position].DBCR.Equals("C")) {
-                recyclerViewHolder.dbcr_amount.Text = mItems[position].CrAmount.ToString("#,##0.00");
+                recyclerViewHolder.dbcr_amount.Text = mItems[position].CrAmount.ToString("#,##0.00") + " " + mItems[position].CurrencySymbol;
                 recyclerViewHolder.dbcr_amount.SetTextColor(Android.Graphics.Color.ParseColor("#7bb89c"));
                 balance = balance + mItems[position].CrAmount;
-                recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+                recyclerViewHolder.balance.Text = balance.ToString("#,##0.00") + " " + mItems[position].CurrencySymbol;
             } else if(mItems[position].DBCR.Equals("P"))
             {
                 recyclerViewHolder.dbcr_amount.Text = string.Empty;
                 if(mItems[position].CrAmount == 0 && mItems[position].DbAmount == 0) {
                     balance = mItems[position].DbAmount;
-                    recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+                    recyclerViewHolder.balance.Text = balance.ToString("#,##0.00") + " " + mItems[position].CurrencySymbol;
                 } else if (mItems[position].CrAmount == 0)
                 {
                     balance = mItems[position].DbAmount;
-                    recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+                    recyclerViewHolder.balance.Text = balance.ToString("#,##0.00") + " " + mItems[position].CurrencySymbol;
                 } else if(mItems[position].DbAmount == 0) {
                     balance = mItems[position].CrAmount;
-                    recyclerViewHolder.balance.Text = balance.ToString("#,##0.00");
+                    recyclerViewHolder.balance.Text = balance.ToString("#,##0.00") + " " + mItems[position].CurrencySymbol;
                 }
             }
         }

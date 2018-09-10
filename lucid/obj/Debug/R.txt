@@ -1254,6 +1254,7 @@ int string character_counter_pattern 0x7f0b0020
 int string confirm_password 0x7f0b0051
 int string currency 0x7f0b0044
 int string currency_as 0x7f0b0055
+int string date 0x7f0b0060
 int string dbcr 0x7f0b005b
 int string dbcr_amount 0x7f0b005c
 int string details_of_transaction 0x7f0b0031
