@@ -2565,8 +2565,8 @@ namespace lucid
 			// aapt resource value: 0x7f0800bc
 			public const int asset_allocation_linear_layout = 2131230908;
 			
-			// aapt resource value: 0x7f080151
-			public const int asset_allocation_list_view = 2131231057;
+			// aapt resource value: 0x7f080152
+			public const int asset_allocation_list_view = 2131231058;
 			
 			// aapt resource value: 0x7f08011a
 			public const int asset_description_even = 2131231002;
@@ -2703,8 +2703,8 @@ namespace lucid
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
-			// aapt resource value: 0x7f08014d
-			public const int divider = 2131231053;
+			// aapt resource value: 0x7f08014e
+			public const int divider = 2131231054;
 			
 			// aapt resource value: 0x7f08011b
 			public const int divider_even = 2131231003;
@@ -2793,20 +2793,20 @@ namespace lucid
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
 			
-			// aapt resource value: 0x7f08014b
-			public const int header_layout = 2131231051;
-			
 			// aapt resource value: 0x7f08014c
-			public const int header_left = 2131231052;
+			public const int header_layout = 2131231052;
+			
+			// aapt resource value: 0x7f08014d
+			public const int header_left = 2131231053;
 			
 			// aapt resource value: 0x7f0800e9
 			public const int header_linear_layout = 2131230953;
 			
-			// aapt resource value: 0x7f080150
-			public const int header_right_bottom = 2131231056;
+			// aapt resource value: 0x7f080151
+			public const int header_right_bottom = 2131231057;
 			
-			// aapt resource value: 0x7f08014f
-			public const int header_right_top = 2131231055;
+			// aapt resource value: 0x7f080150
+			public const int header_right_top = 2131231056;
 			
 			// aapt resource value: 0x7f0800eb
 			public const int header_username = 2131230955;
@@ -2916,8 +2916,8 @@ namespace lucid
 			// aapt resource value: 0x7f08013d
 			public const int market_price_tv = 2131231037;
 			
-			// aapt resource value: 0x7f080153
-			public const int masked = 2131231059;
+			// aapt resource value: 0x7f080154
+			public const int masked = 2131231060;
 			
 			// aapt resource value: 0x7f08013b
 			public const int maturity_date_tv = 2131231035;
@@ -2925,8 +2925,8 @@ namespace lucid
 			// aapt resource value: 0x7f0800fc
 			public const int media_actions = 2131230972;
 			
-			// aapt resource value: 0x7f08014a
-			public const int message = 2131231050;
+			// aapt resource value: 0x7f08014b
+			public const int message = 2131231051;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2937,41 +2937,41 @@ namespace lucid
 			// aapt resource value: 0x7f080028
 			public const int multiply = 2131230760;
 			
-			// aapt resource value: 0x7f08015f
-			public const int nav_about_us = 2131231071;
-			
-			// aapt resource value: 0x7f080159
-			public const int nav_account_summary = 2131231065;
+			// aapt resource value: 0x7f080160
+			public const int nav_about_us = 2131231072;
 			
 			// aapt resource value: 0x7f08015a
-			public const int nav_asset_allocation = 2131231066;
-			
-			// aapt resource value: 0x7f080154
-			public const int nav_camera = 2131231060;
-			
-			// aapt resource value: 0x7f08015d
-			public const int nav_change_password = 2131231069;
+			public const int nav_account_summary = 2131231066;
 			
 			// aapt resource value: 0x7f08015b
-			public const int nav_details_of_transaction = 2131231067;
+			public const int nav_asset_allocation = 2131231067;
 			
 			// aapt resource value: 0x7f080155
-			public const int nav_gallery = 2131231061;
+			public const int nav_camera = 2131231061;
 			
 			// aapt resource value: 0x7f08015e
-			public const int nav_logout = 2131231070;
-			
-			// aapt resource value: 0x7f080157
-			public const int nav_manage = 2131231063;
-			
-			// aapt resource value: 0x7f080158
-			public const int nav_portfolio_summary = 2131231064;
+			public const int nav_change_password = 2131231070;
 			
 			// aapt resource value: 0x7f08015c
-			public const int nav_profit_loss = 2131231068;
+			public const int nav_details_of_transaction = 2131231068;
 			
 			// aapt resource value: 0x7f080156
-			public const int nav_slideshow = 2131231062;
+			public const int nav_gallery = 2131231062;
+			
+			// aapt resource value: 0x7f08015f
+			public const int nav_logout = 2131231071;
+			
+			// aapt resource value: 0x7f080158
+			public const int nav_manage = 2131231064;
+			
+			// aapt resource value: 0x7f080159
+			public const int nav_portfolio_summary = 2131231065;
+			
+			// aapt resource value: 0x7f08015d
+			public const int nav_profit_loss = 2131231069;
+			
+			// aapt resource value: 0x7f080157
+			public const int nav_slideshow = 2131231063;
 			
 			// aapt resource value: 0x7f0800e7
 			public const int nav_view = 2131230951;
@@ -3117,8 +3117,8 @@ namespace lucid
 			// aapt resource value: 0x7f080133
 			public const int right_column_details_odd = 2131231027;
 			
-			// aapt resource value: 0x7f08014e
-			public const int right_header_layout = 2131231054;
+			// aapt resource value: 0x7f08014f
+			public const int right_header_layout = 2131231055;
 			
 			// aapt resource value: 0x7f080104
 			public const int right_icon = 2131230980;
@@ -3285,6 +3285,9 @@ namespace lucid
 			// aapt resource value: 0x7f080101
 			public const int time = 2131230977;
 			
+			// aapt resource value: 0x7f08014a
+			public const int timer_tv = 2131231050;
+			
 			// aapt resource value: 0x7f080125
 			public const int tit_nom_even = 2131231013;
 			
@@ -3432,8 +3435,8 @@ namespace lucid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f080152
-			public const int visible = 2131231058;
+			// aapt resource value: 0x7f080153
+			public const int visible = 2131231059;
 			
 			// aapt resource value: 0x7f08012c
 			public const int weight_percentage_tv_details_even = 2131231020;

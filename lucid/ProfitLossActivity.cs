@@ -43,43 +43,55 @@ namespace lucid
             back_button = FindViewById<ImageButton>(Resource.Id.pl_back_btn);
             back_button.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             back_button.Click += Back_Button_Click;
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                timer = new Timer(HomeActivity.INTERVAL);
+                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
+                timer.Elapsed += Timer_Elapsed;
+                timer.Start();
+            });
         }
 
         void Back_Button_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
-            timer.Stop();
+            Task.Run(() => timer.Stop());
         }
 
         protected override void OnStart()
         {
             base.OnStart();
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                timer = new Timer(HomeActivity.INTERVAL);
+                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
+                timer.Elapsed += Timer_Elapsed;
+                timer.Start();
+            });
         }
 
         protected override void OnResume()
         {
             base.OnResume();
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                timer = new Timer(HomeActivity.INTERVAL);
+                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
+                timer.Elapsed += Timer_Elapsed;
+                timer.Start();
+            });
         }
 
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
-            timer = new Timer(HomeActivity.INTERVAL);
-            HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            Task.Run(() =>
+            {
+                timer = new Timer(HomeActivity.INTERVAL);
+                HomeActivity.COUNTDOWN = HomeActivity.INITIAL_VALUE;
+                timer.Elapsed += Timer_Elapsed;
+                timer.Start();
+            });
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -87,41 +99,41 @@ namespace lucid
             HomeActivity.COUNTDOWN--;
             if (HomeActivity.COUNTDOWN == 0)
             {
-                timer.Stop();
                 Task.Run(async () =>
                 {
                     try
                     {
+                        timer.Stop();
                         LoginResult loginResult = await MKFApp.Current.Logout();
-                        this.RunOnUiThread(() => logoutSuccessful());
+                        this.RunOnUiThread(() => LogoutSuccessful());
                     }
                     catch (Exception exception)
                     {
-                        this.RunOnUiThread(() => logoutFailed());
+                        this.RunOnUiThread(() => LogoutFailed());
                     }
                 });
             }
         }
 
-        public void logoutSuccessful()
+        public void LogoutSuccessful()
         {
-            timer.Stop();
-            showAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
+            ShowAlertDialog(HomeActivity.DIALOG_TITLE, HomeActivity.DIALOG_MESSAGE);
         }
 
-        public void logoutFailed()
+        public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
-        private void showAlertDialog(String title, String message)
+        private void ShowAlertDialog(String title, String message)
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Application.Context);
             builder.SetTitle(title);
             builder.SetMessage(message);
             builder.SetPositiveButton("OK", (sender, e) =>
             {
                 Intent logout = new Intent(this, typeof(MainActivity));
+                logout.SetFlags(ActivityFlags.ClearTask | ActivityFlags.NewTask);
                 StartActivity(logout);
             });
             builder.Create().Show();
