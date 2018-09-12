@@ -25,8 +25,11 @@ namespace MarketFlowLibrary
         private const string updatePasswordAction = "UpdatePassword";
         private const string getAccountSummaryAction = "GetAccountSummary";
         private const string getStatementAction = "GetStatement";
+        private const string getOperationsAction = "GetOperations";
+        private const string getRealisedProfitAction = "GetRealisedProfit";
 
-		private static bool TestMode { get; set; }
+
+        private static bool TestMode { get; set; }
 
 		private static string ServiceURL { get; set;}
 
@@ -156,6 +159,46 @@ namespace MarketFlowLibrary
             if (response.IsSuccessStatusCode)
             {
                 result = Newtonsoft.Json.JsonConvert.DeserializeObject<API_Response<TRNS>>(response.Content.ReadAsStringAsync().Result);
+            }
+
+            return result;
+
+
+        }
+
+        public async static Task<API_Response<Operations>> GetOperations(ParamDate paramDate)
+        {
+            API_Response<Operations> result = new API_Response<Operations>();
+            HttpClient client = new HttpClient();
+            string serviceURL = string.Format("{0}{1}", serviceBaseURI, getOperationsAction);
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(paramDate);
+
+            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(serviceURL, stringContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<API_Response<Operations>>(response.Content.ReadAsStringAsync().Result);
+            }
+
+            return result;
+
+
+        }
+
+        public async static Task<API_Response<ClosedOperations>> GetRealisedProfit(ParamDate paramDate)
+        {
+            API_Response<ClosedOperations> result = new API_Response<ClosedOperations>();
+            HttpClient client = new HttpClient();
+            string serviceURL = string.Format("{0}{1}", serviceBaseURI, getRealisedProfitAction);
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(paramDate);
+
+            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(serviceURL, stringContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<API_Response<ClosedOperations>>(response.Content.ReadAsStringAsync().Result);
             }
 
             return result;

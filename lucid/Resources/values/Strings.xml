@@ -57,4 +57,10 @@
     <string name="from">From --/--/--</string>
     <string name="to">To --/--/--</string>
     <string name="date">Date</string>
+    <string name="buysell">B/S</string>
+    <string name="quantity">Quantity</string>
+    <string name="securityname">Security Name</string>
+    <string name="openprice">Open Price</string>
+    <string name="currencysymbol">Currency Symbol</string>
+    <string name="netamount">Net Amount</string>
 </resources>

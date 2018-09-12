@@ -48,4 +48,161 @@
                 android:padding="1dp" />
         </LinearLayout>
     </Toolbar>
+    <ProgressBar android:id="@+id/progress_bar_dettails_of_transaction"
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_gravity="center"
+                 android:indeterminate="true"/>
+    
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_margin="8dp"
+                  android:layout_gravity="center">
+        
+        <Space android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"/>
+        
+        <Button android:text="@string/from"
+                android:id="@+id/from_btn_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+        
+        <Space android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"/>
+        
+        <Button android:text="@string/to"
+                android:id="@+id/to_btn_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+        
+        <Space android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"/>
+        
+    </LinearLayout>
+    
+    <Button android:id="@+id/submit_btn_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:layout_gravity="center"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
+    
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:weightSum="1"
+                  android:gravity="center"
+                  android:background="#47555e"
+                  android:layout_margin="4dp"
+                  android:paddingHorizontal="4dp"
+                  android:paddingVertical="4dp">
+        <LinearLayout android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:layout_gravity="center"
+                      android:weightSum="1"
+                      android:layout_weight="0.33">
+                      
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:layout_weight="0.5"
+                      android:gravity="center"
+                      android:textColor="@android:color/white"
+                      android:layout_gravity="center"
+                      android:text="@string/transaction_date"/>
+            
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:layout_weight="0.5"
+                      android:textColor="@android:color/white"
+                      android:gravity="center"
+                      android:layout_gravity="center"
+                      android:text="@string/buysell"/>
+            
+        </LinearLayout>
+        
+        <LinearLayout android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:layout_gravity="center"
+                      android:weightSum="1"
+                      android:layout_weight="0.34">
+                      
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:layout_weight="0.5"
+                      android:layout_gravity="center"
+                      android:textColor="@android:color/white"
+                      android:gravity="center"
+                      android:text="@string/quantity"/>
+            
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:layout_weight="0.5"
+                      android:gravity="center"
+                      android:textColor="@android:color/white"
+                      android:layout_gravity="center"
+                      android:text="@string/securityname"/>
+            
+        </LinearLayout>
+        
+        <LinearLayout android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:layout_gravity="center"
+                      android:weightSum="1"
+                      android:layout_weight="0.33">
+                      
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:layout_weight="0.5"
+                      android:gravity="center"
+                      android:textColor="@android:color/white"
+                      android:layout_gravity="center"
+                      android:text="@string/openprice"/>
+            
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="wrap_content"
+                          android:layout_height="match_parent"
+                          android:weightSum="1"
+                          android:layout_weight="0.5"
+                          android:gravity="center"
+                          android:layout_gravity="center">
+                
+                <TextView android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:layout_weight="0.5"
+                      android:gravity="center"
+                      android:textColor="@android:color/white"
+                      android:layout_gravity="center"
+                      android:text="@string/netamount"/>
+                
+                <TextView android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:layout_weight="0.5"
+                      android:gravity="center"
+                      android:textColor="@android:color/white"
+                      android:layout_gravity="center"
+                      android:text="@string/currencysymbol"/>
+            </LinearLayout>
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_dot"
+        android:scrollbars="vertical"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
