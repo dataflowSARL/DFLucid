@@ -223,6 +223,26 @@ namespace MarketFlow
             return response;
         }
 
+        public async Task<List<Operations>> GetOperations(ParamDate paramDate) {
+            List<Operations> response = new List<Operations>();
+            API_Response<Operations> api_response = new API_Response<Operations>();
+            api_response = await MarketFlowLibrary.MarketFlowService.GetOperations(paramDate);
+            if(api_response.Success == true) {
+                response = api_response.Content;
+            }
+            return response;
+        }
+
+        public async Task<List<ClosedOperations>> GetRealisedProfits(ParamDate paramDate) {
+            List<ClosedOperations> response = new List<ClosedOperations>();
+            API_Response<ClosedOperations> api_response = new API_Response<ClosedOperations>();
+            api_response = await MarketFlowLibrary.MarketFlowService.GetRealisedProfit(paramDate);
+            if(api_response.Success == true) {
+                response = api_response.Content;
+            }
+            return response;
+        }
+
 
         //private Device device;
 

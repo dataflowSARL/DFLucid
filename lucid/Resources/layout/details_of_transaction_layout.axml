@@ -115,12 +115,14 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:gravity="center"
+                      android:textColor="@android:color/white"
                       android:layout_gravity="center"
                       android:text="@string/transaction_date"/>
             
             <TextView android:layout_width="wrap_content"
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
+                      android:textColor="@android:color/white"
                       android:gravity="center"
                       android:layout_gravity="center"
                       android:text="@string/buysell"/>
@@ -139,6 +141,7 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:layout_gravity="center"
+                      android:textColor="@android:color/white"
                       android:gravity="center"
                       android:text="@string/quantity"/>
             
@@ -146,6 +149,7 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:gravity="center"
+                      android:textColor="@android:color/white"
                       android:layout_gravity="center"
                       android:text="@string/securityname"/>
             
@@ -163,6 +167,7 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:gravity="center"
+                      android:textColor="@android:color/white"
                       android:layout_gravity="center"
                       android:text="@string/openprice"/>
             
@@ -178,6 +183,7 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:gravity="center"
+                      android:textColor="@android:color/white"
                       android:layout_gravity="center"
                       android:text="@string/netamount"/>
                 
@@ -185,6 +191,7 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:gravity="center"
+                      android:textColor="@android:color/white"
                       android:layout_gravity="center"
                       android:text="@string/currencysymbol"/>
             </LinearLayout>
