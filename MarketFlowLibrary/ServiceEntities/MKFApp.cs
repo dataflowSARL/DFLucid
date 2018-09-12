@@ -168,13 +168,16 @@ namespace MarketFlow
         public async Task<List<Position>> GetPositions(bool forceRefresh = false, bool saveResult = true)
         {
             List<Position> result = new List<Position>();
+            API_Response < Position > api_Response = new API_Response<Position>();
             if (UserPositions == null || forceRefresh == true)
             {
-                result = await MarketFlowLibrary.MarketFlowService.GetPosition(this.User);
-
-                if (saveResult == true)
-                {
-                    UserPositions = result;
+                api_Response = await MarketFlowLibrary.MarketFlowService.GetPosition(this.User);
+                result = api_Response.Content;
+                if(api_Response.Success == true) {
+                    if (saveResult == true)
+                    {
+                        UserPositions = result;
+                    }
                 }
             }
 

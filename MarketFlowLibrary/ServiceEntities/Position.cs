@@ -8,31 +8,31 @@ namespace MKFLibrary
 {
     public class Position
     {
-        public int ord {get;set;}
+        public int RowOrder {get;set;}
         public int Onhold  {get;set;}
-        public string tit_nom  {get;set;}
-        public DateTime? tit_dat_emi { get; set; }
-        public DateTime? tit_dat_mat { get; set; }
-        public double sumQty  {get;set;}
-        public string devSymb { get; set; }
-        public double TitCrs  {get;set;}
-        public double CrsMoyen { get; set; }
-        public double IntVal { get; set; }
-        public double PosBalDevTitTot { get; set; }
-        public double PosBalSysTot { get; set; }
-        public double titnb { get; set; }
+        public string SecurityName  {get;set;}
+        public DateTime? DateIssue { get; set; }
+        public DateTime? DateMaturity { get; set; }
+        public double Quantity  {get;set;}
+        public string CurrencySymbol { get; set; }
+        public double Price  {get;set;}
+        public double AveragePrice { get; set; }
+        public double AccruedInterest { get; set; }
+        public double Balance { get; set; }
+        public double BalanceSystem { get; set; }
+        public double NumberOfUnits { get; set; }
         public double UnrealizedPnl { get; set; }
-        public int TitTyp  {get;set;}
-        public string titTypDesc { get; set; }
-        public string Asset_Cod  {get;set;}
-        public string Asset_Desc  {get;set;}
-        public int AssetGrp  {get;set;}
+        public int SecurityType  {get;set;}
+        public string SecurityTypeDesciption { get; set; }
+        public string AssetCode  {get;set;}
+        public string AssetDescription  {get;set;}
+        public int AssetGroup  {get;set;}
         public decimal Weight  {get;set;}
         public double CostValueUSD  {get;set;}
         public double GainLoss  {get;set;}
         public double UnrealizedPnlUSD  {get;set;}
         public string ISIN  {get;set;}
-        public string MODCOD  {get;set;}
-        public string Tit_Cod {get; set;}
+        public string PriceType  {get;set;}
+        public string SecurityCode {get; set;}
     }
 }

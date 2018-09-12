@@ -63,9 +63,9 @@ namespace MarketFlowLibrary
             return result;
         }
 
-        public async static Task<List<Position>> GetPosition(MKFUser user)
+        public async static Task<API_Response<Position>> GetPosition(MKFUser user)
         {
-            List<Position> result = new List<Position>();
+            API_Response<Position> result = new API_Response<Position>();
             HttpClient client = new HttpClient();
             string serviceURL = string.Format("{0}{1}", serviceBaseURI, getPosition);
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(user);
@@ -75,7 +75,7 @@ namespace MarketFlowLibrary
 
             if (response.IsSuccessStatusCode)
             {
-                result = Newtonsoft.Json.JsonConvert.DeserializeObject<List<MKFLibrary.Position>>(response.Content.ReadAsStringAsync().Result);
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<API_Response<Position>>(response.Content.ReadAsStringAsync().Result);
             }
 
             return result;

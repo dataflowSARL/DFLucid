@@ -122,7 +122,7 @@ namespace lucid
         private void Display()
         {
             progressBar.Visibility = ViewStates.Gone;
-            mItemsAllDetails = AssetAllocationActivity.userAccountPositions.Where(u => u.Tit_Cod == tit_cod).Select(u => new Position() { tit_nom = u.tit_nom, ISIN = u.ISIN, sumQty = u.sumQty, tit_dat_mat = u.tit_dat_mat, devSymb = u.devSymb, TitCrs = u.TitCrs, CrsMoyen = u.CrsMoyen, UnrealizedPnl = u.UnrealizedPnl, UnrealizedPnlUSD = u.UnrealizedPnlUSD, GainLoss = u.GainLoss, PosBalDevTitTot = u.PosBalDevTitTot, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight, IntVal = u.IntVal }).ToList<Position>();
+            mItemsAllDetails = AssetAllocationActivity.userAccountPositions.Where(u => u.SecurityCode == tit_cod).Select(u => new Position() { SecurityName = u.SecurityName, ISIN = u.ISIN, Quantity = u.Quantity, DateMaturity = u.DateMaturity, CurrencySymbol = u.CurrencySymbol, Price = u.Price, AveragePrice = u.AveragePrice, UnrealizedPnl = u.UnrealizedPnl, UnrealizedPnlUSD = u.UnrealizedPnlUSD, GainLoss = u.GainLoss, Balance = u.Balance, BalanceSystem = u.BalanceSystem, Weight = u.Weight, AccruedInterest = u.AccruedInterest }).ToList<Position>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new AllDetailsRecyclerViewAdapter(mItemsAllDetails, this, MainActivity.user);
@@ -144,24 +144,24 @@ namespace lucid
         private void DisplayRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
-            mItemsAllDetails = AssetAllocationActivity.userAccountPositions.Where(u => u.Tit_Cod == tit_cod).Select(u => new Position() { tit_nom = u.tit_nom, ISIN = u.ISIN, sumQty = u.sumQty, tit_dat_mat = u.tit_dat_mat, devSymb = u.devSymb, TitCrs = u.TitCrs, CrsMoyen = u.CrsMoyen, UnrealizedPnl = u.UnrealizedPnl, UnrealizedPnlUSD = u.UnrealizedPnlUSD, GainLoss = u.GainLoss, PosBalDevTitTot = u.PosBalDevTitTot, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight, IntVal = u.IntVal }).ToList<Position>();
+            mItemsAllDetails = AssetAllocationActivity.userAccountPositions.Where(u => u.SecurityCode == tit_cod).Select(u => new Position() { SecurityName = u.SecurityName, ISIN = u.ISIN, Quantity = u.Quantity, DateMaturity = u.DateMaturity, CurrencySymbol = u.CurrencySymbol, Price = u.Price, AveragePrice = u.AveragePrice, UnrealizedPnl = u.UnrealizedPnl, UnrealizedPnlUSD = u.UnrealizedPnlUSD, GainLoss = u.GainLoss, Balance = u.Balance, BalanceSystem = u.BalanceSystem, Weight = u.Weight, AccruedInterest = u.AccruedInterest }).ToList<Position>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new AllDetailsRecyclerViewAdapter(mItemsAllDetails, this, MainActivity.user);
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
 
-        protected override void OnStop()
-        {
-            base.OnStop();
-            Task.Run(() => ad_timer.Stop());
-        }
+        //protected override void OnStop()
+        //{
+        //    base.OnStop();
+        //    Task.Run(() => ad_timer.Stop());
+        //}
 
-        protected override void OnPause()
-        {
-            base.OnPause();
-            Task.Run(() => ad_timer.Stop());
-        }
+        //protected override void OnPause()
+        //{
+        //    base.OnPause();
+        //    Task.Run(() => ad_timer.Stop());
+        //}
 
         protected override void OnStart()
         {

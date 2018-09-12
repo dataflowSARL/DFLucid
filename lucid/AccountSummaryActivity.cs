@@ -197,17 +197,17 @@ namespace lucid
             Task.Run(() => as_timer.Stop());
         }
 
-        protected override void OnStop()
-        {
-            base.OnStop();
-            Task.Run(() => as_timer.Stop());
-        }
+        //protected override void OnStop()
+        //{
+        //    base.OnStop();
+        //    Task.Run(() => as_timer.Stop());
+        //}
 
-        protected override void OnPause()
-        {
-            base.OnPause();
-            Task.Run(() => as_timer.Stop());
-        }
+        //protected override void OnPause()
+        //{
+        //    base.OnPause();
+        //    Task.Run(() => as_timer.Stop());
+        //}
 
         protected override void OnStart()
         {

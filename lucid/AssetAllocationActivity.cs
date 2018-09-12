@@ -121,7 +121,7 @@ namespace lucid
 
         private void Display() {
             progressBar.Visibility = ViewStates.Gone;
-            mItems = userAccountPositions.Where(u => u.AssetGrp == 1).Union(userAccountPositions.Where(u => u.ord == 2).Where(u => u.AssetGrp == 0)).Select(u => new AssetAllocation() { Code = u.Asset_Cod, AssetDescription = u.Asset_Desc, Balance = u.PosBalSysTot, Weight = u.Weight }).ToList<AssetAllocation>();
+            mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
@@ -145,7 +145,7 @@ namespace lucid
 
         private void DisplayRefresher() {
             swipeRefreshLayout.Refreshing = false;
-            mItems = userAccountPositions.Where(u => u.AssetGrp == 1).Union(userAccountPositions.Where(u => u.ord == 2).Where(u => u.AssetGrp == 0)).Select(u => new AssetAllocation() { Code = u.Asset_Cod, AssetDescription = u.Asset_Desc, Balance = u.PosBalSysTot, Weight = u.Weight }).ToList<AssetAllocation>();
+            mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
@@ -160,17 +160,17 @@ namespace lucid
             Task.Run(() => aa_timer.Stop());
         }
 
-        protected override void OnStop()
-        {
-            base.OnStop();
-            Task.Run(() => aa_timer.Stop());
-        }
+        //protected override void OnStop()
+        //{
+        //    base.OnStop();
+        //    Task.Run(() => aa_timer.Stop());
+        //}
 
-        protected override void OnPause()
-        {
-            base.OnPause();
-            Task.Run(() => aa_timer.Stop());
-        }
+        //protected override void OnPause()
+        //{
+        //    base.OnPause();
+        //    Task.Run(() => aa_timer.Stop());
+        //}
 
         protected override void OnStart()
         {

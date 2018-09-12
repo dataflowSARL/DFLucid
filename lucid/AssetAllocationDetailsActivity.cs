@@ -126,7 +126,7 @@ namespace lucid
         private void Display()
         {
             progressBar.Visibility = ViewStates.Gone;
-            mItemsPosition = AssetAllocationActivity.userAccountPositions.Where(u => u.Asset_Cod == assetCode).Where(u => u.Tit_Cod != "").Select(u => new Position() { Tit_Cod = u.Tit_Cod, ISIN = u.ISIN, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
+            mItemsPosition = AssetAllocationActivity.userAccountPositions.Where(u => u.AssetCode == assetCode).Where(u => u.SecurityCode != "").Select(u => new Position() { SecurityCode = u.SecurityCode, ISIN = u.ISIN, SecurityName = u.SecurityName, Quantity = u.Quantity, BalanceSystem = u.BalanceSystem, Weight = u.Weight }).ToList<Position>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this, MainActivity.user, assetCode, title.Text);
@@ -138,7 +138,7 @@ namespace lucid
         private void DisplayRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
-            mItemsPosition = AssetAllocationActivity.userAccountPositions.Where(u => u.Asset_Cod == assetCode).Where(u => u.Tit_Cod != "").Select(u => new Position() { Tit_Cod = u.Tit_Cod, ISIN = u.ISIN, tit_nom = u.tit_nom, sumQty = u.sumQty, PosBalSysTot = u.PosBalSysTot, Weight = u.Weight }).ToList<Position>();
+            mItemsPosition = AssetAllocationActivity.userAccountPositions.Where(u => u.AssetCode == assetCode).Where(u => u.SecurityCode != "").Select(u => new Position() { SecurityCode = u.SecurityCode, ISIN = u.ISIN, SecurityName = u.SecurityName, Quantity = u.Quantity, BalanceSystem = u.BalanceSystem, Weight = u.Weight }).ToList<Position>();
             mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterDetails(mItemsPosition, this, MainActivity.user, assetCode, title.Text);
@@ -149,7 +149,7 @@ namespace lucid
         void MRecyclerViewAdapter_ItemClick(object sender, int e)
         {
             Intent all_details = new Intent(this, typeof(AllDetailsActivity));
-            all_details.PutExtra("tit_cod", mItemsPosition[e].Tit_Cod);
+            all_details.PutExtra("tit_cod", mItemsPosition[e].SecurityCode);
             all_details.PutExtra("webclicode", MainActivity.user.WebCliCode);
             all_details.PutExtra("clicode", MainActivity.user.CliCode);
             all_details.PutExtra("assetcode", assetCode);
@@ -164,17 +164,17 @@ namespace lucid
             Task.Run(() => aad_timer.Stop());
         }
 
-        protected override void OnStop()
-        {
-            base.OnStop();
-            Task.Run(() => aad_timer.Stop());
-        }
+        //protected override void OnStop()
+        //{
+        //    base.OnStop();
+        //    Task.Run(() => aad_timer.Stop());
+        //}
 
-        protected override void OnPause()
-        {
-            base.OnPause();
-            Task.Run(() => aad_timer.Stop());
-        }
+        //protected override void OnPause()
+        //{
+        //    base.OnPause();
+        //    Task.Run(() => aad_timer.Stop());
+        //}
 
         protected override void OnStart()
         {

@@ -148,17 +148,17 @@ namespace lucid
             return true;
         }
 
-        protected override void OnStop()
-        {
-            base.OnStop();
-            Task.Run(() => timer.Stop());
-        }
+        //protected override void OnStop()
+        //{
+        //    base.OnStop();
+        //    Task.Run(() => timer.Stop());
+        //}
 
-        protected override void OnPause()
-        {
-            base.OnPause();
-            Task.Run(() => timer.Stop());
-        }
+        //protected override void OnPause()
+        //{
+        //    base.OnPause();
+        //    Task.Run(() => timer.Stop());
+        //}
 
         protected override void OnStart()
         {

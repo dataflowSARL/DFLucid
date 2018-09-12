@@ -12,8 +12,6 @@ public class HomeActivity
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onCreateOptionsMenu:(Landroid/view/Menu;)Z:GetOnCreateOptionsMenu_Landroid_view_Menu_Handler\n" +
-			"n_onStop:()V:GetOnStopHandler\n" +
-			"n_onPause:()V:GetOnPauseHandler\n" +
 			"n_onStart:()V:GetOnStartHandler\n" +
 			"n_onResume:()V:GetOnResumeHandler\n" +
 			"n_onUserInteraction:()V:GetOnUserInteractionHandler\n" +
@@ -44,22 +42,6 @@ public class HomeActivity
 	}
 
 	private native boolean n_onCreateOptionsMenu (android.view.Menu p0);
-
-
-	public void onStop ()
-	{
-		n_onStop ();
-	}
-
-	private native void n_onStop ();
-
-
-	public void onPause ()
-	{
-		n_onPause ();
-	}
-
-	private native void n_onPause ();
 
 
 	public void onStart ()
