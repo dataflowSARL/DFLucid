@@ -8,15 +8,15 @@ namespace MKFLibrary
 {
     public class Operations
     {        
-        public string refer {get;set;}
-        public DateTime transDate { get; set; }
-        public string typBS { get; set; }
-        public string descr { get; set; }
-        public DateTime? datIssue { get; set; }
-        public DateTime? datMaturity { get; set; }
-        public double qty { get; set; }
-        public string devSymb { get; set; }
-        public double openPrice { get; set; }
-        public double netAmount { get; set; }
+        public string ReferOpe {get;set;}
+        public DateTime? TransactionDate { get; set; }
+        public string BuySell { get; set; }
+        public string SecurityName { get; set; }
+        public DateTime? IssueDate { get; set; }
+        public DateTime? MaturityDate { get; set; }
+        public double Quantity { get; set; }
+        public string CurrencySymbol { get; set; }
+        public double OpenPrice { get; set; }
+        public double NetAmount { get; set; }
     }
 }

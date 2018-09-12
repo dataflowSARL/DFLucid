@@ -36,6 +36,11 @@
                 android:layout_gravity="center"
                 android:textColor="#565a61"
                 style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+            
+           <!--<TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="timer"
+                      android:id="@+id/timer_tv"/>-->
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

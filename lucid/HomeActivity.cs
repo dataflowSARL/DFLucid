@@ -154,6 +154,19 @@ namespace lucid
         //    Task.Run(() => timer.Stop());
         //}
 
+        //protected override void OnDestroy()
+        //{
+        //    base.OnDestroy();
+        //    Task.Run(() =>
+        //    {
+        //        timer.Stop();
+        //        timer = new Timer(INTERVAL);
+        //        COUNTDOWN = INITIAL;
+        //        timer.Elapsed += Timer_Elapsed;
+        //        timer.Start();
+        //    });
+        //}
+
         //protected override void OnPause()
         //{
         //    base.OnPause();

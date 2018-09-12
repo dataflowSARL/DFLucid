@@ -56,7 +56,6 @@
     <Compile Include="ServiceEntities\LoginResult.cs" />
     <Compile Include="ServiceEntities\MKFUser.cs" />
     <Compile Include="ServiceEntities\Operations.cs" />
-    <Compile Include="ServiceEntities\PortSum.cs" />
     <Compile Include="ServiceEntities\Position.cs" />
     <Compile Include="ServiceEntities\TRNS.cs" />
     <Compile Include="ServiceEntities\UserSettings.cs" />
@@ -69,6 +68,8 @@
     <Compile Include="ServiceEntities\MKFApp.cs" />
     <Compile Include="ServiceEntities\API_Response.cs" />
     <Compile Include="ServiceEntities\ParamDate.cs" />
+    <Compile Include="ServiceEntities\PortfolioSummary.cs" />
+    <Compile Include="ServiceEntities\RiskSummary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -33,6 +33,7 @@ namespace lucid
         private ImageButton back_button;
         private LinearLayout linearLayout;
         private Button filter_button;
+        //private TextView timer_tv;
         private RecyclerView mRecyclerView;
         private RecyclerView.LayoutManager mLayoutManager;
         private RecyclerViewAdapterAccountSummary mRecyclerViewAdapter;
@@ -58,6 +59,7 @@ namespace lucid
         }
 
         private void SetUpVariables() {
+            //timer_tv = FindViewById<TextView>(Resource.Id.timer_tv);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_account_summary);
             progressBar.Visibility = ViewStates.Visible;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_as);
@@ -209,6 +211,19 @@ namespace lucid
         //    Task.Run(() => as_timer.Stop());
         //}
 
+        //protected override void OnDestroy()
+        //{
+        //    base.OnDestroy();
+        //    Task.Run(() =>
+        //    {
+        //        as_timer.Stop();
+        //        as_timer = new Timer(INTERVAL);
+        //        COUNTDOWN = INITIAL;
+        //        as_timer.Elapsed += Timer_Elapsed;
+        //        as_timer.Start();
+        //    });
+        //}
+
         protected override void OnStart()
         {
             base.OnStart();
@@ -250,6 +265,7 @@ namespace lucid
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
+            //this.RunOnUiThread(() => timer_tv.Text = COUNTDOWN / 60 + ":" + COUNTDOWN % 60);
             COUNTDOWN--;
             if (COUNTDOWN == 0)
             {
