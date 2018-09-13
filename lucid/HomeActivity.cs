@@ -52,6 +52,7 @@ namespace lucid
             SetUpVariables();
         }
 
+        // Set up the Activity's Views
         public void SetUpVariables() {
             linearLayout = FindViewById<LinearLayout>(Resource.Id.home_linear_layout);
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
@@ -77,6 +78,7 @@ namespace lucid
             });
         }
 
+        //Handles the NavigationView
         public void SetupDrawerContent(NavigationView navigationView)  
         {
             navigationView.NavigationItemSelected += (sender, e) =>  
@@ -87,8 +89,6 @@ namespace lucid
                 {
                     case "Portfolio Summary":
                         timer.Stop();
-                        Intent portfolioSummary = new Intent(this, typeof(PortfolioSummaryActivity));
-                        StartActivity(portfolioSummary);
                         break;
                     case "Account Summary":
                         timer.Stop();
@@ -212,6 +212,7 @@ namespace lucid
             });
         }
 
+        // Called every second when timer ticks.
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             Console.Write(COUNTDOWN.ToString());
@@ -234,6 +235,7 @@ namespace lucid
             }
         }
 
+        // shows dialog when logged out due to inactivity after 5 minutes
         public void LogoutSuccessfulDialog() {
             if (!IsFinishing)
             {
@@ -241,16 +243,19 @@ namespace lucid
             }
         }
 
+        // returns to login page
         public void LogoutSuccessful() {
             Intent logout = new Intent(this, typeof(MainActivity));
             logout.SetFlags(ActivityFlags.ClearTask | ActivityFlags.NewTask);
             StartActivity(logout);
         }
 
+        // called when logout failed.
         public void LogoutFailed() {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
+        // Sets up the alert dialog
         private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

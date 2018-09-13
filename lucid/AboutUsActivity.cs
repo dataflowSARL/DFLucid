@@ -37,6 +37,7 @@ namespace lucid
             SetUpVariables();
         }
 
+        //set up the activity's views
         private void SetUpVariables(){
             linearLayout = FindViewById<LinearLayout>(Resource.Id.au_linear_layout);
             var toolbar = FindViewById<Toolbar>(Resource.Id.au_toolbar);
@@ -53,6 +54,7 @@ namespace lucid
             });
         }
 
+        //back button clicked
         void Back_Button_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
@@ -110,6 +112,7 @@ namespace lucid
             });
         }
 
+        // detects user interaction
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
@@ -123,6 +126,7 @@ namespace lucid
             });
         }
 
+        // timer ticks
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             COUNTDOWN--;
@@ -144,6 +148,7 @@ namespace lucid
             }
         }
 
+        // logged out because of inactivity
         public void LogoutSuccessful()
         {
             if (!IsFinishing)
@@ -152,11 +157,13 @@ namespace lucid
             }
         }
 
+        // logout failed
         public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
+        // set up alert dialog
         private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

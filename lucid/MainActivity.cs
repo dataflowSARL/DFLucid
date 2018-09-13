@@ -55,6 +55,7 @@ namespace lucid
            
         }
 
+        // set up the activity's views
         private void setUpVariables()
         {
             linearLayout = FindViewById<LinearLayout>(Resource.Id.main_activity_linear_layout);
@@ -95,6 +96,7 @@ namespace lucid
 
         }
 
+        // login button clicked
         void Login_Click(object sender, System.EventArgs e)
         {
             progressBar.Visibility = ViewStates.Visible;
@@ -136,6 +138,7 @@ namespace lucid
             }
         }
 
+        // login is successful
         private void SuccessLoginResultMethod(LoginResult loginResult) {
             progressBar.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
@@ -164,6 +167,7 @@ namespace lucid
             }
         }
 
+        //login failed
         private void FailLoginResultMethod() {
             progressBar.Visibility = ViewStates.Invisible;
             error.Visibility = ViewStates.Invisible;
