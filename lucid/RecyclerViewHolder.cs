@@ -52,7 +52,15 @@ namespace lucid
         public TextView security_name_dot { get; set; }
         public TextView open_price_dot { get; set; }
         public TextView net_amount_dot { get; set; }
-        public TextView currency_symbol_dot { get; set; }
+        public TextView closed_date_pl { get; set; }
+        public TextView opened_date_pl { get; set; }
+        public TextView close_bs_pl { get; set; }
+        public TextView open_bs_pl { get; set; }
+        public TextView security_name_pl { get; set; }
+        public TextView quantity_closed_pl { get; set; }
+        public TextView close_price_pl { get; set; }
+        public TextView open_price_pl { get; set; }
+        public TextView estimated_pl { get; set; }
         public ImageButton as_btn { get; set; }
         public ImageButton details_btn_even { get; set; }
         public ImageButton details_btn_odd { get; set; }
@@ -105,7 +113,15 @@ namespace lucid
             security_name_dot = itemview.FindViewById<TextView>(Resource.Id.security_name_dot);
             open_price_dot = itemview.FindViewById<TextView>(Resource.Id.open_price_dot);
             net_amount_dot = itemview.FindViewById<TextView>(Resource.Id.net_amount_dot);
-            currency_symbol_dot = itemview.FindViewById<TextView>(Resource.Id.currency_symbol_dot);
+            closed_date_pl = itemview.FindViewById<TextView>(Resource.Id.closed_date);
+            opened_date_pl = itemview.FindViewById<TextView>(Resource.Id.opened_date);
+            close_bs_pl = itemview.FindViewById<TextView>(Resource.Id.close_bs);
+            open_bs_pl = itemview.FindViewById<TextView>(Resource.Id.open_bs);
+            security_name_pl = itemview.FindViewById<TextView>(Resource.Id.security_name_pl);
+            quantity_closed_pl = itemview.FindViewById<TextView>(Resource.Id.quantity_closed_pl);
+            close_price_pl = itemview.FindViewById<TextView>(Resource.Id.close_price_pl);
+            open_price_pl = itemview.FindViewById<TextView>(Resource.Id.open_price_pl);
+            estimated_pl = itemview.FindViewById<TextView>(Resource.Id.estimated_profit_loss);
             as_btn = itemview.FindViewById<ImageButton>(Resource.Id.as_button);
             details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.details_button_even);
             details_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.details_button_odd);

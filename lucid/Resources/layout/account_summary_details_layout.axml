@@ -113,7 +113,6 @@
                 android:gravity="center"
                 android:layout_gravity="center">
                 <TextView
-                    android:id="@+id/transaction_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -123,7 +122,6 @@
                     android:text="@string/date"
                     android:layout_weight="0.5"/>
                 <TextView
-                    android:id="@+id/due_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
@@ -134,7 +132,6 @@
                     android:layout_weight="0.5"/>
             </LinearLayout>
             <TextView
-                android:id="@+id/transaction_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
@@ -143,7 +140,6 @@
                 android:gravity="center"
                 android:layout_weight="0.25"/>
             <TextView
-                android:id="@+id/dbcr_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dbcr_amount"
@@ -154,7 +150,12 @@
                 android:layout_weight="0.35"/>
                 
         </LinearLayout>
-        
+    <TextView android:id="@+id/nothing_asd"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/nothing"
+              android:gravity="center"
+              android:layout_gravity="center"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_asd"
         android:scrollbars="vertical"

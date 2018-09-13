@@ -86,16 +86,9 @@
                     android:textSize="11dp"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="@string/openprice"/>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:weightSum="1"
-                    android:layout_weight="0.5"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
+                    android:text="@string/open_price"/>
+                
+                <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0.5"
@@ -105,16 +98,6 @@
                         android:textStyle="bold"
                         android:layout_gravity="center"
                         android:text="@string/netamount"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.5"
-                        android:gravity="center"
-                        android:textSize="10dp"
-                        android:id="@+id/currency_symbol_dot"
-                        android:layout_gravity="center"
-                        android:text="@string/currencysymbol"/>
-                </LinearLayout>
             </LinearLayout>
         
     </LinearLayout>

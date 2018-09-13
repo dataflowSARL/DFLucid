@@ -33,9 +33,7 @@ namespace lucid
             recyclerViewHolder.security_name_dot.Text = mItems[position].SecurityName;
             recyclerViewHolder.open_price_dot.Text = mItems[position].OpenPrice.ToString("#,##0.00");
             recyclerViewHolder.net_amount_dot.SetTextColor(Android.Graphics.Color.Blue);
-            recyclerViewHolder.net_amount_dot.Text = mItems[position].NetAmount.ToString("#,##0.00");
-            recyclerViewHolder.currency_symbol_dot.SetTextColor(Android.Graphics.Color.Blue);
-            recyclerViewHolder.currency_symbol_dot.Text = mItems[position].CurrencySymbol;
+            recyclerViewHolder.net_amount_dot.Text = mItems[position].NetAmount.ToString("#,##0.00") + " " + mItems[position].CurrencySymbol;
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

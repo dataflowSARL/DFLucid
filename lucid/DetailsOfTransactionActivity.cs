@@ -37,6 +37,7 @@ namespace lucid
         private ParamDate paramDate = new ParamDate();
         private GradientDrawable gd = new GradientDrawable();
         private DateTime from, to;
+        private TextView nothing;
 
         private int from_year = DateTime.Now.Year , from_month = DateTime.Now.Month - 1, from_day = 1;
         private int to_year = DateTime.Now.Year, to_month = DateTime.Now.Month - 1, to_day = DateTime.Now.Day;
@@ -56,6 +57,8 @@ namespace lucid
 
         }
         private void SetUpVariables() {
+            nothing = FindViewById<TextView>(Resource.Id.nothing_dot);
+            nothing.Visibility = ViewStates.Gone;
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_dettails_of_transaction);
             progressBar.Visibility = ViewStates.Visible;
             paramDate.userMKF = MainActivity.user;
@@ -129,12 +132,19 @@ namespace lucid
             gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
+            if (mItems.Count == 0)
+            {
+                nothing.Visibility = ViewStates.Visible;
+            } else {
+                nothing.Visibility = ViewStates.Gone;
+            }
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mAdapter = new RecyclerViewDOTAdapter(mItems, this, MainActivity.user);
             mRecyclerView.SetAdapter(mAdapter);
         }
 
         private void Failed() {
+            nothing.Visibility = ViewStates.Visible;
             progressBar.Visibility = ViewStates.Gone;
             gd.SetCornerRadius(10);
             gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
@@ -155,6 +165,7 @@ namespace lucid
             }
             else
             {
+                nothing.Visibility = ViewStates.Gone;
                 progressBar.Visibility = ViewStates.Visible;
                 Task.Run(async () =>
                 {

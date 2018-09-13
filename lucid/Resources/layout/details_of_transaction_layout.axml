@@ -115,6 +115,7 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:gravity="center"
+                      android:textSize="11dp"
                       android:textColor="@android:color/white"
                       android:layout_gravity="center"
                       android:text="@string/transaction_date"/>
@@ -122,6 +123,7 @@
             <TextView android:layout_width="wrap_content"
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
+                      android:textSize="10dp"
                       android:textColor="@android:color/white"
                       android:gravity="center"
                       android:layout_gravity="center"
@@ -141,6 +143,7 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:layout_gravity="center"
+                      android:textSize="11dp"
                       android:textColor="@android:color/white"
                       android:gravity="center"
                       android:text="@string/quantity"/>
@@ -149,6 +152,7 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:gravity="center"
+                      android:textSize="11dp"
                       android:textColor="@android:color/white"
                       android:layout_gravity="center"
                       android:text="@string/securityname"/>
@@ -167,38 +171,29 @@
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:gravity="center"
+                      android:textSize="11dp"
                       android:textColor="@android:color/white"
                       android:layout_gravity="center"
-                      android:text="@string/openprice"/>
+                      android:text="@string/open_price"/>
             
-            <LinearLayout android:orientation="horizontal"
-                          android:layout_width="wrap_content"
-                          android:layout_height="match_parent"
-                          android:weightSum="1"
-                          android:layout_weight="0.5"
-                          android:gravity="center"
-                          android:layout_gravity="center">
-                
-                <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="wrap_content"
                       android:layout_height="match_parent"
                       android:layout_weight="0.5"
                       android:gravity="center"
+                      android:textSize="11dp"
                       android:textColor="@android:color/white"
                       android:layout_gravity="center"
                       android:text="@string/netamount"/>
-                
-                <TextView android:layout_width="wrap_content"
-                      android:layout_height="match_parent"
-                      android:layout_weight="0.5"
-                      android:gravity="center"
-                      android:textColor="@android:color/white"
-                      android:layout_gravity="center"
-                      android:text="@string/currencysymbol"/>
-            </LinearLayout>
             
         </LinearLayout>
         
     </LinearLayout>
+    <TextView android:id="@+id/nothing_dot"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/nothing"
+              android:gravity="center"
+              android:layout_gravity="center"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_dot"
         android:scrollbars="vertical"
