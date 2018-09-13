@@ -32,112 +32,83 @@
                  android:layout_gravity="center"
                  android:indeterminate="true"/>
     <LinearLayout
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:weightSum="7.2"
         android:layout_margin="16dp">
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal">
-            <Space
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1" />
-            <ImageView
-                android:id="@+id/logo"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/logo"
-                android:layout_gravity="center" />
-            <Space
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-        <Space
+        
+        <ImageView
+            android:id="@+id/logo"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_weight="1" />
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal">
-            <Space
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1" />
-            <EditText
-                android:id="@+id/username"
-                android:layout_height="50dp"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/hint_username"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:textStyle="normal"
-                android:textColorHint="#565a61"
-                android:background="@drawable/edittextlayout"
-                android:textSize="15dp" />
-            <Space
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-        <Space
+            android:src="@drawable/logo"
+            android:layout_weight="1"
+            android:layout_gravity="center" />
+        
+        <Space android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"/>
+        
+        <EditText
+            android:id="@+id/username"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_weight="0.03" />
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal">
-            <Space
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1" />
-            <EditText
-                android:id="@+id/password"
-                android:layout_height="50dp"
-                android:layout_width="wrap_content"
-                android:hint="@string/hint_password"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:textStyle="normal"
-                android:textColorHint="#565a61"
-                android:inputType="textPassword"
-                android:background="@drawable/edittextlayout"
-                android:textSize="15dp" />
-            <Space
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-        <TextView android:id="@+id/error_message"
-                  android:layout_height="wrap_content"
-                  android:layout_width="wrap_content"
-                  android:textColor="@color/red"
-                  android:layout_gravity="center"
-                  android:text="@string/error"/>
-        <Space
+            android:layout_weight="1"
+            android:hint="@string/hint_username"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textStyle="normal"
+            android:textColorHint="#565a61"
+            android:background="@drawable/edittextlayout"
+            android:textSize="15dp" />
+        
+        <Space android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.1"/>
+        
+        <EditText
+            android:id="@+id/password"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_weight="0.03" />
+            android:hint="@string/hint_password"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textStyle="normal"
+            android:textColorHint="#565a61"
+            android:inputType="textPassword"
+            android:background="@drawable/edittextlayout"
+            android:textSize="15dp" />
+        
+        <TextView 
+            android:id="@+id/error_message"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/red"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="@string/error"/>
+        
+        <Space android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.1"/>
+        
         <Button
             android:id="@+id/login"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/login"
             android:gravity="center"
-            android:textSize="20dp"
+            android:layout_weight="1"
             android:layout_gravity="center"
-            android:textColor="#3e94a6"
+            android:textColor="@android:color/white"
             style="@android:style/Widget.Material.Button.Borderless.Colored" />
-        <Space
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_weight="1" />
+        
+        <Space android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"/>
     </LinearLayout>
 </LinearLayout>

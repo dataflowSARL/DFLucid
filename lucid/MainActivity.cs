@@ -8,6 +8,7 @@ using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -31,7 +32,7 @@ namespace lucid
         private ProgressBar progressBar;
         private LinearLayout linearLayout;
 
-        private GradientDrawable gd = new GradientDrawable();
+        private GradientDrawable gd = new GradientDrawable(), gd_submit = new GradientDrawable();
 
         public static Color TOOLBAR_COLOR = Color.ParseColor("#3e94a6");
 
@@ -60,8 +61,11 @@ namespace lucid
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbarMain);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
+            gd_submit.SetCornerRadius(10);
+            gd_submit.SetStroke(3, Color.ParseColor("#47555e"));
+            gd_submit.SetColor(Color.ParseColor("#47555e"));
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, TOOLBAR_COLOR);
+            gd.SetStroke(3, Color.ParseColor("#47555e"));
             username = FindViewById<EditText>(Resource.Id.username);
             username.Background = gd;
             username.SetTextColor(TOOLBAR_COLOR);
@@ -72,7 +76,7 @@ namespace lucid
             password.SetHighlightColor(Color.LightGray);
             logo = FindViewById<ImageView>(Resource.Id.logo);
             login = FindViewById<Button>(Resource.Id.login);
-            login.SetTextColor(TOOLBAR_COLOR);
+            login.Background = gd_submit;
             error = FindViewById<TextView>(Resource.Id.error_message);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progressBarLogin);
             progressBar.Visibility = ViewStates.Invisible;
@@ -80,7 +84,14 @@ namespace lucid
             login.Click += Login_Click;
             username.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
             password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
-            logo.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 4, screenWidth / 4 , 1); 
+            login.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
+            IWindowManager windowManager = Application.Context.GetSystemService(Context.WindowService).JavaCast<IWindowManager>();
+            var rotation = windowManager.DefaultDisplay.Rotation;
+            if(rotation == SurfaceOrientation.Rotation90 || rotation == SurfaceOrientation.Rotation270) {
+                logo.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 6, screenWidth / 6);
+            } else {
+                logo.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 4, screenWidth / 4);
+            }
 
         }
 
@@ -91,7 +102,7 @@ namespace lucid
             LoginResult loginResult = new LoginResult();
             if (username.Text == string.Empty || password.Text == string.Empty) {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Android.Graphics.Color.Red);
+                gd.SetStroke(3, Color.Red);
                 username.Background = gd;
                 password.Background = gd;
                 progressBar.Visibility = ViewStates.Invisible;
@@ -131,7 +142,7 @@ namespace lucid
             if (loginResult.Success == true)
             {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, TOOLBAR_COLOR);
+                gd.SetStroke(3, Color.ParseColor("#47555e"));
                 username.Background = gd;
                 password.Background = gd;
                 error.Visibility = ViewStates.Invisible;
@@ -144,12 +155,18 @@ namespace lucid
             }
             else
             {
-                Snackbar.Make(linearLayout, loginResult.WebMessage ?? "An Error Occured", Snackbar.LengthLong).Show();
+                gd.SetCornerRadius(10);
+                gd.SetStroke(3, Color.ParseColor("#47555e"));
+                username.Background = gd;
+                password.Background = gd;
+                error.Visibility = ViewStates.Visible;
+                error.Text = loginResult.WebMessage ?? "An Error Occured";
             }
         }
 
         private void FailLoginResultMethod() {
             progressBar.Visibility = ViewStates.Invisible;
+            error.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
             Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }

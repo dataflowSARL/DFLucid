@@ -35,7 +35,7 @@ namespace lucid
         private ProgressBar progressBar;
         private Button from_btn, to_btn, submit;
         private ParamDate paramDate = new ParamDate();
-        private GradientDrawable gd = new GradientDrawable();
+        private GradientDrawable gd = new GradientDrawable(), gd_submit = new GradientDrawable();
         private DateTime from, to;
         private TextView nothing;
 
@@ -72,16 +72,16 @@ namespace lucid
             mLayoutManager = new LinearLayoutManager(this);
             from_btn = FindViewById<Button>(Resource.Id.from_btn_pl);
             to_btn = FindViewById<Button>(Resource.Id.to_btn_pl);
+            gd.SetCornerRadius(10);
+            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            from_btn.Background = gd;
+            to_btn.Background = gd;
             to = DateTime.Now.Date;
             from = DateTime.Now.Date;
             paramDate.DateFrom = from;
             paramDate.DateTo = to;
-            from_btn.Text = "From " + paramDate.DateFrom.ToString("dd/MM/yyyy");
-            to_btn.Text = "To " + paramDate.DateTo.ToString("dd/MM/yyyy");
-            gd.SetCornerRadius(10);
-            gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
-            from_btn.Background = gd;
-            to_btn.Background = gd;
+            from_btn.Text = paramDate.DateFrom.ToString("dd/MM/yyyy");
+            to_btn.Text = paramDate.DateTo.ToString("dd/MM/yyyy");
             from_btn.Click += delegate {
                 from_to = 1;
                 ShowDialog(FROM_DIALOG);
@@ -104,7 +104,10 @@ namespace lucid
                 }
             });
             submit = FindViewById<Button>(Resource.Id.submit_btn_pl);
-            submit.SetTextColor(MainActivity.TOOLBAR_COLOR);
+            gd_submit.SetCornerRadius(10);
+            gd_submit.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd_submit.SetColor(Android.Graphics.Color.ParseColor("#47555e"));
+            submit.Background = gd_submit;
             submit.Click += Submit_Click;
             Task.Run(() =>
             {
@@ -149,7 +152,7 @@ namespace lucid
         {
             progressBar.Visibility = ViewStates.Gone;
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
+            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
             from_btn.Background = gd;
             to_btn.Background = gd;
             if (items.Count == 0)
@@ -171,7 +174,7 @@ namespace lucid
             nothing.Visibility = ViewStates.Visible;
             progressBar.Visibility = ViewStates.Gone;
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
+            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
             from_btn.Background = gd;
             to_btn.Background = gd;
             Snackbar.Make(linearLayout, "An Error Occured.", Snackbar.LengthLong).Show();
@@ -317,16 +320,16 @@ namespace lucid
                 this.from_year = year;
                 this.from_month = month + 1;
                 this.from_day = dayOfMonth;
-                from_btn.Text = "From " + this.from_day + "/" + (this.from_month) + "/" + this.from_year;
                 from = new DateTime(this.from_year, this.from_month, this.from_day).Date;
+                from_btn.Text = from.ToString("dd/MM/yyyy");
             }
             else
             {
                 this.to_year = year;
                 this.to_month = month + 1;
                 this.to_day = dayOfMonth;
-                to_btn.Text = "To " + this.to_day + "/" + this.to_month + "/" + this.to_year;
                 to = new DateTime(this.to_year, this.to_month, this.to_day);
+                to_btn.Text = to.ToString("dd/MM/yyyy");
             }
             paramDate.DateFrom = from;
             paramDate.DateTo = to;

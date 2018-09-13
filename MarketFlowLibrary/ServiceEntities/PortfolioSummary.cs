@@ -8,7 +8,10 @@ namespace MKFLibrary
 {
     public class PortfolioSummary
     {
+        public int RowOrder { get; set; }
+        public int ClientDepositCode { get; set; }
         public string ClientDepositaryPlace { get; set; }
+        public string SecuritySubTypeCode { get; set; }
         public string SecuritySubTypeDesc{ get; set; }
         public double BalanceSystem { get; set; }
         public double TotalBalanceSystem { get; set; }

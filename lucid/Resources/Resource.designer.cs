@@ -3003,8 +3003,8 @@ namespace lucid
 			// aapt resource value: 0x7f0800d6
 			public const int navigation_header_container = 2131230934;
 			
-			// aapt resource value: 0x7f080159
-			public const int net_amount_dot = 2131231065;
+			// aapt resource value: 0x7f080158
+			public const int net_amount_dot = 2131231064;
 			
 			// aapt resource value: 0x7f08003b
 			public const int never = 2131230779;
@@ -3042,8 +3042,8 @@ namespace lucid
 			// aapt resource value: 0x7f08015d
 			public const int open_bs = 2131231069;
 			
-			// aapt resource value: 0x7f080158
-			public const int open_price_dot = 2131231064;
+			// aapt resource value: 0x7f080159
+			public const int open_price_dot = 2131231065;
 			
 			// aapt resource value: 0x7f080161
 			public const int open_price_pl = 2131231073;
@@ -3132,8 +3132,8 @@ namespace lucid
 			// aapt resource value: 0x7f080143
 			public const int qty_tv = 2131231043;
 			
-			// aapt resource value: 0x7f08015f
-			public const int quantity_closed_pl = 2131231071;
+			// aapt resource value: 0x7f08015e
+			public const int quantity_closed_pl = 2131231070;
 			
 			// aapt resource value: 0x7f080156
 			public const int quantity_dot = 2131231062;
@@ -3249,8 +3249,8 @@ namespace lucid
 			// aapt resource value: 0x7f080157
 			public const int security_name_dot = 2131231063;
 			
-			// aapt resource value: 0x7f08015e
-			public const int security_name_pl = 2131231070;
+			// aapt resource value: 0x7f08015f
+			public const int security_name_pl = 2131231071;
 			
 			// aapt resource value: 0x7f080141
 			public const int security_tv = 2131231041;
@@ -4031,8 +4031,8 @@ namespace lucid
 			// aapt resource value: 0x7f0b001f
 			public const int bottom_sheet_behavior = 2131427359;
 			
-			// aapt resource value: 0x7f0b0061
-			public const int buysell = 2131427425;
+			// aapt resource value: 0x7f0b0062
+			public const int buysell = 2131427426;
 			
 			// aapt resource value: 0x7f0b0033
 			public const int change_password = 2131427379;
@@ -4040,14 +4040,14 @@ namespace lucid
 			// aapt resource value: 0x7f0b0020
 			public const int character_counter_pattern = 2131427360;
 			
-			// aapt resource value: 0x7f0b0069
-			public const int close_bs = 2131427433;
+			// aapt resource value: 0x7f0b006a
+			public const int close_bs = 2131427434;
 			
-			// aapt resource value: 0x7f0b006c
-			public const int close_price = 2131427436;
+			// aapt resource value: 0x7f0b006d
+			public const int close_price = 2131427437;
 			
-			// aapt resource value: 0x7f0b0067
-			public const int closed_date = 2131427431;
+			// aapt resource value: 0x7f0b0068
+			public const int closed_date = 2131427432;
 			
 			// aapt resource value: 0x7f0b0051
 			public const int confirm_password = 2131427409;
@@ -4058,11 +4058,11 @@ namespace lucid
 			// aapt resource value: 0x7f0b0055
 			public const int currency_as = 2131427413;
 			
-			// aapt resource value: 0x7f0b0065
-			public const int currencysymbol = 2131427429;
+			// aapt resource value: 0x7f0b0066
+			public const int currencysymbol = 2131427430;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int date = 2131427424;
+			// aapt resource value: 0x7f0b0061
+			public const int date = 2131427425;
 			
 			// aapt resource value: 0x7f0b005b
 			public const int dbcr = 2131427419;
@@ -4082,11 +4082,14 @@ namespace lucid
 			// aapt resource value: 0x7f0b0059
 			public const int due_date = 2131427417;
 			
+			// aapt resource value: 0x7f0b0060
+			public const int empty_date = 2131427424;
+			
 			// aapt resource value: 0x7f0b004e
 			public const int error = 2131427406;
 			
-			// aapt resource value: 0x7f0b006d
-			public const int estimated_pl = 2131427437;
+			// aapt resource value: 0x7f0b006e
+			public const int estimated_pl = 2131427438;
 			
 			// aapt resource value: 0x7f0b005e
 			public const int from = 2131427422;
@@ -4121,26 +4124,26 @@ namespace lucid
 			// aapt resource value: 0x7f0b0043
 			public const int maturity_date = 2131427395;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int netamount = 2131427430;
+			// aapt resource value: 0x7f0b0067
+			public const int netamount = 2131427431;
 			
 			// aapt resource value: 0x7f0b0050
 			public const int new_password = 2131427408;
 			
-			// aapt resource value: 0x7f0b006e
-			public const int nothing = 2131427438;
+			// aapt resource value: 0x7f0b006f
+			public const int nothing = 2131427439;
 			
 			// aapt resource value: 0x7f0b004f
 			public const int old_password = 2131427407;
 			
-			// aapt resource value: 0x7f0b006a
-			public const int open_bs = 2131427434;
+			// aapt resource value: 0x7f0b006b
+			public const int open_bs = 2131427435;
 			
-			// aapt resource value: 0x7f0b0064
-			public const int open_price = 2131427428;
+			// aapt resource value: 0x7f0b0065
+			public const int open_price = 2131427429;
 			
-			// aapt resource value: 0x7f0b0068
-			public const int opened_date = 2131427432;
+			// aapt resource value: 0x7f0b0069
+			public const int opened_date = 2131427433;
 			
 			// aapt resource value: 0x7f0b0021
 			public const int password_toggle_content_description = 2131427361;
@@ -4172,11 +4175,11 @@ namespace lucid
 			// aapt resource value: 0x7f0b0042
 			public const int qty = 2131427394;
 			
-			// aapt resource value: 0x7f0b0062
-			public const int quantity = 2131427426;
+			// aapt resource value: 0x7f0b0063
+			public const int quantity = 2131427427;
 			
-			// aapt resource value: 0x7f0b006b
-			public const int quantity_closed = 2131427435;
+			// aapt resource value: 0x7f0b006c
+			public const int quantity_closed = 2131427436;
 			
 			// aapt resource value: 0x7f0b0011
 			public const int search_menu_title = 2131427345;
@@ -4184,8 +4187,8 @@ namespace lucid
 			// aapt resource value: 0x7f0b0040
 			public const int security = 2131427392;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int securityname = 2131427427;
+			// aapt resource value: 0x7f0b0064
+			public const int securityname = 2131427428;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int status_bar_notification_info_overflow = 2131427366;

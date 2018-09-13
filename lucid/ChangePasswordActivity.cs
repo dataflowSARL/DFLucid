@@ -38,7 +38,7 @@ namespace lucid
         private string clicode;
         private string password;
 
-        private GradientDrawable gd = new GradientDrawable();
+        private GradientDrawable gd = new GradientDrawable(), gd_submit = new GradientDrawable();
 
         private Timer cp_timer;
         private int COUNTDOWN = 5 * 60, INTERVAL = 1000, INITIAL = 5 * 60;
@@ -56,8 +56,11 @@ namespace lucid
             var toolbar = FindViewById<Toolbar>(Resource.Id.cp_toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
+            gd_submit.SetCornerRadius(10);
+            gd_submit.SetStroke(3, Color.ParseColor("#47555e"));
+            gd_submit.SetColor(Color.ParseColor("#47555e"));
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
+            gd.SetStroke(3, Color.ParseColor("#47555e"));
             linearLayout = FindViewById<LinearLayout>(Resource.Id.change_password_layout);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_password);
             progressBar.Visibility = ViewStates.Invisible;
@@ -79,10 +82,10 @@ namespace lucid
             confirm_password.SetHighlightColor(Color.LightGray);
             confirm_password.Background = gd;
             confirm_button = FindViewById<Button>(Resource.Id.confirm_button);
-            confirm_button.SetTextColor(MainActivity.TOOLBAR_COLOR);
             old_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
             new_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
             confirm_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
+            confirm_button.Background = gd_submit;
             confirm_button.Click += Confirm_Button_Click;
             webclicode = MainActivity.user.WebCliCode;
             clicode = MainActivity.user.CliCode;
@@ -101,7 +104,7 @@ namespace lucid
             LoginResult loginResult = new LoginResult();
             if(new_password.Text == string.Empty || old_password.Text == string.Empty || confirm_password.Text == string.Empty) {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Android.Graphics.Color.Red);
+                gd.SetStroke(3, Color.Red);
                 new_password.Background = gd;
                 old_password.Background = gd;
                 confirm_password.Background = gd;
@@ -109,7 +112,7 @@ namespace lucid
                 error_message.Visibility = ViewStates.Visible;
             } else if (!old_password.Text.Equals(MainActivity.user.Password)) {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Android.Graphics.Color.Red);
+                gd.SetStroke(3, Color.Red);
                 new_password.Background = gd;
                 old_password.Background = gd;
                 confirm_password.Background = gd;
@@ -117,7 +120,7 @@ namespace lucid
                 error_message.Visibility = ViewStates.Visible;
             } else if (!new_password.Text.Equals(confirm_password.Text)) {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Android.Graphics.Color.Red);
+                gd.SetStroke(3, Color.Red);
                 new_password.Background = gd;
                 old_password.Background = gd;
                 confirm_password.Background = gd;
@@ -149,7 +152,7 @@ namespace lucid
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
             if (loginResult.Success == true) {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, MainActivity.TOOLBAR_COLOR);
+                gd.SetStroke(3, Color.ParseColor("#47555e"));
                 new_password.Background = gd;
                 old_password.Background = gd;
                 confirm_password.Background = gd;
@@ -161,7 +164,7 @@ namespace lucid
                 StartActivity(home);
             } else {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Android.Graphics.Color.Red);
+                gd.SetStroke(3, Color.Red);
                 new_password.Background = gd;
                 old_password.Background = gd;
                 confirm_password.Background = gd;

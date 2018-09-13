@@ -54,8 +54,9 @@
     <string name="dbcr">DBCR</string>
     <string name="dbcr_amount">Amount</string>
     <string name="balance">Balance</string>
-    <string name="from">From --/--/--</string>
-    <string name="to">To --/--/--</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="empty_date">--/--/--</string>
     <string name="date">Date</string>
     <string name="buysell">B/S</string>
     <string name="quantity">Quantity</string>
