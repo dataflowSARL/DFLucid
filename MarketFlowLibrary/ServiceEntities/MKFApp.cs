@@ -243,6 +243,16 @@ namespace MarketFlow
             return response;
         }
 
+        public async Task<List<RiskSummary>> GetRiskSummary() {
+            List<RiskSummary> response = new List<RiskSummary>();
+            API_Response<RiskSummary> api_response = new API_Response<RiskSummary>();
+            api_response = await MarketFlowLibrary.MarketFlowService.GetRiskSummary(this.User);
+            if(api_response.Success == true) {
+                response = api_response.Content;
+            }
+            return response;
+        }
+
 
         //private Device device;
 

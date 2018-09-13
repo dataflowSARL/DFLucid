@@ -140,7 +140,12 @@ namespace lucid
                         break;
                 }
             };  
-        }  
+        }
+
+        //Handles Portfolio Summary
+        private void ShowPortfolioSummary() {
+
+        }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {  
