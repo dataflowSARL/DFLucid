@@ -136,6 +136,7 @@ namespace lucid
                 password.Background = gd;
                 error.Visibility = ViewStates.Invisible;
                 Intent home = new Intent(this, typeof(HomeActivity));
+                home.PutExtra("username", username.Text);
                 user.WebCliCode = loginResult.WebCliCode;
                 user.CliCode = loginResult.CliCode;
                 user.Username = loginResult.CliID;

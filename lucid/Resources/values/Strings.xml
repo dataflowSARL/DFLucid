@@ -69,6 +69,6 @@
     <string name="open_bs">Open B/S</string>
     <string name="quantity_closed">Quantity Closed</string>
     <string name="close_price">Close Price</string>
-    <string name="estimated_pl">Estimated Profit Loss</string>
+    <string name="estimated_pl">Estimated P/L</string>
     <string name="nothing">Nothing to show</string>
 </resources>

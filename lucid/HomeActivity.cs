@@ -66,7 +66,7 @@ namespace lucid
             View headerView = navigationView.GetHeaderView(0);
             headerView.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             username = headerView.FindViewById<TextView>(Resource.Id.header_username);
-            username.Text = MainActivity.user.Username ?? "Username Not Found";
+            username.Text = Intent.GetStringExtra("username") ?? "Username Not Found";
             SetupDrawerContent(navigationView); //Calling Function
             Task.Run(() =>
             {
