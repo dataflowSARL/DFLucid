@@ -25,6 +25,7 @@ namespace lucid
         #region vars
         private ImageButton back_button;
         private LinearLayout linearLayout;
+        private TextView aboutus;
 
         private Timer au_timer;
         private int COUNTDOWN = 5 * 60, INTERVAL = 1000, INITIAL = 5 * 60;
@@ -45,6 +46,8 @@ namespace lucid
             back_button = FindViewById<ImageButton>(Resource.Id.au_back_btn);
             back_button.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             back_button.Click += Back_Button_Click;
+            aboutus = FindViewById<TextView>(Resource.Id.aboutus_tv);
+            aboutus.Text = "This is an Android Application Developed by Dataflow S.A.R.L. for Lucid Investment Bank.";
             Task.Run(() =>
             {
                 au_timer = new Timer(INTERVAL);

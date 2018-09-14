@@ -15,9 +15,6 @@
     <activity android:label="AssetAllocation" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AssetAllocationActivity">
       <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
     </activity>
-    <activity android:label="PortfolioSummaryActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.PortfolioSummaryActivity">
-      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
-    </activity>
     <activity android:label="AccountSummaryActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AccountSummaryActivity">
       <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
     </activity>

@@ -138,6 +138,23 @@ namespace lucid
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
 
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            Task.Run(async () =>
+            {
+                try
+                {
+                    LoginResult loginResult = await MKFApp.Current.Logout();
+                    this.RunOnUiThread(() => LogoutSuccessful());
+                }
+                catch (Exception exception)
+                {
+                    this.RunOnUiThread(() => LogoutFailed());
+                }
+            });
+        }
+
         // data could not be retrieved
         private void Dismiss()
         {
