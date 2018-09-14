@@ -61,11 +61,21 @@ namespace lucid
         public TextView close_price_pl { get; set; }
         public TextView open_price_pl { get; set; }
         public TextView estimated_pl { get; set; }
+        public TextView total_assets_ps { get; set; }
+        public TextView net_cash_amount_balances_ps { get; set; }
+        public TextView initial_margin_ps { get; set; }
+        public TextView maintenance_margin_ps { get; set; }
+        public TextView net_asset_value_ps { get; set; }
+        public TextView ovl_ps { get; set; }
         public ImageButton as_btn { get; set; }
         public ImageButton details_btn_even { get; set; }
         public ImageButton details_btn_odd { get; set; }
         public ImageButton all_details_btn_even { get; set; }
         public ImageButton all_details_btn_odd { get; set; }
+        public ImageButton total_assets_btn { get; set; }
+        public ImageButton net_cash_balance_btn { get; set; }
+        public LinearLayout total_assets_layout { get; set; }
+        public LinearLayout net_cash_balance_layout { get; set; }
 
         public RecyclerViewHolder(View itemview, Action<int> listener) : base(itemview) {
             tit_nom_even = itemview.FindViewById<TextView>(Resource.Id.tit_nom_even);
@@ -122,11 +132,21 @@ namespace lucid
             close_price_pl = itemview.FindViewById<TextView>(Resource.Id.close_price_pl);
             open_price_pl = itemview.FindViewById<TextView>(Resource.Id.open_price_pl);
             estimated_pl = itemview.FindViewById<TextView>(Resource.Id.estimated_profit_loss);
+            total_assets_ps = itemview.FindViewById<TextView>(Resource.Id.total_assets_ps);
+            net_cash_amount_balances_ps = itemview.FindViewById<TextView>(Resource.Id.net_cash_account_balances_ps);
+            initial_margin_ps = itemview.FindViewById<TextView>(Resource.Id.initial_margin_ps);
+            maintenance_margin_ps = itemview.FindViewById<TextView>(Resource.Id.maintenance_margin_ps);
+            net_asset_value_ps = itemview.FindViewById<TextView>(Resource.Id.net_asset_value_ps);
+            ovl_ps = itemview.FindViewById<TextView>(Resource.Id.ovl_ps);
             as_btn = itemview.FindViewById<ImageButton>(Resource.Id.as_button);
             details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.details_button_even);
             details_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.details_button_odd);
             all_details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.all_details_button_even);
             all_details_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.all_details_button_odd);
+            total_assets_btn = itemview.FindViewById<ImageButton>(Resource.Id.total_assets_btn);
+            net_cash_balance_btn = itemview.FindViewById<ImageButton>(Resource.Id.net_cash_balance_btn);
+            total_assets_layout = itemview.FindViewById<LinearLayout>(Resource.Id.total_assets_layout);
+            net_cash_balance_layout = itemview.FindViewById<LinearLayout>(Resource.Id.net_cash_balance_layout);
 
             itemview.Click += (sender, e) => listener(base.AdapterPosition);
         }

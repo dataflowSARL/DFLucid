@@ -51,6 +51,7 @@ namespace lucid
             SetUpVariables();
         }
 
+        //setup activity's variables
         private void SetUpVariables()
         {
             var toolbar = FindViewById<Toolbar>(Resource.Id.aad_toolbar);
@@ -111,18 +112,21 @@ namespace lucid
 
         }
 
+        // data could not be retrieved
         private void Dismiss()
         {
             progressBar.Visibility = ViewStates.Gone;
             Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }
 
+        //data could not be refreshed
         private void DismissRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
             Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }
 
+        //data retrieved successfully
         private void Display()
         {
             progressBar.Visibility = ViewStates.Gone;
@@ -134,7 +138,7 @@ namespace lucid
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
 
-
+        //data refreshed successfully
         private void DisplayRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
@@ -146,6 +150,7 @@ namespace lucid
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
 
+        // click on recyclerview row
         void MRecyclerViewAdapter_ItemClick(object sender, int e)
         {
             Intent all_details = new Intent(this, typeof(AllDetailsActivity));
@@ -157,7 +162,7 @@ namespace lucid
             StartActivity(all_details);
         }
 
-
+        //returns to parent activity
         void Back_Btn_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
@@ -215,6 +220,7 @@ namespace lucid
             });
         }
 
+        //detects user interaction
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
@@ -228,6 +234,7 @@ namespace lucid
             });
         }
 
+        //timer ticks
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             COUNTDOWN--;
@@ -249,6 +256,7 @@ namespace lucid
             }
         }
 
+        //logout -> inactivity
         public void LogoutSuccessful()
         {
             if (!IsFinishing)
@@ -257,11 +265,13 @@ namespace lucid
             }
         }
 
+        // logout failed
         public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
+        //dialog shows up due to inactivity
         private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

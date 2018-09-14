@@ -57,6 +57,7 @@ namespace lucid
             SetUpVariables();
         }
 
+        //setup activity's views
         private void SetUpVariables()
         {
             var toolbar = FindViewById<Toolbar>(Resource.Id.ad_toolbar);
@@ -113,12 +114,14 @@ namespace lucid
             });
         }
 
+        //returns to parent activity
         void Back_Btn_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
             Task.Run(() => ad_timer.Stop());
         }
 
+        // display data on success
         private void Display()
         {
             progressBar.Visibility = ViewStates.Gone;
@@ -129,18 +132,21 @@ namespace lucid
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
 
+        // error message because data cant be retrieved
         private void Dismiss()
         {
             progressBar.Visibility = ViewStates.Gone;
             Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }
 
+        // data cant be refreshed
         private void DismissRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
             Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }
 
+        // data refresh successful
         private void DisplayRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
@@ -202,6 +208,7 @@ namespace lucid
             });
         }
 
+        //detects user interaction
         public override void OnUserInteraction()
         {
             ad_timer.Stop();
@@ -215,6 +222,7 @@ namespace lucid
             });
         }
 
+        // timer ticks
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             COUNTDOWN--;
@@ -236,6 +244,7 @@ namespace lucid
             }
         }
 
+        //logout -> inactivity
         public void LogoutSuccessful()
         {
             if (!IsFinishing)
@@ -244,11 +253,13 @@ namespace lucid
             }
         }
 
+        //logout failed
         public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
+        //alert dialog due to inactivity
         private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

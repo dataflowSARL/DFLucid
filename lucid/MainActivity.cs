@@ -35,6 +35,7 @@ namespace lucid
         private GradientDrawable gd = new GradientDrawable(), gd_submit = new GradientDrawable();
 
         public static Color TOOLBAR_COLOR = Color.ParseColor("#3e94a6");
+        public static Color TEXT_COLOR = Color.ParseColor("#47555e");
 
         public static MKFUser user;
 
@@ -55,6 +56,7 @@ namespace lucid
            
         }
 
+        // set up the activity's views
         private void setUpVariables()
         {
             linearLayout = FindViewById<LinearLayout>(Resource.Id.main_activity_linear_layout);
@@ -62,10 +64,10 @@ namespace lucid
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
             gd_submit.SetCornerRadius(10);
-            gd_submit.SetStroke(3, Color.ParseColor("#47555e"));
-            gd_submit.SetColor(Color.ParseColor("#47555e"));
+            gd_submit.SetStroke(3, TEXT_COLOR);
+            gd_submit.SetColor(TEXT_COLOR);
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Color.ParseColor("#47555e"));
+            gd.SetStroke(3, TEXT_COLOR);
             username = FindViewById<EditText>(Resource.Id.username);
             username.Background = gd;
             username.SetTextColor(TOOLBAR_COLOR);
@@ -95,6 +97,7 @@ namespace lucid
 
         }
 
+        // login button clicked
         void Login_Click(object sender, System.EventArgs e)
         {
             progressBar.Visibility = ViewStates.Visible;
@@ -136,13 +139,14 @@ namespace lucid
             }
         }
 
+        // login is successful
         private void SuccessLoginResultMethod(LoginResult loginResult) {
             progressBar.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
             if (loginResult.Success == true)
             {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Color.ParseColor("#47555e"));
+                gd.SetStroke(3, TEXT_COLOR);
                 username.Background = gd;
                 password.Background = gd;
                 error.Visibility = ViewStates.Invisible;
@@ -156,7 +160,7 @@ namespace lucid
             else
             {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Color.ParseColor("#47555e"));
+                gd.SetStroke(3, TEXT_COLOR);
                 username.Background = gd;
                 password.Background = gd;
                 error.Visibility = ViewStates.Visible;
@@ -164,6 +168,7 @@ namespace lucid
             }
         }
 
+        //login failed
         private void FailLoginResultMethod() {
             progressBar.Visibility = ViewStates.Invisible;
             error.Visibility = ViewStates.Invisible;

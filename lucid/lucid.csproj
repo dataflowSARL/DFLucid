@@ -132,6 +132,7 @@
     <Compile Include="DatePickerFragment.cs" />
     <Compile Include="RecyclerViewDOTAdapter.cs" />
     <Compile Include="RecyclerViewPLAdapter.cs" />
+    <Compile Include="RecyclerViewPSAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -180,6 +181,7 @@
     <AndroidResource Include="Resources\layout\recyclerview_card_asd_layout.axml" />
     <AndroidResource Include="Resources\layout\recyclerview_card_dot_layout.axml" />
     <AndroidResource Include="Resources\layout\recyclerview_card_pl_layout.axml" />
+    <AndroidResource Include="Resources\layout\recyclerview_card_ps_layout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

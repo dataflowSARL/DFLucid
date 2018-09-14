@@ -56,6 +56,8 @@ namespace lucid
             SetUpVariables();
 
         }
+
+        //setup acitivity's views
         private void SetUpVariables() {
             nothing = FindViewById<TextView>(Resource.Id.nothing_dot);
             nothing.Visibility = ViewStates.Gone;
@@ -73,10 +75,10 @@ namespace lucid
             from_btn = FindViewById<Button>(Resource.Id.from_btn_dot);
             to_btn = FindViewById<Button>(Resource.Id.to_btn_dot);
             gd_submit.SetCornerRadius(10);
-            gd_submit.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
-            gd_submit.SetColor(Android.Graphics.Color.ParseColor("#47555e"));
+            gd_submit.SetStroke(3, MainActivity.TEXT_COLOR);
+            gd_submit.SetColor(MainActivity.TEXT_COLOR);
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
             submit_btn = FindViewById<Button>(Resource.Id.submit_btn_dot);
@@ -129,10 +131,11 @@ namespace lucid
             return null;
         }
 
+        // data retrieved successfully
         private void Success(){
             progressBar.Visibility = ViewStates.Gone;
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
             if (mItems.Count == 0)
@@ -146,16 +149,18 @@ namespace lucid
             mRecyclerView.SetAdapter(mAdapter);
         }
 
+        // data failed to be retrieved
         private void Failed() {
             nothing.Visibility = ViewStates.Visible;
             progressBar.Visibility = ViewStates.Gone;
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
             Snackbar.Make(linearLayout, "An Error Occured.", Snackbar.LengthLong).Show();
         }
 
+        //submit date range button
         void Submit_Btn_Click(object sender, EventArgs e)
         {
             if (paramDate.DateFrom == null || paramDate.DateTo == null || paramDate.userMKF == null)
@@ -186,7 +191,7 @@ namespace lucid
             }
         }
 
-
+        //returns to parent activity
         void Back_Button_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
@@ -244,6 +249,7 @@ namespace lucid
             });
         }
 
+        //detects user interaction
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
@@ -257,6 +263,7 @@ namespace lucid
             });
         }
 
+        //timer ticks
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             COUNTDOWN--;
@@ -278,6 +285,7 @@ namespace lucid
             }
         }
 
+        //logout -> inactivity
         public void LogoutSuccessful()
         {
             if (!IsFinishing)
@@ -286,11 +294,13 @@ namespace lucid
             }
         }
 
+        //logout failed
         public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
+        //alert dialog shows up due to inactivity
         private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -304,6 +314,8 @@ namespace lucid
             });
             builder.Create().Show();
         }
+
+        //select dates on calendar
         public void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
         {
             if (from_to == 1)

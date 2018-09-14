@@ -56,6 +56,8 @@ namespace lucid
             setUpVariables();
         }
 
+
+        //setup activity's views
         private void setUpVariables() {
             nothing = FindViewById<TextView>(Resource.Id.nothing_pl);
             nothing.Visibility = ViewStates.Gone;
@@ -73,7 +75,7 @@ namespace lucid
             from_btn = FindViewById<Button>(Resource.Id.from_btn_pl);
             to_btn = FindViewById<Button>(Resource.Id.to_btn_pl);
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
             to = DateTime.Now.Date;
@@ -105,8 +107,8 @@ namespace lucid
             });
             submit = FindViewById<Button>(Resource.Id.submit_btn_pl);
             gd_submit.SetCornerRadius(10);
-            gd_submit.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
-            gd_submit.SetColor(Android.Graphics.Color.ParseColor("#47555e"));
+            gd_submit.SetStroke(3, MainActivity.TEXT_COLOR);
+            gd_submit.SetColor(MainActivity.TEXT_COLOR);
             submit.Background = gd_submit;
             submit.Click += Submit_Click;
             Task.Run(() =>
@@ -118,6 +120,7 @@ namespace lucid
             });
         }
 
+        // submit date range for data retrieval
         void Submit_Click(object sender, EventArgs e)
         {
             if (paramDate.DateFrom == null || paramDate.DateTo == null || paramDate.userMKF == null)
@@ -148,11 +151,12 @@ namespace lucid
             }
         }
 
+        //data retrieved successfully
         private void Success()
         {
             progressBar.Visibility = ViewStates.Gone;
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
             if (items.Count == 0)
@@ -168,18 +172,19 @@ namespace lucid
             mRecyclerView.SetAdapter(mAdapter);
         }
 
-
+        //data failed to retrieve
         private void Failed()
         {
             nothing.Visibility = ViewStates.Visible;
             progressBar.Visibility = ViewStates.Gone;
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
             Snackbar.Make(linearLayout, "An Error Occured.", Snackbar.LengthLong).Show();
         }
 
+        //shows calendar dialog
         protected override Dialog OnCreateDialog(int id)
         {
             switch (id)
@@ -194,7 +199,7 @@ namespace lucid
             return null;
         }
 
-
+        //returns to parent activity
         void Back_Button_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
@@ -252,6 +257,7 @@ namespace lucid
             });
         }
 
+        //detects user interaction
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
@@ -265,6 +271,7 @@ namespace lucid
             });
         }
 
+        //timer ticks
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             COUNTDOWN--;
@@ -286,6 +293,7 @@ namespace lucid
             }
         }
 
+        //logout -> inactivity
         public void LogoutSuccessful()
         {
             if (!IsFinishing)
@@ -294,11 +302,14 @@ namespace lucid
             }
         }
 
+        //logout failed
         public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
+
+        //alert dialog shows up due to inactivity
         private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(Application.Context);
@@ -313,6 +324,7 @@ namespace lucid
             builder.Create().Show();
         }
 
+        //gets the dates from calendar
         public void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
         {
             if (from_to == 1)

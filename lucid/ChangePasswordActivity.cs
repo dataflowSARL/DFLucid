@@ -52,15 +52,16 @@ namespace lucid
             SetUpVariables();
         }
 
+        //setup acitivity's views
         private void SetUpVariables() {
             var toolbar = FindViewById<Toolbar>(Resource.Id.cp_toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
             gd_submit.SetCornerRadius(10);
-            gd_submit.SetStroke(3, Color.ParseColor("#47555e"));
-            gd_submit.SetColor(Color.ParseColor("#47555e"));
+            gd_submit.SetStroke(3, MainActivity.TEXT_COLOR);
+            gd_submit.SetColor(MainActivity.TEXT_COLOR);
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             linearLayout = FindViewById<LinearLayout>(Resource.Id.change_password_layout);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_password);
             progressBar.Visibility = ViewStates.Invisible;
@@ -99,6 +100,7 @@ namespace lucid
             });
         }
 
+        //confirm button to change password click
         void Confirm_Button_Click(object sender, EventArgs e)
         {
             LoginResult loginResult = new LoginResult();
@@ -146,13 +148,14 @@ namespace lucid
             }
         }
 
+        //password updated successfully
         private void UpdatePasswordSuccess(LoginResult loginResult) {
             progressBar.Visibility = ViewStates.Invisible;
             error_message.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
             if (loginResult.Success == true) {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Color.ParseColor("#47555e"));
+                gd.SetStroke(3, MainActivity.TEXT_COLOR);
                 new_password.Background = gd;
                 old_password.Background = gd;
                 confirm_password.Background = gd;
@@ -172,6 +175,7 @@ namespace lucid
             }
         }
 
+        //password failed to update
         private void UpdatePasswordFail() {
             progressBar.Visibility = ViewStates.Invisible;
             error_message.Visibility = ViewStates.Invisible;
@@ -179,7 +183,7 @@ namespace lucid
             Snackbar.Make(linearLayout , "You are not connected", Snackbar.LengthLong).Show();
         }
 
-
+        //returns to parent activity
         void Back_Button_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
@@ -237,6 +241,7 @@ namespace lucid
             });
         }
 
+        //detects user interaction
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
@@ -250,6 +255,7 @@ namespace lucid
             });
         }
 
+        //timer ticks
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             COUNTDOWN--;
@@ -271,6 +277,7 @@ namespace lucid
             }
         }
 
+        //logout -> inactivity
         public void LogoutSuccessful()
         {
             if (!IsFinishing)
@@ -279,11 +286,13 @@ namespace lucid
             }
         }
 
+        //logout failed
         public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
+        //dialog shows up due to inactivity
         private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

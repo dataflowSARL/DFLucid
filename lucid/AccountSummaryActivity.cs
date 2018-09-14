@@ -58,18 +58,20 @@ namespace lucid
 
         }
 
+
+        // set up the activity's views
         private void SetUpVariables() {
             //timer_tv = FindViewById<TextView>(Resource.Id.timer_tv);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_account_summary);
             progressBar.Visibility = ViewStates.Visible;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_as);
+            mLayoutManager = new LinearLayoutManager(this);
             filter_button = FindViewById<Button>(Resource.Id.filter_button);
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
-            gd.SetColor(Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
+            gd.SetColor(MainActivity.TEXT_COLOR);
             filter_button.Background = gd;
             filter_button.SetTextColor(Android.Graphics.Color.White);
-            mLayoutManager = new LinearLayoutManager(this);
             linearLayout = FindViewById<LinearLayout>(Resource.Id.as_linear_layout);
             var toolbar = FindViewById<Toolbar>(Resource.Id.as_toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
@@ -115,6 +117,7 @@ namespace lucid
             });
         }
 
+        // filter the results
         void Filter_Button_Click(object sender, EventArgs e)
         {
             if(state == 0) {
@@ -136,7 +139,7 @@ namespace lucid
             }
         }
 
-
+        // click on any row of the recyclerview
         void MRecyclerViewAdapter_ItemClick(object sender, int e)
         {
             as_timer.Stop();
@@ -145,6 +148,7 @@ namespace lucid
             StartActivity(details);
         }
 
+        // display results on success
         private void Display() {
             progressBar.Visibility = ViewStates.Gone;
             filter_button.Visibility = ViewStates.Visible;
@@ -161,6 +165,7 @@ namespace lucid
             }
         }
 
+        // display results on refresh
         private void DisplayRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
@@ -181,18 +186,20 @@ namespace lucid
             }
         }
 
+        // data could not be retrieved
         private void Dismiss() {
             progressBar.Visibility = ViewStates.Gone;
             Snackbar.Make(linearLayout, mResponse.Message, Snackbar.LengthLong).Show();
         }
 
+        // datat could not be refreshed
         private void DismissRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
             Snackbar.Make(linearLayout, mResponse.Message, Snackbar.LengthLong).Show();
         }
 
-
+        // back to home activity
         void Back_Button_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
@@ -250,6 +257,7 @@ namespace lucid
             });
         }
 
+        // user interaction detected
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
@@ -263,6 +271,7 @@ namespace lucid
             });
         }
 
+        // timer ticks
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             //this.RunOnUiThread(() => timer_tv.Text = COUNTDOWN / 60 + ":" + COUNTDOWN % 60);
@@ -285,6 +294,7 @@ namespace lucid
             }
         }
 
+        // logout successful
         public void LogoutSuccessful()
         {
             if (!IsFinishing)
@@ -293,11 +303,15 @@ namespace lucid
             }
         }
 
+
+        //logout failed
         public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
+
+        //set up alert dialog after 5min of inactivity
         private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

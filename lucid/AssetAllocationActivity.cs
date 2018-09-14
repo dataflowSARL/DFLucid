@@ -54,6 +54,7 @@ namespace lucid
            
         }
 
+        //setup activity's views
         private void SetUpVariables() {
             var toolbar = FindViewById<Toolbar>(Resource.Id.aa_toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
@@ -64,6 +65,7 @@ namespace lucid
             back_btn.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             back_btn.Click += Back_Btn_Click;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_aa);
+            mLayoutManager = new LinearLayoutManager(this);
             swipeRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_to_refresh);
             swipeRefreshLayout.SetColorSchemeResources(Resource.Color.blue,
                                               Resource.Color.purple,
@@ -108,27 +110,30 @@ namespace lucid
 
         }
 
+        // data cant be retrieved
         private void Dismiss(){
             progressBar.Visibility = ViewStates.Gone;
             Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }
 
+        // data cant be refreshed
         private void DismissRefresher()
         {
             swipeRefreshLayout.Refreshing = false;
             Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
         }
 
+        // data retrieved successfully
         private void Display() {
             progressBar.Visibility = ViewStates.Gone;
             mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
-            mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
             mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
 
+        // click on the recyclerview's rows
         void MRecyclerViewAdapter_ItemClick(object sender, int e)
         {
             if (Convert.ToInt16(mItems[e].Code) >= 0)
@@ -142,18 +147,17 @@ namespace lucid
             }
         }
 
-
+        //data refreshed successful
         private void DisplayRefresher() {
             swipeRefreshLayout.Refreshing = false;
             mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
-            mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
             mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
             mRecyclerView.SetAdapter(mRecyclerViewAdapter);
         }
 
-
+        //returns to parent activity
         void Back_Btn_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
@@ -211,6 +215,7 @@ namespace lucid
             });
         }
 
+        // detects user interaction
         public override void OnUserInteraction()
         {
             base.OnUserInteraction();
@@ -224,6 +229,7 @@ namespace lucid
             });
         }
 
+        //timer ticks
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             COUNTDOWN--;
@@ -245,6 +251,7 @@ namespace lucid
             }
         }
 
+        //logout -> inactivity
         public void LogoutSuccessful()
         {
             if (!IsFinishing)
@@ -253,11 +260,13 @@ namespace lucid
             }
         }
 
+        //logout failed
         public void LogoutFailed()
         {
             Snackbar.Make(linearLayout, "An error occured", Snackbar.LengthLong).Show();
         }
 
+        //dialog shows up due to inactivity
         private void ShowAlertDialog(String title, String message)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -167,7 +167,7 @@ namespace MarketFlow
 
         public async Task<List<Position>> GetPositions(bool forceRefresh = false, bool saveResult = true)
         {
-            List<Position> result = new List<Position>();
+            List<Position> result = UserPositions;
             API_Response < Position > api_Response = new API_Response<Position>();
             if (UserPositions == null || forceRefresh == true)
             {
@@ -237,6 +237,16 @@ namespace MarketFlow
             List<ClosedOperations> response = new List<ClosedOperations>();
             API_Response<ClosedOperations> api_response = new API_Response<ClosedOperations>();
             api_response = await MarketFlowLibrary.MarketFlowService.GetRealisedProfit(paramDate);
+            if(api_response.Success == true) {
+                response = api_response.Content;
+            }
+            return response;
+        }
+
+        public async Task<List<RiskSummary>> GetRiskSummary() {
+            List<RiskSummary> response = new List<RiskSummary>();
+            API_Response<RiskSummary> api_response = new API_Response<RiskSummary>();
+            api_response = await MarketFlowLibrary.MarketFlowService.GetRiskSummary(this.User);
             if(api_response.Success == true) {
                 response = api_response.Content;
             }
