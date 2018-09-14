@@ -1,28 +1,33 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/AssetAllocationDetailsActivity.cs">
     <Files>
-      <File FileName="lucid/RecyclerViewPSAdapter.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="lucid/HomeActivity.cs" Line="143" Column="34" NotebookId="1" />
-      <File FileName="lucid/MainActivity.cs" Line="80" Column="61" NotebookId="1" />
-      <File FileName="lucid/ChangePasswordActivity.cs" Line="59" Column="64" NotebookId="1" />
-      <File FileName="lucid/AccountSummaryDetailsActivity.cs" Line="120" Column="122" NotebookId="1" />
+      <File FileName="lucid/AccountSummaryActivity.cs" Line="124" Column="27" NotebookId="1" />
+      <File FileName="lucid/RecyclerViewSecurityAdapter.cs" Line="84" Column="30" NotebookId="1" />
+      <File FileName="lucid/AssetAllocationDetailsActivity.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="1681" Y="23" Width="1635" Height="992">
         <Files>
-          <File FileName="lucid/RecyclerViewAdapterAccountSummary.cs" Line="44" Column="92" />
-          <File FileName="lucid/RecyclerViewHolder.cs" Line="80" Column="18" />
-          <File FileName="lucid/DetailsOfTransactionActivity.cs" Line="87" Column="126" />
-          <File FileName="lucid/ProfitLossActivity.cs" Line="114" Column="122" />
+          <File FileName="lucid/AssetAllocationActivity.cs" Line="191" Column="50" />
+          <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="243" Column="101" />
+          <File FileName="MarketFlowLibrary/ServiceEntities/MKFApp.cs" Line="179" Column="14" />
+          <File FileName="lucid/RecyclerViewAdapterAssetAllocation.cs" Line="42" Column="67" />
+          <File FileName="lucid/MainActivity.cs" Line="176" Column="41" />
+          <File FileName="lucid/HomeActivity.cs" Line="229" Column="71" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="140" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="141" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="156" column="1" />
+      <Breakpoint file="/Users/lucien/Projects/lucid/lucid/AssetAllocationActivity.cs" relfile="lucid/AssetAllocationActivity.cs" line="157" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.lucid PreferredExecutionTarget="Android.my_device" AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" />
+  <MonoDevelop.Ide.ItemProperties.lucid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.pixel_xl" AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" />
   <MultiItemStartupConfigurations />
 </Properties>

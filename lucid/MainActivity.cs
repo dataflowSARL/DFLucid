@@ -173,7 +173,7 @@ namespace lucid
             progressBar.Visibility = ViewStates.Invisible;
             error.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
-            Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
+            Snackbar.Make(linearLayout, "You are not connected!", Snackbar.LengthLong).Show();
         }
     }
 }

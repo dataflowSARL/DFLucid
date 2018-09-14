@@ -5,7 +5,7 @@ using Android.Widget;
 
 namespace lucid
 {
-	public class RecyclerViewHolder: RecyclerView.ViewHolder
+    public class RecyclerViewHolder : RecyclerView.ViewHolder
     {
         public TextView tit_nom_even { get; set; }
         public TextView tit_nom_odd { get; set; }
@@ -67,6 +67,12 @@ namespace lucid
         public TextView maintenance_margin_ps { get; set; }
         public TextView net_asset_value_ps { get; set; }
         public TextView ovl_ps { get; set; }
+        public TextView desc_security_even { get; set; }
+        public TextView desc_security_odd { get; set; }
+        public TextView balance_system_security_odd { get; set; }
+        public TextView balance_system_security_even { get; set; }
+        public TextView weight_security_odd { get; set; }
+        public TextView weight_security_even { get; set; }
         public ImageButton as_btn { get; set; }
         public ImageButton details_btn_even { get; set; }
         public ImageButton details_btn_odd { get; set; }
@@ -74,6 +80,8 @@ namespace lucid
         public ImageButton all_details_btn_odd { get; set; }
         public ImageButton total_assets_btn { get; set; }
         public ImageButton net_cash_balance_btn { get; set; }
+        public ImageButton details_security_btn_odd { get; set; }
+        public ImageButton details_security_btn_even { get; set; }
         public LinearLayout total_assets_layout { get; set; }
         public LinearLayout net_cash_balance_layout { get; set; }
 
@@ -138,6 +146,14 @@ namespace lucid
             maintenance_margin_ps = itemview.FindViewById<TextView>(Resource.Id.maintenance_margin_ps);
             net_asset_value_ps = itemview.FindViewById<TextView>(Resource.Id.net_asset_value_ps);
             ovl_ps = itemview.FindViewById<TextView>(Resource.Id.ovl_ps);
+            desc_security_odd = itemview.FindViewById<TextView>(Resource.Id.asset_description_security_odd);
+            desc_security_even = itemview.FindViewById<TextView>(Resource.Id.asset_description_security_even);
+            balance_system_security_odd = itemview.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_security_odd);
+            balance_system_security_even = itemview.FindViewById<TextView>(Resource.Id.pos_bal_sys_tot_usd_security_even);
+            weight_security_odd = itemview.FindViewById<TextView>(Resource.Id.weight_percentage_tv_security_odd);
+            weight_security_even = itemview.FindViewById<TextView>(Resource.Id.weight_percentage_tv_security_even);
+            details_security_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.details_button_security_odd);
+            details_security_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.details_button_security_even);
             as_btn = itemview.FindViewById<ImageButton>(Resource.Id.as_button);
             details_btn_even = itemview.FindViewById<ImageButton>(Resource.Id.details_button_even);
             details_btn_odd = itemview.FindViewById<ImageButton>(Resource.Id.details_button_odd);

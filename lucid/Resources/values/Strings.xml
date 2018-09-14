@@ -13,7 +13,7 @@
     <string name="profit_loss">Profit/Loss</string>
     <string name="change_password">Change Password</string>
     <string name="logout">Logout</string>
-    <string name="about_us">About Us</string>
+    <string name="contact_us">Contact Us</string>
     <string name="asset_description">Asset Description</string>
     <string name="pos_bal_sys_tot_usd">Pos Bal Sys Tot (USD)</string>
     <string name="weight_percentage">Weight %</string>
@@ -78,5 +78,10 @@
     <string name="maintenance_margin">Maintenance Margin:</string>
     <string name="net_asset_value">Net Asset Value:</string>
     <string name="ovl">OVL</string>
+    <string name="not_connected">You Are Not Connected!</string>
+    <string name="error_occured">An Error Occured</string>
+    <string name="username_not_found">Username Not Found</string>
+    <string name="show_by_security">Show by Security</string>
+    <string name="show_by_aa">Show by Asset Allocation</string>
     
 </resources>

@@ -68,9 +68,11 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_dot_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_pl_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_ps_layout.xml
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_security_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/lucid/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/lucid/obj/Debug/uploadflags.txt
+/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_security_odd_layout.xml
 /Users/lucien/Projects/lucid/lucid/bin/Debug/Mono.Android.pdb
 /Users/lucien/Projects/lucid/lucid/obj/Debug/linksrc/lucid.pdb
 /Users/lucien/Projects/lucid/lucid/obj/Debug/linksrc/MarketFlowLibrary.pdb

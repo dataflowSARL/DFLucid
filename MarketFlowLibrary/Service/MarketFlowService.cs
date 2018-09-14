@@ -28,6 +28,7 @@ namespace MarketFlowLibrary
         private const string getOperationsAction = "GetOperations";
         private const string getRealisedProfitAction = "GetRealisedProfit";
         private const string getRiskSummaryAction = "GetRiskSummary";
+        private const string getPortfolioSummary = "GetPortfolioSummary";
 
 
         private static bool TestMode { get; set; }
@@ -220,6 +221,26 @@ namespace MarketFlowLibrary
             if (response.IsSuccessStatusCode)
             {
                 result = Newtonsoft.Json.JsonConvert.DeserializeObject<API_Response<RiskSummary>>(response.Content.ReadAsStringAsync().Result);
+            }
+
+            return result;
+
+
+        }
+
+        public async static Task<API_Response<PortfolioSummary>> GetPortfolioSummary(MKFUser user)
+        {
+            API_Response<PortfolioSummary> result = new API_Response<PortfolioSummary>();
+            HttpClient client = new HttpClient();
+            string serviceURL = string.Format("{0}{1}", serviceBaseURI, getPortfolioSummary);
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(user);
+
+            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(serviceURL, stringContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<API_Response<PortfolioSummary>>(response.Content.ReadAsStringAsync().Result);
             }
 
             return result;

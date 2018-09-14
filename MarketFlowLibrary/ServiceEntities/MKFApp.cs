@@ -168,12 +168,13 @@ namespace MarketFlow
         public async Task<List<Position>> GetPositions(bool forceRefresh = false, bool saveResult = true)
         {
             List<Position> result = UserPositions;
-            API_Response < Position > api_Response = new API_Response<Position>();
+            API_Response<Position> api_Response = new API_Response<Position>();
             if (UserPositions == null || forceRefresh == true)
             {
                 api_Response = await MarketFlowLibrary.MarketFlowService.GetPosition(this.User);
                 result = api_Response.Content;
-                if(api_Response.Success == true) {
+                if (api_Response.Success == true)
+                {
                     if (saveResult == true)
                     {
                         UserPositions = result;
@@ -207,9 +208,6 @@ namespace MarketFlow
             paramDate.userMKF = this.User;
             paramDate.DateTo = DateTime.Now;
             API_Response<AccountSummary> response = await MarketFlowLibrary.MarketFlowService.GetAccountSummary(paramDate);
-            if(response.Success == true) {
-
-            }
             return response;
         }
 
@@ -251,6 +249,12 @@ namespace MarketFlow
                 response = api_response.Content;
             }
             return response;
+        }
+
+        public async Task<API_Response<PortfolioSummary>> GetPortfolioSummary() {
+            API_Response<PortfolioSummary> api_response = new API_Response<PortfolioSummary>();
+            api_response = await MarketFlowLibrary.MarketFlowService.GetPortfolioSummary(this.User);
+            return api_response;
         }
 
 

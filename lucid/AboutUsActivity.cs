@@ -47,7 +47,7 @@ namespace lucid
             back_button.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             back_button.Click += Back_Button_Click;
             aboutus = FindViewById<TextView>(Resource.Id.aboutus_tv);
-            aboutus.Text = "This is an Android Application Developed by Dataflow S.A.R.L. for Lucid Investment Bank.";
+            aboutus.Text = "109 Allenby Street, 1st Floor, Marfaa,\nBeirut Central District, Lebanon,\nPO Box 11 - 3346\nT. + 961 1 999 533 F. + 961 1 985 233\nLucid @lucidinvestbank.com";
             Task.Run(() =>
             {
                 au_timer = new Timer(INTERVAL);

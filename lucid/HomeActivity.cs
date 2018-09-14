@@ -112,7 +112,7 @@ namespace lucid
             View headerView = navigationView.GetHeaderView(0);
             headerView.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             username = headerView.FindViewById<TextView>(Resource.Id.header_username);
-            username.Text = Intent.GetStringExtra("username") ?? "Username Not Found";
+            username.Text = Intent.GetStringExtra("username") ?? "Username not Found";
             SetupDrawerContent(navigationView); //Calling Function
             Task.Run(() =>
             {
@@ -220,13 +220,13 @@ namespace lucid
                         });
 
                         break;
-                    case "About Us":
+                    case "Contact Us":
                         timer.Stop();
                         Intent aboutUs = new Intent(this, typeof(AboutUsActivity));
                         StartActivity(aboutUs);
                         break;
                     default:
-                        Snackbar.Make(linearLayout, "You are not connected", Snackbar.LengthLong).Show();
+                        Snackbar.Make(linearLayout, "An Error Occured", Snackbar.LengthLong).Show();
                         break;
                 }
             };  

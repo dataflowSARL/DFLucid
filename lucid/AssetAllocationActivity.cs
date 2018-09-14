@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using Android.App;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -20,6 +21,7 @@ using Android.Widget;
 using MarketFlow;
 using MarketFlowLibrary;
 using MKFLibrary;
+using MKFLibrary.API;
 using Toolbar = Android.Widget.Toolbar;
 
 namespace lucid
@@ -30,14 +32,22 @@ namespace lucid
     {
         #region variables
         private ImageButton back_btn;
-        private RecyclerView mRecyclerView;
+        private RecyclerView mRecyclerView, mRecyclerView_ps;
         private RecyclerView.LayoutManager mLayoutManager;
         private RecyclerViewAdapterAssetAllocation mRecyclerViewAdapter;
+        private RecyclerViewSecurityAdapter mAdapter;
+
         private LinearLayout linearLayout;
         private List<AssetAllocation> mItems = new List<AssetAllocation>();
         public static List<Position> userAccountPositions = new List<Position>();
+        private API_Response<PortfolioSummary> response_ps = new API_Response<PortfolioSummary>();
+        private List<PortfolioSummary> mItems_portfolio_summary = new List<PortfolioSummary>();
         private ProgressBar progressBar;
         private SwipeRefreshLayout swipeRefreshLayout;
+        private int screenWidth;
+        private Button filter_btn;
+        private GradientDrawable gd = new GradientDrawable();
+        private int state = 0;
 
         private Timer aa_timer;
         private int COUNTDOWN = 5 * 60, INTERVAL = 1000, INITIAL = 5 * 60;
@@ -56,6 +66,13 @@ namespace lucid
 
         //setup activity's views
         private void SetUpVariables() {
+            filter_btn = FindViewById<Button>(Resource.Id.filter_aa_button);
+            gd.SetCornerRadius(10);
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
+            gd.SetColor(MainActivity.TEXT_COLOR);
+            filter_btn.Background = gd;
+            filter_btn.Click += Filter_Btn_Click;
+            filter_btn.Visibility = ViewStates.Invisible;
             var toolbar = FindViewById<Toolbar>(Resource.Id.aa_toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             linearLayout = FindViewById<LinearLayout>(Resource.Id.asset_allocation_linear_layout);
@@ -110,6 +127,45 @@ namespace lucid
 
         }
 
+        void Filter_Btn_Click(object sender, EventArgs e)
+        {
+            progressBar.Visibility = ViewStates.Visible;
+            if(state == 0) {
+                state = 1;
+                filter_btn.Text = "Show by Asset Allocation";
+                Task.Run(async () =>
+                {
+                    try
+                    {
+                        response_ps = await MKFApp.Current.GetPortfolioSummary();
+                        this.RunOnUiThread(() => Display());
+                    }
+                    catch (Exception exception)
+                    {
+                        this.RunOnUiThread(() => Dismiss());
+                    }
+                });
+
+            } else {
+                state = 0;
+                filter_btn.Text = "Show by Security";
+                Task.Run(async () =>
+                {
+                    try
+                    {
+                        userAccountPositions = await MKFApp.Current.GetPositions();
+                        this.RunOnUiThread(() => Display());
+                    }
+                    catch (Exception exception)
+                    {
+                        this.RunOnUiThread(() => Dismiss());
+                    }
+                });
+
+            }
+
+        }
+
         // data cant be retrieved
         private void Dismiss(){
             progressBar.Visibility = ViewStates.Gone;
@@ -125,13 +181,42 @@ namespace lucid
 
         // data retrieved successfully
         private void Display() {
+            filter_btn.Visibility = ViewStates.Invisible;
             progressBar.Visibility = ViewStates.Gone;
-            mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
-            mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
-            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
-            mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+            if (state == 1 && response_ps.Success == true)
+            {
+                mItems_portfolio_summary = response_ps.Content;
+                mRecyclerView.SetLayoutManager(mLayoutManager);
+                mAdapter = new RecyclerViewSecurityAdapter(mItems_portfolio_summary, this, MainActivity.user);
+                mAdapter.ItemClick += MAdapter_ItemClick;;
+                mRecyclerView.SetAdapter(mAdapter);
+            }
+            else if (state == 1 && response_ps.Success == false)
+            {
+                Snackbar.Make(linearLayout, response_ps.Message ?? "An Error Occured", Snackbar.LengthLong).Show();
+            }
+            else if (state == 0) {
+                mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
+                mRecyclerView.SetLayoutManager(mLayoutManager);
+                mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
+                mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
+                mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+            }
         }
+
+        void MAdapter_ItemClick(object sender, int e)
+        {
+            if (Convert.ToInt16(mItems[e].Code) >= 0)
+            {
+                Intent details = new Intent(this, typeof(AssetAllocationDetailsActivity));
+                details.PutExtra("assetcode", mItems_portfolio_summary[e].SecuritySubTypeCode);
+                details.PutExtra("webclicode", MainActivity.user.WebCliCode);
+                details.PutExtra("clicode", MainActivity.user.CliCode);
+                details.PutExtra("description", mItems_portfolio_summary[e].SecuritySubTypeDesc);
+                StartActivity(details);
+            }
+        }
+
 
         // click on the recyclerview's rows
         void MRecyclerViewAdapter_ItemClick(object sender, int e)
@@ -149,12 +234,28 @@ namespace lucid
 
         //data refreshed successful
         private void DisplayRefresher() {
+            filter_btn.Visibility = ViewStates.Invisible;
             swipeRefreshLayout.Refreshing = false;
-            mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
-            mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
-            mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
-            mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+            if (state == 1 && response_ps.Success == true)
+            {
+                mItems_portfolio_summary = response_ps.Content;
+                mRecyclerView.SetLayoutManager(mLayoutManager);
+                mAdapter = new RecyclerViewSecurityAdapter(mItems_portfolio_summary, this, MainActivity.user);
+                mAdapter.ItemClick += MAdapter_ItemClick; ;
+                mRecyclerView.SetAdapter(mAdapter);
+            }
+            else if (state == 1 && response_ps.Success == false)
+            {
+                Snackbar.Make(linearLayout, response_ps.Message ?? "An Error Occured", Snackbar.LengthLong).Show();
+            }
+            else if (state == 0)
+            {
+                mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
+                mRecyclerView.SetLayoutManager(mLayoutManager);
+                mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
+                mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
+                mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+            }
         }
 
         //returns to parent activity
