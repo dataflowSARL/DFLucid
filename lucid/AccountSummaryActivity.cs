@@ -65,13 +65,13 @@ namespace lucid
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_account_summary);
             progressBar.Visibility = ViewStates.Visible;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_as);
+            mLayoutManager = new LinearLayoutManager(this);
             filter_button = FindViewById<Button>(Resource.Id.filter_button);
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
-            gd.SetColor(Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
+            gd.SetColor(MainActivity.TEXT_COLOR);
             filter_button.Background = gd;
             filter_button.SetTextColor(Android.Graphics.Color.White);
-            mLayoutManager = new LinearLayoutManager(this);
             linearLayout = FindViewById<LinearLayout>(Resource.Id.as_linear_layout);
             var toolbar = FindViewById<Toolbar>(Resource.Id.as_toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);

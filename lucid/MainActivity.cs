@@ -35,6 +35,7 @@ namespace lucid
         private GradientDrawable gd = new GradientDrawable(), gd_submit = new GradientDrawable();
 
         public static Color TOOLBAR_COLOR = Color.ParseColor("#3e94a6");
+        public static Color TEXT_COLOR = Color.ParseColor("#47555e");
 
         public static MKFUser user;
 
@@ -63,10 +64,10 @@ namespace lucid
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
             gd_submit.SetCornerRadius(10);
-            gd_submit.SetStroke(3, Color.ParseColor("#47555e"));
-            gd_submit.SetColor(Color.ParseColor("#47555e"));
+            gd_submit.SetStroke(3, TEXT_COLOR);
+            gd_submit.SetColor(TEXT_COLOR);
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Color.ParseColor("#47555e"));
+            gd.SetStroke(3, TEXT_COLOR);
             username = FindViewById<EditText>(Resource.Id.username);
             username.Background = gd;
             username.SetTextColor(TOOLBAR_COLOR);
@@ -145,7 +146,7 @@ namespace lucid
             if (loginResult.Success == true)
             {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Color.ParseColor("#47555e"));
+                gd.SetStroke(3, TEXT_COLOR);
                 username.Background = gd;
                 password.Background = gd;
                 error.Visibility = ViewStates.Invisible;
@@ -159,7 +160,7 @@ namespace lucid
             else
             {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Color.ParseColor("#47555e"));
+                gd.SetStroke(3, TEXT_COLOR);
                 username.Background = gd;
                 password.Background = gd;
                 error.Visibility = ViewStates.Visible;

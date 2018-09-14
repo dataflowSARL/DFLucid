@@ -58,10 +58,10 @@ namespace lucid
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             screenWidth = Resources.DisplayMetrics.WidthPixels;
             gd_submit.SetCornerRadius(10);
-            gd_submit.SetStroke(3, Color.ParseColor("#47555e"));
-            gd_submit.SetColor(Color.ParseColor("#47555e"));
+            gd_submit.SetStroke(3, MainActivity.TEXT_COLOR);
+            gd_submit.SetColor(MainActivity.TEXT_COLOR);
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             linearLayout = FindViewById<LinearLayout>(Resource.Id.change_password_layout);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_password);
             progressBar.Visibility = ViewStates.Invisible;
@@ -155,7 +155,7 @@ namespace lucid
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
             if (loginResult.Success == true) {
                 gd.SetCornerRadius(10);
-                gd.SetStroke(3, Color.ParseColor("#47555e"));
+                gd.SetStroke(3, MainActivity.TEXT_COLOR);
                 new_password.Background = gd;
                 old_password.Background = gd;
                 confirm_password.Background = gd;

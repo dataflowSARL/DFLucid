@@ -22,6 +22,8 @@ using System.Timers;
 using Android.App;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
 using static Java.Text.Normalizer;
+using Android.Support.V7.Widget;
+using MKFLibrary.API;
 
 namespace lucid
 {
@@ -34,6 +36,13 @@ namespace lucid
         private DrawerLayout drawerLayout;
         private LinearLayout linearLayout;
         private TextView username;
+
+        private RecyclerView mRecyclerView;
+        private RecyclerView.LayoutManager mLayoutManager;
+        private RecyclerViewPSAdapter mRecyclerViewAdapter;
+        private List<RiskSummary> items = new List<RiskSummary>();
+        private ProgressBar progressBar;
+        private SwipeRefreshLayout swipeRefreshLayout;
 
         private int COUNTDOWN = 5 * 60;
         private int INITIAL = 5 * 60;
@@ -54,10 +63,46 @@ namespace lucid
 
         // Set up the Activity's Views
         public void SetUpVariables() {
+            progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_portfolio_summary);
+            progressBar.Visibility = ViewStates.Visible;
+            mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_ps);
+            mLayoutManager = new LinearLayoutManager(this);
+            swipeRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_to_refresh_portfolio_summary);
+            swipeRefreshLayout.SetColorSchemeResources(Resource.Color.blue,
+                                              Resource.Color.purple,
+                                              Resource.Color.red,
+                                              Resource.Color.green);
+            swipeRefreshLayout.Refresh += delegate {
+                Task.Run(async () =>
+                {
+                    try
+                    {
+                        items = await MKFApp.Current.GetRiskSummary();
+                        this.RunOnUiThread(() => DisplayRefresher());
+                    }
+                    catch (Exception e)
+                    {
+                        this.RunOnUiThread(() => DismissRefresher());
+                    }
+                });
+            };
+            Task.Run(async () =>
+            {
+                try
+                {
+                    items = await MKFApp.Current.GetRiskSummary();
+                    this.RunOnUiThread(() => Display());
+                }
+                catch (Exception e)
+                {
+                    Console.Write(e);
+                    this.RunOnUiThread(() => Dismiss());
+                }
+            });
             linearLayout = FindViewById<LinearLayout>(Resource.Id.home_linear_layout);
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             // Create ActionBarDrawerToggle button and add it to the toolbar  
-            var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
+            V7Toolbar toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
             toolbar.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             SetSupportActionBar(toolbar);
             var drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, Resource.String.drawer_open, Resource.String.drawer_close);
@@ -76,6 +121,34 @@ namespace lucid
                 timer.Elapsed += Timer_Elapsed;
                 timer.Start();
             });
+        }
+        private void Display()
+        {
+            progressBar.Visibility = ViewStates.Gone;
+            mRecyclerView.SetLayoutManager(mLayoutManager);
+            mRecyclerViewAdapter = new RecyclerViewPSAdapter(items, this, MainActivity.user);
+            mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+        }
+
+        private void DisplayRefresher()
+        {
+            swipeRefreshLayout.Refreshing = false;
+            mRecyclerView.SetLayoutManager(mLayoutManager);
+            mRecyclerViewAdapter = new RecyclerViewPSAdapter(items, this, MainActivity.user);
+            mRecyclerView.SetAdapter(mRecyclerViewAdapter);
+        }
+
+        // data could not be retrieved
+        private void Dismiss()
+        {
+            progressBar.Visibility = ViewStates.Gone;
+            Snackbar.Make(linearLayout, "An Error Occured", Snackbar.LengthLong).Show();
+        }
+
+        private void DismissRefresher()
+        {
+            swipeRefreshLayout.Refreshing = false;
+            Snackbar.Make(linearLayout, "An Error Occured", Snackbar.LengthLong).Show();
         }
 
         //Handles the NavigationView
@@ -140,11 +213,6 @@ namespace lucid
                         break;
                 }
             };  
-        }
-
-        //Handles Portfolio Summary
-        private void ShowPortfolioSummary() {
-
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

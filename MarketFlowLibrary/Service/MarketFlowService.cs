@@ -211,7 +211,7 @@ namespace MarketFlowLibrary
         {
             API_Response<RiskSummary> result = new API_Response<RiskSummary>();
             HttpClient client = new HttpClient();
-            string serviceURL = string.Format("{0}{1}", serviceBaseURI, getRealisedProfitAction);
+            string serviceURL = string.Format("{0}{1}", serviceBaseURI, getRiskSummaryAction);
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(user);
 
             var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");

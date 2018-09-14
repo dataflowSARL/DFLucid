@@ -167,7 +167,7 @@ namespace MarketFlow
 
         public async Task<List<Position>> GetPositions(bool forceRefresh = false, bool saveResult = true)
         {
-            List<Position> result = new List<Position>();
+            List<Position> result = UserPositions;
             API_Response < Position > api_Response = new API_Response<Position>();
             if (UserPositions == null || forceRefresh == true)
             {

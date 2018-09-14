@@ -65,6 +65,7 @@ namespace lucid
             back_btn.SetBackgroundColor(MainActivity.TOOLBAR_COLOR);
             back_btn.Click += Back_Btn_Click;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_aa);
+            mLayoutManager = new LinearLayoutManager(this);
             swipeRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_to_refresh);
             swipeRefreshLayout.SetColorSchemeResources(Resource.Color.blue,
                                               Resource.Color.purple,
@@ -126,7 +127,6 @@ namespace lucid
         private void Display() {
             progressBar.Visibility = ViewStates.Gone;
             mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
-            mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
             mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;
@@ -151,7 +151,6 @@ namespace lucid
         private void DisplayRefresher() {
             swipeRefreshLayout.Refreshing = false;
             mItems = userAccountPositions.Where(u => u.AssetGroup == 1).Union(userAccountPositions.Where(u => u.RowOrder == 2).Where(u => u.AssetGroup == 0)).Select(u => new AssetAllocation() { Code = u.AssetCode, AssetDescription = u.AssetDescription, Balance = u.BalanceSystem, Weight = u.Weight }).ToList<AssetAllocation>();
-            mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerViewAdapter = new RecyclerViewAdapterAssetAllocation(mItems, this, MainActivity.user);
             mRecyclerViewAdapter.ItemClick += MRecyclerViewAdapter_ItemClick;

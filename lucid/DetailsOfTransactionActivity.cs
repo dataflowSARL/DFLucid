@@ -75,10 +75,10 @@ namespace lucid
             from_btn = FindViewById<Button>(Resource.Id.from_btn_dot);
             to_btn = FindViewById<Button>(Resource.Id.to_btn_dot);
             gd_submit.SetCornerRadius(10);
-            gd_submit.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
-            gd_submit.SetColor(Android.Graphics.Color.ParseColor("#47555e"));
+            gd_submit.SetStroke(3, MainActivity.TEXT_COLOR);
+            gd_submit.SetColor(MainActivity.TEXT_COLOR);
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
             submit_btn = FindViewById<Button>(Resource.Id.submit_btn_dot);
@@ -135,7 +135,7 @@ namespace lucid
         private void Success(){
             progressBar.Visibility = ViewStates.Gone;
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
             if (mItems.Count == 0)
@@ -154,7 +154,7 @@ namespace lucid
             nothing.Visibility = ViewStates.Visible;
             progressBar.Visibility = ViewStates.Gone;
             gd.SetCornerRadius(10);
-            gd.SetStroke(3, Android.Graphics.Color.ParseColor("#47555e"));
+            gd.SetStroke(3, MainActivity.TEXT_COLOR);
             from_btn.Background = gd;
             to_btn.Background = gd;
             Snackbar.Make(linearLayout, "An Error Occured.", Snackbar.LengthLong).Show();

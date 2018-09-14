@@ -72,4 +72,11 @@
     <string name="close_price">Close Price</string>
     <string name="estimated_pl">Estimated P/L</string>
     <string name="nothing">Nothing to show</string>
+    <string name="total_assets">Total Assets:</string>
+    <string name="net_cash_account_balances">Net Cash and Account Balances:</string>
+    <string name="initial_margin">Initial Margin:</string>
+    <string name="maintenance_margin">Maintenance Margin:</string>
+    <string name="net_asset_value">Net Asset Value:</string>
+    <string name="ovl">OVL</string>
+    
 </resources>
