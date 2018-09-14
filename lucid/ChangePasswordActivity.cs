@@ -83,9 +83,9 @@ namespace lucid
             confirm_password.SetHighlightColor(Color.LightGray);
             confirm_password.Background = gd;
             confirm_button = FindViewById<Button>(Resource.Id.confirm_button);
-            old_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
-            new_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
-            confirm_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, 125);
+            old_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, ViewGroup.LayoutParams.WrapContent);
+            new_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, ViewGroup.LayoutParams.WrapContent);
+            confirm_password.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, ViewGroup.LayoutParams.WrapContent);
             confirm_button.Background = gd_submit;
             confirm_button.Click += Confirm_Button_Click;
             webclicode = MainActivity.user.WebCliCode;

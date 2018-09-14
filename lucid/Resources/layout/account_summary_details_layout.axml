@@ -54,7 +54,12 @@
                  android:layout_gravity="center"
                  android:indeterminate="true"/>
     
-    <LinearLayout android:orientation="horizontal"
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_gravity="center">
+        <LinearLayout android:orientation="horizontal"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:gravity="center"
@@ -90,6 +95,8 @@
                 android:id="@+id/to_btn"
                 android:layout_width="wrap_content"
                 android:textColor="#47555e"
+                android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 style="@style/Widget.AppCompat.Button.Borderless"/>
         
@@ -103,6 +110,10 @@
             android:textColor="@android:color/white"
             android:layout_gravity="center"
             style="@style/Widget.AppCompat.Button.Borderless"/>
+        
+    </LinearLayout>
+    
+    
     
     <LinearLayout
             android:orientation="horizontal"

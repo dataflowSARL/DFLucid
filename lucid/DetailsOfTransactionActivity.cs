@@ -38,6 +38,7 @@ namespace lucid
         private GradientDrawable gd = new GradientDrawable() , gd_submit = new GradientDrawable();
         private DateTime from, to;
         private TextView nothing;
+        private int screenWidth;
 
         private int from_year = DateTime.Now.Year , from_month = DateTime.Now.Month - 1, from_day = 1;
         private int to_year = DateTime.Now.Year, to_month = DateTime.Now.Month - 1, to_day = DateTime.Now.Day;
@@ -59,6 +60,7 @@ namespace lucid
 
         //setup acitivity's views
         private void SetUpVariables() {
+            screenWidth = Resources.DisplayMetrics.WidthPixels;
             nothing = FindViewById<TextView>(Resource.Id.nothing_dot);
             nothing.Visibility = ViewStates.Gone;
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_dettails_of_transaction);
@@ -82,6 +84,7 @@ namespace lucid
             from_btn.Background = gd;
             to_btn.Background = gd;
             submit_btn = FindViewById<Button>(Resource.Id.submit_btn_dot);
+            submit_btn.LayoutParameters = new LinearLayout.LayoutParams(screenWidth / 2, ViewGroup.LayoutParams.WrapContent);
             submit_btn.Background = gd_submit;
             submit_btn.Click += Submit_Btn_Click;
             to = DateTime.Now.Date;

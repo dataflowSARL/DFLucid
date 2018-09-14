@@ -43,17 +43,12 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/logo.png
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/home.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/edittextlayout.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/drawermenu.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/values/styles.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/values/colors.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/menu/nav_menu.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/layout_header.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/toolbar.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/animation.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/animation2.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/asset_allocation.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/asset_allocation_layout.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/portfolio_summary_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/account_summary_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/details_of_transaction_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/profit_loss_layout.xml
@@ -65,7 +60,6 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aa_even_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_aa_odd_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/all_details_layout.xml
-/Users/lucien/Projects/lucid/lucid/obj/Debug/res/drawable/custom_all_details_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_card_all_details_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/home_layout.xml
 /Users/lucien/Projects/lucid/lucid/obj/Debug/res/layout/recyclerview_account_summary_layout.xml

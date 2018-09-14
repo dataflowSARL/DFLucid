@@ -114,7 +114,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HomeActivity.cs" />
     <Compile Include="AssetAllocationActivity.cs" />
-    <Compile Include="PortfolioSummaryActivity.cs" />
     <Compile Include="AccountSummaryActivity.cs" />
     <Compile Include="DetailsOfTransactionActivity.cs" />
     <Compile Include="ProfitLossActivity.cs" />
@@ -129,7 +128,6 @@
     <Compile Include="RecyclerViewAdapterAccountSummary.cs" />
     <Compile Include="AccountSummaryDetailsActivity.cs" />
     <Compile Include="RecyclerViewASDAdapter.cs" />
-    <Compile Include="DatePickerFragment.cs" />
     <Compile Include="RecyclerViewDOTAdapter.cs" />
     <Compile Include="RecyclerViewPLAdapter.cs" />
     <Compile Include="RecyclerViewPSAdapter.cs" />
@@ -151,17 +149,12 @@
     <AndroidResource Include="Resources\drawable\logo.png" />
     <AndroidResource Include="Resources\layout\Home.axml" />
     <AndroidResource Include="Resources\drawable\editTextLayout.xml" />
-    <AndroidResource Include="Resources\drawable\drawerMenu.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\menu\nav_menu.xml" />
     <AndroidResource Include="Resources\layout\layout_header.axml" />
     <AndroidResource Include="Resources\layout\toolbar.axml" />
-    <AndroidResource Include="Resources\drawable\animation.xml" />
-    <AndroidResource Include="Resources\drawable\animation2.xml" />
-    <AndroidResource Include="Resources\drawable\asset_allocation.axml" />
     <AndroidResource Include="Resources\layout\asset_allocation_layout.axml" />
-    <AndroidResource Include="Resources\layout\portfolio_summary_layout.axml" />
     <AndroidResource Include="Resources\layout\account_summary_layout.axml" />
     <AndroidResource Include="Resources\layout\details_of_transaction_layout.axml" />
     <AndroidResource Include="Resources\layout\profit_loss_layout.axml" />
@@ -173,7 +166,6 @@
     <AndroidResource Include="Resources\layout\recyclerview_card_aa_even_layout.axml" />
     <AndroidResource Include="Resources\layout\recyclerview_card_aa_odd_layout.axml" />
     <AndroidResource Include="Resources\layout\all_details_layout.axml" />
-    <AndroidResource Include="Resources\drawable\custom_all_details_layout.xml" />
     <AndroidResource Include="Resources\layout\recyclerview_card_all_details_layout.axml" />
     <AndroidResource Include="Resources\layout\home_layout.axml" />
     <AndroidResource Include="Resources\layout\recyclerview_account_summary_layout.axml" />

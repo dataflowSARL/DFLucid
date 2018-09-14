@@ -53,8 +53,12 @@
                  android:layout_width="match_parent"
                  android:layout_gravity="center"
                  android:indeterminate="true"/>
-    
-    <LinearLayout android:orientation="horizontal"
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_gravity="center">
+        <LinearLayout android:orientation="horizontal"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:gravity="center"
@@ -100,9 +104,14 @@
             android:layout_height="wrap_content"
             android:text="@string/submit"
             android:layout_gravity="center"
+            android:gravity="center"
             android:layout_margin="4dp"
             android:textColor="@android:color/white"
             style="@style/Widget.AppCompat.Button.Borderless"/>
+        
+    </LinearLayout>
+    
+    
     
     <LinearLayout android:orientation="horizontal"
                   android:layout_width="match_parent"
