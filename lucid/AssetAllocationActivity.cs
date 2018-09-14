@@ -130,6 +130,7 @@ namespace lucid
         void Filter_Btn_Click(object sender, EventArgs e)
         {
             progressBar.Visibility = ViewStates.Visible;
+            filter_btn.Visibility = ViewStates.Invisible;
             if(state == 0) {
                 state = 1;
                 filter_btn.Text = "Show by Asset Allocation";
@@ -181,14 +182,14 @@ namespace lucid
 
         // data retrieved successfully
         private void Display() {
-            filter_btn.Visibility = ViewStates.Invisible;
+            filter_btn.Visibility = ViewStates.Visible;
             progressBar.Visibility = ViewStates.Gone;
             if (state == 1 && response_ps.Success == true)
             {
                 mItems_portfolio_summary = response_ps.Content;
                 mRecyclerView.SetLayoutManager(mLayoutManager);
                 mAdapter = new RecyclerViewSecurityAdapter(mItems_portfolio_summary, this, MainActivity.user);
-                mAdapter.ItemClick += MAdapter_ItemClick;;
+                //mAdapter.ItemClick += MAdapter_ItemClick;;
                 mRecyclerView.SetAdapter(mAdapter);
             }
             else if (state == 1 && response_ps.Success == false)
@@ -204,24 +205,24 @@ namespace lucid
             }
         }
 
-        void MAdapter_ItemClick(object sender, int e)
-        {
-            if (Convert.ToInt16(mItems[e].Code) >= 0)
-            {
-                Intent details = new Intent(this, typeof(AssetAllocationDetailsActivity));
-                details.PutExtra("assetcode", mItems_portfolio_summary[e].SecuritySubTypeCode);
-                details.PutExtra("webclicode", MainActivity.user.WebCliCode);
-                details.PutExtra("clicode", MainActivity.user.CliCode);
-                details.PutExtra("description", mItems_portfolio_summary[e].SecuritySubTypeDesc);
-                StartActivity(details);
-            }
-        }
+        //void MAdapter_ItemClick(object sender, int e)
+        //{
+        //    if (Convert.ToInt16(mItems[e].Code) > 0)
+        //    {
+        //        Intent details = new Intent(this, typeof(AssetAllocationDetailsActivity));
+        //        details.PutExtra("assetcode", mItems_portfolio_summary[e].SecuritySubTypeCode);
+        //        details.PutExtra("webclicode", MainActivity.user.WebCliCode);
+        //        details.PutExtra("clicode", MainActivity.user.CliCode);
+        //        details.PutExtra("description", mItems_portfolio_summary[e].SecuritySubTypeDesc);
+        //        StartActivity(details);
+        //    }
+        //}
 
 
         // click on the recyclerview's rows
         void MRecyclerViewAdapter_ItemClick(object sender, int e)
         {
-            if (Convert.ToInt16(mItems[e].Code) >= 0)
+            if (Convert.ToInt16(mItems[e].Code) > 0)
             {
                 Intent details = new Intent(this, typeof(AssetAllocationDetailsActivity));
                 details.PutExtra("assetcode", mItems[e].Code);
@@ -234,14 +235,14 @@ namespace lucid
 
         //data refreshed successful
         private void DisplayRefresher() {
-            filter_btn.Visibility = ViewStates.Invisible;
+            filter_btn.Visibility = ViewStates.Visible;
             swipeRefreshLayout.Refreshing = false;
             if (state == 1 && response_ps.Success == true)
             {
                 mItems_portfolio_summary = response_ps.Content;
                 mRecyclerView.SetLayoutManager(mLayoutManager);
                 mAdapter = new RecyclerViewSecurityAdapter(mItems_portfolio_summary, this, MainActivity.user);
-                mAdapter.ItemClick += MAdapter_ItemClick; ;
+                //mAdapter.ItemClick += MAdapter_ItemClick; ;
                 mRecyclerView.SetAdapter(mAdapter);
             }
             else if (state == 1 && response_ps.Success == false)

@@ -38,18 +38,18 @@ namespace lucid
                     recyclerViewHolder.balance_system_security_odd.SetTextColor(Android.Graphics.Color.Blue);
                     recyclerViewHolder.weight_security_odd.SetTextColor(Android.Graphics.Color.Blue);
                 }
-                recyclerViewHolder.details_security_btn_odd.Click += delegate
-                {
-                    if (Convert.ToInt16(mItems[position].SecuritySubTypeCode) > 0)
-                    {
-                        Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
-                        details.PutExtra("assetcode", mItems[position].SecuritySubTypeCode);
-                        details.PutExtra("webclicode", mUser.WebCliCode);
-                        details.PutExtra("clicode", mUser.CliCode);
-                        details.PutExtra("description", mItems[position].SecuritySubTypeDesc);
-                        mContext.StartActivity(details);
-                    }
-                };
+                //recyclerViewHolder.details_security_btn_odd.Click += delegate
+                //{
+                //    if (Convert.ToInt16(mItems[position].SecuritySubTypeCode) > 0)
+                //    {
+                //        Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
+                //        details.PutExtra("assetcode", mItems[position].SecuritySubTypeCode);
+                //        details.PutExtra("webclicode", mUser.WebCliCode);
+                //        details.PutExtra("clicode", mUser.CliCode);
+                //        details.PutExtra("description", mItems[position].SecuritySubTypeDesc);
+                //        mContext.StartActivity(details);
+                //    }
+                //};
             }
             else
             {
@@ -63,18 +63,18 @@ namespace lucid
                     recyclerViewHolder.balance_system_security_even.SetTextColor(Android.Graphics.Color.Blue);
                     recyclerViewHolder.weight_security_even.SetTextColor(Android.Graphics.Color.Blue);
                 }
-                recyclerViewHolder.details_security_btn_even.Click += delegate
-                {
-                    if (Convert.ToInt16(mItems[position].SecuritySubTypeCode) > 0)
-                    {
-                        Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
-                        details.PutExtra("assetcode", mItems[position].SecuritySubTypeCode);
-                        details.PutExtra("webclicode", mUser.WebCliCode);
-                        details.PutExtra("clicode", mUser.CliCode);
-                        details.PutExtra("description", mItems[position].SecuritySubTypeDesc);
-                        mContext.StartActivity(details);
-                    }
-                };
+                //recyclerViewHolder.details_security_btn_even.Click += delegate
+                //{
+                //    if (Convert.ToInt16(mItems[position].SecuritySubTypeCode) > 0)
+                //    {
+                //        Intent details = new Intent(mContext, typeof(AssetAllocationDetailsActivity));
+                //        details.PutExtra("assetcode", mItems[position].SecuritySubTypeCode);
+                //        details.PutExtra("webclicode", mUser.WebCliCode);
+                //        details.PutExtra("clicode", mUser.CliCode);
+                //        details.PutExtra("description", mItems[position].SecuritySubTypeDesc);
+                //        mContext.StartActivity(details);
+                //    }
+                //};
             }
         }
 

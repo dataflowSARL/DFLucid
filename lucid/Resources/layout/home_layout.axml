@@ -9,6 +9,12 @@
                  android:layout_width="match_parent"
                  android:layout_gravity="center"
                  android:indeterminate="true"/>
+    
+    <!--<com.jjoe64.graphview.GraphView android:id="@+id/graphview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/white"/>-->
+    
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_to_refresh_portfolio_summary"
         android:layout_height="match_parent"

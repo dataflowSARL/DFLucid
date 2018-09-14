@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lucid", "lucid\lucid.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketFlowLibrary", "MarketFlowLibrary\MarketFlowLibrary.csproj", "{94A62BE7-AD8A-4766-94C0-B280461B3DA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphViewBinding", "..\..\Downloads\GraphView\GraphViewBinding\GraphViewBinding.csproj", "{0A93C5FA-1DEF-4D86-9169-3D517765D590}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{94A62BE7-AD8A-4766-94C0-B280461B3DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94A62BE7-AD8A-4766-94C0-B280461B3DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94A62BE7-AD8A-4766-94C0-B280461B3DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A93C5FA-1DEF-4D86-9169-3D517765D590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A93C5FA-1DEF-4D86-9169-3D517765D590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A93C5FA-1DEF-4D86-9169-3D517765D590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A93C5FA-1DEF-4D86-9169-3D517765D590}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

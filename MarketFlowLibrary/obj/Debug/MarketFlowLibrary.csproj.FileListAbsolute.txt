@@ -4,6 +4,7 @@
 /Users/lucien/Projects/lucid/MarketFlowLibrary/bin/Debug/MarketFlowLibrary.MarketFlowLibrary-Signed.apk
 /Users/lucien/Projects/lucid/MarketFlowLibrary/bin/Debug/Newtonsoft.Json.dll
 /Users/lucien/Projects/lucid/MarketFlowLibrary/bin/Debug/Newtonsoft.Json.xml
+/Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/MarketFlowLibrary.csprojAssemblyReference.cache
 /Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/res.flag
 /Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/MarketFlowLibrary.csproj.CoreCompileInputs.cache
 /Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/MarketFlowLibrary.csproj.CopyComplete
@@ -14,4 +15,3 @@
 /Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/R.cs.flag
 /Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/R.txt
 /Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/uploadflags.txt
-/Users/lucien/Projects/lucid/MarketFlowLibrary/obj/Debug/MarketFlowLibrary.csprojAssemblyReference.cache

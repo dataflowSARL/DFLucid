@@ -24,6 +24,8 @@ using AlertDialog = Android.Support.V7.App.AlertDialog;
 using static Java.Text.Normalizer;
 using Android.Support.V7.Widget;
 using MKFLibrary.API;
+using AndroidGraphView;
+using AndroidGraphView.Series;
 
 namespace lucid
 {
@@ -36,6 +38,7 @@ namespace lucid
         private DrawerLayout drawerLayout;
         private LinearLayout linearLayout;
         private TextView username;
+        //private GraphView graphView;
 
         private RecyclerView mRecyclerView;
         private RecyclerView.LayoutManager mLayoutManager;
@@ -63,6 +66,10 @@ namespace lucid
 
         // Set up the Activity's Views
         public void SetUpVariables() {
+            //graphView = FindViewById<GraphView>(Resource.Id.graphview);
+            //DataPoint[] data = new DataPoint[2];
+            //DataPoint totalAssets = new DataPoint(0, items[0].LongPosition + items[0].ShortPosition);
+            ////graphView.GridLabelRenderer.set
             progressBar = FindViewById<ProgressBar>(Resource.Id.progress_bar_portfolio_summary);
             progressBar.Visibility = ViewStates.Visible;
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview_ps);
