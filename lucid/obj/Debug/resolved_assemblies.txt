@@ -1,5 +1,4 @@
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/lucid.dll
-/Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/GraphViewBinding.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/Java.Interop.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/MarketFlowLibrary.dll
 /Users/lucien/Projects/lucid/lucid/obj/Debug/android/assets/Mono.Android.dll

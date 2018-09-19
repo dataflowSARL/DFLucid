@@ -1,26 +1,15 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="lucid/AccountSummaryActivity.cs">
     <Files>
       <File FileName="lucid/AccountSummaryActivity.cs" Line="138" Column="64" />
       <File FileName="lucid/RecyclerViewSecurityAdapter.cs" Line="53" Column="14" />
-      <File FileName="lucid/AssetAllocationDetailsActivity.cs" Line="1" Column="1" />
+      <File FileName="lucid/AssetAllocationDetailsActivity.cs" Line="134" Column="27" />
       <File FileName="lucid/HomeActivity.cs" Line="69" Column="37" />
-      <File FileName="lucid/RecyclerViewPSAdapter.cs" Line="1" Column="1" />
+      <File FileName="lucid/RecyclerViewPSAdapter.cs" Line="62" Column="38" />
+      <File FileName="lucid/RecyclerViewHolder.cs" Line="88" Column="88" />
+      <File FileName="lucid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="23" Column="52" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="lucid" expanded="True">
-            <Node name="GraphViewBinding" expanded="True" />
-            <Node name="lucid" expanded="True">
-              <Node name="References" expanded="True" />
-              <Node name="RecyclerViewAdapterAssetAllocation.cs" selected="True" />
-            </Node>
-            <Node name="MarketFlowLibrary" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
