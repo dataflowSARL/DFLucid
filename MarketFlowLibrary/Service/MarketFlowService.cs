@@ -18,7 +18,13 @@ namespace MarketFlowLibrary
 
 	public class MarketFlowService
 	{
-        private const string serviceBaseURI = "http://10.10.5.244/MKFAPI/API/Values/"; //"http://staging2.folens.ie/api/"; test
+
+		//10.10.0.150:38201 //internal service
+        //moph.dataflow.com.lb //public service
+        //private const string serviceBaseURI = "http://10.10.5.244/MKFAPI/API/Values/"; //"http://staging2.folens.ie/api/";//gloria machine
+
+        private const string serviceBaseURI = "http://moph.dataflow.com.lb/MKFAPI/API/Values/"; //"http://staging2.folens.ie/api/";
+
         private const string loginAction = "login";
 		private const string getPosition = "GetPosition";
         private const string logoutAction = "LogOut";
