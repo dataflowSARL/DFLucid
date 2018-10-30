@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.dataflow.lucid">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="16" />
+  <application android:allowBackup="true" android:icon="@drawable/logo" android:label="@string/app_name" android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:name="android.app.Application">
+    <activity android:icon="@mipmap/icon" android:label="lucid" android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:name="md57c883242be2a3677065c75adf70e4be4.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:theme="@style/Theme.DesignDemo" android:name="md57c883242be2a3677065c75adf70e4be4.HomeActivity" />
+    <activity android:label="AssetAllocation" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AssetAllocationActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="AccountSummaryActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AccountSummaryActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="DetailsOfTransactionActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.DetailsOfTransactionActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="ProfitLossActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ProfitLossActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="ChangePasswordActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.ChangePasswordActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="AboutUsActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.HomeActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AboutUsActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="HomeActivity" />
+    </activity>
+    <activity android:label="AssetAllocationDetailsActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.AssetAllocationActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AssetAllocationDetailsActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".AssetAllocationActivity" />
+    </activity>
+    <activity android:label="AllDetailsActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.AssetAllocationDetailsActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AllDetailsActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".AssetAllocationDetailsActivity" />
+    </activity>
+    <activity android:label="AccountSummaryDetailsActivity" android:parentActivityName="md57c883242be2a3677065c75adf70e4be4.AccountSummaryActivity" android:name="md57c883242be2a3677065c75adf70e4be4.AccountSummaryDetailsActivity">
+      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="AccountSummaryActivity" />
+    </activity>
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.dataflow.lucid.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>

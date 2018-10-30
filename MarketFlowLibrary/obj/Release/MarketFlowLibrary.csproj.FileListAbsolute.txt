@@ -1,0 +1,17 @@
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Release/MarketFlowLibrary.dll
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Release/MarketFlowLibrary.pdb
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Release/MarketFlowLibrary.MarketFlowLibrary.apk
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Release/MarketFlowLibrary.MarketFlowLibrary-Signed.apk
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Release/mscorlib.dll
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Release/Newtonsoft.Json.dll
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Release/mscorlib.pdb
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Release/Newtonsoft.Json.xml
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Release/MarketFlowLibrary.csprojResolveAssemblyReference.cache
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Release/MarketFlowLibrary.csproj.CoreCompileInputs.cache
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Release/MarketFlowLibrary.dll
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Release/MarketFlowLibrary.pdb
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Release/android/bin/MarketFlowLibrary.MarketFlowLibrary.apk
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Release/res/values/strings.xml
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Release/R.cs.flag
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Release/R.txt
+/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Release/uploadflags.txt
