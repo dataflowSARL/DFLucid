@@ -13,9 +13,9 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using MarketFlow;
+//using MarketFlow;
 using MarketFlowLibrary;
-using MKFLibrary;
+
 using Toolbar = Android.Widget.Toolbar;
 
 namespace lucid
@@ -119,10 +119,18 @@ namespace lucid
                 Task.Run(async () =>
                 {
                     try {
+
+                        //Snackbar.Make(linearLayout, MKFApp.Current.GetUrl(), Snackbar.LengthLong).Show();
+                                
                         loginResult = await MKFApp.Current.Login(user.Username, user.Password);
                         this.RunOnUiThread(() => SuccessLoginResultMethod(loginResult));
-                    } catch (Exception exception){
-                        this.RunOnUiThread(() => FailLoginResultMethod());
+
+                    } 
+                    catch (Exception exception){
+                        this.RunOnUiThread(() =>
+                                          // FailLoginResultMethod()
+                                           Snackbar.Make(linearLayout, exception.InnerException + " "+ exception.StackTrace, Snackbar.LengthLong).Show()
+                                          );
                     }
                 });
 
@@ -143,12 +151,16 @@ namespace lucid
         private void SuccessLoginResultMethod(LoginResult loginResult) {
             progressBar.Visibility = ViewStates.Invisible;
             Window.ClearFlags(WindowManagerFlags.NotTouchable);
-            if (loginResult.Success == true)
+            //loginResult.WebMessage = loginResult.Success ? "success" : "error";
+            //loginResult.Success = false;
+
+            if (loginResult.Success)
             {
                 gd.SetCornerRadius(10);
                 gd.SetStroke(3, TEXT_COLOR);
                 username.Background = gd;
                 password.Background = gd;
+              
                 error.Visibility = ViewStates.Invisible;
                 Intent home = new Intent(this, typeof(HomeActivity));
                 home.PutExtra("username", username.Text);
@@ -164,8 +176,9 @@ namespace lucid
                 username.Background = gd;
                 password.Background = gd;
                 error.Visibility = ViewStates.Visible;
-                error.Text = loginResult.WebMessage ?? "An Error Occured";
+                error.Text = loginResult.WebMessage;//?? "An Error Occured";
             }
+
         }
 
         //login failed

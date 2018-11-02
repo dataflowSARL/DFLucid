@@ -10,12 +10,12 @@ using System.Linq;
 using System.Timers;
 using System.Net.Http;
 using System.Diagnostics;
-using MKFLibrary;
+using MarketFlowLibrary;
 using System.Security.Policy;
 using Android.App.Usage;
-using MKFLibrary.API;
+//using MarketFlowLibrary.API;
 
-namespace MarketFlow
+namespace MarketFlowLibrary
 {
     public sealed class MKFApp
     {
@@ -140,6 +140,10 @@ namespace MarketFlow
                     //this.version = versionSetting != null && !string.IsNullOrEmpty(versionSetting.Data) ? float.Parse(versionSetting.Data, CultureInfo.InvariantCulture.NumberFormat) : 0;  
                 }
             }
+        }
+
+        public string GetUrl(){
+            return MarketFlowLibrary.MarketFlowService.GetUrl();
         }
 
         public async Task<LoginResult> Login(string username, string password)

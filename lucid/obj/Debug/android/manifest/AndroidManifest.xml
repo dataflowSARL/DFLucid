@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.dataflow.lucid">
-  <!--suppress UsesMinSdkAttributes-->
-  <uses-sdk android:minSdkVersion="16" />
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+  <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+  <uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+  <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:allowBackup="true" android:icon="@drawable/logo" android:label="@string/app_name" android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:name="android.app.Application" android:debuggable="true">
     <activity android:icon="@mipmap/icon" android:label="lucid" android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:name="md57c883242be2a3677065c75adf70e4be4.MainActivity">

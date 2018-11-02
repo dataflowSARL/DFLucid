@@ -1,21 +1,62 @@
 ﻿<Properties StartupConfiguration="{866F7A50-06F0-48B0-B354-19550399B149}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="lucid/AccountSummaryActivity.cs" Line="138" Column="64" />
-      <File FileName="lucid/RecyclerViewSecurityAdapter.cs" Line="53" Column="14" />
-      <File FileName="lucid/AssetAllocationDetailsActivity.cs" Line="134" Column="27" />
-      <File FileName="lucid/HomeActivity.cs" Line="69" Column="37" />
+      <File FileName="lucid/RecyclerViewSecurityAdapter.cs" Line="90" Column="53" />
+      <File FileName="lucid/AssetAllocationDetailsActivity.cs" Line="9" Column="23" />
       <File FileName="lucid/RecyclerViewPSAdapter.cs" Line="62" Column="38" />
       <File FileName="lucid/RecyclerViewHolder.cs" Line="88" Column="88" />
-      <File FileName="lucid/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="20" Column="3" />
+      <File FileName="MarketFlowLibrary/Service/MarketFlowService.cs" Line="26" Column="74" />
+      <File FileName="lucid/ChangePasswordActivity.cs" Line="141" Column="51" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/MKFApp.cs" Line="157" Column="86" />
+      <File FileName="MarketFlowLibrary/packages.config" Line="1" Column="1" />
+      <File FileName="lucid/packages.config" Line="1" Column="1" />
+      <File FileName="lucid/Resources/AboutResources.txt" Line="1" Column="1" />
+      <File FileName="lucid/Resources/Resource.designer.cs" Line="3608" Column="24" />
+      <File FileName="lucid/Properties/AssemblyInfo.cs" Line="21" Column="34" />
+      <File FileName="lucid/Properties/AndroidManifest.xml" Line="15" Column="12" />
+      <File FileName="lucid/Assets/AboutAssets.txt" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/AccountSummary.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/ClosedOperations.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/MKFUser.cs" Line="14" Column="43" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/Operations.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/ParamDate.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/PortfolioSummary.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/Position.cs" Line="1" Column="1" />
+      <File FileName="lucid/AssetAllocationActivity.cs" Line="24" Column="3" />
+      <File FileName="lucid/DetailsOfTransactionActivity.cs" Line="18" Column="20" />
+      <File FileName="lucid/ProfitLossActivity.cs" Line="19" Column="1" />
+      <File FileName="lucid/AboutUsActivity.cs" Line="17" Column="1" />
+      <File FileName="lucid/AllDetailsActivity.cs" Line="18" Column="1" />
+      <File FileName="lucid/AccountSummaryDetailsActivity.cs" Line="303" Column="27" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/UserSettings.cs" Line="1" Column="1" />
+      <File FileName="lucid/RecyclerViewDOTAdapter.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/DAL/MarketFlowRepository.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/Common/BusinessEntityBase.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/Classes/AssetAllocation.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/SQLite/SQLite.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/Resources/Resource.designer.cs" Line="1" Column="1" />
+      <File FileName="MarketFlowLibrary/DL/MarketFlowDatabase.cs" Line="1" Column="1" />
+      <File FileName="lucid/MainActivity.cs" Line="165" Column="59" />
+      <File FileName="lucid/RecyclerViewAdapterAssetAllocation.cs" Line="8" Column="1" />
+      <File FileName="MarketFlowLibrary/ServiceEntities/API_Response.cs" Line="7" Column="28" />
+      <File FileName="lucid/obj/Release/designtime/Resource.Designer.cs" Line="726" Column="24" />
+      <File FileName="lucid/obj/Debug/designtime/Resource.Designer.cs" Line="297" Column="21" />
+      <File FileName="lucid/AccountSummaryActivity.cs" Line="19" Column="3" />
+      <File FileName="lucid/RecyclerViewAdapterAccountSummary.cs" Line="9" Column="3" />
+      <File FileName="lucid/HomeActivity.cs" Line="174" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="120" column="1" />
+      <Breakpoint file="/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/Service/MarketFlowService.cs" relfile="MarketFlowLibrary/Service/MarketFlowService.cs" line="64" column="1" />
+      <Breakpoint file="/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/lucid/MainActivity.cs" relfile="lucid/MainActivity.cs" line="157" column="1" />
+      <Breakpoint file="/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/lucid/HomeActivity.cs" relfile="lucid/HomeActivity.cs" line="59" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.MarketFlowLibrary PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.lucid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus 4 (Lollipop)" AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" />
+  <MonoDevelop.Ide.ItemProperties.lucid PreferredExecutionTarget="Android.Nexus 4 (Lollipop)" />
   <MultiItemStartupConfigurations />
 </Properties>

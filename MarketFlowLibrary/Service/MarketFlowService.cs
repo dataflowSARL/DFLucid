@@ -10,8 +10,8 @@ using System.Net;
 using System.Net.Http.Headers;
 using Newtonsoft;
 using System.Threading;
-using MKFLibrary;
-using MKFLibrary.API;
+using MarketFlowLibrary;
+//using MarketFlowLibrary.API;
 
 namespace MarketFlowLibrary
 {
@@ -23,7 +23,7 @@ namespace MarketFlowLibrary
         //moph.dataflow.com.lb //public service
         //private const string serviceBaseURI = "http://10.10.5.244/MKFAPI/API/Values/"; //"http://staging2.folens.ie/api/";//gloria machine
 
-        private const string serviceBaseURI = "http://moph.dataflow.com.lb/MKFAPI/API/Values/"; //"http://staging2.folens.ie/api/";
+        private const string serviceBaseURI = "http://moph.dataflow.com.lb/mkfapi/API/Values/"; //"http://staging2.folens.ie/api/";
 
         private const string loginAction = "login";
 		private const string getPosition = "GetPosition";
@@ -56,19 +56,29 @@ namespace MarketFlowLibrary
 			}
 		}
 
+        public static string GetUrl(){
+            return serviceBaseURI;
+        }
+
         public async static Task<LoginResult> Login(MKFUser user)
         {
             LoginResult result = new LoginResult();
             HttpClient client = new HttpClient();
             string serviceURL = string.Format("{0}{1}", serviceBaseURI, loginAction);
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(user);
+            string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(user);
 
-            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
+            var stringContent = new StringContent(jsonData, UnicodeEncoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync(serviceURL, stringContent);
+
+            //HttpResponseMessage response = await client.PostAsync(serviceURL, jsonData);
 
             if (response.IsSuccessStatusCode)
             {
                 result = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginResult>(response.Content.ReadAsStringAsync().Result);
+            }
+            else
+            {
+                result.WebMessage = response.StatusCode.ToString() + " " + response.RequestMessage + " " + response.Content.ToString();
             }
 
             return result;

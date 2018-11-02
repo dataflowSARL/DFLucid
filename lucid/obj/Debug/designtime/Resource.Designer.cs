@@ -27,6 +27,18 @@ namespace lucid
 		public partial class Color
 		{
 			
+			// aapt resource value: 0x7F070003
+			public const int blue = 2131165187;
+			
+			// aapt resource value: 0x7F070006
+			public const int green = 2131165190;
+			
+			// aapt resource value: 0x7F070005
+			public const int purple = 2131165189;
+			
+			// aapt resource value: 0x7F070004
+			public const int red = 2131165188;
+			
 			// aapt resource value: 0x7F070002
 			public const int window_background = 2131165186;
 			
@@ -44,22 +56,10 @@ namespace lucid
 		{
 			
 			// aapt resource value: 0x7F010002
-			public const int animation = 2130771970;
+			public const int editTextLayout = 2130771970;
 			
 			// aapt resource value: 0x7F010003
-			public const int animation2 = 2130771971;
-			
-			// aapt resource value: 0x7F010004
-			public const int asset_allocation = 2130771972;
-			
-			// aapt resource value: 0x7F010005
-			public const int drawerMenu = 2130771973;
-			
-			// aapt resource value: 0x7F010006
-			public const int editTextLayout = 2130771974;
-			
-			// aapt resource value: 0x7F010007
-			public const int logo = 2130771975;
+			public const int logo = 2130771971;
 			
 			static Drawable()
 			{
@@ -74,260 +74,644 @@ namespace lucid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7F020039
-			public const int aad_back_btn = 2130837561;
-			
-			// aapt resource value: 0x7F020037
-			public const int aad_toolbar = 2130837559;
-			
-			// aapt resource value: 0x7F020004
-			public const int aa_back_btn = 2130837508;
-			
-			// aapt resource value: 0x7F020002
-			public const int aa_toolbar = 2130837506;
-			
-			// aapt resource value: 0x7F020077
-			public const int appbar = 2130837623;
-			
-			// aapt resource value: 0x7F020013
-			public const int asset_allocation_list_view = 2130837523;
-			
-			// aapt resource value: 0x7F020044
-			public const int asset_description_even = 2130837572;
-			
-			// aapt resource value: 0x7F020050
-			public const int asset_description_odd = 2130837584;
-			
-			// aapt resource value: 0x7F020034
-			public const int as_back_btn = 2130837556;
-			
-			// aapt resource value: 0x7F020032
-			public const int as_toolbar = 2130837554;
-			
-			// aapt resource value: 0x7F020029
-			public const int au_back_btn = 2130837545;
-			
-			// aapt resource value: 0x7F020027
-			public const int au_toolbar = 2130837543;
-			
-			// aapt resource value: 0x7F020057
-			public const int cp_back_btn = 2130837591;
-			
-			// aapt resource value: 0x7F020055
-			public const int cp_toolbar = 2130837589;
-			
-			// aapt resource value: 0x7F020045
-			public const int details_button_even = 2130837573;
-			
-			// aapt resource value: 0x7F020051
-			public const int details_button_odd = 2130837585;
-			
-			// aapt resource value: 0x7F020009
-			public const int divider = 2130837513;
-			
-			// aapt resource value: 0x7F020042
-			public const int divider1 = 2130837570;
-			
-			// aapt resource value: 0x7F020043
-			public const int divider2 = 2130837571;
-			
-			// aapt resource value: 0x7F020046
-			public const int divider_even = 2130837574;
-			
-			// aapt resource value: 0x7F020052
-			public const int divider_odd = 2130837586;
-			
-			// aapt resource value: 0x7F020062
-			public const int dot_back_btn = 2130837602;
-			
-			// aapt resource value: 0x7F020060
-			public const int dot_toolbar = 2130837600;
-			
-			// aapt resource value: 0x7F020018
-			public const int drawer_layout = 2130837528;
-			
-			// aapt resource value: 0x7F020007
-			public const int header_layout = 2130837511;
-			
-			// aapt resource value: 0x7F020008
-			public const int header_left = 2130837512;
-			
-			// aapt resource value: 0x7F020012
-			public const int header_right_bottom = 2130837522;
-			
-			// aapt resource value: 0x7F020011
-			public const int header_right_top = 2130837521;
-			
-			// aapt resource value: 0x7F020021
-			public const int linearLayoutToolbar = 2130837537;
-			
-			// aapt resource value: 0x7F020028
-			public const int linearLayoutToolbarAboutUs = 2130837544;
-			
-			// aapt resource value: 0x7F020033
-			public const int linearLayoutToolbarAccountSummary = 2130837555;
-			
-			// aapt resource value: 0x7F020003
-			public const int linearLayoutToolbarAssetAllocation = 2130837507;
-			
-			// aapt resource value: 0x7F020038
-			public const int linearLayoutToolbarAssetAllocationDetails = 2130837560;
-			
 			// aapt resource value: 0x7F020056
-			public const int linearLayoutToolbarChangePassword = 2130837590;
-			
-			// aapt resource value: 0x7F020061
-			public const int linearLayoutToolbarDetaisOfTransaction = 2130837601;
-			
-			// aapt resource value: 0x7F020067
-			public const int linearLayoutToolbarPortfolioSummary = 2130837607;
-			
-			// aapt resource value: 0x7F020072
-			public const int linearLayoutToolbarProfitLoss = 2130837618;
-			
-			// aapt resource value: 0x7F020026
-			public const int login = 2130837542;
-			
-			// aapt resource value: 0x7F020023
-			public const int logo = 2130837539;
-			
-			// aapt resource value: 0x7F020076
-			public const int main_content = 2130837622;
-			
-			// aapt resource value: 0x7F020065
-			public const int navheader_logo = 2130837605;
-			
-			// aapt resource value: 0x7F020086
-			public const int nav_about_us = 2130837638;
-			
-			// aapt resource value: 0x7F020080
-			public const int nav_account_summary = 2130837632;
-			
-			// aapt resource value: 0x7F020081
-			public const int nav_asset_allocation = 2130837633;
-			
-			// aapt resource value: 0x7F020014
-			public const int nav_camera = 2130837524;
-			
-			// aapt resource value: 0x7F020084
-			public const int nav_change_password = 2130837636;
-			
-			// aapt resource value: 0x7F020082
-			public const int nav_details_of_transaction = 2130837634;
-			
-			// aapt resource value: 0x7F020015
-			public const int nav_gallery = 2130837525;
-			
-			// aapt resource value: 0x7F020085
-			public const int nav_logout = 2130837637;
-			
-			// aapt resource value: 0x7F020017
-			public const int nav_manage = 2130837527;
-			
-			// aapt resource value: 0x7F020079
-			public const int nav_portfolio_summary = 2130837625;
-			
-			// aapt resource value: 0x7F020083
-			public const int nav_profit_loss = 2130837635;
-			
-			// aapt resource value: 0x7F020016
-			public const int nav_slideshow = 2130837526;
-			
-			// aapt resource value: 0x7F020019
-			public const int nav_view = 2130837529;
-			
-			// aapt resource value: 0x7F020025
-			public const int password = 2130837541;
-			
-			// aapt resource value: 0x7F020073
-			public const int pl_back_btn = 2130837619;
-			
-			// aapt resource value: 0x7F020071
-			public const int pl_toolbar = 2130837617;
-			
-			// aapt resource value: 0x7F020048
-			public const int pos_bal_sys_tot_usd_even = 2130837576;
-			
-			// aapt resource value: 0x7F020053
-			public const int pos_bal_sys_tot_usd_odd = 2130837587;
-			
-			// aapt resource value: 0x7F020068
-			public const int ps_back_btn = 2130837608;
-			
-			// aapt resource value: 0x7F020066
-			public const int ps_toolbar = 2130837606;
-			
-			// aapt resource value: 0x7F020047
-			public const int right_column = 2130837575;
-			
-			// aapt resource value: 0x7F020010
-			public const int right_header_layout = 2130837520;
-			
-			// aapt resource value: 0x7F020030
-			public const int title_about_us = 2130837552;
-			
-			// aapt resource value: 0x7F020035
-			public const int title_account_summary = 2130837557;
-			
-			// aapt resource value: 0x7F020005
-			public const int title_asset_allocation = 2130837509;
-			
-			// aapt resource value: 0x7F020040
-			public const int title_asset_allocation_details = 2130837568;
-			
-			// aapt resource value: 0x7F020058
-			public const int title_change_password = 2130837592;
-			
-			// aapt resource value: 0x7F020063
-			public const int title_details_of_transaction = 2130837603;
-			
-			// aapt resource value: 0x7F020069
-			public const int title_portfolio_summary = 2130837609;
-			
-			// aapt resource value: 0x7F020074
-			public const int title_profit_loss = 2130837620;
-			
-			// aapt resource value: 0x7F020078
-			public const int toolbar = 2130837624;
-			
-			// aapt resource value: 0x7F020022
-			public const int toolbarLogo = 2130837538;
-			
-			// aapt resource value: 0x7F020031
-			public const int toolbarLogoAboutUs = 2130837553;
-			
-			// aapt resource value: 0x7F020036
-			public const int toolbarLogoAccountSummary = 2130837558;
-			
-			// aapt resource value: 0x7F020006
-			public const int toolbarLogoAssetAllocation = 2130837510;
-			
-			// aapt resource value: 0x7F020041
-			public const int toolbarLogoAssetAllocationDetails = 2130837569;
-			
-			// aapt resource value: 0x7F020059
-			public const int toolbarLogoChangePassword = 2130837593;
-			
-			// aapt resource value: 0x7F020064
-			public const int toolbarLogoDetailsOfTransaction = 2130837604;
-			
-			// aapt resource value: 0x7F020070
-			public const int toolbarLogoPortfolioSummary = 2130837616;
-			
-			// aapt resource value: 0x7F020075
-			public const int toolbarLogoProfitLoss = 2130837621;
-			
-			// aapt resource value: 0x7F020020
-			public const int toolbarMain = 2130837536;
-			
-			// aapt resource value: 0x7F020024
-			public const int username = 2130837540;
-			
-			// aapt resource value: 0x7F020049
-			public const int weight_percentage_tv_even = 2130837577;
+			public const int aad_back_btn = 2130837590;
 			
 			// aapt resource value: 0x7F020054
-			public const int weight_percentage_tv_odd = 2130837588;
+			public const int aad_toolbar = 2130837588;
+			
+			// aapt resource value: 0x7F020065
+			public const int aa_back_btn = 2130837605;
+			
+			// aapt resource value: 0x7F020053
+			public const int aa_details_linear_layout = 2130837587;
+			
+			// aapt resource value: 0x7F020063
+			public const int aa_toolbar = 2130837603;
+			
+			// aapt resource value: 0x7F020021
+			public const int aboutus_tv = 2130837537;
+			
+			// aapt resource value: 0x7F020022
+			public const int account_summary_detail_linear_layout = 2130837538;
+			
+			// aapt resource value: 0x7F020115
+			public const int account_to_display = 2130837781;
+			
+			// aapt resource value: 0x7F020114
+			public const int account_type = 2130837780;
+			
+			// aapt resource value: 0x7F020162
+			public const int accued_interest_tv = 2130837858;
+			
+			// aapt resource value: 0x7F020047
+			public const int ad_back_btn = 2130837575;
+			
+			// aapt resource value: 0x7F020045
+			public const int ad_toolbar = 2130837573;
+			
+			// aapt resource value: 0x7F020138
+			public const int all_details_button_even = 2130837816;
+			
+			// aapt resource value: 0x7F020147
+			public const int all_details_button_odd = 2130837831;
+			
+			// aapt resource value: 0x7F020044
+			public const int all_details_layout = 2130837572;
+			
+			// aapt resource value: 0x7F020148
+			public const int all_details_linear_layout = 2130837832;
+			
+			// aapt resource value: 0x7F020116
+			public const int amount_system = 2130837782;
+			
+			// aapt resource value: 0x7F020204
+			public const int appbar = 2130838020;
+			
+			// aapt resource value: 0x7F020025
+			public const int asd_back_btn = 2130837541;
+			
+			// aapt resource value: 0x7F020023
+			public const int asd_toolbar = 2130837539;
+			
+			// aapt resource value: 0x7F020062
+			public const int asset_allocation_linear_layout = 2130837602;
+			
+			// aapt resource value: 0x7F020119
+			public const int asset_description_even = 2130837785;
+			
+			// aapt resource value: 0x7F020125
+			public const int asset_description_odd = 2130837797;
+			
+			// aapt resource value: 0x7F020193
+			public const int asset_description_security_even = 2130837907;
+			
+			// aapt resource value: 0x7F020198
+			public const int asset_description_security_odd = 2130837912;
+			
+			// aapt resource value: 0x7F020037
+			public const int as_back_btn = 2130837559;
+			
+			// aapt resource value: 0x7F020118
+			public const int as_button = 2130837784;
+			
+			// aapt resource value: 0x7F020034
+			public const int as_linear_layout = 2130837556;
+			
+			// aapt resource value: 0x7F020035
+			public const int as_toolbar = 2130837557;
+			
+			// aapt resource value: 0x7F020018
+			public const int au_back_btn = 2130837528;
+			
+			// aapt resource value: 0x7F020015
+			public const int au_linear_layout = 2130837525;
+			
+			// aapt resource value: 0x7F020016
+			public const int au_toolbar = 2130837526;
+			
+			// aapt resource value: 0x7F020155
+			public const int average_price_tv = 2130837845;
+			
+			// aapt resource value: 0x7F020167
+			public const int balance = 2130837863;
+			
+			// aapt resource value: 0x7F020169
+			public const int buy_sell_dot = 2130837865;
+			
+			// aapt resource value: 0x7F020072
+			public const int change_password_layout = 2130837618;
+			
+			// aapt resource value: 0x7F020174
+			public const int closed_date = 2130837876;
+			
+			// aapt resource value: 0x7F020176
+			public const int close_bs = 2130837878;
+			
+			// aapt resource value: 0x7F020180
+			public const int close_price_pl = 2130837888;
+			
+			// aapt resource value: 0x7F020083
+			public const int confirm_button = 2130837635;
+			
+			// aapt resource value: 0x7F020081
+			public const int confirm_password = 2130837633;
+			
+			// aapt resource value: 0x7F020075
+			public const int cp_back_btn = 2130837621;
+			
+			// aapt resource value: 0x7F020073
+			public const int cp_toolbar = 2130837619;
+			
+			// aapt resource value: 0x7F020117
+			public const int currency_symbol = 2130837783;
+			
+			// aapt resource value: 0x7F020153
+			public const int currency_tv = 2130837843;
+			
+			// aapt resource value: 0x7F020166
+			public const int dbcr_amount = 2130837862;
+			
+			// aapt resource value: 0x7F020124
+			public const int details_button_even = 2130837796;
+			
+			// aapt resource value: 0x7F020129
+			public const int details_button_odd = 2130837801;
+			
+			// aapt resource value: 0x7F020197
+			public const int details_button_security_even = 2130837911;
+			
+			// aapt resource value: 0x7F020202
+			public const int details_button_security_odd = 2130838018;
+			
+			// aapt resource value: 0x7F020120
+			public const int divider_even = 2130837792;
+			
+			// aapt resource value: 0x7F020132
+			public const int divider_even_1 = 2130837810;
+			
+			// aapt resource value: 0x7F020134
+			public const int divider_even_2 = 2130837812;
+			
+			// aapt resource value: 0x7F020126
+			public const int divider_odd = 2130837798;
+			
+			// aapt resource value: 0x7F020141
+			public const int divider_odd_1 = 2130837825;
+			
+			// aapt resource value: 0x7F020143
+			public const int divider_odd_2 = 2130837827;
+			
+			// aapt resource value: 0x7F020194
+			public const int divider_security_even = 2130837908;
+			
+			// aapt resource value: 0x7F020199
+			public const int divider_security_odd = 2130837913;
+			
+			// aapt resource value: 0x7F020087
+			public const int dot_back_btn = 2130837639;
+			
+			// aapt resource value: 0x7F020084
+			public const int dot_linear_layout = 2130837636;
+			
+			// aapt resource value: 0x7F020085
+			public const int dot_toolbar = 2130837637;
+			
+			// aapt resource value: 0x7F020003
+			public const int drawer_layout = 2130837507;
+			
+			// aapt resource value: 0x7F020164
+			public const int due_date = 2130837860;
+			
+			// aapt resource value: 0x7F020013
+			public const int error_message = 2130837523;
+			
+			// aapt resource value: 0x7F020182
+			public const int estimated_profit_loss = 2130837890;
+			
+			// aapt resource value: 0x7F020071
+			public const int filter_aa_button = 2130837617;
+			
+			// aapt resource value: 0x7F020043
+			public const int filter_button = 2130837571;
+			
+			// aapt resource value: 0x7F020029
+			public const int from_btn = 2130837545;
+			
+			// aapt resource value: 0x7F020091
+			public const int from_btn_dot = 2130837649;
+			
+			// aapt resource value: 0x7F020109
+			public const int from_btn_pl = 2130837769;
+			
+			// aapt resource value: 0x7F020158
+			public const int gain_loss_tv = 2130837848;
+			
+			// aapt resource value: 0x7F020099
+			public const int header_linear_layout = 2130837657;
+			
+			// aapt resource value: 0x7F020101
+			public const int header_username = 2130837761;
+			
+			// aapt resource value: 0x7F020002
+			public const int home_linear_layout = 2130837506;
+			
+			// aapt resource value: 0x7F020189
+			public const int initial_margin_ps = 2130837897;
+			
+			// aapt resource value: 0x7F020131
+			public const int isin_even = 2130837809;
+			
+			// aapt resource value: 0x7F020140
+			public const int isin_odd = 2130837824;
+			
+			// aapt resource value: 0x7F020150
+			public const int isin_tv = 2130837840;
+			
+			// aapt resource value: 0x7F020007
+			public const int linearLayoutToolbar = 2130837511;
+			
+			// aapt resource value: 0x7F020017
+			public const int linearLayoutToolbarAboutUs = 2130837527;
+			
+			// aapt resource value: 0x7F020036
+			public const int linearLayoutToolbarAccountSummary = 2130837558;
+			
+			// aapt resource value: 0x7F020024
+			public const int linearLayoutToolbarAccountSummaryDetails = 2130837540;
+			
+			// aapt resource value: 0x7F020046
+			public const int linearLayoutToolbarAllDetails = 2130837574;
+			
+			// aapt resource value: 0x7F020064
+			public const int linearLayoutToolbarAssetAllocation = 2130837604;
+			
+			// aapt resource value: 0x7F020055
+			public const int linearLayoutToolbarAssetAllocationDetails = 2130837589;
+			
+			// aapt resource value: 0x7F020074
+			public const int linearLayoutToolbarChangePassword = 2130837620;
+			
+			// aapt resource value: 0x7F020086
+			public const int linearLayoutToolbarDetaisOfTransaction = 2130837638;
+			
+			// aapt resource value: 0x7F020104
+			public const int linearLayoutToolbarProfitLoss = 2130837764;
+			
+			// aapt resource value: 0x7F020014
+			public const int login = 2130837524;
+			
+			// aapt resource value: 0x7F020010
+			public const int logo = 2130837520;
+			
+			// aapt resource value: 0x7F020190
+			public const int maintenance_margin_ps = 2130837904;
+			
+			// aapt resource value: 0x7F020005
+			public const int main_activity_linear_layout = 2130837509;
+			
+			// aapt resource value: 0x7F020203
+			public const int main_content = 2130838019;
+			
+			// aapt resource value: 0x7F020154
+			public const int market_price_tv = 2130837844;
+			
+			// aapt resource value: 0x7F020152
+			public const int maturity_date_tv = 2130837842;
+			
+			// aapt resource value: 0x7F020100
+			public const int navheader_logo = 2130837760;
+			
+			// aapt resource value: 0x7F020214
+			public const int nav_about_us = 2130838036;
+			
+			// aapt resource value: 0x7F020208
+			public const int nav_account_summary = 2130838024;
+			
+			// aapt resource value: 0x7F020209
+			public const int nav_asset_allocation = 2130838025;
+			
+			// aapt resource value: 0x7F020212
+			public const int nav_change_password = 2130838034;
+			
+			// aapt resource value: 0x7F020210
+			public const int nav_details_of_transaction = 2130838032;
+			
+			// aapt resource value: 0x7F020213
+			public const int nav_logout = 2130838035;
+			
+			// aapt resource value: 0x7F020207
+			public const int nav_portfolio_summary = 2130838023;
+			
+			// aapt resource value: 0x7F020211
+			public const int nav_profit_loss = 2130838033;
+			
+			// aapt resource value: 0x7F020004
+			public const int nav_view = 2130837508;
+			
+			// aapt resource value: 0x7F020172
+			public const int net_amount_dot = 2130837874;
+			
+			// aapt resource value: 0x7F020191
+			public const int net_asset_value_ps = 2130837905;
+			
+			// aapt resource value: 0x7F020187
+			public const int net_cash_account_balances_ps = 2130837895;
+			
+			// aapt resource value: 0x7F020188
+			public const int net_cash_balance_btn = 2130837896;
+			
+			// aapt resource value: 0x7F020186
+			public const int net_cash_balance_layout = 2130837894;
+			
+			// aapt resource value: 0x7F020080
+			public const int new_password = 2130837632;
+			
+			// aapt resource value: 0x7F020032
+			public const int nothing_asd = 2130837554;
+			
+			// aapt resource value: 0x7F020094
+			public const int nothing_dot = 2130837652;
+			
+			// aapt resource value: 0x7F020112
+			public const int nothing_pl = 2130837778;
+			
+			// aapt resource value: 0x7F020079
+			public const int old_password = 2130837625;
+			
+			// aapt resource value: 0x7F020175
+			public const int opened_date = 2130837877;
+			
+			// aapt resource value: 0x7F020177
+			public const int open_bs = 2130837879;
+			
+			// aapt resource value: 0x7F020173
+			public const int open_price_dot = 2130837875;
+			
+			// aapt resource value: 0x7F020181
+			public const int open_price_pl = 2130837889;
+			
+			// aapt resource value: 0x7F020192
+			public const int ovl_ps = 2130837906;
+			
+			// aapt resource value: 0x7F020012
+			public const int password = 2130837522;
+			
+			// aapt resource value: 0x7F020105
+			public const int pl_back_btn = 2130837765;
+			
+			// aapt resource value: 0x7F020102
+			public const int pl_linear_layout = 2130837762;
+			
+			// aapt resource value: 0x7F020103
+			public const int pl_toolbar = 2130837763;
+			
+			// aapt resource value: 0x7F020136
+			public const int pos_bal_sys_tot_usd_details_even = 2130837814;
+			
+			// aapt resource value: 0x7F020145
+			public const int pos_bal_sys_tot_usd_details_odd = 2130837829;
+			
+			// aapt resource value: 0x7F020122
+			public const int pos_bal_sys_tot_usd_even = 2130837794;
+			
+			// aapt resource value: 0x7F020127
+			public const int pos_bal_sys_tot_usd_odd = 2130837799;
+			
+			// aapt resource value: 0x7F020195
+			public const int pos_bal_sys_tot_usd_security_even = 2130837909;
+			
+			// aapt resource value: 0x7F020200
+			public const int pos_bal_sys_tot_usd_security_odd = 2130838016;
+			
+			// aapt resource value: 0x7F020009
+			public const int progressBarLogin = 2130837513;
+			
+			// aapt resource value: 0x7F020040
+			public const int progress_bar_account_summary = 2130837568;
+			
+			// aapt resource value: 0x7F020028
+			public const int progress_bar_account_summary_details = 2130837544;
+			
+			// aapt resource value: 0x7F020050
+			public const int progress_bar_all_details = 2130837584;
+			
+			// aapt resource value: 0x7F020068
+			public const int progress_bar_asset_allocation = 2130837608;
+			
+			// aapt resource value: 0x7F020059
+			public const int progress_bar_asset_allocation_details = 2130837593;
+			
+			// aapt resource value: 0x7F020090
+			public const int progress_bar_dettails_of_transaction = 2130837648;
+			
+			// aapt resource value: 0x7F020078
+			public const int progress_bar_password = 2130837624;
+			
+			// aapt resource value: 0x7F020096
+			public const int progress_bar_portfolio_summary = 2130837654;
+			
+			// aapt resource value: 0x7F020108
+			public const int progress_bar_profit_loss = 2130837768;
+			
+			// aapt resource value: 0x7F020206
+			public const int ps_title = 2130838022;
+			
+			// aapt resource value: 0x7F020151
+			public const int qty_tv = 2130837841;
+			
+			// aapt resource value: 0x7F020178
+			public const int quantity_closed_pl = 2130837880;
+			
+			// aapt resource value: 0x7F020170
+			public const int quantity_dot = 2130837872;
+			
+			// aapt resource value: 0x7F020070
+			public const int recyclerview_aa = 2130837616;
+			
+			// aapt resource value: 0x7F020061
+			public const int recyclerview_aa_details = 2130837601;
+			
+			// aapt resource value: 0x7F020052
+			public const int recyclerview_all_details = 2130837586;
+			
+			// aapt resource value: 0x7F020042
+			public const int recyclerview_as = 2130837570;
+			
+			// aapt resource value: 0x7F020033
+			public const int recyclerview_asd = 2130837555;
+			
+			// aapt resource value: 0x7F020095
+			public const int recyclerview_dot = 2130837653;
+			
+			// aapt resource value: 0x7F020113
+			public const int recyclerview_pl = 2130837779;
+			
+			// aapt resource value: 0x7F020098
+			public const int recyclerview_ps = 2130837656;
+			
+			// aapt resource value: 0x7F020051
+			public const int refresher_all_details = 2130837585;
+			
+			// aapt resource value: 0x7F020060
+			public const int refresher_details = 2130837600;
+			
+			// aapt resource value: 0x7F020121
+			public const int right_column = 2130837793;
+			
+			// aapt resource value: 0x7F020135
+			public const int right_column_details_even = 2130837813;
+			
+			// aapt resource value: 0x7F020144
+			public const int right_column_details_odd = 2130837828;
+			
+			// aapt resource value: 0x7F020171
+			public const int security_name_dot = 2130837873;
+			
+			// aapt resource value: 0x7F020179
+			public const int security_name_pl = 2130837881;
+			
+			// aapt resource value: 0x7F020149
+			public const int security_tv = 2130837833;
+			
+			// aapt resource value: 0x7F020031
+			public const int submit_btn = 2130837553;
+			
+			// aapt resource value: 0x7F020093
+			public const int submit_btn_dot = 2130837651;
+			
+			// aapt resource value: 0x7F020111
+			public const int submit_btn_pl = 2130837777;
+			
+			// aapt resource value: 0x7F020133
+			public const int sum_qty_even = 2130837811;
+			
+			// aapt resource value: 0x7F020142
+			public const int sum_qty_odd = 2130837826;
+			
+			// aapt resource value: 0x7F020069
+			public const int swipe_to_refresh = 2130837609;
+			
+			// aapt resource value: 0x7F020041
+			public const int swipe_to_refresh_account_summary = 2130837569;
+			
+			// aapt resource value: 0x7F020097
+			public const int swipe_to_refresh_portfolio_summary = 2130837655;
+			
+			// aapt resource value: 0x7F020019
+			public const int title_about_us = 2130837529;
+			
+			// aapt resource value: 0x7F020038
+			public const int title_account_summary = 2130837560;
+			
+			// aapt resource value: 0x7F020026
+			public const int title_account_summary_details = 2130837542;
+			
+			// aapt resource value: 0x7F020048
+			public const int title_all_details = 2130837576;
+			
+			// aapt resource value: 0x7F020066
+			public const int title_asset_allocation = 2130837606;
+			
+			// aapt resource value: 0x7F020057
+			public const int title_asset_allocation_details = 2130837591;
+			
+			// aapt resource value: 0x7F020076
+			public const int title_change_password = 2130837622;
+			
+			// aapt resource value: 0x7F020088
+			public const int title_details_of_transaction = 2130837640;
+			
+			// aapt resource value: 0x7F020106
+			public const int title_profit_loss = 2130837766;
+			
+			// aapt resource value: 0x7F020130
+			public const int tit_nom_even = 2130837808;
+			
+			// aapt resource value: 0x7F020139
+			public const int tit_nom_odd = 2130837817;
+			
+			// aapt resource value: 0x7F020205
+			public const int toolbar = 2130838021;
+			
+			// aapt resource value: 0x7F020008
+			public const int toolbarLogo = 2130837512;
+			
+			// aapt resource value: 0x7F020020
+			public const int toolbarLogoAboutUs = 2130837536;
+			
+			// aapt resource value: 0x7F020039
+			public const int toolbarLogoAccountSummary = 2130837561;
+			
+			// aapt resource value: 0x7F020027
+			public const int toolbarLogoAccountSummaryDetails = 2130837543;
+			
+			// aapt resource value: 0x7F020049
+			public const int toolbarLogoAllDetails = 2130837577;
+			
+			// aapt resource value: 0x7F020067
+			public const int toolbarLogoAssetAllocation = 2130837607;
+			
+			// aapt resource value: 0x7F020058
+			public const int toolbarLogoAssetAllocationDetails = 2130837592;
+			
+			// aapt resource value: 0x7F020077
+			public const int toolbarLogoChangePassword = 2130837623;
+			
+			// aapt resource value: 0x7F020089
+			public const int toolbarLogoDetailsOfTransaction = 2130837641;
+			
+			// aapt resource value: 0x7F020107
+			public const int toolbarLogoProfitLoss = 2130837767;
+			
+			// aapt resource value: 0x7F020006
+			public const int toolbarMain = 2130837510;
+			
+			// aapt resource value: 0x7F020185
+			public const int total_assets_btn = 2130837893;
+			
+			// aapt resource value: 0x7F020183
+			public const int total_assets_layout = 2130837891;
+			
+			// aapt resource value: 0x7F020184
+			public const int total_assets_ps = 2130837892;
+			
+			// aapt resource value: 0x7F020159
+			public const int total_value_tv = 2130837849;
+			
+			// aapt resource value: 0x7F020160
+			public const int total_value_usd_tv = 2130837856;
+			
+			// aapt resource value: 0x7F020030
+			public const int to_btn = 2130837552;
+			
+			// aapt resource value: 0x7F020092
+			public const int to_btn_dot = 2130837650;
+			
+			// aapt resource value: 0x7F020110
+			public const int to_btn_pl = 2130837776;
+			
+			// aapt resource value: 0x7F020163
+			public const int transaction_date = 2130837859;
+			
+			// aapt resource value: 0x7F020168
+			public const int transaction_date_dot = 2130837864;
+			
+			// aapt resource value: 0x7F020165
+			public const int transaction_description = 2130837861;
+			
+			// aapt resource value: 0x7F020156
+			public const int unrealised_pl_tv = 2130837846;
+			
+			// aapt resource value: 0x7F020157
+			public const int unrealised_pl_usd_tv = 2130837847;
+			
+			// aapt resource value: 0x7F020082
+			public const int update_error = 2130837634;
+			
+			// aapt resource value: 0x7F020011
+			public const int username = 2130837521;
+			
+			// aapt resource value: 0x7F020137
+			public const int weight_percentage_tv_details_even = 2130837815;
+			
+			// aapt resource value: 0x7F020146
+			public const int weight_percentage_tv_details_odd = 2130837830;
+			
+			// aapt resource value: 0x7F020123
+			public const int weight_percentage_tv_even = 2130837795;
+			
+			// aapt resource value: 0x7F020128
+			public const int weight_percentage_tv_odd = 2130837800;
+			
+			// aapt resource value: 0x7F020196
+			public const int weight_percentage_tv_security_even = 2130837910;
+			
+			// aapt resource value: 0x7F020201
+			public const int weight_percentage_tv_security_odd = 2130838017;
+			
+			// aapt resource value: 0x7F020161
+			public const int weight_tv = 2130837857;
 			
 			static Id()
 			{
@@ -346,19 +730,19 @@ namespace lucid
 			public const int about_us_layout = 2130903044;
 			
 			// aapt resource value: 0x7F030005
-			public const int account_summary_layout = 2130903045;
+			public const int account_summary_details_layout = 2130903045;
 			
 			// aapt resource value: 0x7F030006
-			public const int asset_allocation_details_layout = 2130903046;
+			public const int account_summary_layout = 2130903046;
 			
 			// aapt resource value: 0x7F030007
-			public const int asset_allocation_layout = 2130903047;
+			public const int all_details_layout = 2130903047;
 			
 			// aapt resource value: 0x7F030008
-			public const int asset_allocation_listview_even_row = 2130903048;
+			public const int asset_allocation_details_layout = 2130903048;
 			
 			// aapt resource value: 0x7F030009
-			public const int asset_allocation_listview_odd_row = 2130903049;
+			public const int asset_allocation_layout = 2130903049;
 			
 			// aapt resource value: 0x7F030010
 			public const int change_password_layout = 2130903056;
@@ -370,19 +754,58 @@ namespace lucid
 			public const int Home = 2130903042;
 			
 			// aapt resource value: 0x7F030012
-			public const int layout_header = 2130903058;
+			public const int home_layout = 2130903058;
+			
+			// aapt resource value: 0x7F030013
+			public const int layout_header = 2130903059;
 			
 			// aapt resource value: 0x7F030003
 			public const int Main = 2130903043;
-			
-			// aapt resource value: 0x7F030013
-			public const int portfolio_summary_layout = 2130903059;
 			
 			// aapt resource value: 0x7F030014
 			public const int profit_loss_layout = 2130903060;
 			
 			// aapt resource value: 0x7F030015
-			public const int toolbar = 2130903061;
+			public const int recyclerview_account_summary_layout = 2130903061;
+			
+			// aapt resource value: 0x7F030018
+			public const int recyclerview_card_aad_even_layout = 2130903064;
+			
+			// aapt resource value: 0x7F030019
+			public const int recyclerview_card_aad_layout = 2130903065;
+			
+			// aapt resource value: 0x7F030020
+			public const int recyclerview_card_aad_odd_layout = 2130903072;
+			
+			// aapt resource value: 0x7F030016
+			public const int recyclerview_card_aa_even_layout = 2130903062;
+			
+			// aapt resource value: 0x7F030017
+			public const int recyclerview_card_aa_odd_layout = 2130903063;
+			
+			// aapt resource value: 0x7F030021
+			public const int recyclerview_card_all_details_layout = 2130903073;
+			
+			// aapt resource value: 0x7F030022
+			public const int recyclerview_card_asd_layout = 2130903074;
+			
+			// aapt resource value: 0x7F030023
+			public const int recyclerview_card_dot_layout = 2130903075;
+			
+			// aapt resource value: 0x7F030024
+			public const int recyclerview_card_pl_layout = 2130903076;
+			
+			// aapt resource value: 0x7F030025
+			public const int recyclerview_card_ps_layout = 2130903077;
+			
+			// aapt resource value: 0x7F030026
+			public const int recyclerview_card_security_layout = 2130903078;
+			
+			// aapt resource value: 0x7F030027
+			public const int recyclerview_card_security_odd_layout = 2130903079;
+			
+			// aapt resource value: 0x7F030028
+			public const int toolbar = 2130903080;
 			
 			static Layout()
 			{
@@ -429,65 +852,254 @@ namespace lucid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7F060016
-			public const int about_us = 2131099670;
+			// aapt resource value: 0x7F060009
+			public const int account_summary = 2131099657;
 			
-			// aapt resource value: 0x7F060010
-			public const int account_summary = 2131099664;
+			// aapt resource value: 0x7F060049
+			public const int account_summary_details = 2131099721;
 			
-			// aapt resource value: 0x7F060003
-			public const int app_name = 2131099651;
+			// aapt resource value: 0x7F060045
+			public const int account_to_display = 2131099717;
 			
-			// aapt resource value: 0x7F060011
-			public const int asset_allocation = 2131099665;
+			// aapt resource value: 0x7F060046
+			public const int account_type = 2131099718;
 			
-			// aapt resource value: 0x7F060021
-			public const int asset_allocation_details = 2131099681;
+			// aapt resource value: 0x7F060039
+			public const int accued_interest = 2131099705;
 			
-			// aapt resource value: 0x7F060017
-			public const int asset_description = 2131099671;
+			// aapt resource value: 0x7F060025
+			public const int all_details = 2131099685;
 			
-			// aapt resource value: 0x7F060014
-			public const int change_password = 2131099668;
-			
-			// aapt resource value: 0x7F060012
-			public const int details_of_transaction = 2131099666;
-			
-			// aapt resource value: 0x7F060008
-			public const int drawer_close = 2131099656;
-			
-			// aapt resource value: 0x7F060007
-			public const int drawer_open = 2131099655;
+			// aapt resource value: 0x7F060048
+			public const int amount_system = 2131099720;
 			
 			// aapt resource value: 0x7F060002
-			public const int hello = 2131099650;
+			public const int app_name = 2131099650;
 			
-			// aapt resource value: 0x7F060006
-			public const int hint_password = 2131099654;
-			
-			// aapt resource value: 0x7F060005
-			public const int hint_username = 2131099653;
-			
-			// aapt resource value: 0x7F060004
-			public const int login = 2131099652;
-			
-			// aapt resource value: 0x7F060015
-			public const int logout = 2131099669;
-			
-			// aapt resource value: 0x7F060009
-			public const int portfolio_summary = 2131099657;
-			
-			// aapt resource value: 0x7F060018
-			public const int pos_bal_sys_tot_usd = 2131099672;
+			// aapt resource value: 0x7F060010
+			public const int asset_allocation = 2131099664;
 			
 			// aapt resource value: 0x7F060020
-			public const int pos_bal_sys_tot_usd_weight_percentage = 2131099680;
+			public const int asset_allocation_details = 2131099680;
+			
+			// aapt resource value: 0x7F060016
+			public const int asset_description = 2131099670;
+			
+			// aapt resource value: 0x7F060032
+			public const int average_price = 2131099698;
+			
+			// aapt resource value: 0x7F060055
+			public const int balance = 2131099733;
+			
+			// aapt resource value: 0x7F060060
+			public const int buysell = 2131099744;
 			
 			// aapt resource value: 0x7F060013
-			public const int profit_loss = 2131099667;
+			public const int change_password = 2131099667;
+			
+			// aapt resource value: 0x7F060066
+			public const int closed_date = 2131099750;
+			
+			// aapt resource value: 0x7F060068
+			public const int close_bs = 2131099752;
+			
+			// aapt resource value: 0x7F060071
+			public const int close_price = 2131099761;
+			
+			// aapt resource value: 0x7F060043
+			public const int confirm_password = 2131099715;
+			
+			// aapt resource value: 0x7F060015
+			public const int contact_us = 2131099669;
+			
+			// aapt resource value: 0x7F060030
+			public const int currency = 2131099696;
+			
+			// aapt resource value: 0x7F060064
+			public const int currencysymbol = 2131099748;
+			
+			// aapt resource value: 0x7F060047
+			public const int currency_as = 2131099719;
+			
+			// aapt resource value: 0x7F060059
+			public const int date = 2131099737;
+			
+			// aapt resource value: 0x7F060053
+			public const int dbcr = 2131099731;
+			
+			// aapt resource value: 0x7F060054
+			public const int dbcr_amount = 2131099732;
+			
+			// aapt resource value: 0x7F060011
+			public const int details_of_transaction = 2131099665;
+			
+			// aapt resource value: 0x7F060007
+			public const int drawer_close = 2131099655;
+			
+			// aapt resource value: 0x7F060006
+			public const int drawer_open = 2131099654;
+			
+			// aapt resource value: 0x7F060051
+			public const int due_date = 2131099729;
+			
+			// aapt resource value: 0x7F060058
+			public const int empty_date = 2131099736;
+			
+			// aapt resource value: 0x7F060040
+			public const int error = 2131099712;
+			
+			// aapt resource value: 0x7F060081
+			public const int error_occured = 2131099777;
+			
+			// aapt resource value: 0x7F060072
+			public const int estimated_pl = 2131099762;
+			
+			// aapt resource value: 0x7F060056
+			public const int from = 2131099734;
+			
+			// aapt resource value: 0x7F060035
+			public const int gain_loss = 2131099701;
+			
+			// aapt resource value: 0x7F060005
+			public const int hint_password = 2131099653;
+			
+			// aapt resource value: 0x7F060004
+			public const int hint_username = 2131099652;
+			
+			// aapt resource value: 0x7F060076
+			public const int initial_margin = 2131099766;
+			
+			// aapt resource value: 0x7F060022
+			public const int isin = 2131099682;
+			
+			// aapt resource value: 0x7F060027
+			public const int isin2 = 2131099687;
+			
+			// aapt resource value: 0x7F060003
+			public const int login = 2131099651;
+			
+			// aapt resource value: 0x7F060014
+			public const int logout = 2131099668;
+			
+			// aapt resource value: 0x7F060077
+			public const int maintenance_margin = 2131099767;
+			
+			// aapt resource value: 0x7F060031
+			public const int market_price = 2131099697;
+			
+			// aapt resource value: 0x7F060029
+			public const int maturity_date = 2131099689;
+			
+			// aapt resource value: 0x7F060065
+			public const int netamount = 2131099749;
+			
+			// aapt resource value: 0x7F060078
+			public const int net_asset_value = 2131099768;
+			
+			// aapt resource value: 0x7F060075
+			public const int net_cash_account_balances = 2131099765;
+			
+			// aapt resource value: 0x7F060042
+			public const int new_password = 2131099714;
+			
+			// aapt resource value: 0x7F060073
+			public const int nothing = 2131099763;
+			
+			// aapt resource value: 0x7F060080
+			public const int not_connected = 2131099776;
+			
+			// aapt resource value: 0x7F060041
+			public const int old_password = 2131099713;
+			
+			// aapt resource value: 0x7F060067
+			public const int opened_date = 2131099751;
+			
+			// aapt resource value: 0x7F060069
+			public const int open_bs = 2131099753;
+			
+			// aapt resource value: 0x7F060063
+			public const int open_price = 2131099747;
+			
+			// aapt resource value: 0x7F060079
+			public const int ovl = 2131099769;
+			
+			// aapt resource value: 0x7F060008
+			public const int portfolio_summary = 2131099656;
+			
+			// aapt resource value: 0x7F060017
+			public const int pos_bal_sys_tot_usd = 2131099671;
 			
 			// aapt resource value: 0x7F060019
-			public const int weight_percentage = 2131099673;
+			public const int pos_bal_sys_tot_usd_weight_percentage = 2131099673;
+			
+			// aapt resource value: 0x7F060012
+			public const int profit_loss = 2131099666;
+			
+			// aapt resource value: 0x7F060028
+			public const int qty = 2131099688;
+			
+			// aapt resource value: 0x7F060061
+			public const int quantity = 2131099745;
+			
+			// aapt resource value: 0x7F060070
+			public const int quantity_closed = 2131099760;
+			
+			// aapt resource value: 0x7F060026
+			public const int security = 2131099686;
+			
+			// aapt resource value: 0x7F060062
+			public const int securityname = 2131099746;
+			
+			// aapt resource value: 0x7F060084
+			public const int show_by_aa = 2131099780;
+			
+			// aapt resource value: 0x7F060083
+			public const int show_by_security = 2131099779;
+			
+			// aapt resource value: 0x7F060044
+			public const int submit = 2131099716;
+			
+			// aapt resource value: 0x7F060023
+			public const int sumQty = 2131099683;
+			
+			// aapt resource value: 0x7F060021
+			public const int tit_nom = 2131099681;
+			
+			// aapt resource value: 0x7F060057
+			public const int to = 2131099735;
+			
+			// aapt resource value: 0x7F060074
+			public const int total_assets = 2131099764;
+			
+			// aapt resource value: 0x7F060036
+			public const int total_value = 2131099702;
+			
+			// aapt resource value: 0x7F060037
+			public const int total_value_usd = 2131099703;
+			
+			// aapt resource value: 0x7F060050
+			public const int transaction_date = 2131099728;
+			
+			// aapt resource value: 0x7F060052
+			public const int transaction_description = 2131099730;
+			
+			// aapt resource value: 0x7F060033
+			public const int unrealised_pl = 2131099699;
+			
+			// aapt resource value: 0x7F060034
+			public const int unrealised_pl_usd = 2131099700;
+			
+			// aapt resource value: 0x7F060024
+			public const int username = 2131099684;
+			
+			// aapt resource value: 0x7F060082
+			public const int username_not_found = 2131099778;
+			
+			// aapt resource value: 0x7F060038
+			public const int weight = 2131099704;
+			
+			// aapt resource value: 0x7F060018
+			public const int weight_percentage = 2131099672;
 			
 			static String()
 			{

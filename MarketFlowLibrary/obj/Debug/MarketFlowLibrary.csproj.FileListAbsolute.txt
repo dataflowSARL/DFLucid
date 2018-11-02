@@ -21,7 +21,6 @@
 /Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Debug/MarketFlowLibrary.MarketFlowLibrary-Signed.apk
 /Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Debug/Newtonsoft.Json.dll
 /Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/bin/Debug/Newtonsoft.Json.xml
-/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Debug/MarketFlowLibrary.csprojResolveAssemblyReference.cache
 /Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Debug/MarketFlowLibrary.csproj.CoreCompileInputs.cache
 /Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Debug/MarketFlowLibrary.dll
 /Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/MarketFlowLibrary/obj/Debug/MarketFlowLibrary.pdb

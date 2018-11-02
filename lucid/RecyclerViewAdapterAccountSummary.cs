@@ -5,8 +5,8 @@ using Android.Content;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using MKFLibrary;
-using MKFLibrary.API;
+using MarketFlowLibrary;
+//using MarketFlowLibrary.API;
 
 namespace lucid
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Android.Content;
 using Android.Support.V7.Widget;
 using Android.Views;
-using MKFLibrary;
+using MarketFlowLibrary;
 using static Android.Support.V7.Widget.RecyclerView;
 
 namespace lucid

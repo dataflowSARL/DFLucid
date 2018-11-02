@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MKFLibrary.API
+namespace MarketFlowLibrary
 {
     public class API_Response<T>
     {

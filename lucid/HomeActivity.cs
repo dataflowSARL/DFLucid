@@ -14,16 +14,17 @@ using Android.Support.V4.Widget;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Support.Design.Widget;
 using Android.Support.Compat;
-using MKFLibrary;
-using MarketFlow;
+using MarketFlowLibrary;
+//using MarketFlow;
 using System.Threading.Tasks;
 using Android.Graphics.Drawables;
 using System.Timers;
-using Android.App;
+//using Android.App;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
 using static Java.Text.Normalizer;
 using Android.Support.V7.Widget;
-using MKFLibrary.API;
+//using MarketFlowLibrary.API;
+
 
 namespace lucid
 {
@@ -100,7 +101,7 @@ namespace lucid
                     this.RunOnUiThread(() => Dismiss());
                 }
             });
-            linearLayout = FindViewById<LinearLayout>(Resource.Id.home_linear_layout);
+            linearLayout = FindViewById<LinearLayout>(lucid.Resource.Id.home_linear_layout);
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             // Create ActionBarDrawerToggle button and add it to the toolbar  
             V7Toolbar toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);

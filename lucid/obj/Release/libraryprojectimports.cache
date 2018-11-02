@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars>
+    <Jar>obj/Release/lp/3/jl/arch-core-common.jar</Jar>
+    <Jar>obj/Release/lp/4/jl/arch-lifecycle-common.jar</Jar>
+    <Jar>obj/Release/lp/7/jl/support-annotations.jar</Jar>
+    <Jar>obj/Release/lp/20/jl/__reference__kotlin-stdlib.jar</Jar>
+    <Jar>obj/Release/lp/21/jl/__reference__kotlin-stdlib-jre7.jar</Jar>
+    <Jar>obj/Release/lp/22/jl/__reference__kotlin-stdlib-jre8.jar</Jar>
     <Jar>/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/lucid/obj/Release/lp/10/jl/bin/classes.jar</Jar>
     <Jar>/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/lucid/obj/Release/lp/11/jl/bin/classes.jar</Jar>
     <Jar>/Users/dataflDataflowow/Desktop/Hussein/DFLucid/DFLucid/lucid/obj/Release/lp/12/jl/bin/classes.jar</Jar>

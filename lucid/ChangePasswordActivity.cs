@@ -13,10 +13,11 @@ using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
-using MarketFlow;
-using MKFLibrary;
+//using MarketFlow;
+using MarketFlowLibrary;
 using Toolbar = Android.Widget.Toolbar;
 using System.Timers;
+using MarketFlowLibrary;
 
 namespace lucid
 {

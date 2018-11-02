@@ -18,10 +18,10 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using MarketFlow;
+//using MarketFlow;
 using MarketFlowLibrary;
-using MKFLibrary;
-using MKFLibrary.API;
+//using MarketFlowLibrary;
+//using MarketFlowLibrary.API;
 using Toolbar = Android.Widget.Toolbar;
 
 namespace lucid
